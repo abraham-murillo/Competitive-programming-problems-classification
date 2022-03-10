@@ -10,6 +10,7 @@ import json
 
 def getFrom(url):
     url = url.replace(' ', '%20')
+
     if url.startswith("https://codeforces.com/api/"):
         # https://codeforces.com/apiHelp/
         # Easy request using codeforces api
@@ -37,10 +38,16 @@ def getFrom(url):
             output.find('div', attrs={'class': 'section-title'}).decompose()
             problem['output'] = output.text
 
+            note = html.find('div', attrs={'class': 'note'})
+            note.find('div', attrs={'class': 'section-title'}).decompose()
+            problem['note'] = note.text
+
             html.find('div', attrs={
                       'class': 'input-specification'}).decompose()
             html.find('div', attrs={
                       'class': 'output-specification'}).decompose()
+            html.find('div', attrs={
+                'class': 'note'}).decompose()
 
             problem['history'] = html.text
 

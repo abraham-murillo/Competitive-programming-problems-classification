@@ -1,15 +1,15 @@
-import codeforces
+import codeforcesApi
 import json
-import pprint
+from pprint import pprint
 
 # 5 tags para empezar
-easyTags = codeforces.tagsRating[0:5]
-problems = codeforces.getProblemset(easyTags, 10)
+easyTags = codeforcesApi.tagsRating[0:5]
+problems = codeforcesApi.getProblemset(easyTags, 10)
 
 for id, data in problems.items():
-    data = codeforces.getProblem(data)
+    data = codeforcesApi.getProblem(data)
     jsonData = json.dumps(data, indent=4)
-    pprint.pprint(data)
+    pprint(data)
 
     with open(f"problems/{id}.json", "w") as outfile:
         outfile.write(jsonData)
