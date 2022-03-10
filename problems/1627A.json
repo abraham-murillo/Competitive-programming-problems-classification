@@ -1,0 +1,15 @@
+{
+    "contestId": 1627,
+    "index": "A",
+    "name": "Not Shading",
+    "type": "PROGRAMMING",
+    "points": 500.0,
+    "rating": 800,
+    "tags": [
+        "constructive algorithms",
+        "implementation"
+    ],
+    "input": "The input consists of multiple test cases. The first line contains an integer \ud835\udc61t (1\u2264\ud835\udc61\u22641001\u2264t\u2264100)\u00a0\u2014 the number of test cases. The description of the test cases follows.The first line of each test case contains four integers \ud835\udc5bn, \ud835\udc5am, \ud835\udc5fr, and \ud835\udc50c (1\u2264\ud835\udc5b,\ud835\udc5a\u2264501\u2264n,m\u226450; 1\u2264\ud835\udc5f\u2264\ud835\udc5b1\u2264r\u2264n; 1\u2264\ud835\udc50\u2264\ud835\udc5a1\u2264c\u2264m)\u00a0\u2014 the number of rows and the number of columns in the grid, and the row and column of the cell you need to turn black, respectively.Then \ud835\udc5bn lines follow, each containing \ud835\udc5am characters. Each of these characters is either 'B' or 'W'\u00a0\u2014 a black and a white cell, respectively.",
+    "output": "For each test case, if it is impossible to make the cell in row \ud835\udc5fr and column \ud835\udc50c black, output \u22121\u22121. Otherwise, output a single integer\u00a0\u2014 the minimum number of operations required to make the cell in row \ud835\udc5fr and column \ud835\udc50c black. ",
+    "history": "There is a grid with \ud835\udc5bn rows and \ud835\udc5am columns. Some cells are colored black, and the rest of the cells are colored white.In one operation, you can select some black cell and do exactly one of the following:   color all cells in its row black, or  color all cells in its column black. You are given two integers \ud835\udc5fr and \ud835\udc50c. Find the minimum number of operations required to make the cell in row \ud835\udc5fr and column \ud835\udc50c black, or determine that it is impossible.NoteThe first test case is pictured below.  We can take the black cell in row 11 and column 22, and make all cells in its row black. Therefore, the cell in row 11 and column 44 will become black.  In the second test case, the cell in row 22 and column 11 is already black.In the third test case, it is impossible to make the cell in row 22 and column 22 black.The fourth test case is pictured below.  We can take the black cell in row 22 and column 22 and make its column black.   Then, we can take the black cell in row 11 and column 22 and make its row black.   Therefore, the cell in row 11 and column 11 will become black."
+}

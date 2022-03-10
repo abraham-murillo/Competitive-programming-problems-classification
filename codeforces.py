@@ -12,11 +12,11 @@ def getFrom(url):
     url = url.replace(' ', '%20')
     if url.startswith("https://codeforces.com/api/"):
         # https://codeforces.com/apiHelp/
-        # Easy request
+        # Easy request using codeforces api
         page = urllib.request.urlopen(url)
         return json.loads(str(BeautifulSoup(page, 'html.parser')))
     elif url.startswith("https://codeforces.com/problemset/problem/"):
-        # Extract data from html
+        # Extract codeforces problem data from html
         driver = webdriver.Chrome()
         driver.get(url)
 
@@ -71,25 +71,27 @@ def getAllTags():
 
 def getProblem(problem):
     """
-    Problem definition
-    {'contestId': 1000, 
-    'index': 'A', 
-    'name': 'Codehorses T-shirts',
-    'rating': 1200, 
-    'tags': ['greedy', 'implementation'],
-    'type': 'PROGRAMMING'},
+    Default problem definition:
+        {'contestId': 1000, 
+        'index': 'A', 
+        'name': 'Codehorses T-shirts',
+        'rating': 1200, 
+        'tags': ['greedy', 'implementation'],
+        'type': 'PROGRAMMING'},
     """
 
     url = f"https://codeforces.com/problemset/problem/{problem['contestId']}/{problem['index']}"
+    print(url)
     problem.update(getFrom(url))
     return problem
 
 
-def getProblemset(tagsRating):
+def getProblemset(tagsRating, maxNumOfProblems=-1):
     """
     Returns the codeforces problemset
         - All problems should have at least 1 of the tags 
         - Rating of the problem (if any) should be smaller than maxRating
+        - limit of problems is maxNumOfProblems
     """
 
     def getProblems(url):
@@ -104,19 +106,27 @@ def getProblemset(tagsRating):
 
     # Filter the problemset, if problem[tag] isn't in tags ignore the problem
     filteredProblems = dict()
+
+    def enoughProblems():
+        return maxNumOfProblems != -1 and len(filteredProblems) >= maxNumOfProblems
+
     for tag, rating in tagsRating:
         problemsWithATag = getProblems(url + f"?tags={tag}")
-        print(len(problemsWithATag))
+        # print(len(problemsWithATag))
 
         for problem in problemsWithATag:
             if 'rating' in problem and problem['rating'] <= maxRating:
                 problemId = str(problem['contestId']) + problem['index']
                 filteredProblems[problemId] = problem
 
-        print(len(filteredProblems))
+            if enoughProblems():
+                break
 
-    pprint.pprint(filteredProblems)
+        # print(len(filteredProblems))
+        if enoughProblems():
+            break
 
+    # pprint.pprint(filteredProblems)
     return filteredProblems
 
 
@@ -158,17 +168,3 @@ tagsRating = [('implementation', 1480.7348092322186),
               ('flows', 2543.362831858407),
               ('string suffix structures', 2612.987012987013),
               ('fft', 2865.217391304348)]
-
-
-easyTags = tagsRating[0:5]
-# problems = getProblemset(easyTags)
-
-
-sampleProblem = {'contestId': 1000,
-                 'index': 'A',
-                 'name': 'Codehorses T-shirts',
-                 'rating': 1200,
-                 'tags': ['greedy', 'implementation'],
-                 'type': 'PROGRAMMING'}
-
-pprint.pprint(getProblem(sampleProblem))
