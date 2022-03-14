@@ -1,0 +1,13 @@
+{
+    "url": "https://omegaup.com/arena/problem/SEC04-A-05-Volumen",
+    "name": "SEC04-A-05 Volumen",
+    "id": 14314,
+    "site": "omegaup",
+    "tags": [
+        "arithmetic",
+        "formatted input and output"
+    ],
+    "history": "Dise\u00f1e un Software en c\u00f3digo C++, en el cual se capture el valor de un arista de un cubo  y regrese el valor del volumen, hasta con 4 digitos decimales, de la siguiente manera:4El volumen del Cubo es: 64.0000(OJO: Cuide las may\u00fasculas, min\u00fasculas y espacios)NIVELPrincipiante. Se asigan valores a Variables y se realizan Operaciones Aritm\u00e9ticas. Dise\u00f1ada para personas que nunca han programado y empiezan a programar",
+    "input": "2.73",
+    "output": "El volumen del Cubo es: 20.3464"
+}

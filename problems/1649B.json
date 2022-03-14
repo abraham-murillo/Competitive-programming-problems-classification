@@ -1,0 +1,19 @@
+{
+    "contestId": 1649,
+    "index": "B",
+    "name": "Game of Ball Passing",
+    "type": "PROGRAMMING",
+    "points": 1000.0,
+    "rating": 1300,
+    "tags": [
+        "greedy",
+        "implementation"
+    ],
+    "id": "1649B",
+    "site": "codeforces",
+    "url": "https://codeforces.com/problemset/problem/1649/B",
+    "input": "There are several test cases in the input data. The first line contains a single integer t (1\u2264t\u22645\u22c5104)\u00a0\u2014 the number of test cases. This is followed by the test cases description.The first line of each test case contains one integer n (2\u2264n\u2264105)\u00a0\u2014 the number of players.The second line of the test case contains a sequence of integers a1,a2,\u2026,an (0\u2264ai\u2264109), where ai is the number of passes delivered by the i-th player.It is guaranteed that the sum of n over all test cases doesn't exceed 105.",
+    "output": "For each test case print a single integer\u00a0\u2014 the answer to the problem.",
+    "note": "In the first test case, with the only ball, the game can go like this:2\u21921\u21923\u21924\u21921\u21922\u21923\u21924\u21922\u21923\u21922.In the second test case, there is no possible way to play the game with only one ball. One possible way to play with two balls:2\u21921\u21922\u21923\u21922\u21921.2\u21923\u21922\u21921In the third example, there were no passes, so 0 balls are possible.",
+    "history": "Daniel is watching a football team playing a game during their training session. They want to improve their passing skills during that session.The game involves n players, making multiple passes towards each other. Unfortunately, since the balls were moving too fast, after the session Daniel is unable to know how many balls were involved during the game. The only thing he knows is the number of passes delivered by each player during all the session.Find the minimum possible amount of balls that were involved in the game."
+}

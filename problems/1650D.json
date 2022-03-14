@@ -1,0 +1,20 @@
+{
+    "contestId": 1650,
+    "index": "D",
+    "name": "Twist the Permutation",
+    "type": "PROGRAMMING",
+    "rating": 1300,
+    "tags": [
+        "brute force",
+        "constructive algorithms",
+        "implementation",
+        "math"
+    ],
+    "id": "1650D",
+    "site": "codeforces",
+    "url": "https://codeforces.com/problemset/problem/1650/D",
+    "input": "The first line of the input contains an integer t (1\u2264t\u2264500)\u00a0\u2014 the number of test cases in the test.The descriptions of the test cases follow.The first line of the description of each test case contains one integer n (2\u2264n\u22642\u22c5103)\u00a0\u2014 the length of the array a.The next line contains the final state of the array a: n integers a1,a2,\u2026,an (1\u2264ai\u2264n) are written. All ai are distinct.It is guaranteed that the sum of n values over all test cases does not exceed 2\u22c5103.",
+    "output": "For each test case, print the answer on a separate line.Print -1 if the given final value a cannot be obtained by performing an arbitrary number of cyclic shifts on each operation. Otherwise, print n non-negative integers d1,d2,\u2026,dn (di\u22650), where di means that during the i-th operation the first i elements of the array were cyclic shifted to the right di times.If there are several possible answers, print the one where the total number of shifts is minimal (that is, the sum of di values is the smallest). If there are several such answers, print any of them.",
+    "note": "The first test case matches the example from the statement.The second set of input data is simple. Note that the answer [3,2,1] also gives the same permutation, but since the total number of shifts 3+2+1 is greater than 0+0+1, this answer is not correct.",
+    "history": "Petya got an array a of numbers from 1 to n, where a[i]=i.He performed n operations sequentially. In the end, he received a new state of the a array.At the i-th operation, Petya chose the first i elements of the array and cyclically shifted them to the right an arbitrary number of times (elements with indexes i+1 and more remain in their places). One cyclic shift to the right is such a transformation that the array a=[a1,a2,\u2026,an] becomes equal to the array a=[ai,a1,a2,\u2026,ai\u22122,ai\u22121,ai+1,ai+2,\u2026,an].For example, if a=[5,4,2,1,3] and i=3 (that is, this is the third operation), then as a result of this operation, he could get any of these three arrays:  a=[5,4,2,1,3] (makes 0 cyclic shifts, or any number that is divisible by 3);  a=[2,5,4,1,3] (makes 1 cyclic shift, or any number that has a remainder of 1 when divided by 3);  a=[4,2,5,1,3] (makes 2 cyclic shifts, or any number that has a remainder of 2 when divided by 3). Let's look at an example. Let n=6, i.e. initially a=[1,2,3,4,5,6]. A possible scenario is described below.  i=1: no matter how many cyclic shifts Petya makes, the array a does not change.  i=2: let's say Petya decided to make a 1 cyclic shift, then the array will look like a=[2,1,3,4,5,6].  i=3: let's say Petya decided to make 1 cyclic shift, then the array will look like a=[3,2,1,4,5,6].  i=4: let's say Petya decided to make 2 cyclic shifts, the original array will look like a=[1,4,3,2,5,6].  i=5: let's say Petya decided to make 0 cyclic shifts, then the array won't change.  i=6: let's say Petya decided to make 4 cyclic shifts, the array will look like a=[3,2,5,6,1,4]. You are given a final array state a after all n operations. Determine if there is a way to perform the operation that produces this result. In this case, if an answer exists, print the numbers of cyclical shifts that occurred during each of the n operations."
+}

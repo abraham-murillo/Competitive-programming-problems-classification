@@ -1,0 +1,13 @@
+{
+    "url": "https://omegaup.com/arena/problem/Anos-extraterrestres-ANH",
+    "name": "A\u00f1os extraterrestres",
+    "id": 13844,
+    "site": "omegaup",
+    "tags": [
+        "conditionals",
+        "formatted input and output"
+    ],
+    "history": "Una noche mientras regresabas de comerte unos ricos tacos, una luz se posa sobre ti y pierdes el conocimiento. Cuando por fin abres los ojos, te das cuenta que has sido abducido por un grupo de extraterrestres que buscan hacer contacto con los habitantes de la tierra, pero no est\u00e1n seguros si los humanos son lo suficientemente inteligentes para incluirlos en la Uni\u00f3n de Planetas para la Cuarta Transformaci\u00f3n (UPCT), as\u00ed que tu ser\u00e1s uno de los humanos a los cuales evaluar\u00e1n para probar la inteligencia terrestre.El grupo de extraterrestres (provenientes de Venus, Marte y Saturno) quieren que muestres tus conocimientos de programaci\u00f3n, ya que en todas las civilizaciones de la galaxia la programaci\u00f3n es la habilidad m\u00e1s valiosa que hay y el est\u00e1ndar de la inteligencia en la galaxia.Te han puesto como tarea crear un programa, en el lenguaje que elijas, que calcule la cantidad de a\u00f1os terrestres equivalentes a los a\u00f1os que ellos indiquen de alguno de sus planetas de origen. De lograrlo, la Tierra ser\u00e1 considerada para ingresar en la UPCT, de lo contrario los humanos quedar\u00edan relegados y muy probablemente exterminar\u00edan al planeta ya que no ser\u00eda de utilidad a la Galaxia.",
+    "input": "Dos datos, un n\u00famero positivo que representa la cantidad de a\u00f1os seguido por el nombre del planeta de alguno de los extraterrestres. Puede asumir que no se ingresar\u00e1n otros nombres de planetas.",
+    "output": "La cantidad de a\u00f1os terrestres a los que equivale esa cantidad de a\u00f1os del planeta dado redondeado a 2 decimales seguido por las palabras \"a\u00f1os terrestres\" de acuerdo a la siguiente tabla de equivalencia:1.882 a\u00f1os terrestres    =   un a\u00f1o en Marte29.476 a\u00f1os terrestres    =   un a\u00f1o en Saturno0.616 a\u00f1os terrestres    =   un a\u00f1o en Venus"
+}

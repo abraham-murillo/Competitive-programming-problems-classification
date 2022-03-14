@@ -1,0 +1,12 @@
+{
+    "url": "https://omegaup.com/arena/problem/Viaje-en-Remis",
+    "name": "Viaje en Remis",
+    "id": 14833,
+    "site": "omegaup",
+    "tags": [
+        "formatted input and output"
+    ],
+    "history": "Determinar el precio de un viaje de remis a otras localidades. La cantidad de kil\u00f3metros a recorrer y el precio por km. ser\u00e1 ingresado por teclado.",
+    "input": "La entrada consiste en la cantidad de kil\u00f3metros a recorrer y el precio que se cobra por km.",
+    "output": "La salida consiste en el texto El costo del viaje es:  y el importe con el signo peso y dos decimales. Ejemplo: El costo del viaje es: 30.00"
+}

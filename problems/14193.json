@@ -1,0 +1,11 @@
+{
+    "url": "https://omegaup.com/arena/problem/El-Zorro",
+    "name": "El Zorro",
+    "id": 14193,
+    "site": "omegaup",
+    "tags": [
+        "formatted input and output"
+    ],
+    "history": "A lo largo de 82 cap\u00edtulos, en tres temporadas transmitidas originalmente entre 1957 y 1961, Guy Williams enamor\u00f3 a millones de televidentes del mundo entero como el playboy don Diego de la Vega quien, oculto tras un antifaz y una capa, impart\u00eda justicia en la California espa\u00f1ola de principios del siglo XIX como el Zorro.Don Diego, el \u00fanico hijo de don Alejandro de la Vega, regresa a su Los \u00c1ngeles natal convertido en un h\u00e1bil espadach\u00edn y en un jinete sin igual tras sus a\u00f1os de estudio en Madrid. Al descubrir las injusticias y abusos en la colonia espa\u00f1ola en M\u00e9xico, decide esconder sus dotes de luchador y, oculto tras un traje, capa, sombrero y antifaz negros se enfrenta a bandidos, militares y funcionarios corruptos que abusaban de los buenos y honestos habitantes de California.Un sirviente mudo, Bernardo, lo ayuda fielmente en su batalla contra la potencia colonial y para frenar a ladrones y malhechores que azotaban las tierras californianas. Su caballo negro Tornado obedec\u00eda a sus silbidos, lo salvaba cuando estaba en dificultades y se enfrentaba a la adversidad por su due\u00f1o que, a los ojos de la sociedad, s\u00f3lo se dedicaba a leer, bailar, cantar y enamorar a las chicas de la zona.Los capitanes Monasterio, Briones, Arrellano y Mendoza trataban de imponer su ley y usaban como peones al bonach\u00f3n sargento Demetrio L\u00f3pez Garc\u00eda y al inocente cabo Reyes. Mientras tanto, el capit\u00e1n Arturo Toledano era honesto y un rival de altura para el Zorro.El gobernador se dejaba llevar por la corriente, mientras el clero hac\u00eda lo que pod\u00eda para salvar a campesinos e ind\u00edgenas de los abusos de poder.El Zorro dejaba su firma, una Z, tras cada acci\u00f3n y como marca para corruptos, ladrones y abusadores. Tu trabajo consiste en ayudar al nuevo zorro digital dejando su marca en la pantalla de la computadora. El tama\u00f1o N (un n\u00famero entero) y los s\u00edmbolos con que tienes que realizar la Z ser\u00e1n ingresados por pantalla.",
+    "input": "Ingresaran por pantalla un n\u00famero N y un s\u00edmbolo x."
+}

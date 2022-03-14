@@ -25,31 +25,41 @@ def getFrom(url):
         soup = BeautifulSoup(content, 'html.parser')
 
         problem = {}
+        problem['url'] = url
+
+        def decomposeIfFound(html):
+            if html:
+                html.decompose()
 
         for html in soup.findAll('div', attrs={'class': 'problem-statement'}):
-            html.find('div', attrs={'class': 'header'}).decompose()
-            html.find('div', attrs={'class': 'sample-tests'}).decompose()
+            decomposeIfFound(html.find('div', attrs={'class': 'header'}))
+            decomposeIfFound(html.find('div', attrs={'class': 'sample-tests'}))
 
             input = html.find('div', attrs={'class': 'input-specification'})
-            input.find('div', attrs={'class': 'section-title'}).decompose()
-            problem['input'] = input.text
+            if input:
+                decomposeIfFound(input.find(
+                    'div', attrs={'class': 'section-title'}))
+                problem['input'] = input.text
 
             output = html.find('div', attrs={'class': 'output-specification'})
-            output.find('div', attrs={'class': 'section-title'}).decompose()
-            problem['output'] = output.text
+            if output:
+                decomposeIfFound(output.find(
+                    'div', attrs={'class': 'section-title'}))
+                problem['output'] = output.text
 
             note = html.find('div', attrs={'class': 'note'})
-            note.find('div', attrs={'class': 'section-title'}).decompose()
-            problem['note'] = note.text
+            if note:
+                decomposeIfFound(
+                    note.find('div', attrs={'class': 'section-title'}))
+                problem['note'] = note.text
 
-            html.find('div', attrs={
-                      'class': 'input-specification'}).decompose()
-            html.find('div', attrs={
-                      'class': 'output-specification'}).decompose()
-            html.find('div', attrs={
-                'class': 'note'}).decompose()
+            decomposeIfFound(
+                html.find('div', attrs={'class': 'input-specification'}))
+            decomposeIfFound(
+                html.find('div', attrs={'class': 'output-specification'}))
+            decomposeIfFound(html.find('div', attrs={'class': 'note'}))
 
-            problem['history'] = html.text
+        problem['history'] = html.text
 
         return problem
 
@@ -101,14 +111,12 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
         - limit of problems is maxNumOfProblems
     """
 
-    def getProblems(url):
+    def getProblems(tag):
+        url = f"https://codeforces.com/api/problemset.problems?tags={tag}"
         return getFrom(url)['result']['problems']
 
-    url = "https://codeforces.com/api/problemset.problems"
-    tagsSet = set()
     maxRating = 0
     for tag, rating in tagsRating:
-        tagsSet.add(tag)
         maxRating = max(maxRating, rating)
 
     # Filter the problemset, if problem[tag] isn't in tags ignore the problem
@@ -118,12 +126,14 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
         return maxNumOfProblems != -1 and len(filteredProblems) >= maxNumOfProblems
 
     for tag, rating in tagsRating:
-        problemsWithATag = getProblems(url + f"?tags={tag}")
+        problemsWithATag = getProblems(tag)
         # print(len(problemsWithATag))
 
         for problem in problemsWithATag:
             if 'rating' in problem and problem['rating'] <= maxRating:
                 problemId = str(problem['contestId']) + problem['index']
+                problem['id'] = problemId
+                problem['site'] = 'codeforces'
                 filteredProblems[problemId] = problem
 
             if enoughProblems():

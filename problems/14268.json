@@ -1,0 +1,12 @@
+{
+    "url": "https://omegaup.com/arena/problem/SEC04-00-Perimetro-Triangulo",
+    "name": "SEC04-A-00 Per\u00edmetro Tri\u00e1ngulo",
+    "id": 14268,
+    "site": "omegaup",
+    "tags": [
+        "formatted input and output"
+    ],
+    "history": "Dise\u00f1e un software que:Solicite valores num\u00e9ricos de la medida de los lados de un tri\u00e1ngulo y que determine el per\u00edmetro de un TRI\u00c1NGULO. El resultado debe utilizar 2 lugares decimales despu\u00e9s del punto y que muestre un Mensaje del Resultado,El PER\u00cdMETRO del tri\u00e1ngulo es: 23.58",
+    "input": "Se ingresan 3 valores de las medidas de los lados de un tri\u00e1ngulo",
+    "output": "El PER\u00cdMETRO del tri\u00e1ngulo es: 23.58"
+}

@@ -1,0 +1,12 @@
+{
+    "url": "https://omegaup.com/arena/problem/SEC04-01",
+    "name": "SEC04-A-01 Recta Num\u00e9rica",
+    "id": 14282,
+    "site": "omegaup",
+    "tags": [
+        "formatted input and output"
+    ],
+    "history": "Dise\u00f1e un Software en c\u00f3digo C++, en el cu\u00e1l se solicite dos valores num\u00e9ricos que est\u00e9n ubicados en una recta num\u00e9rica. el software deber\u00e1 calcular la distancia que existe en la recta de ambos puntos:La DISTANCIA entre los puntos es: 876(OJO: Cuide las may\u00fasculas, min\u00fasculas y espacios)",
+    "input": "-515",
+    "output": "La DISTANCIA entre los puntos es: 20"
+}
