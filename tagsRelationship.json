@@ -1,0 +1,111 @@
+{
+  "implementation": [
+    "formatted input and output",
+    "functions",
+    "loops",
+    "conditionals",
+    "input and output",
+    "arrays",
+    "implementation",
+    "heuristics"
+  ],
+  "greedy": [
+    "greedy algorithms"
+  ],
+  "brute force": [
+    "brute force"
+  ],
+  "strings": [
+    "chars and strings"
+  ],
+  "sortings": [
+    "sorting"
+  ],
+  "math": [
+    "arithmetic",
+    "modular arithmetic",
+    "analysis of recurrences",
+    "big numbers",
+    "bit manipulation"
+  ],
+  "*special": [
+    "big data",
+    "file seeking",
+    "data compression"
+  ],
+  "expression parsing": [
+    "unformatted input and output",
+    "lexing and parsing"
+  ],
+  "constructive algorithms": [
+    "heuristics"
+  ],
+  "schedules": [],
+  "number theory": [
+    "number theory",
+    "common multiples and divisors",
+    "primality test",
+    "prime generation"
+  ],
+  "two pointers": [
+    "sliding window"
+  ],
+  "ternary search": [],
+  "binary search": [
+    "binary search"
+  ],
+  "games": [],
+  "dfs and similar": [
+    "tree traversal",
+    "recursion",
+    "backtracking",
+    "depth-first search"
+  ],
+  "dsu": [
+    "disjoint sets"
+  ],
+  "bitmasks": [],
+  "dp": [
+    "memorization",
+    "dynamic programming"
+  ],
+  "combinatorics": [
+    "counting problems"
+  ],
+  "geometry": [
+    "analytic geometry"
+  ],
+  "shortest paths": [
+    "breadth-first search"
+  ],
+  "graphs": [
+    "graph representation"
+  ],
+  "hashing": [
+    "hashing"
+  ],
+  "data structures": [
+    "stacks",
+    "queues",
+    "segment trees",
+    "fenwick trees"
+  ],
+  "meet-in-the-middle": [
+    "divide and conquer"
+  ],
+  "trees": [
+    "binary search tree"
+  ],
+  "chinese remainder theorem": [],
+  "2-sat": [],
+  "probabilities": [],
+  "interactive": [],
+  "graph matchings": [],
+  "matrices": [
+    "matrices"
+  ],
+  "divide and conquer": [],
+  "flows": [],
+  "string suffix structures": [],
+  "fft": []
+}
