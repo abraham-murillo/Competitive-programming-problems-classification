@@ -9,7 +9,6 @@ Matrices
 Implementation 
 Formatted input and output 
 Brute force 
-OMI 
 Functions
 Sorting
 Analytic geometry
@@ -29,7 +28,6 @@ Binary search
 Arrays
 Fenwick trees
 Arithmetic
-OMI
 Sorting
 
 2
