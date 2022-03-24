@@ -6,7 +6,9 @@
     "genetic algorithms",
     "particle swarm optimization"
   ],
-  "2-sat": [],
+  "2-sat": [
+    "2-sat"
+  ],
   "binary search": [
     "binary search"
   ],
