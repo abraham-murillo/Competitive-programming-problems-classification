@@ -1,4 +1,5 @@
-import React from "react";
+import { React } from "react";
+import { Link } from "@chakra-ui/react";
 import {
   Button,
   ButtonGroup,
@@ -8,7 +9,7 @@ import {
   Flex,
   Container,
 } from "@chakra-ui/react";
-import { BiCodeCurly, BiCodeBlock } from "react-icons/bi";
+import { BiSearchAlt } from "react-icons/bi";
 
 export default function Navbar() {
   return (
@@ -17,9 +18,9 @@ export default function Navbar() {
         <Flex align={"center"} height={"80px"}>
           <Box w={"86px"}>{/* <Image w={"100px"} src={logo} /> */}</Box>
           <Input placeholder="Título del problema" />
-          <Button marginLeft={3} colorScheme="teal" size="md">
+          <Link marginLeft={3} href="#/searchResults">
             Buscar
-          </Button>
+          </Link>
           <Spacer />
         </Flex>
       </Container>
