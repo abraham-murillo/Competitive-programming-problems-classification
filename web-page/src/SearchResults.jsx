@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { VStack, Container } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 
 export default function SearchResults() {
-  const queryString = "palo";
+  const { queryString } = useParams();
   const INF = 1e9;
 
   const titles = [
@@ -41,6 +42,7 @@ export default function SearchResults() {
   }
 
   useEffect(() => {
+    // console.log(this.props.location.queryString);
     // Fetch titles when database is up
     titles.forEach((element) => console.log(element));
   }, [titles]);

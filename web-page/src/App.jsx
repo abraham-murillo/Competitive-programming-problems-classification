@@ -23,7 +23,10 @@ export default function App() {
             <Navbar />
             <Routes>
               <Route exact path="/" element={<MainPage />} />
-              <Route path="/searchResults" element={<SearchResults />} />
+              <Route
+                path="/searchResults/:queryString"
+                element={<SearchResults />}
+              />
             </Routes>
           </HashRouter>
         </>
