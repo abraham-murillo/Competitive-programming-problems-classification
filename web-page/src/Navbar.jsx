@@ -10,6 +10,7 @@ export default function Navbar() {
       <Container>
         <Flex align={"center"} height={"80px"}>
           <Box w={"86px"}>{/* <Image w={"100px"} src={logo} /> */}</Box>
+          <Link to="/">Página principal</Link>
           <Input
             placeholder="Título del problema"
             onChange={(event) => setQueryString(event.target.value)}
