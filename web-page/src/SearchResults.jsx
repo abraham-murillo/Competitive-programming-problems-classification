@@ -28,10 +28,8 @@ export default function SearchResults() {
 
     // Insert character
     mn = Math.min(mn, editDistance(a, b, i, j + 1) + 1);
-
     // Delete character
     mn = Math.min(mn, editDistance(a, b, i + 1, j) + 1);
-
     // Replace character
     mn = Math.min(mn, editDistance(a, b, i + 1, j + 1) + 1);
 

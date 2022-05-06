@@ -1,21 +1,46 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
-import { Input, Box, Spacer, Flex, Container } from "@chakra-ui/react";
+import {
+  Text,
+  Link,
+  Input,
+  Box,
+  Spacer,
+  Flex,
+  Container,
+  Icon,
+} from "@chakra-ui/react";
+import { BiHomeAlt } from "react-icons/bi";
 
 export default function Navbar() {
   const [queryString, setQueryString] = useState("");
 
   return (
     <Box boxShadow={"md"}>
-      <Container>
+      <Container maxW={"container.lg"}>
         <Flex align={"center"} height={"80px"}>
-          <Box w={"86px"}>{/* <Image w={"100px"} src={logo} /> */}</Box>
-          <Link to="/">Página principal</Link>
+          <Link className="homeButton" href="/">
+            <Icon
+              className="homeButtonIcon"
+              as={BiHomeAlt}
+              color="black"
+              isTruncated
+            ></Icon>
+          </Link>
+          <Spacer />
           <Input
+            maxW={"md"}
             placeholder="Título del problema"
             onChange={(event) => setQueryString(event.target.value)}
           />
-          <Link to={"/searchResults/" + queryString}>Buscar</Link>
+          <Spacer />
+          <Link
+            className="searchButton"
+            href={"#/searchResults/" + queryString}
+          >
+            <Text color="white" isTruncated>
+              Buscar
+            </Text>
+          </Link>
           <Spacer />
         </Flex>
       </Container>
