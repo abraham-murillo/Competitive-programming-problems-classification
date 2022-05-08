@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { VStack, Container } from "@chakra-ui/react";
+import { Spacer, VStack, Container, Link } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 export default function SearchResults() {
@@ -21,21 +21,16 @@ export default function SearchResults() {
 
   function editDistance(a, b, i = 0, j = 0) {
     if (i == a.length) return b.length - j;
-
     if (j == b.length) return a.length - i;
-
     let mn = INF;
-
     // Insert character
     mn = Math.min(mn, editDistance(a, b, i, j + 1) + 1);
     // Delete character
     mn = Math.min(mn, editDistance(a, b, i + 1, j) + 1);
     // Replace character
     mn = Math.min(mn, editDistance(a, b, i + 1, j + 1) + 1);
-
     // Skip
     if (a[i] == b[j]) mn = Math.min(mn, editDistance(a, b, i + 1, j + 1));
-
     return mn;
   }
 
@@ -55,8 +50,11 @@ export default function SearchResults() {
     <Container maxW={"container.lg"} mt={2} h={"90vh"} padding={"0"}>
       <VStack>
         {titles.map((title) => (
-          <Container>{title}</Container>
+          <Container maxW={"container.lg"} mt={2} h={"5vh"}>
+            <Link href="#">{title}</Link>
+          </Container>
         ))}
+        <Spacer />
       </VStack>
     </Container>
   );
