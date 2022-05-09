@@ -19,9 +19,8 @@ import {
 
 import TextareaAutosize from "../components/TextareaAutosize";
 import { v4 as uuid } from "uuid";
-import MakeModal from "../components/MakeModal";
-import TagsPool from "../components/TagsPool";
-
+import TagsBox from "../components/TagsBox";
+import allTopics from "../information/allTopics.json";
 
 export default function CreateProblem() {
   const [title, setTitle] = useState("");
@@ -29,21 +28,17 @@ export default function CreateProblem() {
   const [history, setHistory] = useState("");
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-
+  const [tags, setTags] = useState([]);
+  const [suggestions, setSuggestions] = useState(allTopics.data);
 
   const createNewProblem = useDisclosure();
 
   function handleSubmit(e) {
-
+    // Subir el json a un firebase
   }
 
   return (
-    // <MakeModal
-    //   title={"Agregar problema"}
-    //   isOpen={createNewProblem.isOpen}
-    //   onClose={createNewProblem.onClose}
-    // >
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form>
       <VStack >
         <FormControl isRequired >
           <FormLabel>
@@ -100,7 +95,13 @@ export default function CreateProblem() {
             Tags
           </FormLabel>
 
-          <TagsPool />
+          <TagsBox
+            tags={tags}
+            setTags={setTags}
+            suggestions={suggestions}
+            placeholderText="Ingresa los temas a los que corresponde el problema"
+            noSuggestionsText="No hay temas parecidos al tuyo :("
+          />
         </FormControl>
 
       </VStack>
@@ -109,11 +110,9 @@ export default function CreateProblem() {
         colorScheme="green"
         isFullWidth
         mt={10}
-        type="submit">
+        onClick={(e) => handleSubmit(e)}>
         Crear problema
       </Button>
     </form >
-
-    // </MakeModal>
   );
 }
