@@ -45,10 +45,6 @@
       "name": "divide and conquer"
     },
     {
-      "id": 11,
-      "name": "dp"
-    },
-    {
       "id": 12,
       "name": "dsu"
     },
@@ -287,10 +283,6 @@
     {
       "id": 78,
       "name": "sub array search"
-    },
-    {
-      "id": 79,
-      "name": "disjoint sets"
     },
     {
       "id": 80,

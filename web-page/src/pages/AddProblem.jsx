@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   HStack,
@@ -13,7 +13,6 @@ import {
   FormHelperText,
   VStack,
   Button,
-  Textarea,
   useDisclosure
 } from "@chakra-ui/react";
 
@@ -22,13 +21,13 @@ import { v4 as uuid } from "uuid";
 import TagsBox from "../components/TagsBox";
 import allTopics from "../information/allTopics.json";
 
-export default function CreateProblem() {
+export default function AddProblem() {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [history, setHistory] = useState("");
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [tags, setTags] = useState([]);
+  const [topics, setTopics] = useState([]);
   const [suggestions, setSuggestions] = useState(allTopics.data);
 
   const createNewProblem = useDisclosure();
@@ -66,8 +65,8 @@ export default function CreateProblem() {
           </FormLabel>
 
           <TextareaAutosize
-            text={history}
-            setText={setHistory} />
+            value={history}
+            onChange={setHistory} />
         </FormControl>
 
         <FormControl mt={5} isRequired>
@@ -76,8 +75,8 @@ export default function CreateProblem() {
           </FormLabel>
 
           <TextareaAutosize
-            text={input}
-            setText={setInput} />
+            value={input}
+            onChange={setInput} />
         </FormControl>
 
         <FormControl mt={5} isRequired>
@@ -86,8 +85,8 @@ export default function CreateProblem() {
           </FormLabel>
 
           <TextareaAutosize
-            text={output}
-            setText={setOutput} />
+            value={output}
+            onChange={setOutput} />
         </FormControl>
 
         <FormControl mt={5} isRequired>
@@ -96,8 +95,8 @@ export default function CreateProblem() {
           </FormLabel>
 
           <TagsBox
-            tags={tags}
-            setTags={setTags}
+            tags={topics}
+            setTags={setTopics}
             suggestions={suggestions}
             placeholderText="Ingresa los temas a los que corresponde el problema"
             noSuggestionsText="No hay temas parecidos al tuyo :("

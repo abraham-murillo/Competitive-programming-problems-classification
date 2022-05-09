@@ -4,7 +4,8 @@ import { Container, HStack, Kbd } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 import { BiCodeCurly, BiCodeBlock } from "react-icons/bi";
-import CreateProblem from "./createInfo/CreateProblem";
+import AddProblem from "./pages/AddProblem";
+import DetectTopics from "./pages/DetectTopics";
 
 function PrettyTab(props) {
   const { icon, text, command } = props;
@@ -51,21 +52,24 @@ export default function MainPage() {
       >
         <TabList>
           <PrettyTab
-            text={"Analizar código"}
+            text={"Analizar problema"}
             icon={<BiCodeBlock />}
             command={1}
           />
 
-          <PrettyTab text={"Crear JSON"} icon={<BiCodeCurly />} command={2} />
+          <PrettyTab
+            text={"Crear JSON"}
+            icon={<BiCodeCurly />}
+            command={2} />
         </TabList>
 
         <TabPanels>
-          {/* <TabPanel>
-            <WritingWindow />
-          </TabPanel> */}
+          <TabPanel>
+            <DetectTopics />
+          </TabPanel>
 
           <TabPanel>
-            <CreateProblem />
+            <AddProblem />
           </TabPanel>
         </TabPanels>
       </Tabs>

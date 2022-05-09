@@ -6,7 +6,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import MainPage from "./MainPage";
-import SearchResults from "./SearchResults";
+import SearchResults from "./pages/SearchResults";
 
 export const AppContext = React.createContext(null);
 
@@ -22,7 +22,11 @@ export default function App() {
           <HashRouter>
             <Navbar />
             <Routes>
-              <Route exact path="/" element={<MainPage />} />
+              <Route
+                exact path="/"
+                element={<MainPage />}
+              />
+
               <Route
                 path="/searchResults/:queryString"
                 element={<SearchResults />}

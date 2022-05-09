@@ -24,15 +24,19 @@ export default function Navbar() {
               as={BiHomeAlt}
               color="black"
               isTruncated
-            ></Icon>
+            />
           </Link>
+
           <Spacer />
+
           <Input
             maxW={"md"}
             placeholder="Título del problema"
             onChange={(event) => setQueryString(event.target.value)}
           />
+
           <Spacer />
+
           <Link
             className="searchButton"
             href={"#/searchResults/" + queryString}
@@ -41,7 +45,7 @@ export default function Navbar() {
               Buscar
             </Text>
           </Link>
-          <Spacer />
+
         </Flex>
       </Container>
     </Box>
