@@ -47,17 +47,16 @@ export default function MainPage() {
         variant={"enclosed"}
         size={"sm"}
         index={tabIndex}
-        onChange={(e) => setTab(e)}>
+        onChange={(e) => setTab(e)}
+      >
         <TabList>
           <PrettyTab
             text={"Analizar código"}
             icon={<BiCodeBlock />}
-            command={1} />
+            command={1}
+          />
 
-          <PrettyTab
-            text={"Crear JSON"}
-            icon={<BiCodeCurly />}
-            command={2} />
+          <PrettyTab text={"Crear JSON"} icon={<BiCodeCurly />} command={2} />
         </TabList>
 
         <TabPanels>
@@ -69,7 +68,6 @@ export default function MainPage() {
             <CreateProblem />
           </TabPanel>
         </TabPanels>
-
       </Tabs>
     </Container>
   );

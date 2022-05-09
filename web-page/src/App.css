@@ -24,6 +24,23 @@
   color: white;
 }
 
+.input {
+  display: none;
+}
+
+.searchButton {
+  background-color: #38a169;
+  color: white;
+  padding: 9px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.homeButtonIcon {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
