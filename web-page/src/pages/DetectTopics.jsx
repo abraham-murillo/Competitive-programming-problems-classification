@@ -14,6 +14,7 @@ export default function DetectTopics() {
       <HStack>
         <Box w="50%">
           <TextareaAutosize
+            minRows={20}
             value={text}
             onChange={setText} />
         </Box>
