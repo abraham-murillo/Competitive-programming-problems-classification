@@ -16,10 +16,10 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 
-import TextareaAutosize from "../components/TextareaAutosize";
+import TextareaAutosize from "components/TextareaAutosize";
 import { v4 as uuid } from "uuid";
-import TagsBox from "../components/TagsBox";
-import allTopics from "../information/allTopics.json";
+import TagsBox from "components/TagsBox";
+import allTopics from "information/omegaupTopics.json";
 
 export default function AddProblem() {
   const [title, setTitle] = useState("");

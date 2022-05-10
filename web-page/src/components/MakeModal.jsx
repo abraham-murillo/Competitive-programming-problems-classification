@@ -1,20 +1,12 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
 import {
-  Button,
   Divider,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
 } from "@chakra-ui/react";
 
 export default function MakeModal(props) {

@@ -4,8 +4,8 @@ import { Container, HStack, Kbd } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 import { BiCodeCurly, BiCodeBlock } from "react-icons/bi";
-import AddProblem from "./pages/AddProblem";
-import DetectTopics from "./pages/DetectTopics";
+import AddProblem from "pages/AddProblem";
+import DetectTopics from "pages/DetectTopics";
 
 function PrettyTab(props) {
   const { icon, text, command } = props;

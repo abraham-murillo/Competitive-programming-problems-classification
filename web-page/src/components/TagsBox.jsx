@@ -1,27 +1,11 @@
 import React, { useCallback, useRef, useState } from "react";
 import {
-  Box,
-  HStack,
-  EditableInput,
-  Editable,
-  EditablePreview,
-  EditableTextarea,
-  FormLabel,
-  Flex,
-  FormControl,
-  Input,
-  FormHelperText,
-  VStack,
-  Button,
-  Textarea,
-  useDisclosure,
   Tag,
   TagCloseButton,
-  TagLabel,
-  Spacer
+  TagLabel
 } from "@chakra-ui/react";
 
-import "./TagsBox.css"
+import "styles/TagsBox.css"
 import ReactTags from 'react-tag-autocomplete'
 
 export default function TagsBox(props) {

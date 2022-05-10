@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Textarea } from "@chakra-ui/react";
 
 export default function TextareaAutosize(props) {
-  const { value, onChange } = props;
-  const [rows, setRows] = useState(1);
+  const { value, onChange, minRows } = props;
+  const [rows, setRows] = useState(1 || minRows);
 
   function getEndOfLinesCount(text) {
     let cnt = 0;
@@ -13,7 +13,7 @@ export default function TextareaAutosize(props) {
   }
 
   useEffect(() => {
-    setRows(getEndOfLinesCount(value));
+    setRows(Math.max(minRows || 1, getEndOfLinesCount(value)));
   }, [value]);
 
   return (

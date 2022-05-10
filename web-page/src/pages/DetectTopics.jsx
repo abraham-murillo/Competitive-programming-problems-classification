@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Box, HStack } from "@chakra-ui/react";
-import TextareaAutosize from "../components/TextareaAutosize";
-import TagsBox from "../components/TagsBox";
+import TextareaAutosize from "components/TextareaAutosize";
+import TagsBox from "components/TagsBox";
 
 export default function DetectTopics() {
   const [text, setText] = useState("");

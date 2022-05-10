@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import "styles/App.css";
 
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./Navbar";
-import MainPage from "./MainPage";
-import SearchResults from "./pages/SearchResults";
+import Navbar from "Navbar";
+import MainPage from "MainPage";
+import SearchResults from "pages/SearchResults";
 
 export const AppContext = React.createContext(null);
 
