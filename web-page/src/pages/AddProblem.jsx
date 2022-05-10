@@ -1,25 +1,16 @@
 import React, { useState } from "react";
 import {
-  Box,
-  HStack,
-  EditableInput,
-  Editable,
-  EditablePreview,
-  EditableTextarea,
   FormLabel,
-  Flex,
   FormControl,
   Input,
-  FormHelperText,
   VStack,
   Button,
   useDisclosure
 } from "@chakra-ui/react";
 
 import TextareaAutosize from "components/TextareaAutosize";
-import { v4 as uuid } from "uuid";
 import TagsBox from "components/TagsBox";
-import allTopics from "information/omegaupTopics.json";
+import topics from "information/omegaupTopics.json";
 
 export default function AddProblem() {
   const [title, setTitle] = useState("");
@@ -28,7 +19,7 @@ export default function AddProblem() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [topics, setTopics] = useState([]);
-  const [suggestions, setSuggestions] = useState(allTopics.data);
+  const [suggestions, setSuggestions] = useState(topics.data);
 
   const createNewProblem = useDisclosure();
 
@@ -98,8 +89,8 @@ export default function AddProblem() {
             tags={topics}
             setTags={setTopics}
             suggestions={suggestions}
-            placeholderText="Ingresa los temas a los que corresponde el problema"
-            noSuggestionsText="No hay temas parecidos al tuyo :("
+            placeholderText={"Ingresa los temas a los que corresponde el problema"}
+            noSuggestionsText={"No hay temas parecidos al tuyo :("}
           />
         </FormControl>
 
