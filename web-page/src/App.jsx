@@ -7,6 +7,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "Navbar";
 import MainPage from "MainPage";
 import SearchResults from "pages/SearchResults";
+import Problem from "pages/Problem";
 
 export const AppContext = React.createContext(null);
 
@@ -19,8 +20,9 @@ export default function App() {
     <ChakraProvider theme={theme}>
       <AppContext.Provider value={{}}>
         <>
+          <Navbar />
+
           <HashRouter>
-            <Navbar />
             <Routes>
               <Route
                 exact path="/"
@@ -30,6 +32,11 @@ export default function App() {
               <Route
                 path="/searchResults/:queryString"
                 element={<SearchResults />}
+              />
+
+              <Route
+                path="/problem/:problemId"
+                element={<Problem />}
               />
             </Routes>
           </HashRouter>
