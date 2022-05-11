@@ -1,61 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Spacer, VStack, Container, Link } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { getProblemTitles } from "api/functions";
+import editDistance from "tools/editDistance";
 
 export default function SearchResults() {
   const { queryString } = useParams();
-  const INF = 1e9;
-
-  const titles = [
-    "cat",
-    "calo",
-    "dog",
-    "palo",
-    "perro",
-    "cato",
-    "gato",
-    "wtf",
-    "xd",
-    "ca lo",
-  ];
-
-  function editDistance(a, b, i = 0, j = 0) {
-    if (i == a.length) return b.length - j;
-    if (j == b.length) return a.length - i;
-    let mn = INF;
-    // Insert character
-    mn = Math.min(mn, editDistance(a, b, i, j + 1) + 1);
-    // Delete character
-    mn = Math.min(mn, editDistance(a, b, i + 1, j) + 1);
-    // Replace character
-    mn = Math.min(mn, editDistance(a, b, i + 1, j + 1) + 1);
-    // Skip
-    if (a[i] == b[j]) mn = Math.min(mn, editDistance(a, b, i + 1, j + 1));
-    return mn;
-  }
+  const [titles, setTitles] = useState([]);
 
   useEffect(() => {
-    // console.log(this.props.location.queryString);
-    // Fetch titles when database is up
-    titles.forEach((element) => console.log(element));
-  }, [titles]);
+    getProblemTitles().then(titles => {
+      titles.sort((a, b) => {
+        const x = editDistance(queryString, a.name);
+        const y = editDistance(queryString, b.name);
+        return x > y ? 1 : x < y ? -1 : 0;
+      });
 
-  titles.sort((a, b) => {
-    const x = editDistance(queryString, a);
-    const y = editDistance(queryString, b);
-    return x > y ? 1 : x < y ? -1 : 0;
-  });
+      return titles;
+    }).then(sortedTitles => {
+      return sortedTitles.slice(0, 20);
+    }).then(top20 => {
+      setTitles(top20);
+    });
+  }, [queryString]);
 
   return (
     <Container maxW={"container.lg"} mt={2} h={"90vh"} padding={"0"}>
       <VStack>
         {titles.map((title) => (
           <Container maxW={"container.lg"} mt={2} h={"5vh"}>
-            <Link href="#">{title}</Link>
+            <Link href={`#/problem/${title.id}`}>
+              {title.name}
+            </Link>
           </Container>
-        ))}
+        ))
+        }
         <Spacer />
-      </VStack>
-    </Container>
+      </VStack >
+    </Container >
   );
 }
