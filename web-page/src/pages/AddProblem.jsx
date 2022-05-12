@@ -5,12 +5,14 @@ import {
   Input,
   VStack,
   Button,
-  useDisclosure
+  useDisclosure,
+  useToast
 } from "@chakra-ui/react";
 
 import TextareaAutosize from "components/TextareaAutosize";
 import TagsBox from "components/TagsBox";
 import topics from "information/omegaupTopics.json";
+import { addProblem } from "api/functions";
 
 export default function AddProblem() {
   const [title, setTitle] = useState("");
@@ -19,16 +21,41 @@ export default function AddProblem() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [topics, setTopics] = useState([]);
+
   const [suggestions, setSuggestions] = useState(topics.data);
+  const toast = useToast();
 
-  const createNewProblem = useDisclosure();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-  function handleSubmit(e) {
-    // Subir el json a un firebase
+    const success = await addProblem({
+      title,
+      url,
+      history,
+      input,
+      output,
+      topics
+    })
+
+    if (success) {
+      toast({
+        title: 'Problema creado exitosamente.',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    } else {
+      toast({
+        title: 'Hubo un error al crear el problema, inténtelo más tarde.',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
   }
 
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <VStack >
         <FormControl isRequired >
           <FormLabel>
@@ -46,6 +73,7 @@ export default function AddProblem() {
           </FormLabel>
 
           <Input
+            type={"url"}
             value={url}
             onChange={(e) => setUrl(e.target.value)} />
         </FormControl>
@@ -100,7 +128,7 @@ export default function AddProblem() {
         colorScheme="green"
         isFullWidth
         mt={10}
-        onClick={(e) => handleSubmit(e)}>
+        type="submit">
         Crear problema
       </Button>
     </form >
