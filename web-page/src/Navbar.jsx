@@ -14,6 +14,12 @@ import { BiHomeAlt } from "react-icons/bi";
 export default function Navbar() {
   const [queryString, setQueryString] = useState("");
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Search", queryString);
+    window.location.href = "/#/searchResults/" + queryString;
+  }
+
   return (
     <Box boxShadow={"md"}>
       <Container maxW={"container.lg"}>
@@ -29,23 +35,14 @@ export default function Navbar() {
 
           <Spacer />
 
-          <Input
-            maxW={"md"}
-            placeholder="Título del problema"
-            onChange={(event) => setQueryString(event.target.value)}
-          />
-
-          <Spacer />
-
-          <Link
-            className="searchButton"
-            href={"#/searchResults/" + queryString}
-          >
-            <Text color="white" isTruncated>
-              Buscar
-            </Text>
-          </Link>
-
+          <form onSubmit={handleSubmit}>
+            <Input
+              w="30vw"
+              placeholder="Título del problema"
+              onChange={(event) => setQueryString(event.target.value)}
+              onSubmit={handleSubmit}
+            />
+          </form>
         </Flex>
       </Container>
     </Box>
