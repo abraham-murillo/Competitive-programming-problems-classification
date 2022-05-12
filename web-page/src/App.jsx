@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "styles/App.css";
 
 import { ChakraProvider, theme } from "@chakra-ui/react";
@@ -8,6 +8,7 @@ import Navbar from "Navbar";
 import MainPage from "MainPage";
 import SearchResults from "pages/SearchResults";
 import Problem from "pages/Problem";
+import { getRawProblems } from "api/functions";
 
 export const AppContext = React.createContext(null);
 
@@ -16,9 +17,20 @@ export function useAppContext() {
 }
 
 export default function App() {
+  const [titles, setTitles] = useState([]);
+
+  useEffect(() => {
+    async function getTitles() {
+      const rawProblems = await getRawProblems();
+      setTitles(rawProblems);
+    }
+
+    getTitles();
+  }, []);
+
   return (
     <ChakraProvider theme={theme}>
-      <AppContext.Provider value={{}}>
+      <AppContext.Provider value={{ titles }}>
         <>
           <Navbar />
 
