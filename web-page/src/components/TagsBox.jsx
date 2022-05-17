@@ -8,6 +8,19 @@ import {
 import "styles/TagsBox.css"
 import ReactTags from 'react-tag-autocomplete'
 
+export function CustomTag({ tag, onDelete }) {
+  return (
+    <Tag
+      borderRadius="full"
+      size="lg"
+      colorScheme="blue"
+      onClick={onDelete}>
+      <TagLabel> {tag.name} </TagLabel>
+      <TagCloseButton />
+    </Tag>
+  );
+}
+
 export default function TagsBox(props) {
   const { tags, setTags, suggestions } = props;
 
@@ -18,19 +31,6 @@ export default function TagsBox(props) {
   function handleAddition(tag) {
     setTags([...tags, tag]);
   };
-
-  function CustomTag({ tag, onDelete }) {
-    return (
-      <Tag
-        borderRadius="full"
-        size="lg"
-        colorScheme="blue"
-        onClick={onDelete}>
-        <TagLabel> {tag.name} </TagLabel>
-        <TagCloseButton />
-      </Tag>
-    );
-  }
 
   return (
     <ReactTags

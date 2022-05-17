@@ -8,7 +8,6 @@ export default function DetectTopics() {
   const [text, setText] = useState("");
   const [topics, setTopics] = useState([]);
 
-
   return (
     <Box>
       <HStack>
