@@ -16,7 +16,6 @@ export default function Navbar() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Search", queryString);
     window.location.href = "/#/searchResults/" + queryString;
   }
 
