@@ -8,7 +8,7 @@ import Navbar from "Navbar";
 import MainPage from "MainPage";
 import SearchResults from "pages/SearchResults";
 import Problem from "pages/Problem";
-import { getRawProblems } from "api/functions";
+import { getAllProblems } from "api/firebase";
 
 export const AppContext = React.createContext(null);
 
@@ -17,20 +17,32 @@ export function useAppContext() {
 }
 
 export default function App() {
-  const [titles, setTitles] = useState([]);
+  const [problems, setProblems] = useState([]);
 
   useEffect(() => {
     async function getTitles() {
-      const rawProblems = await getRawProblems();
-      setTitles(rawProblems);
+      const allProblems = await getAllProblems();
+      setProblems(allProblems);
     }
 
     getTitles();
   }, []);
 
+  function eraseLocalProblem(problemId) {
+    setProblems(problems.filter((problem) => problem.id !== problemId))
+  }
+
+  function addLocalProblem(newProblem) {
+    setProblems([...problems, newProblem])
+  }
+
   return (
     <ChakraProvider theme={theme}>
-      <AppContext.Provider value={{ titles }}>
+      <AppContext.Provider value={{
+        problems, setProblems,
+        eraseLocalProblem,
+        addLocalProblem
+      }}>
         <>
           <Navbar />
 

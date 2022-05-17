@@ -3,16 +3,17 @@ import { Spacer, VStack, Container, Link } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import editDistance from "utils/editDistance";
 import { useAppContext } from "App";
+import Error from "components/Error";
 
 const topK = 20;
 
 export default function SearchResults() {
-  const { titles } = useAppContext();
+  const { problems } = useAppContext();
   const { queryString } = useParams();
-  const [top, setTop] = useState(titles.slice(0, topK));
+  const [top, setTop] = useState(problems.slice(0, topK));
 
   useEffect(() => {
-    let newTop = titles;
+    let newTop = problems;
 
     newTop
       .sort((a, b) => {
