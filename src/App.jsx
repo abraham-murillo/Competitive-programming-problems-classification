@@ -7,10 +7,11 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "Navbar";
 import MainPage from "MainPage";
 import SearchResults from "pages/SearchResults";
-import Problem from "pages/problem/Problem";
-import { getAllProblems } from "api/firebase";
+import ProblemPage from "pages/problem/ProblemPage";
 import AddProblem from "pages/AddProblem";
 import DetectTopics from "pages/DetectTopics";
+
+import { getAllProblems } from "api/firebase";
 
 export const AppContext = React.createContext(null);
 
@@ -73,7 +74,7 @@ export default function App() {
 
               <Route
                 path="/problem/:problemId"
-                element={<Problem />}
+                element={<ProblemPage />}
               />
             </Routes>
           </HashRouter>
