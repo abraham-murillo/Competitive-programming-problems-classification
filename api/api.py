@@ -14,6 +14,16 @@ def currentTime():
     return {"time": time.time()}
 
 
+@app.route("/filter", methods=["POST"])
+def getFilteredText():
+    text = request.get_json()
+    print(text)
+
+    return {
+        "filteredText": nlp.filterText(text)
+    }
+
+
 @app.route("/tokenizer", methods=["POST"])
 def getTokens():
     text = request.get_json()
