@@ -46,10 +46,47 @@ def lemmatize(text):
     return lemmatizedText[:-1]
 
 
+def featureMatrix(texts):
+    nlpTexts = {}
+
+    # Convert each text to nlp form
+    for label in texts.keys():
+        nlp = smart.detectLanguage(texts[label])
+        nlpTexts[label] = nlp(texts[label])
+
+    vocabulary = {}
+
+    # Exatract vocabulary
+    for text in nlpTexts.values():
+        for token in text:
+            if token.text.lower() not in vocabulary:
+                vocabulary[token.text.lower()] = len(vocabulary)
+
+    features = []
+
+    # Add labels
+    for label in nlpTexts.keys():
+        features.append([label] + [0] * len(vocabulary))
+
+    i = 0
+
+    # Count token frequencies
+    for text in nlpTexts.values():
+        for token in text:
+            features[i][vocabulary[token.text.lower()] + 1] += 1
+
+        i += 1
+
+    return features
+
+
 def filterText(text):
     lemmatizedText = lemmatize(text)
     return lemmatizedText
 
 
-text = "I am the green child. Behold! a green child is here! Denounce the all-mighty taurus and begone my young ones!"
-pprint(lemmatize(text))
+# text = "I am the green child. Behold! a green child is here! Denounce the all-mighty taurus and begone my young ones!"
+texts = {"Text1": "Hello, how are you?",
+         "Text2": "I'm fine, and you",
+         "Text3": "Fine as well, thank you!"}
+pprint(featureMatrix(texts))
