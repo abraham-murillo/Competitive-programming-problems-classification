@@ -57,7 +57,8 @@
     "depth first search"
   ],
   "divide and conquer": [
-    "divide and conquer"
+    "divide and conquer",
+    "meet-in-the-middle"
   ],
   "dp": [
     "memorization",
@@ -96,10 +97,18 @@
     "graph connectivity",
     "topological sorting",
     "directed graphs",
-    "graphs with negative weights"
+    "graphs with negative weights",
+    "2-sat",
+    "dfs and similar",
+    "dsu",
+    "flows",
+    "graph matchings",
+    "shortest paths",
+    "trees"
   ],
   "greedy": [
-    "greedy algorithms"
+    "greedy algorithms",
+    "schedules"
   ],
   "hashing": [
     "hashing"
@@ -132,7 +141,9 @@
     "systems of equations",
     "diophantine equations",
     "modular multiplicative inverse",
-    "permutations"
+    "permutations",
+    "2-sat",
+    "matrices"
   ],
   "matrices": [
     "matrices"
@@ -174,7 +185,8 @@
     "chars and strings",
     "string matching",
     "tries",
-    "palindrome algorithms"
+    "palindrome algorithms",
+    "string suffix structures"
   ],
   "ternary search": [
     "ternary search"

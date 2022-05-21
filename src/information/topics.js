@@ -499,14 +499,6 @@ export const omegaup = [
 
 export const codeforces = [
   {
-    "id": 0,
-    "name": "*special"
-  },
-  {
-    "id": 1,
-    "name": "2-sat"
-  },
-  {
     "id": 2,
     "name": "binary search"
   },
@@ -517,10 +509,6 @@ export const codeforces = [
   {
     "id": 4,
     "name": "brute force"
-  },
-  {
-    "id": 5,
-    "name": "chinese remainder theorem"
   },
   {
     "id": 6,
@@ -535,20 +523,12 @@ export const codeforces = [
     "name": "data structures"
   },
   {
-    "id": 9,
-    "name": "dfs and similar"
-  },
-  {
     "id": 10,
     "name": "divide and conquer"
   },
   {
     "id": 11,
     "name": "dp"
-  },
-  {
-    "id": 12,
-    "name": "dsu"
   },
   {
     "id": 13,
@@ -559,20 +539,12 @@ export const codeforces = [
     "name": "fft"
   },
   {
-    "id": 15,
-    "name": "flows"
-  },
-  {
     "id": 16,
     "name": "games"
   },
   {
     "id": 17,
     "name": "geometry"
-  },
-  {
-    "id": 18,
-    "name": "graph matchings"
   },
   {
     "id": 19,
@@ -595,14 +567,6 @@ export const codeforces = [
     "name": "math"
   },
   {
-    "id": 24,
-    "name": "matrices"
-  },
-  {
-    "id": 25,
-    "name": "meet-in-the-middle"
-  },
-  {
     "id": 26,
     "name": "number theory"
   },
@@ -611,20 +575,8 @@ export const codeforces = [
     "name": "probabilities"
   },
   {
-    "id": 28,
-    "name": "schedules"
-  },
-  {
-    "id": 29,
-    "name": "shortest paths"
-  },
-  {
     "id": 30,
     "name": "sortings"
-  },
-  {
-    "id": 31,
-    "name": "string suffix structures"
   },
   {
     "id": 32,
@@ -633,10 +585,6 @@ export const codeforces = [
   {
     "id": 33,
     "name": "ternary search"
-  },
-  {
-    "id": 34,
-    "name": "trees"
   },
   {
     "id": 35,
@@ -703,7 +651,8 @@ export const codeforcesToOmegaup = {
     "depth first search"
   ],
   "divide and conquer": [
-    "divide and conquer"
+    "divide and conquer",
+    "meet-in-the-middle"
   ],
   "dp": [
     "memorization",
@@ -742,10 +691,18 @@ export const codeforcesToOmegaup = {
     "graph connectivity",
     "topological sorting",
     "directed graphs",
-    "graphs with negative weights"
+    "graphs with negative weights",
+    "2-sat",
+    "dfs and similar",
+    "dsu",
+    "flows",
+    "graph matchings",
+    "shortest paths",
+    "trees"
   ],
   "greedy": [
-    "greedy algorithms"
+    "greedy algorithms",
+    "schedules"
   ],
   "hashing": [
     "hashing"
@@ -778,7 +735,9 @@ export const codeforcesToOmegaup = {
     "systems of equations",
     "diophantine equations",
     "modular multiplicative inverse",
-    "permutations"
+    "permutations",
+    "2-sat",
+    "matrices"
   ],
   "matrices": [
     "matrices"
@@ -820,7 +779,8 @@ export const codeforcesToOmegaup = {
     "chars and strings",
     "string matching",
     "tries",
-    "palindrome algorithms"
+    "palindrome algorithms",
+    "string suffix structures"
   ],
   "ternary search": [
     "ternary search"

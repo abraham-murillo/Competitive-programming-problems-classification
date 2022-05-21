@@ -13,7 +13,7 @@ import {
 
 import TextareaAutosize from "components/TextareaAutosize";
 import TagsBox from "components/TagsBox";
-import { omegaup } from "information/topics";
+import { codeforces } from "information/topics";
 import { addProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
 import { useAppContext } from "App";
@@ -26,7 +26,7 @@ export default function AddProblem() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [topics, setTopics] = useState([]);
-  const [suggestions, setSuggestions] = useState(omegaup);
+  const [suggestions, setSuggestions] = useState(codeforces);
   const toast = useToast();
 
   async function handleSubmit(e) {
