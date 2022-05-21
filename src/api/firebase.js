@@ -4,10 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import {
   collection,
-  getDocs, getDoc,
-  addDoc, deleteDoc,
+  getDocs,
+  getDoc,
+  addDoc,
+  deleteDoc,
   doc,
-  query, where,
+  query,
+  where,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -17,7 +20,7 @@ const firebaseConfig = {
   storageBucket: "nlp-problems-classification.appspot.com",
   messagingSenderId: "831064056148",
   appId: "1:831064056148:web:839d990106c8987711a8c1",
-  measurementId: "G-6QGW6R4Y4Q"
+  measurementId: "G-6QGW6R4Y4Q",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -30,14 +33,14 @@ const rawProblems = collection(firestore, "rawProblems");
 
 export async function getAllProblems() {
   return await getDocs(rawProblems)
-    .then(response => {
+    .then((response) => {
       return response.docs.map((doc) => ({
         ...doc.data(),
-        id: doc.id
+        id: doc.id,
       }));
     })
-    .catch(error => {
-      console.log(error.message)
+    .catch((error) => {
+      console.log(error.message);
     });
 }
 
@@ -49,11 +52,11 @@ export async function getProblem(id) {
 export async function addProblem(data) {
   return await addDoc(rawProblems, data)
     .then((response) => {
-      return response.id
+      return response.id;
     })
     .catch((error) => {
       return undefined;
-    })
+    });
 }
 
 export async function eraseProblem(id) {
@@ -63,5 +66,5 @@ export async function eraseProblem(id) {
     })
     .catch((error) => {
       return false;
-    })
+    });
 }
