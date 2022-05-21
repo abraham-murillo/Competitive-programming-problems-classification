@@ -14,7 +14,7 @@ def currentTime():
     return {"time": time.time()}
 
 
-@app.route("/filter", methods=["POST"])
+@app.route("/filteredText", methods=["POST"])
 def getFilteredText():
     text = request.get_json()
     print(text)
