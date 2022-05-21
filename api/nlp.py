@@ -30,5 +30,5 @@ def tokenize(text):
 
     return list(tokens.values())
 
-text = "hello, how are you?"
+# text = "hello, how are you?"
 # pprint(tokenize(text))
