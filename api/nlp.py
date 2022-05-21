@@ -88,7 +88,7 @@ def filterText(text):
 
 
 # text = "I am the green child. Behold! a green child is here! Denounce the all-mighty taurus and begone my young ones!"
-texts = {"Text1": "Hello, how are you?",
-         "Text2": "I'm fine, and you",
-         "Text3": "Fine as well, thank you!"}
-pprint(featureMatrix(texts))
+# texts = {"Text1": "Hello, how are you?",
+#          "Text2": "I'm fine, and you",
+#          "Text3": "Fine as well, thank you!"}
+# pprint(featureMatrix(texts))

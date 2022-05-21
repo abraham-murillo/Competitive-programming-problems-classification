@@ -11,7 +11,6 @@ export async function getTokens(text) {
 }
 
 export async function getFilteredText(text) {
-  console.log(text);
   return await fetch("/filteredText", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

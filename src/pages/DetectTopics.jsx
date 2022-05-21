@@ -8,12 +8,12 @@ import TagsBox from "components/TagsBox";
 export default function DetectTopics() {
   const [text, setText] = useState("");
   const [topics, setTopics] = useState([]);
+  const [filteredText, setFilteredText] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(text);
     const response = await getFilteredText(text);
-    console.log(response.fileteredText);
+    setFilteredText(response.filteredText);
   }
 
   return (
@@ -29,10 +29,21 @@ export default function DetectTopics() {
               Problema
             </Text>
 
-            <TextareaAutosize minRows={20} value={text} onChange={setText} />
+            <TextareaAutosize
+              minRows={5}
+              value={text}
+              onChange={setText} />
+
+            <Text fontWeight="bold" fontSize="xl">
+              Idea principal del texto
+            </Text>
+            <TextareaAutosize
+              minRows={5}
+              value={filteredText}
+              onChange={setFilteredText} />
           </Box>
 
-          <Box w="50%">
+          <Box w="50%" hidden={true}>
             <Text fontWeight="bold" fontSize="xl">
               Temas
             </Text>
