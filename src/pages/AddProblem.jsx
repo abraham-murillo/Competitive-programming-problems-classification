@@ -8,7 +8,7 @@ import {
   Button,
   useDisclosure,
   Text,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 
 import TextareaAutosize from "components/TextareaAutosize";
@@ -38,7 +38,7 @@ export default function AddProblem() {
       history,
       input,
       output,
-      topics
+      topics,
     };
 
     const problemId = await addProblem(problemData);
@@ -46,15 +46,15 @@ export default function AddProblem() {
     if (problemId !== undefined) {
       addLocalProblem({
         ...problemData,
-        id: problemId
-      })
+        id: problemId,
+      });
     }
 
     toastBoth({
       status: problemId !== undefined,
-      success: 'Problema creado exitosamente.',
-      failure: 'Hubo un error al crear el problema, inténtelo más tarde.',
-      toast
+      success: "Problema creado exitosamente.",
+      failure: "Hubo un error al crear el problema, inténtelo más tarde.",
+      toast,
     });
   }
 
@@ -69,82 +69,64 @@ export default function AddProblem() {
             Crear JSON
           </Text>
 
-          <FormControl isRequired >
-            <FormLabel>
-              Título del problema
-            </FormLabel>
+          <FormControl isRequired>
+            <FormLabel>Título del problema</FormLabel>
 
-            <Input
-              value={title}
-              onChange={(e) => setTitle(e.target.value)} />
+            <Input value={title} onChange={(e) => setTitle(e.target.value)} />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>
-              Url
-            </FormLabel>
+            <FormLabel>Url</FormLabel>
 
             <Input
               type={"url"}
               value={url}
-              onChange={(e) => setUrl(e.target.value)} />
+              onChange={(e) => setUrl(e.target.value)}
+            />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>
-              Historia
-            </FormLabel>
+            <FormLabel>Historia</FormLabel>
 
-            <TextareaAutosize
-              value={history}
-              onChange={setHistory} />
+            <TextareaAutosize value={history} onChange={setHistory} />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>
-              Entrada
-            </FormLabel>
+            <FormLabel>Entrada</FormLabel>
 
-            <TextareaAutosize
-              value={input}
-              onChange={setInput} />
+            <TextareaAutosize value={input} onChange={setInput} />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>
-              Salida
-            </FormLabel>
+            <FormLabel>Salida</FormLabel>
 
-            <TextareaAutosize
-              value={output}
-              onChange={setOutput} />
+            <TextareaAutosize value={output} onChange={setOutput} />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>
-              Tags
-            </FormLabel>
+            <FormLabel>Tags</FormLabel>
 
             <TagsBox
               tags={topics}
               setTags={setTopics}
               suggestions={suggestions}
-              placeholderText={"Ingresa los temas a los que corresponde el problema"}
+              placeholderText={
+                "Ingresa los temas a los que corresponde el problema"
+              }
               noSuggestionsText={"No hay temas parecidos al tuyo :("}
             />
           </FormControl>
-
         </VStack>
-      </Box>
 
-      <Button
-        // zIndex={-1}
-        colorScheme="green"
-        isFullWidth
-        mt={10}
-        onClick={(e) => handleSubmit(e)}>
-        Crear problema
-      </Button>
+        <Button
+          // zIndex={-1}
+          colorScheme="green"
+          isFullWidth
+          mt={10}
+          onClick={(e) => handleSubmit(e)}>
+          Crear problema
+        </Button>
+      </Box>
     </form >
   );
 }

@@ -1,6 +1,6 @@
 import spacy
 from pprint import pprint
-import json
+from langdetect import detect
 
 
 class SmartNLP():
@@ -10,7 +10,7 @@ class SmartNLP():
 
     def detectLanguage(self, text):
         # Returns nlp based on the language
-        return self.english
+        return self.english if detect(text) == "en" else self.spanish
 
 
 smart = SmartNLP()
@@ -22,7 +22,7 @@ def tokenize(text):
 
     tokens = dict()
     for word in text:
-        tokens[word.lemma_] = {
+        tokens = {
             "text": word.text,
             "pos": word.pos_,
             "lemma": word.lemma_,
@@ -35,6 +35,7 @@ def tokenize(text):
 
 # text = "hello, how are you?"
 # pprint(tokenize(text))
+
 
 def lemmatize(text):
     nlp = smart.detectLanguage(text)
