@@ -29,10 +29,7 @@ export default function DetectTopics() {
               Problema
             </Text>
 
-            <TextareaAutosize
-              minRows={5}
-              value={text}
-              onChange={setText} />
+            <TextareaAutosize minRows={5} value={text} onChange={setText} />
 
             <Text fontWeight="bold" fontSize="xl">
               Idea principal del texto
@@ -40,7 +37,8 @@ export default function DetectTopics() {
             <TextareaAutosize
               minRows={5}
               value={filteredText}
-              onChange={setFilteredText} />
+              onChange={setFilteredText}
+            />
           </Box>
 
           <Box w="50%" hidden={true}>
