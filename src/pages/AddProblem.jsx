@@ -59,7 +59,7 @@ export default function AddProblem() {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form>
       <Box
         h="70vh">
         <VStack >
@@ -142,7 +142,6 @@ export default function AddProblem() {
         colorScheme="green"
         isFullWidth
         mt={10}
-        type="submit | button"
         onClick={(e) => handleSubmit(e)}>
         Crear problema
       </Button>

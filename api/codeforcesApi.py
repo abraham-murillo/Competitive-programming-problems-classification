@@ -1,5 +1,6 @@
 import urllib.request
 
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -7,6 +8,7 @@ import pandas as pd
 import pprint
 import json
 
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 def getFrom(url):
     url = url.replace(' ', '%20')
@@ -18,7 +20,6 @@ def getFrom(url):
         return json.loads(str(BeautifulSoup(page, 'html.parser')))
     elif url.startswith("https://codeforces.com/problemset/problem/"):
         # Extract codeforces problem data from html
-        driver = webdriver.Chrome()
         driver.get(url)
 
         content = driver.page_source
@@ -46,13 +47,11 @@ def getFrom(url):
                 decomposeIfFound(output.find(
                     'div', attrs={'class': 'section-title'}))
                 problem['output'] = output.text
-
             note = html.find('div', attrs={'class': 'note'})
             if note:
                 decomposeIfFound(
                     note.find('div', attrs={'class': 'section-title'}))
                 problem['note'] = note.text
-
             decomposeIfFound(
                 html.find('div', attrs={'class': 'input-specification'}))
             decomposeIfFound(
@@ -60,13 +59,12 @@ def getFrom(url):
             decomposeIfFound(html.find('div', attrs={'class': 'note'}))
 
         problem['history'] = html.text
-
         return problem
 
 
-def getAllTags():
+def getAllTopics():
     """
-    Returns tags sorted by average rating 
+    Returns topics sorted by average rating 
     """
     url = "https://codeforces.com/api/problemset.problems"
     problems = getFrom(url)['result']['problems']
@@ -98,16 +96,15 @@ def getProblem(problem):
     """
 
     url = f"https://codeforces.com/problemset/problem/{problem['contestId']}/{problem['index']}"
-    print(url)
+    # print(url)
     problem.update(getFrom(url))
     return problem
 
 
-def getProblemset(tagsRating, maxNumOfProblems=-1):
+def getProblemset(topics, maxNumOfProblems=-1):
     """
     Returns the codeforces problemset
-        - All problems should have at least 1 of the tags 
-        - Rating of the problem (if any) should be smaller than maxRating
+        - All problems should have at least 1 of the tags
         - limit of problems is maxNumOfProblems
     """
 
@@ -115,26 +112,21 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
         url = f"https://codeforces.com/api/problemset.problems?tags={tag}"
         return getFrom(url)['result']['problems']
 
-    maxRating = 0
-    for tag, rating in tagsRating:
-        maxRating = max(maxRating, rating)
 
-    # Filter the problemset, if problem[tag] isn't in tags ignore the problem
     filteredProblems = dict()
 
     def enoughProblems():
         return maxNumOfProblems != -1 and len(filteredProblems) >= maxNumOfProblems
 
-    for tag, rating in tagsRating:
-        problemsWithATag = getProblems(tag)
-        # print(len(problemsWithATag))
+    for topic, rating in topics:
+        problemsWithTopic = getProblems(topic)
+        # print(len(problemsWithTopic))
 
-        for problem in problemsWithATag:
-            if 'rating' in problem and problem['rating'] <= maxRating:
-                problemId = str(problem['contestId']) + problem['index']
-                problem['id'] = problemId
-                problem['site'] = 'codeforces'
-                filteredProblems[problemId] = problem
+        for problem in problemsWithTopic:
+            problemId = str(problem['contestId']) + problem['index']
+            problem['id'] = problemId
+            problem['site'] = 'codeforces'
+            filteredProblems[problemId] = problem
 
             if enoughProblems():
                 break
@@ -147,41 +139,42 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
     return filteredProblems
 
 
-# List obtained with getAllTags()
-tagsRating = [('implementation', 1480.7348092322186),
-              ('greedy', 1721.7074440395627),
-              ('brute force', 1730.524505588994),
-              ('strings', 1734.0740740740741),
-              ('sortings', 1734.078947368421),
-              ('math', 1769.0954773869346),
-              ('*special', 1809.8305084745762),
-              ('expression parsing', 1862.5),
-              ('constructive algorithms', 1865.944540727903),
-              ('schedules', 1883.3333333333333),
-              ('number theory', 1917.490494296578),
-              ('two pointers', 1964.207650273224),
-              ('ternary search', 2020.4545454545455),
-              ('binary search', 2045.6258411843876),
-              ('games', 2072.972972972973),
-              ('dfs and similar', 2144.7214076246332),
-              ('dsu', 2160.8695652173915),
-              ('bitmasks', 2176.2162162162163),
-              ('dp', 2191.527599486521),
-              ('combinatorics', 2213.3037694013306),
-              ('geometry', 2222.257053291536),
-              ('shortest paths', 2225.0),
-              ('graphs', 2253.4969325153374),
-              ('hashing', 2275.641025641026),
-              ('data structures', 2295.8870967741937),
-              ('meet-in-the-middle', 2357.8947368421054),
-              ('trees', 2383.505154639175),
-              ('chinese remainder theorem', 2384.6153846153848),
-              ('2-sat', 2400.0),
-              ('probabilities', 2400.5555555555557),
-              ('interactive', 2420.0),
-              ('graph matchings', 2440.909090909091),
-              ('matrices', 2495.8333333333335),
-              ('divide and conquer', 2536.3636363636365),
-              ('flows', 2543.362831858407),
-              ('string suffix structures', 2612.987012987013),
-              ('fft', 2865.217391304348)]
+# List obtained with getAllTopics()
+topicsRating = [
+    # ('implementation', 1480.7348092322186),
+    # ('sortings', 1734.078947368421),
+    # ('strings', 1734.0740740740741),
+    ('greedy', 1721.7074440395627),
+    ('brute force', 1730.524505588994),
+    ('math', 1769.0954773869346),
+    ('expression parsing', 1862.5),
+    ('constructive algorithms', 1865.944540727903),
+    ('schedules', 1883.3333333333333),
+    ('number theory', 1917.490494296578),
+    ('two pointers', 1964.207650273224),
+    ('ternary search', 2020.4545454545455),
+    ('binary search', 2045.6258411843876),
+    ('games', 2072.972972972973),
+    ('dfs and similar', 2144.7214076246332),
+    ('dsu', 2160.8695652173915),
+    ('bitmasks', 2176.2162162162163),
+    ('dp', 2191.527599486521),
+    ('combinatorics', 2213.3037694013306),
+    ('geometry', 2222.257053291536),
+    ('shortest paths', 2225.0),
+    ('graphs', 2253.4969325153374),
+    ('hashing', 2275.641025641026),
+    ('data structures', 2295.8870967741937),
+    ('meet-in-the-middle', 2357.8947368421054),
+    ('trees', 2383.505154639175),
+    ('chinese remainder theorem', 2384.6153846153848),
+    ('2-sat', 2400.0),
+    ('probabilities', 2400.5555555555557),
+    ('interactive', 2420.0),
+    ('graph matchings', 2440.909090909091),
+    ('matrices', 2495.8333333333335),
+    ('divide and conquer', 2536.3636363636365),
+    ('flows', 2543.362831858407),
+    ('string suffix structures', 2612.987012987013),
+    ('fft', 2865.217391304348)
+]
