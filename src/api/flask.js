@@ -1,5 +1,3 @@
-const PORT = "http://localhost:5000";
-
 export async function getTokens(text) {
   return await fetch("/tokenizer", {
     method: "POST",

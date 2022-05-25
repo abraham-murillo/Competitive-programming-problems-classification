@@ -29,7 +29,17 @@ export default function TagsBox(props) {
   };
 
   function handleAddition(tag) {
-    setTags([...tags, tag]);
+    let exists = false
+    tags.forEach(element => {
+      if (element.id === tag.id) {
+        exists = true;
+        return
+      }
+    });
+
+    if (!exists) {
+      setTags([...tags, tag]);
+    }
   };
 
   return (

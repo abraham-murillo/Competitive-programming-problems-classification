@@ -1,14 +1,16 @@
 import urllib.request
 
+from webdriver_manager.chrome import ChromeDriverManager
 from pylatexenc.latex2text import LatexNodes2Text
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 
-import trashTags
+# import trashTags
 from pprint import pprint
 import json
 
+driver = webdriver.Chrome(ChromeDriverManager().install())
 tagPrefixes = ['problemTag', 'problemTopic']
 
 
@@ -28,7 +30,7 @@ def destroyCamelCase(text):
 
 def getFrom(url):
     url = url.replace(' ', '%20')
-    driver = webdriver.Chrome()
+    
     driver.get(url)
     content = driver.page_source
     soup = BeautifulSoup(content, 'html.parser')
@@ -56,8 +58,6 @@ def getFrom(url):
         doing = "?"
         for text in allText:
             text = text.strip()
-            text = LatexNodes2Text().latex_to_text(text)
-            print(text)
             if text in problemSections:
                 if doing != '?':
                     problem[doing] = section
@@ -85,36 +85,36 @@ def getFrom(url):
         } for problem in problems]
 
 
-def getAllTags():
-    # omegaupTags.txt was extracted by hand :'(
-    tags = dict()
-    count = dict()
-    with open("omegaupTags.txt") as input:
-        level = 0
-        for line in input.readlines():
-            line = line.strip()
-            if line.isdigit():
-                level = int(line)
-            elif len(line) > 0:
-                line = line.lower()
-                if line not in tags:
-                    tags[line] = level
-                    count[line] = 1
-                else:
-                    tags[line] += level
-                    count[line] += 1
+# def getAllTags():
+#     # omegaupTags.txt was extracted by hand :'(
+#     tags = dict()
+#     count = dict()
+#     with open("omegaupTags.txt") as input:
+#         level = 0
+#         for line in input.readlines():
+#             line = line.strip()
+#             if line.isdigit():
+#                 level = int(line)
+#             elif len(line) > 0:
+#                 line = line.lower()
+#                 if line not in tags:
+#                     tags[line] = level
+#                     count[line] = 1
+#                 else:
+#                     tags[line] += level
+#                     count[line] += 1
 
-    for tag, level in trashTags.tags:
-        tag = destroyCamelCase(tag).lower()
-        if tag not in tags:
-            tags[tag] = level
-            count[tag] = 1
+#     for tag, level in trashTags.tags:
+#         tag = destroyCamelCase(tag).lower()
+#         if tag not in tags:
+#             tags[tag] = level
+#             count[tag] = 1
 
-    # Aproximate to codeforces rating
-    # Sort tags by average rating (in theory those are easier)
-    tags = [(tag.lower(), round(rating * 900 / count[tag], 2))
-            for tag, rating in tags.items()]
-    return sorted(tags, key=lambda x: x[1])
+#     # Aproximate to codeforces rating
+#     # Sort tags by average rating (in theory those are easier)
+#     tags = [(tag.lower(), round(rating * 900 / count[tag], 2))
+#             for tag, rating in tags.items()]
+#     return sorted(tags, key=lambda x: x[1])
 
 
 def getProblem(problem):
@@ -123,19 +123,13 @@ def getProblem(problem):
     return problem
 
 
-def getProblemset(tagsRating, maxNumOfProblems=-1):
+def getProblemset(topics, maxNumOfProblems=-1):
     """
     Returns the omegaup problemset
-        - All problems should have at least 1 of the tags
-        - Rating of the problem (if any) should be smaller than maxRating
+        - All problems should have at least 1 of the topics
         - limit of problems is maxNumOfProblems
     """
 
-    tagsSet = set()
-    for tag, rating in tagsRating:
-        tagsSet.add(tag)
-
-    # Filter the problemset, if problem[tag] isn't in tags ignore the problem
     filteredProblems = dict()
 
     def enoughProblems():
@@ -146,12 +140,11 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
         url = f"https://omegaup.com/problem/list/?page={page}&tag[]=problemTag{tag}"
         return getFrom(url)
 
-    for tag, rating in tagsRating:
+    for topic in topics:
         for page in range(0, 1000):
-            problemsWithATag = getProblems(tag, page)
-            # print(len(problemsWithATag))
-
-            for problem in problemsWithATag:
+            problemsWithTopic = getProblems(topic, page)
+        
+            for problem in problemsWithTopic:
                 filteredProblems[problem['id']] = problem
 
                 if enoughProblems():
@@ -161,7 +154,7 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
                 break
 
             # Apparently if it has less than 100 problems per page it's the last pagination index
-            if len(problemsWithATag) < 100:
+            if len(problemsWithTopic) < 100:
                 break
 
         if enoughProblems():
@@ -172,7 +165,7 @@ def getProblemset(tagsRating, maxNumOfProblems=-1):
 
 
 # List obtained with getAllTags()
-tagsRating = [('formatted input and output', 900.0),
+topicsRating = [('formatted input and output', 900.0),
               ('brute force', 900.0),
               ('functions', 900.0),
               ('analytic geometry', 900.0),
