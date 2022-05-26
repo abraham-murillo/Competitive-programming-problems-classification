@@ -41,6 +41,7 @@ itsdangerous==2.1.2
 Jinja2==3.1.2
 kiwisolver==1.4.2
 langcodes==3.3.0
+langdetect==1.0.9
 MarkupSafe==2.1.1
 matplotlib==3.5.2
 msgpack==1.0.3
