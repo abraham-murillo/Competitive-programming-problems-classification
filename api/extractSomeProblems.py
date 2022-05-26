@@ -14,23 +14,23 @@ from topicsStandardization import getOmegaupTopics, getCodeforcesTopics
 def flatten(t):
     return [item for sublist in t for item in sublist]
 
+def addSpaces(text):
+    newText = ""
+    last = ''
+    for ch in text:
+        if last in punctuation:
+            newText += " "
+        newText += ch
+        last = ch
+    return newText
+
+def pretty(text):
+    text = LatexNodes2Text().latex_to_text(text)
+    text = unicodedata.normalize('NFKD', text)
+    text = addSpaces(text)
+    return " ".join(text.split())
+
 def fixData(problem):
-    def addSpaces(text):
-        newText = ""
-        last = ''
-        for ch in text:
-            if last in punctuation:
-                newText += " "
-            newText += ch
-            last = ch
-        return newText
-
-    def pretty(text):
-        text = LatexNodes2Text().latex_to_text(text)
-        text = unicodedata.normalize('NFKD', text)
-        text = addSpaces(text)
-        return " ".join(text.split())
-
     for field in ['history', 'input', 'output', 'note']:
         if field in problem:
             problem[field] = pretty(problem[field])
