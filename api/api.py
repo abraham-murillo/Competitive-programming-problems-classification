@@ -53,6 +53,7 @@ def getTokens():
     #     except:
     #         return jsonify({"status": "error"})
 
+
 def addProblem(problemData):
     # Used at TagsBox for component <ReactTags/>
     problemData['topics'] = [{
@@ -73,14 +74,17 @@ def addProblem(problemData):
         return id
 
     # Custom id, url is unique :)
-    db.collection('rawProblems').document(getId(problemData['url'])).set(problemData)
+    db.collection('rawProblems').document(
+        getId(problemData['url'])).set(problemData)
 
     print(f" {problemData['title']} added as {getId(problemData['url'])}")
 
 
 def getAll():
-  problems = db.collection('rawProblems').get()
-  return [problem.to_dict() for problem in problems]
+    problems = db.collection('rawProblems').get()
+    return [problem.to_dict() for problem in problems]
+
 
 if __name__ == "__main__":
+    getAll()
     app.run(debug=True)
