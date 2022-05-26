@@ -78,5 +78,9 @@ def addProblem(problemData):
     print(f" {problemData['title']} added as {getId(problemData['url'])}")
 
 
+def getAll():
+  problems = db.collection('rawProblems').get()
+  return [problem.to_dict() for problem in problems]
+
 if __name__ == "__main__":
     app.run(debug=True)
