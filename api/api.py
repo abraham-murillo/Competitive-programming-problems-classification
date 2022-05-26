@@ -86,5 +86,4 @@ def getAll():
 
 
 if __name__ == "__main__":
-    getAll()
     app.run(debug=True)
