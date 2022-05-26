@@ -3,6 +3,9 @@ from pprint import pprint
 from langdetect import detect
 import re
 
+import unicodedata
+from pylatexenc.latex2text import LatexNodes2Text
+
 
 class SmartNLP():
     english = spacy.load("en_core_web_sm")
@@ -10,7 +13,8 @@ class SmartNLP():
 
     def detectLanguage(self, text):
         # Returns nlp based on the language
-        return self.english if detect(text) == "en" else self.spanish
+        # return self.english if detect(text) == "en" else self.spanish
+        return self.english
 
 
 smart = SmartNLP()
@@ -50,6 +54,8 @@ def lemmatize(text):
 
 
 def filterText(text):
+    text = LatexNodes2Text().latex_to_text(text)
+    text = unicodedata.normalize('NFKD', text)
     text = lemmatize(text)
     # Remove multiple spaces
     text = re.sub(' +', ' ', text)
