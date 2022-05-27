@@ -62,6 +62,7 @@ def getTopics():
     return {"topics": utils.topicsForReact(codeforcesToOmegaup.keys())}
 
 
+
 def addProblem(problemData):
     problemData["topics"] = utils.topicsForReact(problemData["topics"])
 
