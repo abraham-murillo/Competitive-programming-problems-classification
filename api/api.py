@@ -72,54 +72,54 @@ class Model:
 
     def train(self):
         pprint("Starting model training...")
+        # Fetch training samples from database
         allProblems = getAll()
-        pprint(allProblems[:5])
         X = []
 
+        # Filter text and create input vectors
         for problemData in allProblems:
             description = problemData["history"]
             description = nlp.filterText(description)
             X.append(description)
 
-        pprint(X[:5])
         Y = []
-        classMap = {}
+        topicMap = {}
 
+        # Compress topics and create output vector
         for problemData in allProblems:
             targetTopic = problemData["topics"][0]["id"]
 
-            if targetTopic not in classMap:
-                classMap[targetTopic] = len(classMap)
-                self.reverseTopicMap[classMap[targetTopic]] = targetTopic
+            if targetTopic not in topicMap:
+                topicMap[targetTopic] = len(topicMap)
+                self.reverseTopicMap[topicMap[targetTopic]] = targetTopic
 
-            Y.append(classMap[targetTopic])
+            Y.append(topicMap[targetTopic])
 
-        pprint(Y[:5])
-        pprint(classMap)
-
+        # Split data such that test samples are 20% of the total samples
         X_train, X_test, Y_train, Y_test = train_test_split(
             X, Y, test_size=0.20)
-        Y_train = tf.one_hot(Y_train, depth=len(classMap))
-        Y_test = tf.one_hot(Y_test, depth=len(classMap))
 
+        # Fix dimensiones so that output matches the number of classses
+        Y_train = tf.one_hot(Y_train, depth=len(topicMap))
+        Y_test = tf.one_hot(Y_test, depth=len(topicMap))
+
+        # Expand vocabulary
         self.tokenizer.fit_on_texts(X_train)
+
+        # Compress string inputs to numbers inputs
         X_train = self.tokenizer.texts_to_sequences(X_train)
         X_test = self.tokenizer.texts_to_sequences(X_test)
 
+        # Crop out any words that exceed maxLen
         X_train = pad_sequences(X_train, padding='post', maxlen=self.maxLen)
         X_test = pad_sequences(X_test, padding='post', maxlen=self.maxLen)
 
         # TODO: Find a place to store Word2Vect and use it here
         embeddings = dict()
         embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
-        it = 0
 
+        # Create embeddings dictionary. i.e every word is a vector
         for line in embeddingsFile:
-            # TODO: Remove this in production
-            if it == 100:
-                break
-
-            it += 1
             features = line.split()
             word = features[0]
             vector = asarray(features[1:], dtype='float32')
@@ -130,17 +130,19 @@ class Model:
         vocabSize = 10000
         embeddingMatrix = np.zeros((vocabSize, 300))
 
+        # Populate embedding matrix. i.e every index is a vector
         for word, index in self.tokenizer.word_index.items():
             embeddingVector = embeddings.get(word)
 
             if embeddingVector is not None:
                 embeddingMatrix[index] = embeddingVector
 
+        # Train neural network
         embeddingLayer = Embedding(vocabSize, 300, weights=[
                                    embeddingMatrix], input_length=self.maxLen, trainable=False)
         self.model.add(embeddingLayer)
         self.model.add(Flatten())
-        self.model.add(Dense(len(classMap), activation='sigmoid'))
+        self.model.add(Dense(len(topicMap), activation='sigmoid'))
         self.model.compile(optimizer='adam',
                            loss='binary_crossentropy', metrics=['acc'])
         self.model.fit(X_train, Y_train, batch_size=128,
@@ -165,6 +167,7 @@ def textToSequences(text):
 @app.route("/predictedTopics", methods=["POST"])
 def getPredictedTopics():
     text = request.get_json()
+    # Compress strings to numbers
     X_test = textToSequences(text)
     Y_predictions = model.model.predict(X_test)
     pprint(Y_predictions)
@@ -172,6 +175,7 @@ def getPredictedTopics():
     indices = []
 
     for i in range(len(Y_predictions[0])):
+        # Only consider predictions that are good enough
         if Y_predictions[0][i] >= 0.30:
             indices.append(i)
 
