@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 
 import { Button, Box, HStack, Text, VStack } from "@chakra-ui/react";
-import { getFilteredText } from "api/flask";
+import { getPredictedTopics } from "api/flask";
 import TextareaAutosize from "components/TextareaAutosize";
 import TagsBox from "components/TagsBox";
 
 export default function DetectTopics() {
   const [text, setText] = useState("");
   const [topics, setTopics] = useState([]);
-  const [filteredText, setFilteredText] = useState("");
+  const [predictedTopics, setPredictedTopics] = useState([]);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await getFilteredText(text);
-    setFilteredText(response.filteredText);
+    const response = await getPredictedTopics(text);
+    setPredictedTopics(response.predictedTopics);
   }
 
   return (
@@ -32,12 +32,12 @@ export default function DetectTopics() {
             <TextareaAutosize minRows={5} value={text} onChange={setText} />
 
             <Text fontWeight="bold" fontSize="xl">
-              Idea principal del texto
+              Temas predecidos
             </Text>
             <TextareaAutosize
               minRows={5}
-              value={filteredText}
-              onChange={setFilteredText}
+              value={predictedTopics}
+              onChange={setPredictedTopics}
             />
           </Box>
 
@@ -45,8 +45,6 @@ export default function DetectTopics() {
             <Text fontWeight="bold" fontSize="xl">
               Temas
             </Text>
-
-            <TagsBox tags={topics} setTags={setTopics} />
           </Box>
         </HStack>
         <Button
