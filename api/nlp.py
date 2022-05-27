@@ -2,8 +2,11 @@ import spacy
 from pprint import pprint
 from langdetect import detect
 
+import pandas
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
-class SmartNLP():
+
+class SmartNLP:
     # TODO: Enable both english and spanish nlp
     english = spacy.load("en_core_web_sm")
     spanish = spacy.load("es_core_news_sm")
@@ -28,10 +31,11 @@ def tokenize(text):
             "lemma": word.lemma_,
             "tag": word.tag_,
             "dep": word.dep_,
-            "stop": word.is_stop
+            "stop": word.is_stop,
         }
 
     return list(tokens.values())
+
 
 # text = "hello, how are you?"
 # pprint(tokenize(text))
@@ -93,3 +97,26 @@ def filterText(text):
 #          "Text2": "I'm fine, and you",
 #          "Text3": "Fine as well, thank you!"}
 # pprint(featureMatrix(texts))
+
+
+def tfIdfMatrix(texts):
+    """
+    TF-IDF is a scoring measure widely used in information retrieval (IR) or summarization. TF-IDF is intended to reflect how relevant a term is in a given document.
+        - A data cleansing technique should be applied to the texts in advance.
+    """
+    cv = CountVectorizer()
+    wordsCount = cv.fit_transform(texts)
+
+    data = TfidfVectorizer().fit_transform(texts)
+    data = pandas.DataFrame(
+        data.todense(),
+        index=[i for i in range(0, len(texts))],
+        columns=cv.get_feature_names_out(),
+    )
+
+    return data
+
+# Example extracted from https://medium.datadriveninvestor.com/tf-idf-in-natural-language-processing-8db8ef4a7736
+# texts = ["eat veg", "eat nonveg", "eat food"]
+# pprint(tfIdf(texts))
+# tfIdfImportant(texts)
