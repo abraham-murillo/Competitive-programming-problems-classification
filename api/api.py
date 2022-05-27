@@ -168,11 +168,16 @@ def getPredictedTopics():
     pprint(text)
     X_test = textToSequences(text)
     Y_predictions = model.model.predict(X_test)
-    indices = tf.argmax(Y_predictions, axis=1)
+    predictedClasses = []
+
+    for i in range(len(Y_predictions[0])):
+        if Y_predictions[0][i] >= 0.30:
+            predictedClasses.append(model.reverseClassMap[i])
+
     pprint(Y_predictions)
     pprint(model.reverseClassMap)
 
-    return {"predictedTopics": [model.reverseClassMap[int(indices[0])]]}
+    return {"predictedTopics": predictedClasses}
 
 
 @app.route("/tokenizer", methods=["POST"])
