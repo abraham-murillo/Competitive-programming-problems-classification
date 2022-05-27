@@ -1,19 +1,22 @@
 import spacy
 from pprint import pprint
 from langdetect import detect
+import re
+
+import unicodedata
+from pylatexenc.latex2text import LatexNodes2Text
 
 import pandas
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
-
-class SmartNLP:
-    # TODO: Enable both english and spanish nlp
+class SmartNLP():
     english = spacy.load("en_core_web_sm")
     spanish = spacy.load("es_core_news_sm")
 
     def detectLanguage(self, text):
         # Returns nlp based on the language
-        return self.english if detect(text) == "en" else self.spanish
+        # return self.english if detect(text) == "en" else self.spanish
+        return self.english
 
 
 smart = SmartNLP()
@@ -53,6 +56,15 @@ def lemmatize(text):
     return lemmatizedText[:-1]
 
 
+def filterText(text):
+    text = LatexNodes2Text().latex_to_text(text)
+    text = unicodedata.normalize('NFKD', text)
+    text = lemmatize(text)
+    # Remove multiple spaces
+    text = re.sub(' +', ' ', text)
+    return text
+
+
 def featureMatrix(texts):
     nlpTexts = {}
 
@@ -85,11 +97,6 @@ def featureMatrix(texts):
         i += 1
 
     return features
-
-
-def filterText(text):
-    lemmatizedText = lemmatize(text)
-    return lemmatizedText
 
 
 # text = "I am the green child. Behold! a green child is here! Denounce the all-mighty taurus and begone my young ones!"
