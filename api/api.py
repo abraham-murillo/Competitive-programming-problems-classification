@@ -65,7 +65,7 @@ def getAll():
 
 
 class Model:
-    reverseClassMap = {}
+    reverseTopicMap = {}
     model = Sequential()
     tokenizer = Tokenizer(num_words=5000)
     maxLen = 100
@@ -86,13 +86,13 @@ class Model:
         classMap = {}
 
         for problemData in allProblems:
-            targetClass = problemData["topics"][0]["id"]
+            targetTopic = problemData["topics"][0]["id"]
 
-            if targetClass not in classMap:
-                classMap[targetClass] = len(classMap)
-                self.reverseClassMap[classMap[targetClass]] = targetClass
+            if targetTopic not in classMap:
+                classMap[targetTopic] = len(classMap)
+                self.reverseTopicMap[classMap[targetTopic]] = targetTopic
 
-            Y.append(classMap[targetClass])
+            Y.append(classMap[targetTopic])
 
         pprint(Y[:5])
         pprint(classMap)
@@ -165,19 +165,26 @@ def textToSequences(text):
 @app.route("/predictedTopics", methods=["POST"])
 def getPredictedTopics():
     text = request.get_json()
-    pprint(text)
     X_test = textToSequences(text)
     Y_predictions = model.model.predict(X_test)
-    predictedClasses = []
+    pprint(Y_predictions)
+    pprint(model.reverseTopicMap)
+    indices = []
 
     for i in range(len(Y_predictions[0])):
         if Y_predictions[0][i] >= 0.30:
-            predictedClasses.append(model.reverseClassMap[i])
+            indices.append(i)
 
-    pprint(Y_predictions)
-    pprint(model.reverseClassMap)
+    def customKey(i):
+        return Y_predictions[0][i]
 
-    return {"predictedTopics": predictedClasses}
+    indices.sort(key=customKey)
+    predictedTopics = []
+
+    for i in indices:
+        predictedTopics.append(model.reverseTopicMap[i])
+
+    return {"predictedTopics": predictedTopics}
 
 
 @app.route("/tokenizer", methods=["POST"])
