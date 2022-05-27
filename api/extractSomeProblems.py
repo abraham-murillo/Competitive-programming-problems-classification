@@ -14,9 +14,10 @@ from topicsStandardization import getOmegaupTopics, getCodeforcesTopics
 def flatten(t):
     return [item for sublist in t for item in sublist]
 
+
 def addSpaces(text):
     newText = ""
-    last = ''
+    last = ""
     for ch in text:
         if last in punctuation:
             newText += " "
@@ -24,14 +25,16 @@ def addSpaces(text):
         last = ch
     return newText
 
+
 def pretty(text):
     text = LatexNodes2Text().latex_to_text(text)
-    text = unicodedata.normalize('NFKD', text)
+    text = unicodedata.normalize("NFKD", text)
     text = addSpaces(text)
     return " ".join(text.split())
 
+
 def fixData(problem):
-    for field in ['history', 'input', 'output', 'note']:
+    for field in ["history", "input", "output", "note"]:
         if field in problem:
             problem[field] = pretty(problem[field])
         else:
@@ -55,6 +58,7 @@ def getCodeforcesProblems(topic, numOfProblems):
         data = fixData(codeforcesApi.getProblem(data))
         addProblem(data)
 
+
 def getOmegaupProblems(topic, numOfProblems):
     topic = topic[0]
     omegaupTopics = getOmegaupTopics(topic)
@@ -62,9 +66,12 @@ def getOmegaupProblems(topic, numOfProblems):
     problemset = omegaupApi.getProblemset(omegaupTopics, numOfProblems)
     for id, data in problemset.items():
         data = fixData(omegaupApi.getProblem(data))
-        codeforcesTopics = set(flatten([getCodeforcesTopics(x) for x in data['topics']]))
-        data['topics'] = list(codeforcesTopics)  
-        addProblem(data) 
+        codeforcesTopics = set(
+            flatten([getCodeforcesTopics(x) for x in data["topics"]])
+        )
+        data["topics"] = list(codeforcesTopics)
+        addProblem(data)
+
 
 last = 0
 
