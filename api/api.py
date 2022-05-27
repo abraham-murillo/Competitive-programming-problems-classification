@@ -64,132 +64,102 @@ def getAll():
     return [problem.to_dict() for problem in problems]
 
 
-def trainModel():
-    pprint("Starting model training...")
-    allProblems = getAll()
-    # TODO: Dummy values. Remove when Firebase daily limit usage shit is fixed
-    # allProblems = [
-    #     {
-    #         "history": "cat",
-    #         "topics": [
-    #             {"id": "cat"}
-    #         ]
-    #     }, {
-    #         "history": "dog",
-    #         "topics": [
-    #             {"id": "dog"}
-    #         ]
-    #     }, {
-    #         "history": "cat",
-    #         "topics": [
-    #             {"id": "cat"}
-    #         ]},
-    #     {
-    #         "history": "bird",
-    #         "topics": [
-    #             {"id": "bird"}
-    #         ]
-    #     }, {
-    #         "history": "cat",
-    #         "topics": [
-    #             {"id": "cat"}
-    #         ]
-    #     }, {
-    #         "history": "dog",
-    #         "topics": [
-    #             {"id": "dog"}
-    #         ]}
-
-    # ]
-    pprint(allProblems[:10])
-    X = []
-
-    for problemData in allProblems:
-        description = problemData["history"]
-        description = nlp.filterText(description)
-        X.append(description)
-
-    pprint(X[:10])
-    Y = []
-    classMap = {}
+class Model:
     reverseClassMap = {}
-
-    for problemData in allProblems:
-        targetClass = problemData["topics"][0]["id"]
-
-        if targetClass not in classMap:
-            classMap[targetClass] = len(classMap)
-            reverseClassMap[classMap[targetClass]] = targetClass
-
-        Y.append(classMap[targetClass])
-
-    pprint(Y[:10])
-    pprint(classMap)
-
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.20)
-    Y_train = tf.one_hot(Y_train, depth=len(classMap))
-    Y_test = tf.one_hot(Y_test, depth=len(classMap))
-
+    model = Sequential()
     tokenizer = Tokenizer(num_words=5000)
-    tokenizer.fit_on_texts(X_train)
-    X_train = tokenizer.texts_to_sequences(X_train)
-    X_test = tokenizer.texts_to_sequences(X_test)
-
     maxLen = 100
 
-    X_train = pad_sequences(X_train, padding='post', maxlen=maxLen)
-    X_test = pad_sequences(X_test, padding='post', maxlen=maxLen)
+    def train(self):
+        pprint("Starting model training...")
+        allProblems = getAll()
+        pprint(allProblems[:5])
+        X = []
 
-    # # TODO: Find a place to store Word2Vect and use it here
-    embeddings = dict()
-    embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
-    # it = 0
+        for problemData in allProblems:
+            description = problemData["history"]
+            description = nlp.filterText(description)
+            X.append(description)
 
-    for line in embeddingsFile:
-        # if it == 100:
-        #     break
+        pprint(X[:5])
+        Y = []
+        classMap = {}
 
-        # it += 1
-        features = line.split()
-        word = features[0]
-        vector = asarray(features[1:], dtype='float32')
-        embeddings[word] = vector
+        for problemData in allProblems:
+            targetClass = problemData["topics"][0]["id"]
 
-    embeddingsFile.close()
-    vocabSize = 10000
-    embeddingMatrix = np.zeros((vocabSize, 300))
+            if targetClass not in classMap:
+                classMap[targetClass] = len(classMap)
+                self.reverseClassMap[classMap[targetClass]] = targetClass
 
-    for word, index in tokenizer.word_index.items():
-        embeddingVector = embeddings.get(word)
+            Y.append(classMap[targetClass])
 
-        if embeddingVector is not None:
-            embeddingMatrix[index] = embeddingVector
+        pprint(Y[:5])
+        pprint(classMap)
 
-    model = Sequential()
-    embeddingLayer = Embedding(vocabSize, 300, weights=[
-                               embeddingMatrix], input_length=maxLen, trainable=False)
-    model.add(embeddingLayer)
-    model.add(Flatten())
-    model.add(Dense(len(classMap), activation='sigmoid'))
-    model.compile(optimizer='adam',
-                  loss='binary_crossentropy', metrics=['acc'])
-    model.fit(X_train, Y_train, batch_size=128,
-              epochs=10, verbose=1, validation_split=0.2)
-    score = model.evaluate(X_test, Y_test, verbose=1)
-    print("Test Loss:", score[0])
-    print("Test Accuracy:", score[1])
-    return model, tokenizer, maxLen, reverseClassMap
+        X_train, X_test, Y_train, Y_test = train_test_split(
+            X, Y, test_size=0.20)
+        Y_train = tf.one_hot(Y_train, depth=len(classMap))
+        Y_test = tf.one_hot(Y_test, depth=len(classMap))
+
+        self.tokenizer.fit_on_texts(X_train)
+        X_train = self.tokenizer.texts_to_sequences(X_train)
+        X_test = self.tokenizer.texts_to_sequences(X_test)
+
+        X_train = pad_sequences(X_train, padding='post', maxlen=self.maxLen)
+        X_test = pad_sequences(X_test, padding='post', maxlen=self.maxLen)
+
+        # TODO: Find a place to store Word2Vect and use it here
+        embeddings = dict()
+        embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
+        it = 0
+
+        for line in embeddingsFile:
+            # TODO: Remove this in production
+            if it == 100:
+                break
+
+            it += 1
+            features = line.split()
+            word = features[0]
+            vector = asarray(features[1:], dtype='float32')
+            embeddings[word] = vector
+
+        embeddingsFile.close()
+        # TODO: Not sure about this number
+        vocabSize = 10000
+        embeddingMatrix = np.zeros((vocabSize, 300))
+
+        for word, index in self.tokenizer.word_index.items():
+            embeddingVector = embeddings.get(word)
+
+            if embeddingVector is not None:
+                embeddingMatrix[index] = embeddingVector
+
+        embeddingLayer = Embedding(vocabSize, 300, weights=[
+                                   embeddingMatrix], input_length=self.maxLen, trainable=False)
+        self.model.add(embeddingLayer)
+        self.model.add(Flatten())
+        self.model.add(Dense(len(classMap), activation='sigmoid'))
+        self.model.compile(optimizer='adam',
+                           loss='binary_crossentropy', metrics=['acc'])
+        self.model.fit(X_train, Y_train, batch_size=128,
+                       epochs=10, verbose=1, validation_split=0.2)
+        score = self.model.evaluate(X_test, Y_test, verbose=1)
+        print("Test Loss:", score[0])
+        print("Test Accuracy:", score[1])
+
+
+model = Model()
+model.train()
 
 
 def textToSequences(text):
     text = [text]
-    tokenizer.fit_on_texts(text)
-    text = tokenizer.texts_to_sequences(text)
-    text = pad_sequences(text, padding='post', maxlen=maxLen)
+    model.tokenizer.fit_on_texts(text)
+    text = model.tokenizer.texts_to_sequences(text)
+    text = pad_sequences(text, padding='post', maxlen=model.maxLen)
     return text
-
-
-model, tokenizer, maxLen, reverseClassMap = trainModel()
 
 
 @app.route("/predictedTopics", methods=["POST"])
@@ -197,12 +167,12 @@ def getPredictedTopics():
     text = request.get_json()
     pprint(text)
     X_test = textToSequences(text)
-    Y_predictions = model.predict(X_test)
+    Y_predictions = model.model.predict(X_test)
     indices = tf.argmax(Y_predictions, axis=1)
     pprint(Y_predictions)
-    pprint(reverseClassMap)
+    pprint(model.reverseClassMap)
 
-    return {"predictedTopics": [reverseClassMap[int(indices[0])]]}
+    return {"predictedTopics": [model.reverseClassMap[int(indices[0])]]}
 
 
 @app.route("/tokenizer", methods=["POST"])
