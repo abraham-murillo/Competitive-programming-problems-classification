@@ -25,6 +25,8 @@ from tensorflow.keras import Sequential
 from keras.layers.core import Activation, Dropout, Dense
 from keras.layers import Flatten, Conv1D, LSTM, GlobalMaxPooling1D
 from tensorflow.keras.layers import Embedding
+from keras.utils.np_utils import to_categorical
+import matplotlib.pyplot as plt
 
 cred = credentials.Certificate("serviceAccountKey.json")
 app = firebase_admin.initialize_app(cred)
@@ -100,8 +102,8 @@ class Model:
             X, Y, test_size=0.20)
 
         # Fix dimensiones so that output matches the number of classses
-        Y_train = tf.one_hot(Y_train, depth=len(topicMap))
-        Y_test = tf.one_hot(Y_test, depth=len(topicMap))
+        Y_train = to_categorical(Y_train, num_classes=len(topicMap))
+        Y_test = to_categorical(Y_test, num_classes=len(topicMap))
 
         # Expand vocabulary
         self.tokenizer.fit_on_texts(X_train)
@@ -117,9 +119,14 @@ class Model:
         # TODO: Find a place to store Word2Vect and use it here
         embeddings = dict()
         embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
+        it = 0
 
         # Create embeddings dictionary. i.e every word is a vector
         for line in embeddingsFile:
+            if (it == 100):
+                break
+
+            it += 1
             features = line.split()
             word = features[0]
             vector = asarray(features[1:], dtype='float32')
@@ -142,14 +149,25 @@ class Model:
                                    embeddingMatrix], input_length=self.maxLen, trainable=False)
         self.model.add(embeddingLayer)
         self.model.add(Flatten())
-        self.model.add(Dense(len(topicMap), activation='sigmoid'))
+        self.model.add(Dense(len(topicMap), activation='softmax'))
         self.model.compile(optimizer='adam',
-                           loss='binary_crossentropy', metrics=['acc'])
-        self.model.fit(X_train, Y_train, batch_size=128,
-                       epochs=10, verbose=1, validation_split=0.2)
+                           loss='categorical_crossentropy', metrics=['acc'])
+        history = self.model.fit(X_train, Y_train, batch_size=8,
+                                 epochs=30, verbose=1, validation_split=0.2)
         score = self.model.evaluate(X_test, Y_test, verbose=1)
         print("Test Loss:", score[0])
         print("Test Accuracy:", score[1])
+
+        # Plot cost vs accuracy graphs
+        plt.figure(figsize=(12, 5))
+        plt.ylim(-0.1, 1.1)
+        plt.plot(history.history['acc'])
+        plt.plot(history.history['val_acc'])
+        plt.title('Deep neural network')
+        plt.ylabel('accuracy')
+        plt.xlabel('epoch')
+        plt.legend(['Train', 'Validation'])
+        plt.show()
 
 
 model = Model()
@@ -164,7 +182,7 @@ def textToSequences(text):
     return text
 
 
-@app.route("/predictedTopics", methods=["POST"])
+@ app.route("/predictedTopics", methods=["POST"])
 def getPredictedTopics():
     text = request.get_json()
     # Compress strings to numbers
@@ -191,7 +209,7 @@ def getPredictedTopics():
     return {"predictedTopics": predictedTopics}
 
 
-@app.route("/tokenizer", methods=["POST"])
+@ app.route("/tokenizer", methods=["POST"])
 def getTokens():
     text = request.get_json()
     print(text)
@@ -199,7 +217,7 @@ def getTokens():
     return {"tokens": nlp.tokenize(text)}
 
 
-@app.route("/tfIdf", methods=["POST"])
+@ app.route("/tfIdf", methods=["POST"])
 def getTfIdf():
     texts = request.get_json()
     print(texts)
@@ -207,7 +225,7 @@ def getTfIdf():
     return {"tfIdf": nlp.tfIdf(texts)}
 
 
-@app.route("/topics")
+@ app.route("/topics")
 def getTopics():
     return {"topics": utils.topicsForReact(codeforcesToOmegaup.keys())}
 
