@@ -66,6 +66,33 @@ def getAll():
     return [problem.to_dict() for problem in problems]
 
 
+def sortFile():
+    embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
+    wordsFile = open("Word2VectSortedWords.txt", "a")
+    linesFile = open("Word2VectSorted", "a")
+    embeddingsList = []
+    embeddingsWords = []
+
+    for line in embeddingsFile:
+        embeddingsList.append(line)
+        features = line.split()
+        word = features[0]
+        embeddingsWords.append(word)
+
+    embeddingsFile.close()
+    embeddingsList.sort()
+    embeddingsWords.sort()
+
+    for line in embeddingsList:
+        linesFile.write(line)
+
+    for word in embeddingsWords:
+        wordsFile.write(word)
+
+    wordsFile.close()
+    linesFile.close()
+
+
 class Model:
     reverseTopicMap = {}
     model = Sequential()
@@ -124,7 +151,7 @@ class Model:
 
         # Create embeddings dictionary. i.e every word is a vector
         for line in embeddingsFile:
-            if (it == 100):
+            if (it == 1000):
                 break
 
             it += 1
@@ -132,7 +159,7 @@ class Model:
             word = features[0]
             vector = asarray(features[1:], dtype='float32')
             embeddings[word] = vector
-
+        pprint("wtf")
         embeddingsFile.close()
         # TODO: Not sure about this number
         vocabSize = 10000
@@ -181,11 +208,12 @@ class Model:
 
 # Use DNN, CNN or LSTM to change model
 model = Model()
-model.train("LSTM")
+# model.train("DNN")
 
 
-def textToSequences(text):
-    text = [text]
+def instantiateQuery(text):
+    text = [nlp.filterText(text)]
+    pprint(text)
     model.tokenizer.fit_on_texts(text)
     text = model.tokenizer.texts_to_sequences(text)
     text = pad_sequences(text, padding='post', maxlen=model.maxLen)
@@ -196,7 +224,7 @@ def textToSequences(text):
 def getPredictedTopics():
     text = request.get_json()
     # Compress strings to numbers
-    X_test = textToSequences(text)
+    X_test = instantiateQuery(text)
     Y_predictions = model.model.predict(X_test)
     pprint(Y_predictions)
     pprint(model.reverseTopicMap)
@@ -254,4 +282,5 @@ def addProblem(problemData):
 
 
 if __name__ == "__main__":
+    sortFile()
     app.run(debug=True)
