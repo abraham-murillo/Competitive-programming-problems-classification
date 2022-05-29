@@ -72,8 +72,9 @@ class Model:
     tokenizer = Tokenizer(num_words=5000)
     maxLen = 100
 
-    def train(self):
+    def train(self, type):
         pprint("Starting model training...")
+        pprint("Model type: " + type)
         # Fetch training samples from database
         allProblems = getAll()
         X = []
@@ -148,7 +149,15 @@ class Model:
         embeddingLayer = Embedding(vocabSize, 300, weights=[
                                    embeddingMatrix], input_length=self.maxLen, trainable=False)
         self.model.add(embeddingLayer)
-        self.model.add(Flatten())
+
+        if type == "CNN":
+            self.model.add(Conv1D(30, 2, activation='relu'))
+            self.model.add(GlobalMaxPooling1D())
+        elif type == "LSTM":
+            self.model.add(LSTM(200, dropout=0.2, recurrent_dropout=0.2))
+        elif type == "DNN":
+            self.model.add(Flatten())
+
         self.model.add(Dense(len(topicMap), activation='softmax'))
         self.model.compile(optimizer='adam',
                            loss='categorical_crossentropy', metrics=['acc'])
@@ -163,15 +172,16 @@ class Model:
         plt.ylim(-0.1, 1.1)
         plt.plot(history.history['acc'])
         plt.plot(history.history['val_acc'])
-        plt.title('Deep neural network')
+        plt.title("Model: " + type)
         plt.ylabel('accuracy')
         plt.xlabel('epoch')
         plt.legend(['Train', 'Validation'])
         plt.show()
 
 
+# Use DNN, CNN or LSTM to change model
 model = Model()
-model.train()
+model.train("LSTM")
 
 
 def textToSequences(text):
