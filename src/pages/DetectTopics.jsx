@@ -7,13 +7,15 @@ import TagsBox from "components/TagsBox";
 
 export default function DetectTopics() {
   const [text, setText] = useState("");
-  const [topics, setTopics] = useState([]);
   const [predictedTopics, setPredictedTopics] = useState([]);
 
   async function handleSubmit(e) {
     e.preventDefault();
     const response = await getPredictedTopics(text);
-    setPredictedTopics(response.predictedTopics);
+
+    if (response.predictedTopics.length > 0)
+      setPredictedTopics(response.predictedTopics);
+    else setPredictedTopics(["No c :,("]);
   }
 
   return (
