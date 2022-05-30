@@ -30,22 +30,24 @@ class Model:
 
         # Filter text and create input vectors
         for problemData in allProblems:
-            description = problemData["history"]
-            description = nlp.filterText(description)
-            X.append(description)
+            if len(problemData["topics"]) > 0:
+                description = problemData["history"]
+                description = nlp.filterText(description)
+                X.append(description)
 
         Y = []
         topicMap = {}
 
         # Compress topics and create output vector
         for problemData in allProblems:
-            targetTopic = problemData["topics"][0]
+            if len(problemData["topics"]) > 0:
+                targetTopic = problemData["topics"][0]
 
-            if targetTopic not in topicMap:
-                topicMap[targetTopic] = len(topicMap)
-                self.reverseTopicMap[topicMap[targetTopic]] = targetTopic
+                if targetTopic not in topicMap:
+                    topicMap[targetTopic] = len(topicMap)
+                    self.reverseTopicMap[topicMap[targetTopic]] = targetTopic
 
-            Y.append(topicMap[targetTopic])
+                Y.append(topicMap[targetTopic])
 
         # Split data such that test samples are 20% of the total samples
         X_train, X_test, Y_train, Y_test = train_test_split(
@@ -72,7 +74,7 @@ class Model:
         for word, index in self.tokenizer.word_index.items():
             tokenIndex[word] = index
 
-        pprint("Creating embeddings matrix...")
+        pprint("Creating embedding matrix...")
         # TODO: Find a place to store Word2Vect and use it here
         embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
         # TODO: Not sure about this number
