@@ -1,3 +1,4 @@
+import ai
 import time
 import firebase_admin
 from firebase_admin import credentials, initialize_app, firestore
@@ -48,6 +49,16 @@ def getAllProblems():
 # pprint(getAllProblems()[:5])
 
 
+model = ai.Model()
+model.train("DNN", getAll())
+
+
+@ app.route("/predictedTopics", methods=["POST"])
+def getPredictedTopics():
+    text = request.get_json()
+    return {"predictedTopics": model.getPredictedTopics(text)}
+
+
 @ app.route("/tokenizer", methods=["POST"])
 def getTokens():
     text = request.get_json()
@@ -80,4 +91,5 @@ def addProblem(problemData):
 
 
 if __name__ == "__main__":
+    # Use DNN, CNN or LSTM to change model
     app.run(debug=True)

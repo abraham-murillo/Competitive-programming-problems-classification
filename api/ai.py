@@ -1,7 +1,6 @@
-import api
+import nlp
 from tensorflow.keras.preprocessing.text import Tokenizer
 from sklearn.model_selection import train_test_split
-from api import nlp
 import numpy as np
 import tensorflow as tf
 from numpy import asarray
@@ -23,11 +22,10 @@ class Model:
     tokenizer = Tokenizer(num_words=5000)
     maxLen = 100
 
-    def train(self, type):
+    def train(self, type, allProblems):
         pprint("Starting model training...")
         pprint("Model type: " + type)
         # Fetch training samples from database
-        allProblems = api.getAll()
         X = []
 
         # Filter text and create input vectors
@@ -81,18 +79,19 @@ class Model:
         embeddingMatrix = np.zeros((vocabSize, 300))
 
         # Create embeddings matrix. i.e every word is a vector
+        pprint("Creating embeddings matrix...")
         for line in embeddingsFile:
             features = line.split()
-            word = features[0]
+            token = features[0]
 
-            if word in tokenIndex:
-                pprint(word)
+            if token in tokenIndex:
                 vector = asarray(features[1:], dtype='float32')
-                embeddingMatrix[tokenIndex[word]] = vector
+                embeddingMatrix[tokenIndex[token]] = vector
 
         embeddingsFile.close()
 
         # Train neural network
+        pprint("Training neural network...")
         embeddingLayer = Embedding(vocabSize, 300, weights=[
                                    embeddingMatrix], input_length=self.maxLen, trainable=False)
         self.model.add(embeddingLayer)
@@ -125,43 +124,34 @@ class Model:
         plt.legend(['Train', 'Validation'])
         plt.show()
 
+    def instantiateQuery(self, text):
+        text = [nlp.filterText(text)]
+        pprint(text)
+        self.tokenizer.fit_on_texts(text)
+        text = self.tokenizer.texts_to_sequences(text)
+        text = pad_sequences(text, padding='post', maxlen=self.maxLen)
+        return text
 
-# Use DNN, CNN or LSTM to change model
-model = Model()
-model.train("DNN")
+    def getPredictedTopics(self, text):
+        # Compress strings to numbers
+        X_test = self.instantiateQuery(text)
+        Y_predictions = self.model.predict(X_test)
+        pprint(Y_predictions)
+        pprint(self.reverseTopicMap)
+        indices = []
 
+        for i in range(len(Y_predictions[0])):
+            # Only consider predictions that are good enough
+            if Y_predictions[0][i] >= 0.30:
+                indices.append(i)
 
-def instantiateQuery(text):
-    text = [nlp.filterText(text)]
-    pprint(text)
-    model.tokenizer.fit_on_texts(text)
-    text = model.tokenizer.texts_to_sequences(text)
-    text = pad_sequences(text, padding='post', maxlen=model.maxLen)
-    return text
+        def customKey(i):
+            return Y_predictions[0][i]
 
+        indices.sort(key=customKey)
+        predictedTopics = []
 
-@ api.app.route("/predictedTopics", methods=["POST"])
-def getPredictedTopics():
-    text = api.request.get_json()
-    # Compress strings to numbers
-    X_test = instantiateQuery(text)
-    Y_predictions = model.model.predict(X_test)
-    pprint(Y_predictions)
-    pprint(model.reverseTopicMap)
-    indices = []
+        for i in indices:
+            predictedTopics.append(self.reverseTopicMap[i])
 
-    for i in range(len(Y_predictions[0])):
-        # Only consider predictions that are good enough
-        if Y_predictions[0][i] >= 0.30:
-            indices.append(i)
-
-    def customKey(i):
-        return Y_predictions[0][i]
-
-    indices.sort(key=customKey)
-    predictedTopics = []
-
-    for i in indices:
-        predictedTopics.append(model.reverseTopicMap[i])
-
-    return {"predictedTopics": predictedTopics}
+        return predictedTopics
