@@ -6,13 +6,14 @@ import {
   Input,
   VStack,
   Button,
+  HStack,
   useDisclosure,
   Text,
   useToast,
 } from "@chakra-ui/react";
 
 import TextareaAutosize from "components/TextareaAutosize";
-import TagsBox from "components/TagsBox";
+import { CustomTag } from "components/TagsBox";
 import { codeforces } from "information/topics";
 import { addProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
@@ -106,15 +107,11 @@ export default function AddProblem() {
           <FormControl mt={5} isRequired>
             <FormLabel>Tags</FormLabel>
 
-            <TagsBox
-              tags={topics}
-              setTags={setTopics}
-              suggestions={suggestions}
-              placeholderText={
-                "Ingresa los temas a los que corresponde el problema"
-              }
-              noSuggestionsText={"No hay temas parecidos al tuyo :("}
-            />
+            {topics.length > 0 && (
+              <HStack>
+                {topics.map((topic) => <CustomTag tag={topic} />)}
+              </HStack>
+            )}
           </FormControl>
         </VStack>
 
