@@ -9,6 +9,7 @@ from pylatexenc.latex2text import LatexNodes2Text
 import pandas
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
+
 class SmartNLP():
     english = spacy.load("en_core_web_sm")
     spanish = spacy.load("es_core_news_sm")
@@ -62,6 +63,8 @@ def filterText(text):
     text = lemmatize(text)
     # Remove multiple spaces
     text = re.sub(' +', ' ', text)
+    # Remove newlines
+    text = text.replace("\n", "")
     return text
 
 
