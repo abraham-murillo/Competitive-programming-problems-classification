@@ -135,9 +135,9 @@ def getProblemset(topics, maxNumOfProblems=-1):
 
 # List obtained with getAllTopics()
 topicsRating = [
-    # ('implementation', 1480.7348092322186),
-    # ('sortings', 1734.078947368421),
-    # ('strings', 1734.0740740740741),
+    ('implementation', 1480.7348092322186),
+    ('sortings', 1734.078947368421),
+    ('strings', 1734.0740740740741),
     ("greedy", 1721.7074440395627),
     ("brute force", 1730.524505588994),
     ("math", 1769.0954773869346),
