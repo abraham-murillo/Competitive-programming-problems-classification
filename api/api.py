@@ -50,7 +50,7 @@ def getAllProblems():
 
 
 model = ai.Model()
-model.train("DNN", getAllProblems())
+model.train("CNN", getAllProblems())
 
 
 @ app.route("/predictedTopics", methods=["POST"])
