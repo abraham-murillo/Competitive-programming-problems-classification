@@ -22,32 +22,75 @@ class Model:
     tokenizer = Tokenizer(num_words=5000)
     maxLen = 100
 
-    def train(self, type, allProblems):
-        pprint("Starting model training...")
-        pprint("Model type: " + type)
-        # Fetch training samples from database
-        X = []
+    def dataToMap(self, allProblems):
+        problems = {}
 
-        # Filter text and create input vectors
         for problemData in allProblems:
             if len(problemData["topics"]) > 0:
                 description = problemData["history"]
-                description = nlp.filterText(description)
-                X.append(description)
+                topic = problemData["topics"][0]
+                problems[description] = topic
+
+        return problems
+
+    def balanceData(self, allProblems):
+        topicCount = {}
+
+        for topic in allProblems.values():
+            if topic not in topicCount:
+                topicCount[topic] = 0
+
+            topicCount[topic] += 1
+
+        mn = 1e9
+
+        for cnt in topicCount.values():
+            if cnt < mn:
+                mn = cnt
+
+        topicCount = {}
+        problems = {}
+
+        for description in allProblems.keys():
+            topic = allProblems[description]
+
+            if topic not in topicCount:
+                topicCount[topic] = 0
+
+            topicCount[topic] += 1
+
+            if topicCount[topic] <= mn:
+                problems[description] = topic
+
+        return problems
+
+    def train(self, type, allProblems):
+        pprint("Starting model training...")
+        pprint("Model type: " + type)
+        allProblems = self.dataToMap(allProblems)
+        allProblems = self.balanceData(allProblems)
+        X = []
+
+        # Filter text and create input vectors
+        for description in allProblems.keys():
+            description = nlp.filterText(description)
+            X.append(description)
 
         Y = []
         topicMap = {}
+        topicCount = {}
 
         # Compress topics and create output vector
-        for problemData in allProblems:
-            if len(problemData["topics"]) > 0:
-                targetTopic = problemData["topics"][0]
+        for topic in allProblems.values():
+            if topic not in topicMap:
+                topicMap[topic] = len(topicMap)
+                self.reverseTopicMap[topicMap[topic]] = topic
+                topicCount[topic] = 0
 
-                if targetTopic not in topicMap:
-                    topicMap[targetTopic] = len(topicMap)
-                    self.reverseTopicMap[topicMap[targetTopic]] = targetTopic
+            topicCount[topic] += 1
+            Y.append(topicMap[topic])
 
-                Y.append(topicMap[targetTopic])
+        pprint(topicCount)
 
         # Split data such that test samples are 20% of the total samples
         X_train, X_test, Y_train, Y_test = train_test_split(
@@ -78,7 +121,7 @@ class Model:
         # TODO: Find a place to store Word2Vect and use it here
         embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
         # TODO: Not sure about this number
-        vocabSize = 10000
+        vocabSize = len(self.tokenizer.word_index) + 1
         embeddingMatrix = np.zeros((vocabSize, 300))
 
         # Create embeddings matrix. i.e every word is a vector
@@ -90,6 +133,7 @@ class Model:
                 vector = asarray(features[1:], dtype='float32')
                 embeddingMatrix[tokenIndex[token]] = vector
 
+        pprint(embeddingMatrix)
         embeddingsFile.close()
 
         # Train neural network
