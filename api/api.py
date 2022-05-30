@@ -40,7 +40,7 @@ def getAllProblems():
     topics = ['implementation', 'sortings', 'strings']
 
     return dummy.getAllProblems(topics)
-    
+
     rawProblemsRef = db.collection("rawProblems")
     query = rawProblemsRef.limit(300)
     problems = query.stream()
@@ -50,7 +50,7 @@ def getAllProblems():
 
 
 model = ai.Model()
-model.train("DNN", getAll())
+model.train("DNN", getAllProblems())
 
 
 @ app.route("/predictedTopics", methods=["POST"])
