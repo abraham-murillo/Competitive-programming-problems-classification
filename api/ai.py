@@ -72,6 +72,7 @@ class Model:
         for word, index in self.tokenizer.word_index.items():
             tokenIndex[word] = index
 
+        pprint("Creating embeddings matrix...")
         # TODO: Find a place to store Word2Vect and use it here
         embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
         # TODO: Not sure about this number
@@ -79,7 +80,6 @@ class Model:
         embeddingMatrix = np.zeros((vocabSize, 300))
 
         # Create embeddings matrix. i.e every word is a vector
-        pprint("Creating embeddings matrix...")
         for line in embeddingsFile:
             features = line.split()
             token = features[0]
@@ -113,7 +113,9 @@ class Model:
         print("Test Loss:", score[0])
         print("Test Accuracy:", score[1])
 
-        # Plot cost vs accuracy graphs
+        self.plotGraph(history, type)
+
+    def plotGraph(self, history, type):
         plt.figure(figsize=(12, 5))
         plt.ylim(-0.1, 1.1)
         plt.plot(history.history['acc'])
