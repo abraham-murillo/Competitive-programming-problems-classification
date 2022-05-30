@@ -39,7 +39,7 @@ class Model:
 
         # Compress topics and create output vector
         for problemData in allProblems:
-            targetTopic = problemData["topics"][0]["id"]
+            targetTopic = problemData["topics"][0]
 
             if targetTopic not in topicMap:
                 topicMap[targetTopic] = len(topicMap)
