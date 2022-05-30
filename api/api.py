@@ -12,6 +12,7 @@ import utils
 from topicsStandardization import codeforcesToOmegaup
 from pprint import pprint
 
+import dummy
 
 cred = credentials.Certificate("serviceAccountKey.json")
 app = firebase_admin.initialize_app(cred)
@@ -26,29 +27,26 @@ def currentTime():
     return {"time": time.time()}
 
 
-# @app.route("/filteredText", methods=["POST"])
-# def getSomething():
-#     if request.method == "POST" and request.is_json:
-#         try:
-#            # do something
-#         except:
-#             return {"status": "error"}
-
-
 @app.route("/filteredText", methods=["POST"])
 def getFilteredText():
     text = request.get_json()
-    print(text)
+    # print(text)
 
     return {"filteredText": nlp.filterText(text)}
 
 
-def getAll():
+def getAllProblems():
     # TODO: Test if works u.u
+    topics = ['implementation', 'sortings', 'strings']
+
+    return dummy.getAllProblems(topics)
+    
     rawProblemsRef = db.collection("rawProblems")
     query = rawProblemsRef.limit(300)
     problems = query.stream()
     return [problem.to_dict() for problem in problems]
+
+# pprint(getAllProblems()[:5])
 
 
 model = ai.Model()
@@ -64,29 +62,26 @@ def getPredictedTopics():
 @ app.route("/tokenizer", methods=["POST"])
 def getTokens():
     text = request.get_json()
-    print(text)
+    # print(text)
 
     return {"tokens": nlp.tokenize(text)}
 
 
-@ app.route("/tfIdf", methods=["POST"])
+@app.route("/tfIdf", methods=["POST"])
 def getTfIdf():
     texts = request.get_json()
-    print(texts)
+    # print(texts)
 
     return {"tfIdf": nlp.tfIdf(texts)}
 
 
-@ app.route("/topics")
+@app.route("/topics")
 def getTopics():
     return {"topics": utils.topicsForReact(codeforcesToOmegaup.keys())}
 
 
 def addProblem(problemData):
     problemData["topics"] = utils.topicsForReact(problemData["topics"])
-
-    # Auto-generated id
-    # db.collection('rawProblems').add(problemData)
 
     # Custom id, url is unique :)
     id = utils.getProblemId(problemData["url"])
