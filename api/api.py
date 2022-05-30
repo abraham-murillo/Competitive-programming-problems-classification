@@ -45,7 +45,7 @@ def getAllProblems():
     problems = query.stream()
     return [problem.to_dict() for problem in problems]
 
-pprint(getAllProblems()[:5])
+# pprint(getAllProblems()[:5])
 
 
 @ app.route("/tokenizer", methods=["POST"])
