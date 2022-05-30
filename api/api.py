@@ -144,33 +144,29 @@ class Model:
         X_train = pad_sequences(X_train, padding='post', maxlen=self.maxLen)
         X_test = pad_sequences(X_test, padding='post', maxlen=self.maxLen)
 
+        # Create set of tokens
+        tokenIndex = {}
+
+        for word, index in self.tokenizer.word_index.items():
+            tokenIndex[word] = index
+
         # TODO: Find a place to store Word2Vect and use it here
-        embeddings = dict()
         embeddingsFile = open("/home/uriel/CUCEI/Word2VecEnglish.txt", "r")
-        it = 0
-
-        # Create embeddings dictionary. i.e every word is a vector
-        for line in embeddingsFile:
-            if (it == 1000):
-                break
-
-            it += 1
-            features = line.split()
-            word = features[0]
-            vector = asarray(features[1:], dtype='float32')
-            embeddings[word] = vector
-        pprint("wtf")
-        embeddingsFile.close()
         # TODO: Not sure about this number
         vocabSize = 10000
         embeddingMatrix = np.zeros((vocabSize, 300))
 
-        # Populate embedding matrix. i.e every index is a vector
-        for word, index in self.tokenizer.word_index.items():
-            embeddingVector = embeddings.get(word)
+        # Create embeddings matrix. i.e every word is a vector
+        for line in embeddingsFile:
+            features = line.split()
+            word = features[0]
 
-            if embeddingVector is not None:
-                embeddingMatrix[index] = embeddingVector
+            if word in tokenIndex:
+                pprint(word)
+                vector = asarray(features[1:], dtype='float32')
+                embeddingMatrix[tokenIndex[word]] = vector
+
+        embeddingsFile.close()
 
         # Train neural network
         embeddingLayer = Embedding(vocabSize, 300, weights=[
@@ -208,7 +204,7 @@ class Model:
 
 # Use DNN, CNN or LSTM to change model
 model = Model()
-# model.train("DNN")
+model.train("DNN")
 
 
 def instantiateQuery(text):
