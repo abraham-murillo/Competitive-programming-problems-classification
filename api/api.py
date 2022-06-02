@@ -8,7 +8,6 @@ from flask_restful import Api, Resource, reqparse
 
 import json
 import nlp
-import utils
 from topicsStandardization import codeforcesToOmegaup
 from pprint import pprint
 
@@ -36,8 +35,7 @@ def getFilteredText():
 
 
 def getAllProblems():
-    # TODO: Test if works u.u
-    topics = ['implementation', 'sortings', 'strings']
+    topics = ["implementation", "sortings", "strings"]
 
     return dummy.getAllProblems(topics)
 
@@ -46,6 +44,7 @@ def getAllProblems():
     problems = query.stream()
     return [problem.to_dict() for problem in problems]
 
+
 # pprint(getAllProblems()[:5])
 
 
@@ -53,13 +52,13 @@ model = ai.Model()
 model.train("CNN", getAllProblems())
 
 
-@ app.route("/predictedTopics", methods=["POST"])
+@app.route("/predictedTopics", methods=["POST"])
 def getPredictedTopics():
     text = request.get_json()
     return {"predictedTopics": model.getPredictedTopics(text)}
 
 
-@ app.route("/tokenizer", methods=["POST"])
+@app.route("/tokenizer", methods=["POST"])
 def getTokens():
     text = request.get_json()
     # print(text)
@@ -77,11 +76,21 @@ def getTfIdf():
 
 @app.route("/topics")
 def getTopics():
-    return {"topics": utils.topicsForReact(codeforcesToOmegaup.keys())}
+    return {"topics": codeforcesToOmegaup.keys()}
 
 
 def addProblem(problemData):
-    problemData["topics"] = utils.topicsForReact(problemData["topics"])
+    def getProblemId(url):
+        """
+        Returns problem id used in firebase
+        """
+        id = ""
+        url = url.split("/")
+        if "omegaup.com" in url:
+            id = f"omegaup-{url[-1]}"
+        elif "codeforces.com" in url:
+            id = f"codeforces-{url[-2]}{url[-1]}"
+        return id
 
     # Custom id, url is unique :)
     id = utils.getProblemId(problemData["url"])

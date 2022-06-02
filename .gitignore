@@ -27,6 +27,9 @@ yarn-error.log*
 .DS_Store
 
 venv
+.venv
 __pycache__
 
 .vscode
+
+get-pip.py
