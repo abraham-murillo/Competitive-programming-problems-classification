@@ -81,6 +81,21 @@ def filterText(text):
     text = re.sub(" +", " ", text)
     # Remove newlines
     text = text.replace("\n", "")
+    # Remove stopwords in spanish
+    spanishStopWords = ['a', 'acá', 'ahí', 'al', 'algo', 'algún', 'alguna', 'alguno', 'algunas', 'algunos', 'allá', 'allí', 'ambos', 'ante',
+                        'antes', 'aquel', 'aquella', 'aquello', 'aquellas', 'aquellos', 'aquí', 'arriba', 'así', 'atrás', 'aun', 'aunque',
+                        'bien', 'cada', 'casi', 'como', 'con', 'cual', 'cuales', 'cualquier', 'cualquiera', 'cuan', 'cuando', 'cuanto', 'cuanta',
+                        'cuantos', 'cuantas', 'de', 'del', 'demás', 'desde', 'donde', 'dos', 'el', 'él', 'ella', 'ello', 'ellas', 'ellos', 'en',
+                        'eres', 'esa', 'ese', 'eso', 'esas', 'esos', 'esta', 'esto', 'estas', 'estos', 'este', 'etc', 'ha', 'hasta', 'la', 'lo', 'las',
+                        'los', 'me', 'mi', 'mis', 'mía', 'mías', 'mío', 'míos', 'mientras', 'muy', 'ni', 'nosotras', 'nosotros', 'nuestra',
+                        'nuestro', 'nuestras', 'nuestros', 'os', 'otra', 'otro', 'otras', 'otros', 'para', 'pero', 'pues', 'que', 'qué', 'si', 'sí',
+                        'siempre', 'siendo', 'sin', 'sino', 'so', 'sobre', 'sr', 'sra', 'sres', 'sta', 'su', 'sus', 'te', 'tu', 'tus', 'un', 'una',
+                        'uno', 'unas', 'unos', 'usted', 'ustedes', 'vosotras', 'vosotros', 'vuestra', 'vuestro', 'vuestras', 'vuestros', 'y', 'ya',
+                        'yo']
+
+    for stopWord in spanishStopWords:
+        text = text.replace(" " + str(stopWord) + " ", " ")
+
     return text
 
 
