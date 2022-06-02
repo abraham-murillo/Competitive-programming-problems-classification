@@ -158,7 +158,6 @@ class Model:
         score = self.model.evaluate(X_test, Y_test, verbose=1)
         print("Test Loss:", score[0])
         print("Test Accuracy:", score[1])
-
         self.plotGraph(history, type)
 
     def plotGraph(self, history, type):
