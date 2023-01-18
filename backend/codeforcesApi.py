@@ -1,15 +1,13 @@
 import urllib.request
 
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium import webdriver
+from chromeDriver import getChromeDriver
 from bs4 import BeautifulSoup
 import pandas as pd
 
 import pprint
 import json
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
-
+driver = getChromeDriver()
 
 def getFrom(url):
     url = url.replace(" ", "%20")
