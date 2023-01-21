@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Game of the Year",
+    "url": "https://codeforces.com/problemset/problem/1783/E",
+    "history": "Monocarp and Polycarp are playing a computer game. This game features n bosses for the playing to kill, numbered from 1 to n . They will fight each boss the following way: Monocarp makes k attempts to kill the boss; Polycarp makes k attempts to kill the boss; Monocarp makes k attempts to kill the boss; Polycarp makes k attempts to kill the boss; . . . Monocarp kills the i - th boss on his a_ i - th attempt. Polycarp kills the i - th boss on his b_ i - th attempt. After one of them kills the i - th boss, they move on to the ( i+ 1) - st boss. The attempt counters reset for both of them. Once one of them kills the n - th boss, the game ends. Find all values of k from 1 to n such that Monocarp kills all bosses.",
+    "input": "The first line contains a single integer t ( 1 \u2264 t \u2264 10^ 4 ) \u2014 the number of testcases. The first line of each testcase contains a single integer n ( 1 \u2264 n \u2264 2 \u00b7 10^ 5 ) \u2014 the number of bosses. The second line contains n integers a_ 1, a_ 2, . . . , a_ n ( 1 \u2264 a_ i \u2264 n ) \u2014 the index of attempt Monocarp kills each boss on. The third line contains n integers b_ 1, b_ 2, . . . , b_ n ( 1 \u2264 b_ i \u2264 n ) \u2014 the index of attempt Polycarp kills each boss on. The sum of n over all testcases doesn' t exceed 2 \u00b7 10^ 5 .",
+    "output": "For each testcase, print two lines. The first line should contain a single integer cnt \u2014 the number of values of k from 1 to n such that Monocarp kills all bosses. The second line should contain cnt distinct integers \u2014 the values of k themselves.",
+    "note": "Consider the last testcase of the example. Let k = 1 . First, Monocarp makes one attempt to kill the first boss. It' s successful, since a_ 1 = 1 . Then, Monocarp makes one attempt to kill the second boss. It' s unsuccessful, since a_ 2 > 1 . So, Polycarp makes an attempt then. It' s also unsuccessful, since b_ 2 > 1 . Then, Monocarp makes another attempt. It' s still unsuccessful, since a_ 2 > 2 . This goes on until Polycarp finally kills the boss on his third attempt. Monocarp didn' t kill this boss, thus, k = 1 isn' t the answer. Let k = 2 . Monocarp still kills the first boss on his first attempt. Then, he makes two unsuccessful attempts for the second boss. Then, Polycarp makes two unsuccessful attempts. Then, Monocarp makes two more attempts and kills the boss on his fourth attempt. The third boss is similar. First, two unsuccessful attempts by Monocarp. Then, two unsuccessful attempts by Polycarp. Then, Monocarp has two more attempts, but even his first one is successful, since a_ 3 = 3 . The fourth boss is also killed by Monocarp. Thus, k = 2 is the answer.",
+    "topics": [
+      "brute force",
+      "data structures",
+      "math",
+      "number theory"
+    ]
+  },
+  {
+    "title": "Different Arrays",
+    "url": "https://codeforces.com/problemset/problem/1783/D",
+    "history": "You are given an array a consisting of n integers. You have to perform the sequence of n- 2 operations on this array: during the first operation, you either add a_ 2 to a_ 1 and subtract a_ 2 from a_ 3 , or add a_ 2 to a_ 3 and subtract a_ 2 from a_ 1 ; during the second operation, you either add a_ 3 to a_ 2 and subtract a_ 3 from a_ 4 , or add a_ 3 to a_ 4 and subtract a_ 3 from a_ 2 ; . . . during the last operation, you either add a_ n- 1 to a_ n- 2 and subtract a_ n- 1 from a_ n , or add a_ n- 1 to a_ n and subtract a_ n- 1 from a_ n- 2 . So, during the i - th operation, you add the value of a_ i+ 1 to one of its neighbors, and subtract it from the other neighbor. For example, if you have the array [ 1, 2, 3, 4, 5] , one of the possible sequences of operations is: subtract 2 from a_ 3 and add it to a_ 1 , so the array becomes [ 3, 2, 1, 4, 5] ; subtract 1 from a_ 2 and add it to a_ 4 , so the array becomes [ 3, 1, 1, 5, 5] ; subtract 5 from a_ 3 and add it to a_ 5 , so the array becomes [ 3, 1, - 4, 5, 10] . So, the resulting array is [ 3, 1, - 4, 5, 10] . An array is reachable if it can be obtained by performing the aforementioned sequence of operations on a . You have to calculate the number of reachable arrays, and print it modulo 998244353 .",
+    "input": "The first line contains one integer n ( 3 \u2264 n \u2264 300 ) . The second line contains n integers a_ 1, a_ 2, . . . , a_ n ( 0 \u2264 a_ i \u2264 300 ) .",
+    "output": "Print one integer \u2014 the number of reachable arrays. Since the answer can be very large, print its remainder modulo 998244353 .",
+    "note": " ",
+    "topics": [
+      "brute force",
+      "dp",
+      "implementation"
+    ]
+  }
+]
