@@ -1,0 +1,997 @@
+[
+  {
+    "title": "Asignaci\u00f3n de registros",
+    "url": "https://omegaup.com/arena/problem/Asignacion-de-registros",
+    "history": "Cierto procesador cuenta con veintiseis variables identificadas con letras de ` A` a ` Z` , con cinco registros identificados como ` r0` hasta ` r4` y con el siguiente conjunto de instrucciones: - ` IMPRIME ` V: Imprime el valor de la variable V. Tarda tres ciclos de reloj. - ` IMPRIME r` _ i: Imprime el valor del registro ` r` _ i. Tarda un ciclo de reloj. - ` CARGA r` _ i ` ` V: Carga el valor de la variable V al registro ` r` _ i. Tarda tres ciclos de reloj. Cuentas con una lista de instrucciones que contiene u\u0301nicamente instrucciones del primer tipo. Escribe un programa que produzca una lista de instrucciones cuya ejecucio\u0301n sea ma\u0301s ra\u0301pida que la ejecucio\u0301n de la lista original. Sabes de antemano que, en una instruccio\u0301n ` IMPRIME ` V, es exponencialmente ma\u0301s probable que V se refiera a una variable recientemente impresa que a una variable que hace mucho no se imprime.",
+    "input": "Una secuencia de li\u0301neas que debera\u0301n procesarse hasta el fin de la entrada y que denota la lista original de instrucciones. Puedes suponer que habra\u0301n entre 500 y 1000 li\u0301neas.",
+    "output": "Una secuencia de li\u0301neas que denote una lista de instrucciones optimizada. Tu programa sera\u0301 aceptado si la lista generada es sema\u0301nticamente equivalente y es al menos el doble de ra\u0301pido que la lista original. Se garantiza que un algoritmo gloto\u0301n cla\u0301sico resuelve el problema.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 16677
+  },
+  {
+    "title": "Mejor baraja",
+    "url": "https://omegaup.com/arena/problem/Mejor-baraja",
+    "history": "Tienes n cartas * * ordenadas* * a_ i, cada una tiene un di\u0301gito ( un entero entre 1 y 9) . Tu familia tiene una creencia de que siempre se debe sacrificar algo material para obtener la felicidad. De manera muy curiosa, un di\u0301a te encuentras con un presentador de shows que te dice lo siguiente: - Te dare\u0301 un entero k, si eliminas k cartas de tu baraja y unes las cartas restantes * * en su orden original* * , te llevara\u0301s esa misma cantidad de soles. Como crees que este es un sacrificio necesario, tu meta es eliminar k cartas de manera que la cantidad de soles que te lleves sea la ma\u0301xima posible.",
+    "input": "La primera li\u0301nea de entrada contiene dos enteros n y k, la cantidad de cartas y la cantidad de eliminaciones que debes realizar. La segunda li\u0301nea de entrada contiene n enteros a_ i separados por un espacio, el i- e\u0301simo de los enteros es la i- e\u0301sima carta.",
+    "output": "Imprime una sola li\u0301nea, la respuesta al problema.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 16380
+  },
+  {
+    "title": "Empanadas de Adri\u00e1n",
+    "url": "https://omegaup.com/arena/problem/Empanadas-de-Adrian",
+    "history": "Adria\u0301n es un amante de las empanadas. Un di\u0301a entra en una tienda de empanadas donde se venden N empanadas y esta\u0301 dispuesto a comprar ma\u0301ximo M de ellas. Cada empanada, aporta a_ i puntos de felicidad si Adria\u0301n llega a comer esta empanada y tiene un sabor b_ i. Adema\u0301s si es la primera vez que Adria\u0301n prueba ese sabor de empanada en su vida, obtendra\u0301 K puntos de felicidad adicionales. Habra\u0301n empanadas que tambie\u0301n son del desagrado de Adria\u0301n, siendo que le restari\u0301an puntos de felicidad si las come, de tan feo sabor que tienen. Dados los puntos de felicidad de cada empanada y su sabor, determina la mayor cantidad de puntos de felicidad que Adria\u0301n podra\u0301 obtener, siendo que inicialmente nunca ha probado ninguna de las empanadas de la tienda en su vida.",
+    "input": "En la primera li\u0301nea, primero un entero N representando el nu\u0301mero de empanadas disponibles, despue\u0301s un entero M representando el ma\u0301ximo nu\u0301mero de empanadas que Adria\u0301n esta\u0301 dispuesto a comprar, y un entero K, representando los puntos de felicidad adicionales, si Adria\u0301n come por primera vez un sabor de empanada que jama\u0301s habi\u0301a probado. En la segunda li\u0301nea con N enteros, los cua\u0301les describen al arreglo A y muestran la cantidad de puntos de felicidad que la empanada i aporta ( 1 < = i < = N) . En la tercera li\u0301nea con N enteros, los cua\u0301les describen al arreglo B y muestran los sabores de cada empanada i( 1 < = i < = N) .",
+    "output": "Imprime la mayor cantidad de puntos de felicidad que Adria\u0301n puede obtener comiendo a lo ma\u0301s M empanadas, posiblemente 0.",
+    "note": "",
+    "topics": [
+      "two pointers",
+      "greedy",
+      "sortings"
+    ],
+    "id": 15740
+  },
+  {
+    "title": "Subiendo niveles",
+    "url": "https://omegaup.com/arena/problem/Subiendo-niveles",
+    "history": "Se hizo una rifa para ver quie\u0301n tendri\u0301a la suerte de participar en un nuevo juego altamente interactivo, y tu\u0301 te llevaste el boleto ganador! # ProblemaEl juego consiste de N salas, que puedes visitar cuando quieras y como quieras. Inicialmente comienzas con un nivel de poder k, y todas las salas i tienen un nivel de poder x_ i. Si entras a una sala i cuyo poder es menor o igual al tuyo, entonces ganas esa sala, y tu nivel k aumenta la cantidad de poder x_ i del nivel. Por ejemplo, si tu nivel es 50, y entras a una sala de nivel 35, entonces al salir, tu nivel sera\u0301 85. Si entras a una sala y tu poder es ma\u0301s bajo que el de la sala, pierdes el juego, y tu puntuacio\u0301n final sera\u0301 el nivel final de poder que conseguiste. Sabiendo que puedes acceder a las salas en cualquier orden, calcula el ma\u0301ximo nivel que puedes alcanzar sin perder.",
+    "input": "Una li\u0301nea con dos enteros N, k, siendo la cantidad de salas, y tu nivel inicial de poder. En la segunda li\u0301nea, N enteros x_ i, describiendo el nivel de poder de cada sala.",
+    "output": "Un solo entero que contenga el nivel ma\u0301ximo que se puede alcanzar en el juego.",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 15676
+  },
+  {
+    "title": "Juntando amigos",
+    "url": "https://omegaup.com/arena/problem/Juntando-amigos",
+    "history": "Todos conocemos la Feria de Santa Rita, todos van a divertirse en grande, y al ser un evento tan importante para la ciudad, debemos asegurarnos de que todo este\u0301 muy bien organizado, para ello requerimos tu ayuda. # ProblemaGracias a los censos de poblacio\u0301n, sabemos que van a atender N personas a la feria, numeradas desde 1 hasta N y no solo eso, sino que todas estas personas van solas y no conocen a nadie ma\u0301s en la Feria. Tu trabajo consistira\u0301 en mantener registros de un total de Q actividades. Lo ma\u0301s importante en la feria son los juegos, y siendo una feria, las personas van a invitar a otros a subirse a un juego juntos, tras lo cual se vuelven amigos, concretamente, si la persona a invita a la persona b a subirse a un juego, siempre terminara\u0301n siendo amigos. Pero no siempre tienes que subirte a un juego con alguien para ser su amigo, basta con que alguno de tus amigos lo conozca. Asi\u0301 que cualquier persona que sea amigo de alguno de tus amigos, tambie\u0301n es tu amigo, aunque nunca te hayas subido a un juego con esa persona ( si a y b son amigos, y b y c tambie\u0301n son amigos, entonces siempre se cumplira\u0301 que a y c son amigos) . Los juegos no lo son todo en la feria, tambie\u0301n es muy importante la buena comida! Las personas se invitara\u0301n a comer unas a otras, pero solo aceptara\u0301n si ya son amigos, asi\u0301 que cuando una persona a invite a comer a la persona b, tienes que responder si aceptara\u0301 o no aceptara\u0301.",
+    "input": "* En la primera li\u0301nea dos enteros N y Q, la cantidad de personas en la feria, y la cantidad de actividades que se van a hacer. * En las siguientes Q li\u0301neas, primero un caracter x, seguido de dos enteros a y b* Cuando x es * * J* * , quiere decir que la persona a y la persona b se subieron a un juego juntos. * Cuando x es * * C* * , quiere decir que la persona a invito\u0301 a comer a la persona b",
+    "output": "Para cada vez que alguien invita a otra persona a comer, debes imprimir una li\u0301nea diciendo * * Amigos : ) * * si comieron juntos, o * * Desconocidos : ( * * si no comieron juntos.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 15675
+  },
+  {
+    "title": "Iluminando la Mina",
+    "url": "https://omegaup.com/arena/problem/Iluminando-la-Mina",
+    "history": "Al momento de hablar de videojuegos no puedes omitir hablar del juego ma\u0301s jugado de los u\u0301ltimos an\u0303os \u0308Minecraft \u0308. Por lo menos es lo que Santy dice. La parte favorita de Santy del juego consiste en minar. Esta es una actividad muy satisfactoria y desestresante. En el juego puedes buscar minas naturales que son generadas por el juego o artificiales que son minas que tu creas. La forma ma\u0301s eficiente de crear una mina artificial es haciendo una li\u0301nea recta. Lamentablemente al ser artificial no existe iluminacio\u0301n dentro de la mina. Sin embargo, existen artefactos llamados * * antorchas* * . Las antorchas son elementos que colocas en una posicio\u0301n x ( un bloque) e ilumina todas las posiciones [ x - k, x + k] donde k es el radio de iluminacio\u0301n de las antorchas. Por ejemplo, si el radio de iluminacio\u0301n es de 2 y colocas la antorcha en el bloque 10 entonces los bloques desde el 8 hasta el 12 van a quedar iluminados. Obviamente Santy quiere que toda su mina se encuentre iluminada. Pero otro dato a considerar es que muchas veces al crear las minas artificiales te encuentras con * * lugares interesantes* * . Adema\u0301s de querer iluminar toda su mina, Santy quiere que exista una antorcha en estos lugares interesantes para tener cierta * marca* de estos. # ProblemaSe tiene una mina unidimensional de N bloquees, numerados del 0 al N- 1. Dentro de la mina existen M lugares interesantes en los bloquees a_ 1, . . . , a_ M que requieren tener una antorcha. Teniendo en cuenta que el radio de iluminacio\u0301n de las antorchas es de k, ayuda a Santy a saber la mi\u0301nima cantidad de antorchas que santy necesita para iluminar toda su mina.",
+    "input": "Tres enteros N, M, k que representan la cantidad de bloquees en la mina, el nu\u0301mero de lugares interesantes y el radio de iluminacio\u0301n de las antorchas respectivamente. En la siguiente li\u0301nea se te dara\u0301n M enteros ordenados de menor a mayor que representan las posiciones de los lugares interesantes.",
+    "output": "La cantidad mi\u0301nima de antorchas necesarias para iluminar la mina",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 15263
+  },
+  {
+    "title": "Maximizando Puntos",
+    "url": "https://omegaup.com/arena/problem/Maximizando-Puntos",
+    "history": "Este an\u0303o la competencia a nivel nacional se celebro\u0301 de una forma diferente a como estamos acostumbrados. Cada estado podi\u0301a llevar la cantidad de participantes que quisiera. Yucata\u0301n decidio\u0301 llevar N alumnos. Antes de empezar el examen se le pide a cada estado entregar una lista con los estudiantes numerados del 1 al N ( donde N es la cantidad de participantes) . Despue\u0301s del examen cada estudiante obtiene una calificacio\u0301n a_ i. Uno pensari\u0301a que naturalmente la calificacio\u0301n del estado consiste en el promedio de las calificaciones de sus alumnos. Pero no es asi\u0301, olvidamos que los que organizan esta olimpiada les gustan las matema\u0301ticas tanto como a nosotros. Entonces decidieron hacer lo siguiente: - Cada estado va a elegir una subsecuencia contigua de al menos dos de sus estudiantes ( previamente numerados) . Es decir, van a elegir a los estudiantes desde una posicio\u0301n l hasta una posicio\u0301n r con 1 \u2264 l < r \u2264 N. - Una vez elegida la secuencia de estudiantes, el puntaje del estado queda determinado por max( a_ l, . . . , a_ r) \u00d7min ( a_ l, . . . , a_ r) . Es decir, se toman al que obtuvo calificacio\u0301n ma\u0301s alta y ma\u0301s baja de esa subsecuencia y los multiplican. Obviamente el estado de Yucata\u0301n quiere obtener la mayor cantidad de puntos posibles. Ayu\u0301dalos a conocer este dato. # ProblemaSe te dara\u0301 la secuencia con las calificaciones que obtuvo cada estudiante a_ i y debes determinar cua\u0301l es la mayor cantidad de puntos que se pueden obtener calculando la calificacio\u0301n como se menciono\u0301 la descripcio\u0301n.",
+    "input": "Un numero N indicando la cantidad de estudiantes, seguido se te dara\u0301n N nu\u0301meros en donde la posicio\u0301n i indica la calificacio\u0301n del estudiante a_ i.",
+    "output": "Un u\u0301nico entero denotando la calificacio\u0301n ma\u0301xima que se puede obtener. # Ejemplos| | input31 3 2| | output6| | descriptionLas posibles secuencias que podemos elegir son: [ 1, 3, 2] , [ 1, 3] , [ 3, 2] . De todas estas aquella con mayor calificacio\u0301n es [ 3, 2] con una calificacio\u0301n de 6 puntos. | | input51 1 1 1 1| | output1| | input269 69| | output4761| | end# Limites* * Para 25",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 15089
+  },
+  {
+    "title": "Secuencias geniales",
+    "url": "https://omegaup.com/arena/problem/Secuencias-geniales",
+    "history": "Decimos que una secuencia es genial para un dado entero positivo x, si podemos partirla en pares de nu\u0301meros tal que el primer nu\u0301mero del par multiplicado por x es igual al segundo. En una secuencia genial no importa el orden de los pares, es decir, todas las permutaciones de una secuencia genial siguen siendo geniales para un dado x. Le contaste sobre estas secuencias a tu amigo, y ahora necesita tu ayuda para construir varias secuencias geniales. Cada secuencia tiene N_ i nu\u0301meros, y su propio nu\u0301mero x, e\u0301l quiere convertir estas secuencias en geniales, para hacer eso puede comprar nuevos enteros positivos y agregarlos a la secuencia, pero es bien sabido que los enteros positivos son muy caros, asi\u0301 que quiere saber la menor cantidad de nu\u0301meros que necesita comprar para transformar cada secuencia en genial ( puede que necesite comprar 0 nu\u0301meros) .",
+    "input": "En la primera li\u0301nea un entero t, la cantidad de secuencias que tiene tu amigo. En la primera li\u0301nea de cada secuencia, dos enteros N y x, el taman\u0303o de la secuencia de tu amigo y el nu\u0301mero x que escogio\u0301. En la segunda li\u0301nea de cada secuencia, N enteros a_ i, los numeros que tu amigo ya tiene.",
+    "output": "Imprime la mi\u0301nima cantidad de nu\u0301meros que debe comprar para transformar todas sus secuencias en geniales.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14880
+  },
+  {
+    "title": "Hidden Number",
+    "url": "https://omegaup.com/arena/problem/Hidden-Number",
+    "history": "# DescriptionAs you know, Santiago is an expert summing numbers, this time he issumming numbers from a list L of N positive integer numbers, not necessarily different. He likes to performsums so much that he selects an integer X and looks for a subsequenceof S from L such that the sum of the elements of S equalsX. For example, if the list is ( 10, 3, 1, 2, 2, 4) , and X= 14, then, Santiagocan take the subsequences ( 10, 3, 1) , ( 10, 4) , or ( 10, 2, 2) since 10 + 3 + 1 = 10 + 4 = 10 + 2 + 2 = 14. Santiago has noticed there may be some values for X for which he can choose multiple differentsubsequences S, however, you have pointed out that there also exist some values for X for whichno possible subsequence S exists. Santiago does not believe you, thats why he wants you to findthe smallest possible value for X for which no subsequence S exists in his list.",
+    "input": "The first line of the input contains an integer N ( 1 \u2264 N \u2264 10^ 6) , representing the number of elements in the list. The second and last line in the inputcontains N numbers separated by a space between, the numbers in the list, each numberwill have a value between 1 and 10^ 6.",
+    "output": "Print a line with containing an integer indicating the smallest positive integer value for X such that Santiago can not find a subsequence S. # Example| | input21 1| | output3| | input53 2 5 4 10| | output1| | end",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14811
+  },
+  {
+    "title": "Conversor de decimal a otras bases",
+    "url": "https://omegaup.com/arena/problem/Conversor-de-decimal-a-otras-bas",
+    "history": "Dada una base b ( 2 \u2264 b \u2264 36) y un nu\u0301mero entero positivo n en base decimal de 32 bits, expresa el entero n en la base b.",
+    "input": "Un entero T ( 0 \u2264 T\u2264100) , que representa el nu\u0301mero de casos de prueba. Por cada caso de prueba, dos valores b y n.",
+    "output": "El valor de n en la base b por cada caso de prueba, expresado con di\u0301gitos de 0- 9 y caracteres A- Z ( mayu\u0301sculas) .",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14712
+  },
+  {
+    "title": "Peones",
+    "url": "https://omegaup.com/arena/problem/ofmi-2022-peones",
+    "history": "Durante su primer an\u0303o de secundaria Maeva Jane Watson se inscribio\u0301 al club de ajedrez de su escuela. El ajedrez era un juego que desde su infancia le llamaba la atencio\u0301n, pero que nunca habi\u0301a intentado. Desde las primeras semanas en el club, Maeva desarrollo\u0301 una habilidad estrate\u0301gica y anali\u0301tica extraordinaria que la llevaron a destacar sobre los dema\u0301s estudiantes del club y a los pocos meses ganar el campeonato anual estatal de ajedrez, el cual defendio\u0301 por los siguientes dos an\u0303os consecutivos. Lorena Stacy, su maestra de ajedrez, decidio\u0301 ponerle un nuevo reto, el cual consiste en lo siguiente: Tienes un tablero de ajedrez de N filas y M columnas. En el tablero hay M peones de color negro, exactamente uno en cada columna; cada peo\u0301n negro puede estar en cualquier posicio\u0301n a lo largo de su columna. En el tablero tambie\u0301n hay solo un peo\u0301n de color blanco que se encuentra en la esquina inferior izquierda. Dadas las posiciones iniciales de los peones negros y la posicio\u0301n final deseada del peo\u0301n blanco, ayuda a MJ Watson a saber si es posible que el peo\u0301n blanco pueda llegar desde la esquina inferior izquierda a su posicio\u0301n final deseada. Los peones se pueden mover de dos formas ( como en una partida de ajedrez) : - Si la casilla de enfrente esta\u0301 libre ( no hay ningu\u0301n peo\u0301n) , se puede mover el peo\u0301n u\u0301nicamente una posicio\u0301n hacia delante. - Una posicio\u0301n en diagonal ( hacia delante, ya sea izquierda o derecha) cuando pueden capturar a un peo\u0301n enemigo. Cuando esto sucede, el peo\u0301n enemigo se descarta del tablero. El frente de los peones negros es la parte inferior del tablero y el frente del peo\u0301n blanco es la parte superior del tablero. Puedes mover los peones ( negros o blanco) en el orden que quieras ( no se respeta un movimiento por turnos) . Mover un peo\u0301n ya sea hacia delante o en diagonal, cuenta como 1 movimiento. # ProblemaTu tarea es determinar el mi\u0301nimo nu\u0301mero de movimientos de peones que se necesitan para que el peo\u0301n blanco llegue de su posicio\u0301n inicial a su posicio\u0301n final. En caso de que no exista un camino posible para el peo\u0301n blanco, imprime - 1.",
+    "input": "- En la primera li\u0301nea dos enteros separados por un espacio, N y M que representan la cantidad de filas y columnas del tablero respectivamente. - En las siguientes li\u0301neas una matriz de N* M enteros separados por un espacio que representan la configuracio\u0301n inicial del tablero. ( 0 representa espacio libre y 1 representa la posicio\u0301n de un peo\u0301n negro. ) - Finalmente, dos enteros separados por un espacio, X y Y que representan la fila y columna respectivamente de la posicio\u0301n final deseada para el peo\u0301n blanco. * * NOTA: * * La coordenada ( 1, 1) es la posicio\u0301n de la esquina superior izquierda del tablero.",
+    "output": "Un entero con el nu\u0301mero mi\u0301nimo de movimientos de peo\u0301n que necesitas para llevar al peo\u0301n blanco de su posicio\u0301n inicial a su posicio\u0301n final o - 1 en caso de que no se pueda.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14530
+  },
+  {
+    "title": "Creando Personaje",
+    "url": "https://omegaup.com/arena/problem/Creando-Personaje",
+    "history": "Almendro acaba de comprarse un nuevo videojuego donde puede crear un personaje y completar misiones. El personaje tiene 10 atributos a los cuales puede asignarle puntos. En el inicio del juego, e\u0301l tiene m puntos los cuales puede repartir libremente entre todos los atributos de su personaje. Todas las misiones son secuenciales, y deben ser terminadas en un orden en especi\u0301fico, ninguna puede ser saltada o completada sin primero haber terminado todas las misiones previas. Cada misio\u0301n tiene ciertos requisitos para ser completada, el personaje debe tener un mi\u0301nimo de puntaje de atributos para completarla. La compan\u0303i\u0301a que desarrollo\u0301 el videojuego vende puntos por separadolos cuales pueden ser asignados a los atributos del personaje. El juego es muy difi\u0301cil y Almendro sospecha que es imposible terminarlo sin comprar puntos extra. Por desgracia Almendro ya jugo\u0301 durante 0. 0023 segundos y ya no es elegible para un reembolso. Ha decidido ver que\u0301 tan lejos puede avanzar en el videojuego. Quiere saber como debe distribuir los puntos en los atributos de su personaje para asi\u0301 llegar lo ma\u0301s lejos posible. Por fortuna e\u0301l sabe de antemano los requisitos para cada misio\u0301n, por lo que le es posible formular una estrategia.",
+    "input": "En la primer li\u0301nea un nu\u0301mero 2\u2264 m \u2264 100 los puntos que Almendro puede distribuir entre los 10 atributos de su personaje. En la segunda li\u0301nea un nu\u0301mero 1\u2264 n \u2264 1e5 la cantidad de misiones en el videojuego. Cada una de las siguientes n li\u0301neas describe una misio\u0301n del videojuego, en el orden que deben ser completadas. La descripcio\u0301n consiste de 10 enteros 0\u2264 a_ i \u2264 m separados por espacios, el i- e\u0301simo entero representa el puntaje mi\u0301nimo que el personaje debe tener en el i- e\u0301simo atributo para pasar la misio\u0301n. El personaje debe cumplir todos los requisitos para poder cumplir con la misio\u0301n y seguir adelante.",
+    "output": "Imprime dos li\u0301neas. En la primer li\u0301nea la cantidad de misiones que es posible completar asumiendo que el personaje sera\u0301 creado o\u0301ptimamente. En la segunda li\u0301nea imprimir 10 enteros, la descripcio\u0301n del personaje, el i- e\u0301simo entero es el valor que tiene el i- e\u0301simo atributo. Recuerda que la suma de estos valores no puede exceder m. Si existen mu\u0301ltiples formas de crear este personaje, puedes imprimir cualquiera.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14500
+  },
+  {
+    "title": "Bob Rossado",
+    "url": "https://omegaup.com/arena/problem/Bob-Rossado",
+    "history": "Bob Rossado tiene un muro el cual le encargaron para que pintase. Un pintor anterior dejo\u0301 el trabajo a medias y ahora e\u0301l debe repararlo. El muro es un cuadrado ( la base y altura son iguales) y esta\u0301 dividido en secciones de 1x1. Algunas de estas secciones esta\u0301n pintadas y otras no. Bob quiere terminar de pintar el muro con un solo brochazo. E\u0301l escogera\u0301 un segmento cuadrado del muro y lo pintara\u0301 con un solo movimiento. El segmento que elija debe tener la misma altura y base ( porque es un cuadrado) . Como esto implica que muy probablemente termine pintando secciones que ya estaban pintadas, terminara\u0301 gastando pintura, asi\u0301 que le interesa escoger el cuadrado ma\u0301s pequen\u0303o posible. Ayu\u0301dale a saber el a\u0301rea de este cuadrado y la cantidad de celdas que ya estaban pintadas pero volvio\u0301 a pintar. Esta\u0301 garantizado que habra\u0301 por lo menos una celda sin pintar.",
+    "input": "En la primer li\u0301nea un nu\u0301mero 2\u2264 n \u2264 1e3 el taman\u0303o de uno de los lados del muro. En cada una de las siguientes n li\u0301neas habra\u0301 una cadena de exactamente n caracteres. Estos caracteres pueden ser ' . ' o ' # ' significando una celda vaci\u0301a y una pintada respectivamente.",
+    "output": "Imprime dos enteros en una sola li\u0301nea separados por un solo espacio, el a\u0301rea mi\u0301nima del cuadrado a escoger para pintar, y la cantidad de celdas ya pintadas que Bob repintara\u0301 respectivamente.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14494
+  },
+  {
+    "title": "List\u00f3n",
+    "url": "https://omegaup.com/arena/problem/Liston",
+    "history": "Nepomuceno tiene un listo\u0301n largo de tres colores, rojo ( R) , verde ( G) y azul ( B) . Puedes visualizar el listo\u0301n como una secuencia de colores ( ej. RRBGR) . A Nepomuceno no le gusta la variedad y quiere hacer adornos de un solo color con el listo\u0301n. Como quiere hacer el adorno mas grande posible, necesitara\u0301 el trazo de listo\u0301n mas largo compuesto del mismo color. Ayu\u0301dale a saber de que\u0301 color y que\u0301 tan largo sera\u0301 este trozo.",
+    "input": "En la primer li\u0301nea un entero impar 3\u2264 n \u2264 1e5. El taman\u0303o del listo\u0301n. En la segunda li\u0301nea una cadena de n caracteres donde el i- e\u0301simo caracter sera\u0301 ' R' , ' G' o ' B' .",
+    "output": "En una sola li\u0301nea, separados por un espacio, imprime un caracter y un entero. El color del trazo de listo\u0301n ma\u0301s largo y su taman\u0303o. Si existen mu\u0301ltiples respuestas, dale prioridad al trazo de listo\u0301n que se encuentre ma\u0301s \" A la izquierda\"",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14340
+  },
+  {
+    "title": "Chismes",
+    "url": "https://omegaup.com/arena/problem/Chismes",
+    "history": "Parte de nuestra naturaleza humana es darle duro al chisme. \u00bfA quien? A quien nos quede al alcance de la mano. . . o, ma\u0301s bien, \u00a1de la boca! Considera una matriz de personas; definimos a dos personas \" al alcance\" una de la otra si esta\u0301n adyacentes ( al norte, al sur, al este o al oeste) la una de la otra. ! [ Ejemplos] ( samples. jpg) En la imagen, la persona p no podra\u0301 pasarle el chisme a ninguna de las personas 1, 2, 3 o 4. En cambio, la persona q puede pasarle el chisme a las personas 5, 6, 7 y 8. Desde luego, cada persona que recibe el \" chisme fresco\" pasa, a su vez, a difundirlo a todas las personas a su alcance. Debera\u0301s hacer un programa que, para cada matriz de personas de su entrada ( primero el nu\u0301mero de renglones, luego el nu\u0301mero de columas y finalmente los valores 0 para \" vaci\u0301o\" y 1 para \" persona\" ) imprima en su salida el nu\u0301mero mi\u0301nimo de personas a las que se les deberi\u0301a \" sembrar\" el chisme para que todas las dema\u0301s acaben entera\u0301ndose.",
+    "input": "Matrices binarias con la dimensio\u0301n por delante; puedes contar con que las dimensiones son enteros estrictamente positivos no mayores que 100; cada 1 en la matriz indica la presencia de una persona.",
+    "output": "Por cada matriz, un entero no negativo: el menor nu\u0301mero de personas a quienes hay que dar el chisme para que se encarguen de difundirlo a sus adyacentes; que e\u0301stos divulguen el chisme a sus adyacentes; y asi\u0301 sucesivamente hasta que el chisme termine siendo del dominio pu\u0301blico. | | input4 31 0 10 1 11 1 01 0 1| | output3| | descriptionCon sembrar el chisme en la persona de arriba a la izquierda, la de abajo a la derecha y alguna otra ( no importa quie\u0301n) es suficiente. | | input3 31 1 01 0 10 1 12 51 0 1 1 11 1 1 0 1| | output21| | descriptionDos matrices. | | end",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14316
+  },
+  {
+    "title": "Viaje al espacio",
+    "url": "https://omegaup.com/arena/problem/Viaje-al-espacio",
+    "history": "Desde pequen\u0303o, Pedro siempre quiso volar, llegar ma\u0301s alla\u0301 del cielo, alcanzar las estrellas; esto se debe a que su papa\u0301 era un gran piloto de avio\u0301n y por tanto e\u0301l queri\u0301a superarlo, logrando llegar al espacio. Debido a las limitaciones fi\u0301sicas que teni\u0301a por ser humano, decidio\u0301 ponerse manos a la obra para fabricar un coche que fuera capaz de volar y asi\u0301 cumplir su mayor ilusio\u0301n. Despue\u0301s de mucho tiempo estudiando la ingenieri\u0301a necesaria para hacerlo posible, y despue\u0301s de muchos intentos fallidos, Pedro casi ha logrado terminar de construir, el vehi\u0301culo: solo le falta el motor, el volante y las cuatro llantas ( tampoco le ha instalado los frenos, pero e\u0301l cree que no los necesitara\u0301) . Muchas tiendas alrededor tienen las piezas que necesita, pero como no quiere perder tiempo ni caminar mucho, decide que solo va a ir a una tienda, la que le salga ma\u0301s barata en total. \u00bfPuedes ayudarle a decidir a que\u0301 tienda deberi\u0301a ir para que le salga lo ma\u0301s econo\u0301mico posible?",
+    "input": "Un entero t que representa la cantidad de tiendas. Luego, t li\u0301neas con 3 enteros cada una separados por un espacio que representan los precios del motor, del volante y de cada llanta en la i- e\u0301sima tienda. Las tiendas se enumeran del 1 al t segu\u0301n el orden de aparicio\u0301n en la entrada del problema.",
+    "output": "Un entero que representa a la tienda que ofrece el precio ma\u0301s barato en total. Si hay un empate en el precio total ma\u0301s bajo, se debe elegir la tienda con el nu\u0301mero ma\u0301s bajo.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 14130
+  },
+  {
+    "title": "ONI 2021",
+    "url": "https://omegaup.com/arena/problem/OIEC_2021",
+    "history": "Ha comenzado la ONI 2021 y con la emocio\u0301n se habi\u0301a vuelto tendencia publicar en las redes la palabra \" OOOIIEEECC! ! ! \" con cada vez ma\u0301s letras. Mientras se acercaba la fecha, eran cada vez ma\u0301s las personas que publicaban y comentaban, de tal forma que se saturaron todos los servidores de Facebook e Instagram. Para que esto no suceda nuevamente, los propietarios de la redes tomaron cartas en el asunto y decidieron plantear las siguientes reglas: - Solo se pueden publicar comentarios que contengan cinco enteros. - Los enteros deben estar en li\u0301neas distintas. En seguida, los participantes y seguidores de la OIEC aprovecharon esta medida para seguir expresando su emocio\u0301n y ahora escriben mensajes con cinco enteros: k< sub> o< / sub> , k< sub> i< / sub> , k< sub> e< / sub> , k< sub> c< / sub> , k< sub> ! < / sub> , indicando el nu\u0301mero de caracteres \" O\" , \" I\" , \" E\" , \" C\" y \" ! \" respectivamente. Dado un conjunto de comentarios de los seguidores de la OIEC, tu tarea consiste en decodificarlos todos. # # Ejemplo: | | input12345| | outputOIIEEECCCC! ! ! ! ! | | descriptionSe imprime cada letra de la palabra \" OIEC! \" con el nu\u0301mero de repeticiones especificado. | | end",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 13814
+  },
+  {
+    "title": "En busca de la mayor diversi\u00f3n",
+    "url": "https://omegaup.com/arena/problem/edm2021n1-diversion",
+    "history": "Nicola\u0301s es un nin\u0303o muy caprichoso y sabe que su mama\u0301 hara\u0301 lo posible por mantenerlo feliz. Nicola\u0301s suele aprovecharse de este hecho ( por favor, no seas como Nicola\u0301s) . Cada vez que Nicola\u0301s y su mama\u0301 van a hacer las compras, el nin\u0303o exige que se le compren N juguetes. Normalmente termina ocurriendo, pero esta vez, la madre se puso firme y le dijo a Nicola\u0301s que no le comprara\u0301 N juguetes, sino solamente N - 1. Es decir, si siempre le compraba 5 juguetes, esta vez le comprari\u0301a solo 4. Nicola\u0301s esta\u0301 en una situacio\u0301n difi\u0301cil y necesita conseguir la mayor diversio\u0301n posible. Cada juguete tiene un nivel de diversio\u0301n y la diversio\u0301n final es la suma de los niveles de diversio\u0301n de los juguetes adquiridos. Tu trabajo es conseguir la mayor diversio\u0301n posible.",
+    "input": "* Una li\u0301nea con la cantidad N de juguetes que eligio\u0301 inicialmente Nicola\u0301s. * N li\u0301neas, cada una con el nivel de diversio\u0301n de un juguete.",
+    "output": "Una li\u0301nea con la mayor diversio\u0301n posible habiendo dejado exactamente un juguete sin comprar ( puede ser cualquiera, siempre y cuando la diversio\u0301n obtenida sea la mayor posible) .",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 13769
+  },
+  {
+    "title": "Espada m\u00e1gica",
+    "url": "https://omegaup.com/arena/problem/Espada-magica",
+    "history": "Esta\u0301s jugando un videojuego en el mundo ma\u0301gico de Magialandia. Quieres comparte una espada muy poderosa, pero es muy cara. Por fortuna en este mundo hay muchas misiones donde te recompensan con dinero. Como te urge tener esa espada, quieres hacer la mi\u0301nima cantidad de misiones y asi\u0301 comprarla lo ma\u0301s pronto posible. Determina cuantas misiones como mi\u0301nimo tendra\u0301s que completar para juntar suficiente dinero para tu espada ma\u0301gica.",
+    "input": "En la primer li\u0301nea un entero 2\u2264 n \u2264 1e6, la cantidad de misiones disponibles. En la segunda li\u0301nea hay n nu\u0301meros 1 \u2264 a_ i \u2264 1e6 la cantidad de oro que da la i- e\u0301sima misio\u0301n. En la tercer li\u0301nea un entero 1 \u2264 q \u2264 1e5 la cantidad de casos de prueba. En las siguientes q li\u0301neas hay un entero 1\u2264 m \u2264 1e12 el precio de la espada en cada caso de prueba.",
+    "output": "q enteros cada uno en una li\u0301nea distinta. Cada entero es la mi\u0301nima cantidad de misiones que deben ser completadas para obtener suficiente oro para comprar la espada en el caso de prueba correspondiente. En caso de que sea imposible juntar suficiente oro aun completando todas las misiones, imprimir \" - 1\" sin comillas.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "binary search"
+    ],
+    "id": 13542
+  },
+  {
+    "title": "D\u00eda lluvioso",
+    "url": "https://omegaup.com/arena/problem/Dia-lluvioso",
+    "history": "El Sr. Bigotes estaba de regreso a casa cuando de repente, comenzo\u0301 a llover, atrapado en la lluvia solicita tu ayuda. El se encuentra en una banqueta b en la posicio\u0301n b_ 0, delante de e\u0301l se encuentran algunos charcos de agua, representados con un 1 y zonas secas, representadas con un 0. Como el Sr. Bigotes es un gato y no le gusta mojarse las patitas evitara\u0301 a toda costa los charcos de agua, e\u0301l decide moverse a saltos, pudiendo saltar a lo ma\u0301s l casillas. Ayu\u0301dalo a llegar a su casa que se encuentra en la posicio\u0301n b_ n+ 1 dando el menor nu\u0301mero de saltos posibles.",
+    "input": "Un entero n que es el largo de la acera, seguido de n nu\u0301meros, los cuales pueden ser 0 o 1.",
+    "output": "Si el Sr. Bigotes puede llegar sin mojarse a su casa, imprimir < kbd> Victoria aplastante! < / kbd> , y despue\u0301s en otra li\u0301nea < kbd> Saltos: < / kbd> seguido del nu\u0301mero de saltos totales que dio, en caso de no haber llegado a casa sin mojarse, debera\u0301s imprimir < kbd> Sr. Bigotes nooo! < / kbd> .",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 13262
+  },
+  {
+    "title": "Yu-Gi-Oh!",
+    "url": "https://omegaup.com/arena/problem/Yu-Gi-Oh",
+    "history": "Jorge se encontraba jugando Yu- Gi- Oh! con sus n cartas cuando de pronto adquirio\u0301 un poder que le permiti\u0301a ver el nivel de cada carta en su pila de cartas ( deck) . Las cartas esta\u0301n numeradas de 1 a n desde el fondo hasta la cima de la pila. El deck esta\u0301 representado por un arreglo con las puntuaciones p_ i ( 1 \u2264 i \u2264 n) de cada carta. La carta con puntuacio\u0301n p_ 1 esta\u0301 en el fondo y la carta con puntuacio\u0301n p_ n esta\u0301 en la cima. Jorge esta\u0301 a punto de revolver su deck, por lo que quiere utilizar este poder para maximizar la fuerza de su deck y vencer a Santy, su malvado oponente. La fuerza del deck se define como: \u2211_ i= 1^ n n^ n - i\u00b7 p_ i Jorge revuelve su deck de la siguiente manera: - Elige un entero k ( 0 < k) . - Toma las primeras k cartas de la cima de su deck y las pone, en el orden en el que esta\u0301n, en la cima de una segunda pila que va a ser su deck revuelto. - Repite el proceso hasta que no queden cartas en su deck original. Por ejemplo, si el deck es 1 2 3 4 5, puede revolverlo de la siguiente manera: - k = 1: se toma la primer carta de la cima del deck original y se ponen en la cima del segundo deck. - Original: 1 2 3 4- Segundo: 5- k = 3: se toman las primeras 3 cartas de la cima del deck original y se ponen en la cima del segundo deck. - Original: 1- Segundo: 5 2 3 4- k = 1: se toma la primer carta de la cima del deck original y se ponen en la cima del segundo deck. - Original: - Segundo: 5 2 3 4 1Jorge sabe que eres un buen programador y quiere ganar a toda costa, por lo que te ha pedido que le ayudes a revolver su deck y calcules la fuerza obtenida. # ProblemaDado un arreglo con las puntuaciones p_ i de las n cartas del deck de Jorge ( desde el fondo hasta la cima) , revuelve el deck y calcula la fuerza obtenida. El puntaje obtenido para cada caso sera\u0301 mayor si tu respuesta se acerca a la fuerza ma\u0301xima posible, o menor si se aleja de la fuerza ma\u0301xima posible. Si imprimes la ma\u0301xima fuerza posible, obtendra\u0301s todos los puntos.",
+    "input": "En la primera li\u0301nea un entero n, la cantidad de cartas del deck de Jorge. En la segunda li\u0301nea, n enteros p_ i, las puntuaciones de cada carta empezando por el fondo y terminando en la cima del deck.",
+    "output": "Una li\u0301nea con un entero indicando la fuerza calculada, mo\u0301dulo 10^ 9 + 7.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "number theory",
+      "sortings",
+      "math",
+      "greedy"
+    ],
+    "id": 13002
+  },
+  {
+    "title": "Wena jugadora",
+    "url": "https://omegaup.com/arena/problem/Wena-jugadora",
+    "history": "Wen adora jugar videojuegos y u\u0301ltimamente esta\u0301 obsesionada con uno en especi\u0301fico. Su historia la cautivo\u0301 tanto que quiere terminarlo lo antes posible, pero tiene dos inconvenientes; Primero, segu\u0301n su mama\u0301, no es sano que juegue tantas horas y segundo, ella tiene una extran\u0303a fobia a los nu\u0301meros compuestos. Asi\u0301 que decidio\u0301 que no jugara\u0301 ma\u0301s de 10 horas por di\u0301a y tampoco jugara\u0301 alguna cantidad compuesta de horas. Un nu\u0301mero compuesto, es cualquier nu\u0301mero que se puede representar como la multiplicacio\u0301n de dos nu\u0301meros, donde ninguno de los dos es 1, por ejemplo 21 = 3 x 7, 25 = 5 x 5. Por otro lado, 11 no es un nu\u0301mero compuesto porque no hay dos nu\u0301meros donde ninguno sea 1, que al multiplicarse el resultado sea 11. Ayuda a Wen a saber la mi\u0301nima cantidad de di\u0301as que necesita para terminar su videojuego.",
+    "input": "La primera li\u0301nea contendra\u0301 un entero 1\u2264 t \u2264 100, el nu\u0301mero de casos de prueba. Despue\u0301s t li\u0301neas con un entero 1\u2264 n \u2264 1e7, el nu\u0301mero de horas que restan del videojuego.",
+    "output": "t li\u0301neas distintas con la cantidad mi\u0301nima de di\u0301as que son necesarios para terminar su videojuego, en cada caso.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 12926
+  },
+  {
+    "title": "Explorando un nuevo mundo",
+    "url": "https://omegaup.com/arena/problem/Explorando-un-nuevo-mundo",
+    "history": "# HistoriaUna enfermedad mortal amenaza la vida de la tierra. Esta enfermedad convierte a los humanos en murcielagos. La grandes naciones se han unido para encontrar una cura a esto. Los grandes cientificos se dieron cuenta que la cura jama\u0301s sera\u0301 hallada en la tierra, asi\u0301 que decidieron explorar nuevas tierras. La OMI ( Organizacio\u0301n Mundial Interespacial) mando una nave con un gran nu\u0301mero de pasajeros para explorar cierto planeta. Las grandes mentes decidieron dividir a los tripulantes en grupos. El problema es que unas personas tienen menos experiencia que los otros. Cierto tripulante cuenta con una inexperiencia e_ i, esto significa que debe estar en un grupo con * * por lo menos* * e_ i personas. # ProblemaLos cientificos quieren explorar rapido el planeta; por lo cua\u0301l, les conviene tener bastantes grupos. Ayudar a los cientificos a saber cua\u0301l es la cantidad ma\u0301xima de grupos que pueden obtener. * * Nota: * * No es necesario que todas las personas este\u0301n en un grupo. Pueden haber personas que se queden en la nave.",
+    "input": "Se te dara\u0301 un nu\u0301mero N que indica la cantidad de personas que hay en la nave. Seguido se te dara\u0301 una lista de N nu\u0301meros e_ i que indica el nivel de * * inexperiencia* * de cada tripulante",
+    "output": "Un u\u0301nico nu\u0301mero representado la cantidad ma\u0301xima de grupos que se pueden hacer. # Ejemplos| | input52 3 1 2 2| | output2| | descriptionPodemos dejar a la persona con inexperiencia 3 en la navey los grupos seri\u0301an 1, 2 y 2, 2. Los grupos estan bienformados porque en cada grupo no hay un persona que tenga menospersonas que la experiencia de los integrantes. Adema\u0301s se puedever que es el mayor nu\u0301mero de grupos que se pueden hacer. | | input42 2 1 1| | output3| | end# Limites* * Para un 10",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 12705
+  },
+  {
+    "title": "\u00bfLe brind\u00e9 un buen servicio?",
+    "url": "https://omegaup.com/arena/problem/Le-brinde-un-buen-servicio-hoy",
+    "history": "Melanie consiguio\u0301 un nuevo trabajo como cajera en un banco. Ella esta\u0301 muy emocionada porque asi\u0301 tendra\u0301 dinero para invitar a Adriana a un lujoso restaurante. Sin embargo, Melanie es pe\u0301sima en su trabajo lo cual preocupa a Alonso, su supervisor, quie\u0301n a pesar de que odia a Adriana y quisiera ver que Melanie sea despedida, debe mejorar la situacio\u0301n o sera\u0301 e\u0301l quie\u0301n sea despedido. Alonso no es tonto, asi\u0301 que le pide a cada cliente que diga que\u0301 tra\u0301mite realizara\u0301 para asi\u0301 poder decirle cua\u0301nto tiempo demorara\u0301 su tra\u0301mite. Con esta informacio\u0301n crea una lista con el tiempo que demorara\u0301 cada cliente en sus tra\u0301mites, la cual puede servir a Melanie para mejorar las cosas. Alonso le da la lista a Melanie y le dice que la despedira\u0301 si no optimiza el funcionamiento de la cola. Melanie se da cuenta que las personas se * * molestan* * si el tiempo que esperan en la cola supera el tiempo que demorara\u0301n en sus tra\u0301mites. Melanie esta\u0301 desesperada por lo que te pide ayuda para que cambies de posicio\u0301n a las personas en la fila de tal forma que la cantidad de personas * * molestas* * sea mi\u0301nima. * * Importante: A pesar de que un cliente este\u0301 molesto Melanie debe atenderlo* *",
+    "input": "- La primera linea contiene un nu\u0301mero entero n, la cantidad de personas en la fila. - La segunda li\u0301nea son n nu\u0301meros que representan el tiempo que demorara\u0301 cada persona en hacer su tra\u0301mite.",
+    "output": "En una u\u0301nica linea imprime el ma\u0301ximo nu\u0301mero de personas * * no molestas* * que se puede lograr. | | input530 4 3 7 8| | output4| | end| | input105 1 1 1 1 1 1 1 1 1| | output3| | end# Limites- 2 \u2264 n \u2264 10^ 5* * NOTA: * * En el primer ejemplo, si ordenamos a los clientes de la siguiente forma: [ 3 4 8 7 30] , todos los clientes en la fila no estari\u0301an molestos excepto el cliente con tiempo de tra\u0301mite 7 ( el 4to en la fila) , por lo que la respuesta es 4.",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 12680
+  },
+  {
+    "title": "Comunicaci\u00f3n Confusa",
+    "url": "https://omegaup.com/arena/problem/epis-comunicacion-confusa",
+    "history": "Tu mejor amigo Adam compro\u0301 recientemente una Raspberry Pi y algunos equipos, incluido un sensor de temperatura inala\u0301mbrico y un receptor de 433MHz para recibir las sen\u0303ales que envi\u0301an los sensores. Adam planea usar la Raspberry Pi como pantalla interior para su sensor meteorolo\u0301gico. Como es muy bueno con la electro\u0301nica, ra\u0301pidamente logro\u0301 que el receptor recibiera las sen\u0303ales del sensor. Sin embargo, cuando miro\u0301 los bytes enviados por el sensor, estos no parecian tener sentido. Despue\u0301s de algunas horas buscando en muchos sitios web, encontro\u0301 un documento que explica que su sensor meteorolo\u0301gico codifica los datos que envi\u0301a para evitar que se utilicen junto con productos de otros fabricantes. Afortunadamente, el documento tambie\u0301n describe co\u0301mo el sensor codifica su comunicacio\u0301n. El documento establece que el sensor aplica la expresio\u0301n x \u2227 ( x < < 1) a cada byte enviado. El operador \u2227 es XOR^ 1 de bit a bit, por ejemplo, 10110000 \u2227 01100100 = 11010100. El operador < < es un desplazamiento a la izquierda ( no circular) de un valor de byte^ 2, por ejemplo, 10111001 < < 1 = 01110010. Para que la Raspberry Pi de Adam interprete correctamente los bytes enviados por el sensor meteorolo\u0301gico, es necesario descifrar la transmisio\u0301n. Sin embargo, Adam no es bueno programando ( en realidad es un programador bastante malo) . Entonces te pidio\u0301 que lo ayudaras y, como buen amigo, siempre esta\u0301s feliz de complacerlo. \u00bfPuedes ayudar a Adam implementando el algoritmo de decodificacio\u0301n?",
+    "input": "La entrada consta de: - Una li\u0301nea con un nu\u0301mero entero n ( 1\u2264 n \u2264 10^ 5) que representa el nu\u0301mero de bytes en el mensaje enviado por el sensor meteorolo\u0301gico; - Una li\u0301nea con n nu\u0301meros enteros b_ 1, . . . , b_ n ( 0 \u2264 b_ i \u2264 255 para todo i) , que representan los valores de bytes del mensaje.",
+    "output": "Una linea con n valores de bytes ( en formato decimal) , con el mensaje decodificado.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 12530
+  },
+  {
+    "title": "Teselas",
+    "url": "https://omegaup.com/arena/problem/epis-teselas",
+    "history": "Los sitios web de mapas como Bing Maps y Google Maps a menudo almacenan sus mapas como muchos archivos de ima\u0301genes diferentes, llamadas teselas. El nivel de zoom ma\u0301s bajo ( nivel 0) consiste en un sola tesela con una imagen de bajo detalle de todo el mapa, el nivel de zoom 1 consta de cuatro teselas, cada uno con una versio\u0301n ligeramente ma\u0301s detallada de una cuarta parte del mapa, y en general, el nivel de zoom n contiene 4n teselas diferentes que contienen cada uno una parte del mapa. Una forma de identificar una tesela es mediante una clave cua\u0301druple. Una clave cuadruple es una cadena de di\u0301gitos que identifica de forma u\u0301nica una tesela en un cierto nivel de zoom. El primer di\u0301gito especifica en cua\u0301l de los cuatro cuadrantes del mapa completo se encuentra la tesela: 0 para el cuadrante superior izquierdo, 1 para el cuadrante superior derecho, 2 para el cuadrante inferior izquierdo y 3 para el cuadrante inferior derecho. Los di\u0301gitos siguientes especifican en que\u0301 subcuadrante del cuadrante actual se encuentra la tesela. Las claves cua\u0301druples para los niveles de zoom 1 a 3 se muestran en la siguiente figura. ! [ imagen1] [ 1] Otra forma de identificar un mosaico es dar el nivel de zoom y las coordenadas x y y, donde ( 0, 0) es la esquina superior izquierda. Las coordenadas de los mosaicos del nivel de zoom 3 se muestran en la siguiente figura. ! [ imagen2] [ 2] Dada la clave cua\u0301druple de una tesela, genere el nivel de zoom y las coordenadas x y y de esa tesela.",
+    "input": "La entrada consta de: - Una li\u0301nea con una cadena s ( 1 \u2264 taman\u0303o( s) \u2264 30) , la clave cua\u0301druple de una tesela del mapa. - La cadena s consta u\u0301nicamente de los di\u0301gitos \" 0\" , \" 1\" , \" 2\" y \" 3\" .",
+    "output": "Genere tres nu\u0301meros enteros, el nivel de zoom y las coordenadas x y y del mosaico. # # Ejemplo 1| | input3| | output1 1 1| | end# # Ejemplo 2| | input130| | output3 6 2| | end",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 12529
+  },
+  {
+    "title": "Jurados",
+    "url": "https://omegaup.com/arena/problem/epis-jurados",
+    "history": "Los organizadores del XXVII CONEIMERA 2021 de la UNA- PUNO han decidido que quieren mejorar la calificacio\u0301n automa\u0301tica de las presentaciones para el concurso, por lo que ahora utilizan dos sistemas: Jurado A y Jurado B. Ambos sistemas evalu\u0301an cada envi\u0301o y los resultados de la calificacio\u0301n se comparan para asegurarse de que los sistemas este\u0301n de acuerdo. Sin embargo, algo salio\u0301 mal al establecer la conexio\u0301n entre los sistemas, y ahora el jurado solo conoce todos los resultados de ambos sistemas, \u00a1pero no que\u0301 resultado pertenece a que\u0301 envio! Por lo tanto, se le pide que los ayude a determinar cua\u0301ntos resultados podri\u0301an haber sido consistentes.",
+    "input": "La entrada consta de: - Una li\u0301nea con un nu\u0301mero entero n ( 1\u2264 n \u2264 10^ 5) , que representa el nu\u0301mero de envios; - n li\u0301neas, cada una con el resultado de la evaluacio\u0301n del Jurado A, en orden arbitrario; - n li\u0301neas, cada una con el resultado de la evaluacio\u0301n del Jurado B, en orden arbitrario. Cada resultado es una cadena de entre 5 y 15 caracteres ( inclusive) que consta de letras minu\u0301sculas.",
+    "output": "Muestre una li\u0301nea con el nu\u0301mero ma\u0301ximo de resultados de evaluacio\u0301n que podri\u0301an haber sido los mismos para ambos sistemas.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 12528
+  },
+  {
+    "title": "El Cumplea\u00f1os",
+    "url": "https://omegaup.com/arena/problem/epis-cumple-1",
+    "history": "Es el cumplean\u0303os de tu amigo y tu\u0301 y otras personas decidieron comprarle una copia de StarCraft II, porque \u00bfquie\u0301n no querri\u0301a tenerlo? Se acordo dividir los costos de la manera ma\u0301s justa posible. Dado que algunos tienen ma\u0301s dinero disponible que otros, tambie\u0301n se acordo\u0301 que nadie tiene que pagar ma\u0301s de lo que puede pagar. Cada contribucio\u0301n sera\u0301 un mu\u0301ltiplo de 1 centavo, es decir, nadie puede pagar fracciones de centavo. Todo el mundo anota la cantidad ma\u0301xima que puede aportar. Teniendo en cuenta estas cantidades ma\u0301ximas de todos, se debe compartir el costo del presente de la manera ma\u0301s justa posible. Eso significa que minimiza la mayor distancia de las contribuciones al 1/ n- e\u0301simo del costo total. En caso de empate, minimice la segunda distancia ma\u0301s grande y asi\u0301 sucesivamente. Dado que la unidad ma\u0301s pequen\u0303a de contribucio\u0301n es 1 centavo, puede haber ma\u0301s de una posible divisio\u0301n del costo. En ese caso, las personas con un monto ma\u0301ximo superior pagan ma\u0301s. Si todavi\u0301a hay ambigu\u0308edad, los que ocupan los primeros lugares en la lista pagan ma\u0301s. Ya que tu compraste el regalo, es tu tarea averiguar cua\u0301nto tienen que pagar todos ( incluye\u0301ndote a ti) .",
+    "input": "En la primera li\u0301nea se tiene un nu\u0301mero entero positivo que representa el nu\u0301mero de casos de prueba, como ma\u0301ximo 100. Despue\u0301s de eso, por caso de prueba: - Una li\u0301nea con dos enteros p y n que representan el precio del presente en centavos ( 1\u2264 p \u2264 1000000) y el nu\u0301mero de personas ( 2\u2264 n \u2264 1000000) quienes contribuyen en la compra del presente ( incluyendote a ti) . - Una li\u0301nea con n nu\u0301meros enteros a_ i ( 1 \u2264 a_ i \u2264 1000000) , donde a_ i es la cantidad ma\u0301xima, en centavos, que la i- e\u0301sima persona de la lista, puede contribuir.",
+    "output": "Por cada caso de prueba: - Una linea con n nu\u0301meros enteros que representan la cantidad que cada persona debe contribuir de acuerdo al esquema. Si el costo total no se puede dividir de acuerdo a las reglas de arriba, la linea debe contener \" IMPOSSIBLE\" en su lugar.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 12527
+  },
+  {
+    "title": "Sanguchitos exquisitos",
+    "url": "https://omegaup.com/arena/problem/Sanguchitos-exquisitos",
+    "history": "Marcos es realmente fana\u0301tico de los * sanguchitos* de miga. Por suerte, este an\u0303o, va a ser el encargado de prepararlos para la cena de Navidad. Para considerar un sanguchito * exquisito* bajo su criterio, tiene que estar formado de alguna de estas tres formas: - Dos fetas de jamo\u0301n, y un pan. - Dos fetas de jamo\u0301n, una feta de queso, y un pan. - Una feta de jamo\u0301n, una feta de queso, y un pan. Actualmente, Marcos posee n fetas de jamo\u0301n, m fetas de queso, y k panes; y esta\u0301 realmente preocupado por saber cua\u0301l es la ma\u0301xima cantidad de * sanguchitos exquisitos* que puede preparar para este banquete naviden\u0303o, \u00bfPodri\u0301as ayudarlo?",
+    "input": "La entrada consiste de una u\u0301nica li\u0301nea con 3 nu\u0301meros enteros, n, m, k, la cantidad de fetas de jamo\u0301n, fetas de queso, y panes respectivamente. 0 < = n, m, k < = 10^ 8",
+    "output": "Imprimir un entero indicando el ma\u0301ximo nu\u0301mero de * sanguchitos exquisitos* que puede obtener nuestro amigo Marcos.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 12455
+  },
+  {
+    "title": "El problema de la mochila (version continua)",
+    "url": "https://omegaup.com/arena/problem/El-problema-de-la-mochila-c",
+    "history": "Se cuenta con una coleccio\u0301n de N objetos donde cada uno tiene un peso y un valor, y una mochila a la que le caben C unidades de peso. Escribe un programa que calcule la ma\u0301xima suma de valores que se puede lograr guardando objetos ( o fracciones de ellos) en la mochila sin superar su capacidad de peso.",
+    "input": "Dos enteros N y C seguidos de N parejas de enteros P, V que denotan el peso y el valor de cada uno de los N objetos. Puedes suponer que 0 \u2264 N, C \u2264 10^ 5 y que 1 \u2264 P, V \u2264 500.",
+    "output": "Un real que sea la ma\u0301xima suma de valores que se puede lograr, redondeado a dos puntos decimales.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 11407
+  },
+  {
+    "title": "Circulismo",
+    "url": "https://omegaup.com/arena/problem/Circulismo",
+    "history": "Te has inscrito a una escuela de arte y la clase del di\u0301a de hoy es circulismo, donde todo lo que se dibuja sobre el lienzo son ci\u0301rculos. Tu primera tarea de la clase es poder pintar un lienzo de altura H y base B, solo puedes dibujar ci\u0301rculos, pero con el detalle de que cada ci\u0301rculo tiene que tener su centro sobre la li\u0301nea horizontal que esta\u0301 en medio, el maestro te dio una descripcio\u0301n de una serie de ci\u0301rculos ( su posicio\u0301n y su radio) que son los u\u0301nicos ci\u0301rculos que puedes dibujar, tienes que pintar cada ci\u0301rculo con un color diferente. Pero la pintura es muy cara por eso quieres comprar la menor cantidad de colores y como tienes que cubrir cada rinco\u0301n de cuadro con al menos un color, quieres saber cua\u0301l es el menor nu\u0301mero de colores necesarios para realizar tu primer obra maestra de circulismo. ! [ Ejemplo de entrada] ( circulismo. png)",
+    "input": "- Primer li\u0301nea: contiene 3 nu\u0301meros H, B y N, donde H es la altura del cuadro, B es la longitud de la base y N es el nu\u0301mero de ci\u0301rculos que tienes permitido dibujar. - Siguientes N li\u0301neas: cada li\u0301nea representa la descripcio\u0301n de cada ci\u0301rculo y contiene dos nu\u0301meros X y R, donde X es la posicio\u0301n del centro del ci\u0301rculo y R es el radio del ci\u0301rculo.",
+    "output": "Tu programa debe decir cua\u0301l es el mi\u0301nimo nu\u0301mero de colores que se necesita para realizar tu pintura o imprimir - 1 si no es posible pintar todo el cuadro.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "sortings"
+    ],
+    "id": 11353
+  },
+  {
+    "title": "Decoraciones",
+    "url": "https://omegaup.com/arena/problem/Decoraciones",
+    "history": "Tienes r globos rojos, g globos verdes y b globos azules. Para decorar una sola mesa de un banquete necesitas exactamente tres globos. Tres globos pegados a la misma mesa no pueden tener el mismo color. \u00bfCua\u0301l es el ma\u0301ximo nu\u0301mero t de mesas que pueden ser decoradas si sabemos la cantidad de globos de cada color?",
+    "input": "Una u\u0301nica li\u0301nea que contiene tres enteros r, g y b ( 0 \u2264 r, g, b \u2264 2 \u00b7 10^ 9) - el nu\u0301mero de globos rojos, verdes y azules, respectivamente. Los nu\u0301meros esta\u0301n separados por exactamente un espacio.",
+    "output": "Imprime un u\u0301nico entero t - el nu\u0301mero ma\u0301ximo de mesas que pueden ser decoradas de la forma requerida.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 11099
+  },
+  {
+    "title": "Leer libros",
+    "url": "https://omegaup.com/arena/problem/Leer-Libros",
+    "history": "Mari\u0301a esta\u0301 entrenando para la * 1er Copa Centroamericana de Programacio\u0301n* . Tiene H horas antes de que empiece la competicio\u0301n y tiene L libros que quiere estudiar. Ella lee una pa\u0301gina cada minuto y quiere saber cua\u0301l es el ma\u0301ximo nu\u0301mero de libros que puede leer antes de la competicio\u0301n. Ella tambie\u0301n sabe que leer libros grandes es ma\u0301s u\u0301til, entonces si hay dos grupos con el mismo nu\u0301meros de libros, ella prefiere el grupo con el libro ma\u0301s grande que no este\u0301 en el otro grupo.",
+    "input": "* La primer li\u0301nea tendra\u0301 dos nu\u0301meros H y L. * La pro\u0301xima li\u0301nea tendra\u0301 los L nu\u0301meros. Cada nu\u0301mero indica el nu\u0301mero de pa\u0301ginas de cada uno de los libros. * No hay dos libros con el mismo nu\u0301mero de pa\u0301ginas. * 0 H \u2264 10, 000* 0 L \u2264 100, 000* 0 L_ i \u2264 100, 000",
+    "output": "El mejor grupo de libros ordenados por nu\u0301mero de pa\u0301ginas.",
+    "note": "",
+    "topics": [
+      "two pointers",
+      "greedy",
+      "sortings"
+    ],
+    "id": 10813
+  },
+  {
+    "title": "Creando al genio",
+    "url": "https://omegaup.com/arena/problem/Creando-al-genio",
+    "history": "# HistoriaYa cansado de que todos le ganen, Santiago decidio\u0301 crear un juego que era ma\u0301s bien una competencia/ experimento en el cua\u0301l estaba seguro de que no podi\u0301a perder ( o por lo menos eso esperaba) . Su honor no le dejaba retar a alguien que ya le habi\u0301a ganado, es por eso que fue a desafiar a Jacobo. El reto consisti\u0301a en que cada quie\u0301n iba a entrenar a una persona para resolver problemas de programacio\u0301n. Despue\u0301s de entrenarlos, la persona ( de las que entrenaron) que ma\u0301s resolviera los problemas de un exame\u0301n ganaba y por tanto, su entrenador le ganaba al otro. Se establecio una lista de M temas ( numerados del 1 al M) que pueden salir en el exame\u0301n. Se considera que una persona aprende un temas despue\u0301s de que resuelve un problema de dicho tema. Santiago empezo a entrenar a su alumno de forma random. Sin embargo, Jacobo engenio un plan estrategico. Jacobo tomo una lista de N problemas en OmegaUp, cada problema tiene asociado un tema a_ i; pero, igual cada problema tiene un tiempo li\u0301mite t_ i en el que lo puedes resolver ( despue\u0301s de ese tiempo el problema desaparece) . El tiempo lo medimos en minutos, entonces la persona que entrena Jacobo empieza en el minuto 0, tambien es una persona muy bien entrada entonces puede resolver cualquie problema en 1 minuto. Sin embargo, al ser un humano tiene limitaciones y cansa, despue\u0301s de resolver el primer problema ( sea cual sea el que decida\u0301) tiene que descansar un minutos. Despue\u0301s de resolver el segundo problema debe descansar 2 minutos y asi\u0301. EN general, despue\u0301s de resolver su k- esimo problema debera\u0301 descansar k minutos. Jacobo decidio\u0301 hacer un programa que le ayude a calcular cuanto es el nu\u0301mero ma\u0301ximo de temas que le puede ensen\u0303ar a su alumnos para que le gane al de Santy. # ProblemaDada una lista de N problemas donde cada problema consiste en una pareja a_ i y t_ i ( tema y tiempo limite) ; decir, cuanta es la cantidad maxima de los M tema\u0301s que puede aprender dicho alumno con las consideraciones dadas. Hay que tener encuenta que si la persona esta en el tiempo x y el problema tiene como limite el tiempo x aun puede resolver el problema el alumno.",
+    "input": "Dos nu\u0301meros N y M que representan la cantidad de problemas y cantidad de temas respectivamente. Seguido se dara\u0301n N parejas de nu\u0301meros a_ i y t_ i que representa el tema y el tiempo limite de dicho problema.",
+    "output": "Un u\u0301nico entero representando la cantidad ma\u0301xima de temas que puede aprender el alumno# Ejemplos| | input3 31 13 32 2| | output2| | descriptionPuede resolver el primer problema en el tiempo 0 y lo termina en el tiempo 1 y se debe esperar hasta el tiempo 2 por su descanso; luego resuelve el problema con tema 2 en ese mismo tiempo y lo termina en el minuto 3 se tiene que dar su descanso de 2 minutos y queda en el tiempo 4. Y ya no puede resolver nada ma\u0301s, entonces la cantidad ma\u0301xima de temas que pudo aprender es de 2. | | input4 51 12 12 84 2| | output3| | end# Li\u0301mitesPara todos los casos se satiface que- 1 \u2264 a_ i \u2264 M* * Para un 25",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 10643
+  },
+  {
+    "title": "Y^3 + X^5 = N^7",
+    "url": "https://omegaup.com/arena/problem/Y3--X5--N7",
+    "history": "# HistoriaUn dia, Sebas estaba leyendo un Tzaloa de la OMM, y se encontro un problema muy dificil: \" Dado un entero N, determina si se cumple la igualdad Y^ 3 + X^ 5 = N^ 7 para algun X, Y entero. \" , cuya solucion no encontro. Tu como buen programador que eres, escribe un codigo que resuelva dicho problema.",
+    "input": "Un entero N.",
+    "output": "Imprime 1 o - 1 si existen o no dichos enteros respectivamente.",
+    "note": "",
+    "topics": [
+      "strings",
+      "brute force",
+      "binary search",
+      "implementation",
+      "graphs",
+      "trees",
+      "geometry",
+      "string suffix structures",
+      "sortings",
+      "flows",
+      "graph matchings",
+      "matrices",
+      "dfs and similar",
+      "constructive algorithms",
+      "data structures",
+      "combinatorics",
+      "math",
+      "number theory",
+      "games",
+      "dp",
+      "shortest paths",
+      "meet-in-the-middle",
+      "greedy"
+    ],
+    "id": 9724
+  },
+  {
+    "title": "Sumita cuadrada",
+    "url": "https://omegaup.com/arena/problem/Sumita-cuadrada",
+    "history": "Sebas esta\u0301 en un entrenamiento de matematicas, y le presentaron un problema: \" Demuestra que para toda N existe una suma de N nu\u0301meros tal que su suma sea un cuadrado perfecto. \" , Sebas esta muy ocupado para resolver ese problema, y tu\u0301 como buen programador que eres, te ha pedido que demuestres el problema con \" casitos\" .",
+    "input": "Un entero N",
+    "output": "Los N nu\u0301meros distintos entre si\u0301 separados por un espacio y ordenados en orden creciente tal que su suma sea un cuadrado perfecto",
+    "note": "",
+    "topics": [
+      "math",
+      "trees",
+      "implementation",
+      "data structures",
+      "meet-in-the-middle",
+      "brute force",
+      "dfs and similar",
+      "matrices",
+      "geometry",
+      "combinatorics",
+      "shortest paths",
+      "dp",
+      "binary search",
+      "strings",
+      "flows",
+      "constructive algorithms",
+      "number theory",
+      "graph matchings",
+      "greedy",
+      "string suffix structures",
+      "graphs",
+      "sortings",
+      "games"
+    ],
+    "id": 9723
+  },
+  {
+    "title": "\u00bfWhat is love?",
+    "url": "https://omegaup.com/arena/problem/What-is-love",
+    "history": "Melanie es una chica enamoradiza, nunca pasa una temporada entera sin tener pareja. Esto significa que sus relaciones no duran mucho, por lo que Melanie a empezado a dudar de si existe el amor. . . ! [ enter image description here] [ 1] Por suerte la nueva pareja de Melanie, Adriana, estudio ciencias de la computacio\u0301n y como un gesto roma\u0301ntico decidio\u0301 enviarle mensajes roma\u0301nticos a Melanie. Ella los leyo\u0301 en su smartphone y decidio\u0301 imprimirlos, sin embargo su impresora esta malograda e imprimio\u0301 el mensaje sobre una cadena de nu\u0301meros. Sin embargo ella es super ecolo\u0301gica asi\u0301 que decide quedarse con las impresiones. Pero hay algunas que no tienen todo el mensaje entero asi\u0301 que te pide ayuda. \u00bfPuedes decirle a Melanie si el mensaje que le envio\u0301 Adriana esta en la impresio\u0301n? De ser asi\u0301 puedes decirle en que posicio\u0301n se encuentra cada letra, del mensaje en la impresio\u0301n. Imprime las posiciones en orden.",
+    "input": "- La primer li\u0301nea de entrada contendra\u0301 un nu\u0301mero n, el taman\u0303o de laimpresio\u0301n. - La segunda li\u0301nea de entrada contendra\u0301 un string s, el mensaje queleyo\u0301 Melanie. - La tercera linea de entrada contendra\u0301 un string w de taman\u0303o n, lo quese imprimio\u0301.",
+    "output": "Si el mensaje se encuentra en la impresio\u0301n escribir * * YES* * y acto seguido escribir varios lineas con los i\u0301ndices en los que se encuentra cada letra del mensaje en la impresio\u0301n. Caso contrario solo escribir * * NO* * | | input12lindal6i23n2d32a3| | outputYES025710| | end| | input8preciosapreciosa| | outputYES01234567| | end| | input27te quiero123t23e23q23u32i32e32r34o23| | outputNO| | end# Limites- 2< = n< = 500- 1< = s, w< = 500> NOTA: En el tercer ejemplo puedes ver que el mensaje original tiene un> espacio y la impresio\u0301n no lo tiene, por ello la impresio\u0301n es> incorrecta. Varios de los mensajes de Adriana son frases y otros> solo palabras pero Melanie te dara\u0301 algunos puntos si le ayudas solo con palabras: > > - 75 puntos por un mensaje que es solo una palabra> - 25 puntos por un mensaje que es una frase# AyudaSi quieres leer frases que contengan espacios en c+ + puedes ver el siguiente [ link. ] ( https: / / repl. it/ repls/ LovelySillyDebugger)",
+    "note": "",
+    "topics": [
+      "combinatorics",
+      "strings",
+      "greedy",
+      "implementation"
+    ],
+    "id": 9613
+  },
+  {
+    "title": "Gestionando archivos",
+    "url": "https://omegaup.com/arena/problem/Gestionando-archivos",
+    "history": "Qaqo esta\u0301 acomodando unos expedientes del archivero. Ella sabe que hay exactamente N expedientes y que cada uno esta\u0301 etiquetado con un nu\u0301mero entre 1 y N. Ella quiere acomodarlos en un orden especi\u0301fico haciendo u\u0301nicamente el siguiente movimiento: Qaqo toma el u\u0301ltimo expediente del archivero y lo mueve a cualquier posicio\u0301n que ella quiera. Quieres ayudar a Qaqo para que no trabaje de ma\u0301s. Tu tarea es decirle a Qaqo cua\u0301l es el mi\u0301nimo nu\u0301mero de movimientos que tiene que hacer para acomodar los expedientes.",
+    "input": "En la primera li\u0301nea un entero N, el nu\u0301mero de expedientes que hay en el archivero. Las siguientes N li\u0301neas describen la configuracio\u0301n inicial del archivero. Para cada una, habra\u0301 un entero distinto entre 1 y N, que representa la etiqueta de ese expediente. El primer expediente dado es el que encuentra al principio del archivero. Las siguientes N li\u0301neas describen la configuracio\u0301n final deseada. Para cada una, habra\u0301 un entero distinto entre 1 y N, que representa la etiqueta de ese expediente. El primer expediente dado es el que encuentra al principio del archivero.",
+    "output": "Un solo entero, la cantidad mi\u0301nima de movimientos para organizar el archivero.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 9181
+  },
+  {
+    "title": "John Freddy y los numeros",
+    "url": "https://omegaup.com/arena/problem/John-Freddy-y-los-numeros",
+    "history": "John Freddy es un estudiante que le gusta jugar mucho al fu\u0301tbol, pero por estar jugando se le olvido hacer la tarea, por esa te pide el favor que le ayudes. La tarea consiste en dado un arreglo de N nu\u0301meros, quieres saber cuanto es el ma\u0301ximo producto que se puede hacer escogiendo dos nu\u0301meros del arreglo",
+    "input": "Un nu\u0301mero N seguido de N enteros, * * a< sub> 0< / sub> , a< sub> 1< / sub> , . . . , a< sub> n- 1< / sub> . * *",
+    "output": "El ma\u0301ximo producto que se puede hacer escogiendo dos nu\u0301meros del arreglo",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 8640
+  },
+  {
+    "title": "Alumnos de Lions",
+    "url": "https://omegaup.com/arena/problem/Alumnos-de-Lions",
+    "history": "Te han asignado como presidente de la generacio\u0301n, y tus superiores quieren que hagas una encuesta y que determines que\u0301 tan saludables esta\u0301n todos los alumnos. Para hacer esta tarea, has monitoreado a los dema\u0301s alumnos y podra\u0301s hacer un modelo matema\u0301tico de la salud respecto a dos variables: comida y tiempo en el gimnasio. Tienes una lista de * * N* * alumnos y sabes que hay cuatro comidas en la cafeteri\u0301a en orden ascendente de salud: - Pizza ( la menos saludable) - Tacos- Torta- Ensalada ( la ma\u0301s saludable) Tambie\u0301n sabes que la comida tiene ma\u0301s impacto en la salud que el tiempo en el gimnasio, asi\u0301 que decides ordenar los alumnos primero por comida y luego por tiempo en el gimnasio.",
+    "input": "Un entero * * N* * , el nu\u0301mero de alumnos en la generacio\u0301n, seguido por * * N* * li\u0301neas. En cada una de las siguientes li\u0301neas, estara\u0301 el nombre del alumno ( una sola cuerda) , el nombre de su comida preferida ( una sola cuerda) y finalmente un entero que representa el tiempo en el gimnasio en horas * * H* * .",
+    "output": "* * N* * li\u0301neas, cada uno con el nombre de cada alumno. El ma\u0301s saludable debe ir primero y el menos saludable debe ir al final.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "strings",
+      "greedy"
+    ],
+    "id": 8616
+  },
+  {
+    "title": "Agust\u00edn y sus meditaciones",
+    "url": "https://omegaup.com/arena/problem/Agustin-y-sus-meditaciones",
+    "history": "El pequen\u0303o Agusti\u0301n no esta a gusti\u0301n : ( Ayer llego\u0301 al palacio real, muy cansado de haber jugado toda la man\u0303ana, solo para encontrarse con la mala noticia de que su amigo Osman habi\u0301a refundido una nota en la que e\u0301l, Agusti\u0301n, habi\u0301a trabajado durante casi an\u0303o y medio. La nota llevaba una sola palabra producto de las duras meditaciones que habi\u0301a llevado durante toda su vida ( cinco an\u0303os tiene Agusti\u0301n) . Asi\u0301 que apenas se entero\u0301 lo primero que hizo fue buscar por todo el palacio recolectando todas las notas que encontraba. Hoy por la man\u0303ana llego\u0301 Osman al palacio, a lo que Agusti\u0301n le pregunto\u0301 por la nota, e\u0301l le respondio\u0301 que habi\u0301a estado jugando un juego muy divertido con una nota que se habi\u0301a encontrado, sus palabras exactas fueron: > Supongamos que tenemos una palabra; digamos \u201dpalabra\u201d, luego llegamos y escogemos dos letras del abecedario; digamos ' a' y ' b' , entonces lo que hacemos es llegar y cambiar en la palabra las letras ' a' por letras ' b' y las letras ' b' por letras ' a' , entonces \" palabra\" quedari\u0301a \" pblbarb\" \u00bfNo es asombroso? > E incluso lo podemos hacer con letras que no esta\u0301n en la palabra, digamos ' z' y ' l' , quedari\u0301a \" pbzbarb\" > Y mira, si lo hacemos con dos letras que no esta\u0301n en la palabra, digamos ' x' y ' y' , quedari\u0301a \" pbzbarb\" \u00a1Las posibilidades son infinitas! Agusti\u0301n se fue muy enojado a su cuarto y no ha salido de alli\u0301 desde el medio di\u0301a, no quiere hablar con nadie ni ha recibido nada de comida. Si bien Agusti\u0301n se sabe la palabra que e\u0301l habi\u0301a escrito, e\u0301l au\u0301n quiere hallar la nota, y esta\u0301 intentando descifrar cua\u0301l de las notas que e\u0301l recolecto\u0301 es la nota donde e\u0301l originalmente escribio\u0301 su palabra. E\u0301l ya descarto\u0301 todas aquellas donde el taman\u0303o de la palabra de Agusti\u0301n ( llamemosla S) y la palabra escrita en la nota ( llamemosla Q) son diferentes. Entonces e\u0301l te va a dar las dos palabras y tu\u0301 tienes que ayudarlo dicie\u0301ndole si se puede llegar desde la palabra que e\u0301l escribio\u0301 a la palabra escrita en la nota haciendo el juego de Osman cuantas veces sean necesarias ( No tenemos seguridad de cuantas veces hizo Osman el juego) . Ayu\u0301dalo por favor, e\u0301l au\u0301n tiene cinco an\u0303os y se le hacen muy difi\u0301ciles estos trabajos : (",
+    "input": "Un cadena de cara\u0301cteres S; la palabra que escribio\u0301 Agusti\u0301n, y una cadena de cara\u0301cteres Q que consisten de solamente letras minu\u0301sculas del alfabeto ingle\u0301s. | S| = | Q| ( | S| se refiere al taman\u0303o de la cadena de cara\u0301cteres S) .",
+    "output": "Imprime \u201cSi\u201c si se puede llegar de la palabra S a la palabra Q haciendo el juego de Osman; imprime \u201cNo\u201c si no se puede.",
+    "note": "",
+    "topics": [
+      "strings",
+      "implementation",
+      "greedy"
+    ],
+    "id": 8591
+  },
+  {
+    "title": "Subiendo la bomba por la colina",
+    "url": "https://omegaup.com/arena/problem/Subiendo-la-bomba-por-la-colina",
+    "history": "Hay N robots en una colina y una bomba en la base de la misma: tu objetivo es usar los robots para subir la bomba lo ma\u0301s posible sobre la colina. Cada robot cuenta con una altura inicial H, una cantidad de energi\u0301a E y puede bajar la colina sin gastar energi\u0301a pero gasta una unidad de energi\u0301a para subir una unidad de altura. Cuando un robot alcanza la bomba, e\u0301ste puede cargarla y lleva\u0301rsela ( el robot gasta la misma cantidad de energi\u0301a subiendo con o sin la bomba) ; el robot puede soltar la bomba en cualquier momento o bien, soltarla hasta que se acabe su energi\u0301a y ya no pueda avanzar ma\u0301s. Si fuera posible, otro robot puede ir a recoger la bomba en la posicio\u0301n en la que quedo\u0301 para seguir subie\u0301ndola. Los robots pueden programarse en cualquier orden. Escribe un programa que determine la altura ma\u0301xima que puede alcanzar la bomba si se usan los robots de manera o\u0301ptima.",
+    "input": "Un entero N seguido de N parejas de enteros H, E que determinan la altura y energi\u0301a de cada robot. Puedes suponer que 0 \u2264 N \u2264 10^ 5, 0 \u2264 H \u2264 10^ 9 y 0 \u2264 E \u2264 10^ 6.",
+    "output": "Un entero positivo que sea la altura ma\u0301xima que puede alcanzar la bomba.",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 8526
+  },
+  {
+    "title": "Matriz Binaria",
+    "url": "https://omegaup.com/arena/problem/Matriz-Binaria",
+    "history": "Se te da una matriz booleana ( sus entradas son todas ceros o unos) de N renglones y M columnas. Puedes realizar la siguiente operacio\u0301n: * Elegir un renglo\u0301n o una columna y cambiar el estado de cada elemento. Si el elemento es 0 entonces se cambia a 1, y si el elemento es 1 entonces se cambia a 0. Se te permite realizar un nu\u0301mero ilimitado de operaciones. Al final, se interpreta cada renglo\u0301n como la representacio\u0301n binaria de un nu\u0301mero, donde la primera columna se asocia con el bit ma\u0301s signicativo. Tu tarea es maximizar la suma de todos los N nu\u0301meros.",
+    "input": "La primera li\u0301nea contiene dos enteros N y M, el taman\u0303o de la matriz. Las siguientes N li\u0301neas contienen M nu\u0301meros, representando la matriz.",
+    "output": "La ma\u0301xima suma que se puede obtener.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "matrices",
+      "math"
+    ],
+    "id": 8247
+  },
+  {
+    "title": "Cena mejorado",
+    "url": "https://omegaup.com/arena/problem/Cena-2",
+    "history": "Los alumnos de Fernanda son muy necios acerca de sus compan\u0303eros de comida. Ellos se han organizado en dos grupos alimenticios( convenientemente numerados 1 y 2) que insisten en comer juntos, con el grupo 1 al inicio de la fila y el grupo 2 al final de la misma. El problema comienza cuando ellas se forman para entrar al a\u0301rea de alimentacio\u0301n. Cada alumnosiilleva con el una pequen\u0303a tarjeta en la cual esta\u0301 grabadoDi( 1< = Di< = 2) Di( 1< = Di< = 2) indicando su pertenencia a un grupo alimenticio. Todo el conjunto deN( 1< = N< = 30, 000) N( 1< = N< = 30, 000) alumnos se ha alineado para la comida pero es fa\u0301cil para cualquiera ver, que ellos no esta\u0301n agrupadas segu\u0301n sus tarjetas de grupo alimenticio. El trabajo de la maestra Fernanda es muy complicado para ella. Ella recorre la li\u0301nea de alumnos cambiando su asignacio\u0301n de grupo alimenticio tachando el nu\u0301mero antiguo y escribiendo uno nuevo. Haciendo eso, ella crea grupos de alumnos como 1112222 o 1111122 en los que los grupos alimenticios de los alumnos esta\u0301n ordenados ascendentemente. En pocas ocasiones, ella podri\u0301a cambiar las tarjetas de tal manera que solamente quede un grupo de alumnos ( por ejemplo, 1111111 o 2222222) . Fernanda esta\u0301 cansada y por eso, Cyntia y Fa\u0301tima se ofrecieron a ayudarle: \u00bfcua\u0301l es el nu\u0301mero mi\u0301nimo absoluto de tarjetas que ella debe cambiar para crear un grupo apropiado de socios alimentarios? Debes u\u0301nicamente cambiar los nu\u0301meros de las tarjetas y no reorganizar a los alumnos en la fila.",
+    "input": "Li\u0301nea 1: Un solo entero: NLi\u0301neas 2. . N+ 1: La li\u0301nea i+ 1 describe la preferencia alimentaria del alumno i con un solo entero: DiDi",
+    "output": "Li\u0301nea 1: Un solo entero que es el nu\u0301mero mi\u0301nimo de tarjetas que la maestra Fernanda la diosa suprema debe cambiar para asignar los alumnos a los grupos alimentarios como se ha descrito.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 7875
+  },
+  {
+    "title": "Juego con piedras",
+    "url": "https://omegaup.com/arena/problem/Juego-con-piedras",
+    "history": "Eric y Mati\u0301as esta\u0301n jugando con una pila de N piedras. En su turno, cada uno de ellos debe sacar entre 1 y K piedras de la pila. El que saque la u\u0301ltima piedra sera\u0301 el ganador. Se sabe que ambos son muy inteligentes y por lo tanto siempre juegan de forma o\u0301ptima. Adema\u0301s siempre empieza jugando Eric. \u00bfQuie\u0301n sera\u0301 el ganador?",
+    "input": "La entrada consiste de una u\u0301nica li\u0301nea con dos enteros N ( 1< = N< = 10^ 9) y K ( 1< = K< = 10^ 9) , que indican respectivamente la cantidad inicial de piedras en la pila y el nu\u0301mero ma\u0301ximo de piedras que se puede sacar en un turno.",
+    "output": "Imprimir el nombre del ganador.",
+    "note": "",
+    "topics": [
+      "games",
+      "greedy",
+      "implementation"
+    ],
+    "id": 7287
+  },
+  {
+    "title": "Mataron a Kenny",
+    "url": "https://omegaup.com/arena/problem/Mataron-a-Kenny",
+    "history": "KENNY quiere saber el mayor de N nu\u0301meros, para hacerlo mas interesante el quiere sumarle el numeromas pequen\u0303o y multiplicarlo por N, como KENNY esta muerto quiere que hagas un programa que realice\u0301 estos ca\u0301lculos por el. ! [ enter image description here] [ 1] < / center>",
+    "input": "En la primera linea un entero N que indica la cantidad de nu\u0301meros a leer en la segunda linea separados por un espacio.",
+    "output": "Un entero L que representa la suma del mayor con el menor y su multiplicacio\u0301n por N",
+    "note": "",
+    "topics": [
+      "greedy",
+      "math",
+      "sortings"
+    ],
+    "id": 6845
+  },
+  {
+    "title": "Monedas volteadas en intervalos",
+    "url": "https://omegaup.com/arena/problem/Monedas-volteadas-en-intervalos",
+    "history": "Cuentas con un fila infinita de monedas donde todas muestran sol inicialmente. Escribe un programa que calcule la menor cantidad de monedas que necesitas voltear para que exista al menos un a\u0301guila en cada uno de los M intervalos que se te dara\u0301n.",
+    "input": "Un entero M seguido de M parejas de enteros I, J correspondientes a intervalos cerrados. Puedes suponer que 0 \u2264 M \u2264 100, 000 y que 1 \u2264 I \u2264 J \u2264 1, 000, 000.",
+    "output": "Un entero que sea la menor cantidad de monedas que necesitas voltear.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "sortings",
+      "implementation"
+    ],
+    "id": 6758
+  },
+  {
+    "title": "Voltea monedas consecutivas",
+    "url": "https://omegaup.com/arena/problem/Voltea-monedas-consecutivas",
+    "history": "Cuentas con un fila de N monedas, donde algunas de ellas muestran sol y otras muestran aguila, y puedes realizar una operacio\u0301n que voltea un grupo de M monedas consecutivas. Escribe un programa que calcule la menor cantidad de veces que necesitas realizar la operacio\u0301n para que todas las monedas muestren sol.",
+    "input": "Dos enteros N y M seguido de N enteros que corresponden con el estado de las monedas ( un 1 denota sol y un 0 denota a\u0301guila) . Puedes suponer que 1 \u2264 M \u2264 N \u2264 1000.",
+    "output": "Un entero que sea la menor cantidad de veces que necesitas realizar la operacio\u0301n o - 1 si es imposible voltear las monedas.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 6632
+  },
+  {
+    "title": "Alumina",
+    "url": "https://omegaup.com/arena/problem/Alumina",
+    "history": "Todas las ciudades de Alumina esta\u0301n localizadas sobre una li\u0301nea enumerada. Por lo tanto, cada ciudad tiene asociada un nu\u0301mero de acuerdo a su posicio\u0301n en la li\u0301nea. No hay dos ciudades en un mismo punto. Los habitantes de Alumina adoran enviarse cartas entre ellos. Cada persona puede enviar una carta solo a habitantes de otra ciudad ( Ya que si viven en la misma ciudad, entonces es fa\u0301cil entregarla) . Son\u0303ara\u0301 extran\u0303o, pero es cierto. . . el costo de enviar una carta es equivalente a la distancia entre las ciudades del destinatario y el remitente. Para cada ciudad debes calcular dos valores min_ i y max_ i, donde min_ i es el mi\u0301nimo costo de enviar una carta desde la i- e\u0301sima ciudad a cualquier otra ciudad, y max_ i es el ma\u0301ximo costo de enviar una carta desde la i- e\u0301sima ciudad a cualquier otra.",
+    "input": "La primera li\u0301nea de la entrada contendra\u0301 un entero n ( 2\u2264 n \u2264 10^ 5) - el nu\u0301mero de ciudades en Alumina. La segunda li\u0301nea contendra\u0301 la secuencia de n enteros distintos x_ 1, x_ 2, x_ 3, . . . , x_ n ( - 10^ 9\u2264 x_ i\u2264 10^ 9) , donde x_ i es la posicio\u0301n de la i- e\u0301sima ciudad. Todas las x_ i' s son distintas y esta\u0301n dadas en orden * * ascendiente* * .",
+    "output": "Imprime\u0301 n li\u0301neas, donde la i- e\u0301sima li\u0301nea contiene dos enteros min_ i, max_ i, separados por un espacio.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "greedy"
+    ],
+    "id": 6624
+  },
+  {
+    "title": "Creaci\u00f3n de concursos de programaci\u00f3n",
+    "url": "https://omegaup.com/arena/problem/Creacion-de-concursos-de-program",
+    "history": "Eres el encargado de organizar una serie de concursos de programacio\u0301n y cada concurso consta de exactamente cuatro problemas. En cada concurso deseas poner problemas con niveles de dificultad P_ 1, P_ 2, P_ 3, P_ 4 tales que 1 \u2264 P_ 1 < P_ 2 < P_ 3 < P_ 4 \u2264 100 y que P_ i+ 1 - P_ i\u2264 10. Cuentas ya con una lista ordenada de N problemas y deseas organizar la serie de concursos de este an\u0303o de modo que los problemas de tu lista aparezcan en el mismo orden. Sin embargo, es posible que sea necesario inventar e insertar problemas nuevos en la lista que todos los concursos organizados cumplan las restricciones. Una vez finalizada la lista, los primeros cuatro problemas formara\u0301n el primer concurso, los siguientes cuatro problemas formara\u0301n el siguiente concurso y asi\u0301 sucesivamente. Escribe un programa que determine cua\u0301l es el nu\u0301mero mi\u0301nimo de problemas nuevos que necesitas insertar en la lista para organizar la serie de concursos.",
+    "input": "La entrada consiste de varios casos de prueba, los cuales deben procesarse hasta el fin de archivo. Cada caso de prueba consiste de un entero N seguido una secuencia de N enteros que denotan las dificultades de los N problemas de tu lista original. Puedes suponer que 1 \u2264 N \u2264 100, 000 y que las dificultades de los problemas esta\u0301n en el rango de 1 a 100.",
+    "output": "Para cada caso de prueba, un entero que sea la mi\u0301nima cantidad de problemas nuevos que necesitas insertar en la lista.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 6601
+  },
+  {
+    "title": "Grafo Tramposo",
+    "url": "https://omegaup.com/arena/problem/Grafo-Tramposo",
+    "history": "Randy y Briaares son muy buenos amigos. El problema es que, por lo general, a Briaares le encanta molestar a Randy. Es por ello que Briaares decidio\u0301 construir un grafo lleno de trampas, un * * Grafo Tramposo* * . Una vez que Briaares termino\u0301 de elaborar el Grafo Tramposo, le grito\u0301 a Randy: * \" \u00a1Hey, Randy, ven a ver mi grandioso grafo! * solo para despue\u0301s poder patearlo dentro del grafo. Un Grafo Tramposo es un grafo no dirigido con n ve\u0301rtices y m aristas. Cada arista k tiene asignado un rango de enteros l_ k y r_ k ( l_ k\u2264 r_ k) . Para poder salir del Grafo Tramposo, Randy debe escoger inicialmente ( es decir, antes de empezar a moverse) algu\u0301n entero ( llame\u0301mosle x) , entonces Randy debera\u0301 moverse de alguna manera desde el ve\u0301rtice con el nu\u0301mero 1 al ve\u0301rtice con el nu\u0301mero n. Adema\u0301s, Randy puede pasar a trave\u0301s de una arista k so\u0301lo si l_ k\u2264 x\u2264 r_ k. Para hacer el escape ma\u0301s fa\u0301cil, Briaares definio\u0301 la * * lealtad* * de un camino que va desde el 1er ve\u0301rtice hasta el n- e\u0301simo como el nu\u0301mero de enteros x tales que, si Randy escoge algunos de ellos, puede pasar por el camino completo. Ayuda a Randy a encontrar el camino con la ma\u0301xima lealtad y asi\u0301 poder salir del Grafo Tramposo tan ra\u0301pido como sea posible.",
+    "input": "La primera li\u0301nea contiene dos enteros n y m ( 2\u2264 n\u2264 10^ 3, 0\u2264 m\u2264 3\u00b7 10^ 3) . Las siguientes m li\u0301neas describen las aristas. Cada li\u0301nea contiene cuatro enteros a_ k, b_ k, l_ k y r_ k ( 1\u2264 a_ k, b_ k\u2264 n, 1\u2264 l_ k\u2264 r_ k\u2264 10^ 6) . Los nu\u0301meros significan que en el Grafo Tramposo, la k- e\u0301sima arista conecta los ve\u0301rtices a_ k y b_ k, y esta arista corresponde al rango de enteros desde l_ k a r_ k. Note que el grafo dado puede contener ciclos y mu\u0301ltiples aristas entre un mismo par de nodos.",
+    "output": "En una sola li\u0301nea imprime un entero - la ma\u0301xima lealtad de entre todos los caminos que van del primer ve\u0301rtice al n- e\u0301simo. Si dicho camino no existe, o la ma\u0301xima lealtad es 0, imprime en una sola li\u0301nea \" Oh, vamos! \" , sin comillas.",
+    "note": "",
+    "topics": [
+      "graphs",
+      "binary search",
+      "greedy",
+      "shortest paths"
+    ],
+    "id": 6213
+  },
+  {
+    "title": "El escape de los ratones",
+    "url": "https://omegaup.com/arena/problem/El-escape-de-los-ratones",
+    "history": "Habi\u0301a una vez una casa infestada de ratones, todos ide\u0301nticos entre si\u0301. Un gato escucho\u0301 hablar de ella y decidio\u0301 vivir ahi\u0301, atrapando a los ratones uno tras otro. Un di\u0301a, los ratones no pudieron soportarlo ma\u0301s y todos corrieron al mismo tiempo hacia sus madrigueras para esconderse y permanecer ahi\u0301. Escribe un programa que, dadas las posiciones de los ratones asi\u0301 como las posiciones y capacidades de las madrigueras, calcule la cantidad mi\u0301nima de segundos que se requiere para que todos los ratones logren esconderse.",
+    "input": "Un entero N seguido de N enteros que denotan las posiciones de los ratones. Posteriormente un entero M seguido de M parejas de enteros que denotan la posicio\u0301n y la capacidad de cada una de las madrigueras. Puedes suponer que 1 \u2264 N, M \u2264 1000, que todas las posiciones ( ratones y madrigueras) son distintas y esta\u0301n en el rango de 0 a 1000000, que las capacidades de las madrigueras esta\u0301n en el rango de 1 a 5 y que los ratones corren a una velocidad de una posicio\u0301n por segundo.",
+    "output": "Un entero que sea la cantidad mi\u0301nima de segundos requerida para que los ratones logren esconderse o el entero - 1 si no existe solucio\u0301n.",
+    "note": "",
+    "topics": [
+      "binary search",
+      "greedy"
+    ],
+    "id": 5333
+  },
+  {
+    "title": "Exploraci\u00f3n",
+    "url": "https://omegaup.com/arena/problem/Exploracion",
+    "history": "Bessie esta\u0301 viajando en un camino lleno de marcas interesantes. Sipensamos en este camino como una li\u0301nea nume\u0301rica, Bessie comienza en el\u201corigen\u201d ( x = 0) , y hay N ( 1 < = N < = 50, 000) marcas ubicadas en lospuntos X_ 1. . . X_ N ( - 10, 000 < = X_ i < = 10, 000) . Bessie quiere visitartantas marcas como sea posible antes del atardecer, lo cual ocurre en T( 1 < = T < = 1, 000, 000, 000) minutos. Luego ella parara\u0301 donde sea que este\u0301 ydescansara\u0301. Le toma a Bessie 1 minuto desplazarse 1 unidad dedistancia. Bessie visitara\u0301 las marcas en un orden determinado, como las marcas ma\u0301scerca al origen son ma\u0301s importantes, ella siempre visitara\u0301 las marcas novisitadas que este\u0301n ma\u0301s cerca al origen. Nunca habra\u0301 2 marcas a la mismadistancia del origenAyude a Bessie a determinar el nu\u0301mero ma\u0301ximo de marcas que ella puedevisitar antes de que termine el di\u0301a.",
+    "input": "* Li\u0301nea 1: Dos enteros separados por espacio: T y N. * Li\u0301neas 2. . . N+ 1: La li\u0301nea i+ 1 contiene X_ i, la ubicacio\u0301n de la marcai- e\u0301sima.",
+    "output": "* Li\u0301nea 1: El nu\u0301mero ma\u0301ximo de marcas que Bessie puede visitar.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "greedy"
+    ],
+    "id": 4785
+  },
+  {
+    "title": "Horarios empalmados",
+    "url": "https://omegaup.com/arena/problem/Horarios-empalmados",
+    "history": "En la feria de ciencias de este an\u0303o se organizaron muchos eventos en diferentes puntos de tu escuela, pero desafortunadamente no podra\u0301s asistir a todos los eventos debido a que algunos horarios esta\u0301n empalmados. Tu consuelo sera\u0301 el asistir a la mayor cantidad posible de eventos distintos completos. Dada la lista de tiempos de inicio y fin de cada evento, escribe un programa que calcule a cua\u0301ntos eventos puedes asistir.",
+    "input": "Un entero N seguido de N parejas de enteros T_ i, F_ i que denotan los tiempos de inicio y de fin del i- e\u0301simo evento. Puedes suponer que 1 \u2264 N \u2264 100, 000 y que 0 \u2264 T_ i < F_ i \u2264 1, 000, 000 para 1 \u2264 i \u2264 N.",
+    "output": "Un entero que denota la mayor cantidad de eventos a los cuales es posible asistir.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "sortings"
+    ],
+    "id": 4747
+  },
+  {
+    "title": "Comprador de Bloques",
+    "url": "https://omegaup.com/arena/problem/Comprador-de-Bloques",
+    "history": "\u00a1Por fin son vacaciones : D! te has puesto a limpiar tu cuarto y te encontraste con una caja de bloques ensamblables, y decidiste separarlos por colores formando una torre de cada color diferente una al lado de la otra, formando un \u201cmuro\u201d, como la configuracio\u0301n de los colores te gusto\u0301 tanto no quieres cambiar el orden de las torres. Adema\u0301s de tus bloques encontraste un viejo poster de tu banda favorita y lo quieres pegar un tu \u201cmuro\u201d de bloques, solo que hay un problema, el poster no pegara bien a menos que donde lo pongas este completamente cubierto por bloques y adema\u0301s sus lados sean paralelos a los ejes X y Y. Como no quieres que tu poster se caiga quieres encontrar el lugar adecuado en donde colocarlo, sin embargo, no siempre sera\u0301 posible encontrar un lugar para pegar el po\u0301ster. Como adema\u0301s te encontraste una vieja alcanci\u0301a con dinero, te has propuesto comprar bloques de colores para poder pegar tu poster, pero como te gusta la organizacio\u0301n, los bloques los compraras de la siguiente forma: 1) Busca la menor altura entre las torres de bloques. 2) Para cada torre con esa altura compraras suficientes bloques para igualar a la segunda menor altura de las torres. Cada bloque de la torre i costara i pesos, las torres esta\u0301n indexadas en 1. 3) Si despue\u0301s de realizar tus compras, no lograste pegar tu poster, tendra\u0301s que ir a comprar ma\u0301s bloques.",
+    "input": "Primera li\u0301nea N H B, representando el nu\u0301mero de torres de bloques, la altura del poster, y el ancho del poster, respectivamente. Segunda li\u0301nea N nu\u0301meros representando la altura H_ i de cada torre de bloques.",
+    "output": "Una li\u0301nea. El mi\u0301nimo de dinero que tienes que gastar de tu alcanci\u0301a para poder pegar tu poster. Se garantiza que siempre habra\u0301 solucio\u0301n.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "binary search",
+      "implementation"
+    ],
+    "id": 4197
+  },
+  {
+    "title": "Las Cartas del Dr. Lira (Adaptacion)",
+    "url": "https://omegaup.com/arena/problem/Cartas-Lira",
+    "history": "Dr. Lira tiene N cartas acomodadas en una secuencia. E\u0301l numero\u0301 las cartas de izquierda a derecha con nu\u0301meros de 0 a N- 1. Cada carta esta\u0301 coloreada negra de un lado y blanco del otro. Algunas de las cartas ( posiblemente ninguna o todas) estara\u0301n acomodadas con el lado negro hacia arriba y otras con el blanco. Para activar su arsenal de armas, Dr. Lira necesita voltear algunas cartas tal que queden acomodadas de forma alternada: cada par de cartas consecutivas deben tener colores diferentes. Para no cansarse, Dr. Lira ha contratado tus servicios para que encuentres cua\u0301l es el mi\u0301nimo nu\u0301mero de cartas que tienes que voltear para que todas las cartas queden alternadas.",
+    "input": "Tendra\u0301s como entrada un entero 3\u2264N\u226450 que indica el nu\u0301mero de cartas de Dr. Lira. En la siguiente li\u0301nea encontrara\u0301s la configuracio\u0301n actual de las cartas, cada una representada por un numero 1 o 0: si el caracter en la i- e\u0301sima posicio\u0301n es 1, quiere decir que la carta esta\u0301 actualmente mostrando su lado negro, si es 0, quiere decir que esta\u0301 mostrando su lado blanco.",
+    "output": "Cuenta e imprime un entero representando el mi\u0301nimo nu\u0301mero de cartas que necesitas voltear para obtener la configuracio\u0301n que alterne las cartas.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "greedy"
+    ],
+    "id": 4059
+  },
+  {
+    "title": "El baile de las langostas",
+    "url": "https://omegaup.com/arena/problem/El-baile-de-las-langostas",
+    "history": "La falsa tortuga y el grifo le preguntaron a Alicia si conoci\u0301a el baile de langostas. Cuando Alicia les respondio\u0301 que no, la tortuga dio un suspiro de desaprobacio\u0301n y dijo \" \u00a1no tienes idea de lo hermoso que es! \" El grifo comenzo\u0301 a describir el baile: \" todos los animales presentes ( focas, tortugas y dema\u0301s) intentan formar F filas de C animales cada una, \u00a1pero no se vale que haya animales repetidos en la misma fila! \" . El grifo termino\u0301 el relato: \" y cuando lo hayan logrado, \u00a1cada animal agarra una langosta y la avienta hacia el mar lo ma\u0301s lejos posible! \" . \" \u00a1\u00a1Lo ma\u0301s posible! ! \" grito\u0301 emocionada la falsa tortuga. Alicia ra\u0301pidamente se dio cuenta que lo ma\u0301s complicado del baile era formar a los animales de la manera correcta. Dada una descripcio\u0301n de los animales presentes, ayuda a Alicia a encontrar una formacio\u0301n que cumpla los requisitos del baile.",
+    "input": "Los enteros F y C seguidos de F * C enteros que identifican las especies de los animales a formar. Puedes suponer que 1 le; F, C le; F * C le; 100000, que las especies de animales esta\u0301n representadas por enteros en el rango de 1 a 100 y que siempre es posible formar a los animales.",
+    "output": "Una matriz de F \u00d7 C enteros que denoten una manera correcta de formar a los animales.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 3887
+  },
+  {
+    "title": "Candidato independiente",
+    "url": "https://omegaup.com/arena/problem/candidato_independiente",
+    "history": "E\u0301ste es un an\u0303o electoral y las candidaturas independientes han sido autorizadas. Para ganar terreno, Engel, candidato independiente, ha decidido eficientar sus asistencias a los diferentes eventos ( conferencias, cenas, desayunos, presentaciones, visitas, etc. ) Engel desea acudir a tantos eventos como sea posible. No hay tanto problema entre semana porque so\u0301lo hay dos o tres eventos en la tarde, pero los sa\u0301bados su agenda esta\u0301 saturada. Por lo general los eventos empiezan a las 8 am ( desayuno incluido) y pueden terminarse hasta media noche ( para no molestar a los vecinos) . Naturalmente Engel quiere asistir al ma\u0301ximo nu\u0301mero de eventos posibles. Cada evento tiene una hora de inicio y otra de fin, todas las horas exactas. Esta\u0301n listadas con el formato de 24 horas. Por ejemplo un evento podra\u0301 empezar a las 10 am ( 10) y finalizar a las 2 pm ( 14) . El primer evento puede empezar a las 8 am ( 8) y el u\u0301ltimo evento finalizar a media noche ( 24) . A fin de no ser descorte\u0301s, Engel se queda en cada evento al menos media hora y se debe de considerar que el traslado entre los eventos es instanta\u0301neo. Si no hay eventos que atender en algunas horas del di\u0301a, simplemente se va a la casa de campan\u0303a a descansar.",
+    "input": "Cada caso prueba contiene un entero p ( \u2264 100) que indica los eventos que se tienen considerados para ese di\u0301a. En las siguientes p li\u0301neas, cada una con el formato s, e, ambos enteros donde 8 \u2264 s \u2264 e \u2264 24, se indica la hora s de inicio del evento y el fin a la hora e. Se debe de tomar en cuenta que puede haber muchos eventos con la misma hora de inicio y fin",
+    "output": "Indique el valor n con el ma\u0301ximo nu\u0301mero de eventos que Engel puede atender# Ejemplos| | input314 1514 1514 15| | output2| | input812 1313 1412 139 109 1012 1312 149 11| | output7| | end",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 3646
+  },
+  {
+    "title": "Greedy Artisan",
+    "url": "https://omegaup.com/arena/problem/Greedy-Artisan",
+    "history": "On their way to the next World Finals, Mr. Ed and his pals are visiting the beautiful city of Moscow. One of their favorite tourism activities is buying souvenirs to bring back home, so they are looking for matryoshkas in a big artisan market close to the Red Square. < center> ! [ Matryoshkas] ( matryoshkas. jpg) < / center> In the market, there is a very greedy and clever artisan that sells custom sets of matryoshkas. This artisan has n different matryoshkas in stock, each one having a unique identifier i ( 1 \u2264 i \u2264 n) , a size s_ i and a base price p_ i. As the artisan is really clever, he offers a special deal to his clients: Assume someone wants to buy the custom set T = i_ 1, i_ 2, . . . , i_ m of m matryoshkas. Let us call i_ max to the identifier of the matryoshka with the maximum size and, in case there are multiple matryoshkas with maximum size, the maximum price in T, then the price one has to pay to buy T is price( T) = \u2211_ j = 1^ m s_ i_ j/ s_ i_ max\u00d7 p_ i_ max Mr. Ed wants to exploit the artisan\u2019s deal buying exactly k matryoshkas, regardless which are the sizes of each matryoshka. Please determine the minimum number of money he needs to expend.",
+    "input": "The input will contain several test cases. The first line of each test case contains 2 space- separated integers n and k, representing the number of matryoshkas the artisan has in stock and the number of matryoshkas Mr. Ed wants to buy ( 1 \u2264 n \u2264 100, 000 and 1 \u2264 k \u2264 n) . There will follow n lines. The i- th line contains 2 integers s_ i and p_ i, representing the size and the base price of the i- th matryoshka ( 1 \u2264 s_ i, p_ i \u2264 10^ 6) . There may be matryoshkas with the same s_ i and p_ i. The last test case is followed by a single line containing 2 zeroes.",
+    "output": "For each case, print a single line with a real number with 6 digits after the decimal point representing the minimum price Mr. Ed has to pay to buy k matryoshkas ( see format below) . # Example| | input3 210 54 46 30 0| | outputCase # 1: 5. 000000| | end",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 3025
+  },
+  {
+    "title": "IOI 2011 - Rice Hub",
+    "url": "https://omegaup.com/arena/problem/RiceHub",
+    "history": "En las afueras de la ciudad se encuentra un famoso camino llamado Camino de Arroz, a lo largo de este camino hay R campos de arroz, cada uno de ellos se encuentra en una coordenada entera entre 1 y L inclusivo. Dichos campos de arroz sera\u0301n dados en un orden no decreciente, formalmente para 0 < = i < = R, donde X[ i] representa la coordenada del campo i, puedes asumir que 1 < = X[ 0] < = X[ 1] < = . . . < = X[ R- 1] < = L. Nota que * puede haber ma\u0301s de un campo de arroz en una misma coordenada* . Se planea construir un Almace\u0301n de arroz para guardar la mayor cantidad de arroz que se pueda y al igual que los campos de arroz, el Almace\u0301n de Arroz debe encontrarse en una coordenada entera entre 1 y L inclusivo, no importa si en dicha coordenada se encuentran uno o ma\u0301s campos de arroz. Cada campo de arroz produce exactamente la cantidad necesaria para llenar un camio\u0301n, para transportar el arroz al almace\u0301n, es necesario contratar un camionero, el cual cobra un Baht por transportar un camio\u0301n lleno de arroz una unidad de distancia. En otras palabras, el costo de transportar el arroz de un campo hasta el almace\u0301n es igual a la diferencia entre sus coordenadas. Desafortunadamente el presupuesto esta\u0301 limitado y no se quiere gastar ma\u0301s de B Bahts en el transporte. Tu tarea consiste en situar el almace\u0301n de arroz para almacenar la mayor cantidad de arroz que se pueda.",
+    "input": "Tu programa leera\u0301 la entrada con el siguiente formato: * Li\u0301nea 1: R, L, y B. * Li\u0301neas 2 a R + 1: La localizacio\u0301n de los campos de arroz, es decir, la li\u0301nea i + 2, contiene X[ i] para 0 < = i < = R.",
+    "output": "Tu programa debe encontrar una localizacio\u0301n o\u0301ptima para el almace\u0301n e imprimir el nu\u0301mero ma\u0301ximo de camiones de arroz que pueden ser transportados al almace\u0301n sin exceder el presupuesto.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "binary search"
+    ],
+    "id": 2894
+  },
+  {
+    "title": "IOI 2000 - Estacionamiento",
+    "url": "https://omegaup.com/arena/problem/IOI-2000---Estacionamiento",
+    "history": "< center> ! [ Logo IOI 2000] ( logo00. jpg) < / center> \u2014\u2014\u2014\u2014\u2014\u2014- # EstacionamientoUn estacionamiento cercano a la Gran Muralla tiene una larga fila de lugares para estacionarse. Actualmente la fila se encuentra completamente ocupada por automo\u0301viles. Cada automo\u0301vil es de un determinado tipo, y varios automo\u0301viles pueden ser del mismo tipo. Los tipos de automo\u0301viles son identificados con un valor entero. Algunos trabajadores han decidido ordenar los automo\u0301viles estacionados en la fila por su tipo, en orden ascendente de izquierda a derecha utilizando el siguiente procedimiento: En lo que llamaremos una ronda, cada uno de los trabajadores toma un auto y lo saca del lugar en el que estaba estacionado, liberando asi\u0301 algunos espacios del estacionamiento, luego, cada uno de los trabajadores estaciona el auto que tomo\u0301 en alguno de los lugares que se liberaron durante la misma ronda. Puede darse el caso de que algunos trabajadores no muevan ningu\u0301n automo\u0301vil durante una ronda. Supo\u0301n que N es el nu\u0301mero de automo\u0301viles en la fila y W es el nu\u0301mero de trabajadores. Escribe un programa que, dados los tipos de automo\u0301viles estacionados en la fila y el nu\u0301mero de trabajadores, encuentre dicha forma de ordenar los automo\u0301viles y el nu\u0301mero de rondas necesarias sea a lo ma\u0301s \u2308N/ W - 1\u2309, es decir N/ W - 1 redondeado al entero ma\u0301s cercano que sea mayor o igual a este nu\u0301mero. El mi\u0301nimo nu\u0301mero de rondas necesarias para ordenar los automo\u0301viles, nunca sera\u0301 mayor a \u2308N/ W - 1\u2309. Considera el siguiente ejemplo. Hay 10 autos estacionados, de los tipos 1, 2, 3, y 4 con 4 trabajadores. El acomodo inicial de los automo\u0301viles identificados por su tipo, de izquierda a derecha es: 2 3 3 4 4 2 1 1 3 1El mi\u0301nimo numero de rondas necesarias es tres, y las rondas se pueden llevar a cabo de tal manera que el acomodo de los automo\u0301viles despue\u0301s de cada ronda sea: * 2 1 1 4 4 2 3 3 3 1 \u0096 despue\u0301s de la ronda 1, * 2 1 1 2 4 3 3 3 4 1 \u0096 despue\u0301s de la ronda 2, y* 1 1 1 2 2 3 3 3 4 4 \u0096 despue\u0301s de la ronda 3.",
+    "input": "La primera li\u0301nea contendra\u0301 tres enteros. El primer entero es el nu\u0301mero de automo\u0301vles N, 2 \u2264 N \u2264 20000. El segundo entero es la cantidad de tipos de automo\u0301viles M, 2 \u2264 M \u2264 50. Los tipos de automo\u0301viles estara\u0301n identificados por enteros de 1 a M. Hay al menos un auto de cada tipo. El tercer entero es el nu\u0301mero de trabajadores W, 2 \u2264 W \u2264 M. La segunda li\u0301nea estara\u0301 conformada por N enteros, donde el i- e\u0301simo entero es el tipo del i- e\u0301simo automo\u0301vil en la fila, de izquierda a derecha.",
+    "output": "La primera li\u0301nea de la salida contendra\u0301 un entero R, que es el nu\u0301mero de rondas en la solucio\u0301n. Las siguientes R li\u0301neas describen cada una de las rondas de la 1 a la R. En cada linea, el primer entero es el nu\u0301mero de autos C, que son movidos durante esa ronda. Despue\u0301s vendra\u0301n 2C enteros, identificando las posiciones en la fila de los automo\u0301viles, utilizando los enteros de 1 a N. Los primeros dos describen co\u0301mo se movio\u0301 uno de los autos: El primer entero es la posicio\u0301n del auto antes del inicio de la ronda, y el segundo entero indica la posicio\u0301n del auto despue\u0301s de dicha ronda. Los siguientes dos enteros indican como se movio\u0301 otro automo\u0301vil, y asi\u0301 sucesivamente. Pueden existir diferentes soluciones para estas R li\u0301neas, pero tu programa so\u0301lo debe imprimir una de ellas.",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 2272
+  },
+  {
+    "title": "IOI 1996 - Procesamiento de Trabajos",
+    "url": "https://omegaup.com/arena/problem/Procesamiento-de-Trabajos",
+    "history": "< center> ! [ Logo IOI 1996] ( logo96. jpg) < / center> \u2014\u2014\u2014\u2014\u2014\u2013# Procesamiento de TrabajosUna fa\u0301brica esta\u0301 manejando una li\u0301nea de produccio\u0301n. Dicha li\u0301nea permite ingresar * trabajos* en bruto por el contenedor de entrada, realizar un par de operaciones a los * trabajos* y presentar el resultado final en un contenedor de salida. Hay dos operaciones que deben realizarse para transformar cada * trabajo* en el producto deseado, primero debe realizarse la operacio\u0301n A y despue\u0301s la operacio\u0301n B. Existen un total de a y b ma\u0301quinas capaces de realizar la operacio\u0301n A y B respectivamente. La figura de abajo ilustra una posible configuracio\u0301n de la li\u0301nea de produccio\u0301n de la fa\u0301brica, funciona de la siguiente manera: Los * trabajos* en bruto son colocados en el contenedor de entrada. Una ma\u0301quina tipo A toma un * trabajo* del contenedor de entrada, ejecuta la operacio\u0301n A en ese * trabajo* y finalmente lo coloca en el contenedor intermedio. Una maquina tipo B toma un * trabajo* del contenedor intermedio, ejecuta la operacio\u0301n B en el * trabajo* y coloca el resultado en el contenedor de salida. Todas las ma\u0301quinas pueden trabajar de manera paralela e independientemente una de las otras, sin embargo, las ma\u0301quinas tienen distinto rendimiento, de manera que a cada ma\u0301quina le toma un determinado tiempo procesar un * trabajo* . < center> ! [ Li\u0301nea de Produccio\u0301n] ( produccion. png) < / center> Dados N * trabajos* en bruto ( disponibles desde el tiempo 0) y el tiempo de procesamiento de cada una de las ma\u0301quinas, se quiere saber cual sera\u0301 el mi\u0301nimo tiempo necesario para realizar u\u0301nicamente la operacio\u0301n A en todos los * trabajos* , y tambie\u0301n, para realizar ambas operaciones en todos los * trabajos* .",
+    "input": "La primer li\u0301nea de entrada contendra\u0301 un entero n, el nu\u0301mero de * trabajos* por procesar. En la siguiente li\u0301nea se encontrara\u0301 un u\u0301nico entero a, el nu\u0301mero de ma\u0301quinas del tipo A. A continuacio\u0301n habra\u0301n a enteros A_ i, representando el tiempo de procesamiento de la i- e\u0301sima ma\u0301quina del tipo A. La entrada seguira\u0301 con un entero b, el nu\u0301mero de ma\u0301quinas del tipo B. La siguiente li\u0301nea contendra\u0301 b enteros B_ i, cada uno representando el tiempo de procesamiento de la i- e\u0301sima ma\u0301quina del tipo B.",
+    "output": "Imprime a la salida dos li\u0301neas con un entero cada una: el tiempo mi\u0301nimo requerido para realizar u\u0301nicamente la operacio\u0301n A y en la siguiente el tiempo mi\u0301nimo para realizar ambas operaciones. | | input521 133 1 4| | output35| | end# Li\u0301mites* 1 \u2264 a, b \u2264 100, 000* 1 \u2264 N \u2264 1, 000, 000* 1 \u2264 A_ i, B_ i \u2264 1, 000",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 2242
+  },
+  {
+    "title": "IOI 2008 - Impresora de Tipos",
+    "url": "https://omegaup.com/arena/problem/Impresora-Tipos",
+    "history": "< center> ! [ Logo IOI 2008] ( logo08. jpg) < / center> \u2014\u2014\u2014\u2014\u2014\u2013# Impresora de TiposNecesitas imprimir N palabras en una impresora de tipos mo\u0301viles. Las impresoras de tipos mo\u0301viles son esas viejas impresoras en las que se necesita colocar pequen\u0303as piezas de metal ( cada una con una sola letra) de manera que se formen palabras. Una pieza de papel es entonces presionada contra las piezas para imprimir la palabra. La impresora con la que cuentas permite realizar cualquiera de las siguientes operaciones: * Agregar una letra al final de la palabra colocada en la impresora. * Quitar la u\u0301ltima letra del final de la palabra que esta\u0301 actualmente en la impresora. Solo es posible realizar esta operacio\u0301n si existe al menos una pieza meta\u0301lica colocada en la impresora. * Imprimir la palabra que se encuentre actualmente en la impresora. Inicialmente la impresora esta\u0301 vacia; no contiene ninguna pieza de metal. Al final de la impresio\u0301n, es posible dejar algunas letras en la impresora. Adema\u0301s, puedes imprimir las palabras en el orden que tu quieras. Como cada operacio\u0301n cuesta tiempo, quieres minimizar el nu\u0301mero total de operaciones que realizas. Dadas las N palabras que deseas imprimir, encuentra el mi\u0301nimo nu\u0301mero de operaciones necesarias para imprimir todas las palabras en cualquier orden e imprime cualquier secuencia mi\u0301nima para lograrlo.",
+    "input": "Tu programa debe leer de entrada esta\u0301ndar la siguiente informacio\u0301n: * La primer li\u0301nea contiene un entero N, el nu\u0301mero de palabras que quieres imprimir. * Cada una de las siguientes N li\u0301neas contiene una palabra. Cada palabra consiste en u\u0301nicamente letras minu\u0301sculas de la a a la z y tiene una longitud entre 1 y 20 caracteres. Todas las palabras sera\u0301n distintas.",
+    "output": "Tu programa debe escribir en salida esta\u0301ndar la siguiente informacio\u0301n: * La primer li\u0301nea debe contener un entero M, el mi\u0301nimo nu\u0301mero de operaciones requeridas. * Cada una de las siguientes M debe contener un caracter. Los caracteres describen la secuencia de operaciones realizadas. Cada operacio\u0301n se describe a continuacio\u0301n: * Agregar una letra esta\u0301 representado por el caracter de la misma letra agregada. * Imprimir la palabra actual esta\u0301 representado por el caracter ` ' P' ` ( mayu\u0301scula) . * Quitar la u\u0301ltima letra esta\u0301 representado por el caracter ` ' - ' ` ( menos) . | | input3printthepoem| | output20theP\u2014poemP\u2014rintP| | end# Li\u0301mites# Subtarea 1 [ 40 puntos] 1 \u2264 N \u2264 18# Subtarea 2 [ 60 puntos] 1 \u2264 N \u2264 25, 000",
+    "note": "",
+    "topics": [
+      "string suffix structures",
+      "data structures",
+      "strings",
+      "greedy"
+    ],
+    "id": 2121
+  },
+  {
+    "title": "Help Cupid",
+    "url": "https://omegaup.com/arena/problem/Help-Cupid",
+    "history": "Cupid\u2019s job is getting harder, so he is adopting new technologies to help himwith his difficult task of matching people into happy couples. He appointed thebest programmers in his staff to a new project called Advanced Couples Matching( ACM) . For this project, the programmers need to produce an algorithm thattakes a set of an even number of N lonely persons and matches them into N/ 2couples, such that each person is in exactly one couple. Sadly, the data available about each person is limited. In this modern world, using gender, ethnicity, age or nationality as criteria to form couples is nota sensible option, so the programmers can only use data about the internetconnection of each candidate. They decided to focus this stage on time zones. People living in closer time zones are more likely to find time to interactwith each other. Thus, the programmers decided to create couples so as tominimize the _ total time difference_ . Each time zone is identified by an integer between - 11 and 12, inclusive, representing its difference in hours from a particular time zone calledCoordinated Universal Time ( or UTC) . The time difference of two people livingin time zones represented by integers i and j is the minimum between | i \u2212j| and 24 - | i - j| . Given a partition of a set of an even number N ofcandidates into N/ 2 couples, its total time difference is the sum of the timedifference of each couple. You are asked to write a program that receives as input the time zones of a setof N candidates. The output of the program must be the minimum total timedifference among all possible partitions of the set into couples.",
+    "input": "The first line contains an even integer N ( 2 \u2264 N \u2264 1000) representingthe number of candidates to be coupled. The second line contains N integersT_ 1, T_ 2, . . . , T_ N ( - 11 \u2264 T_ i \u2264 12 for i = 1, 2, . . . , N) indicating the time zones of the candidates.",
+    "output": "Output a line with an integer representing the minimum total time differenceamong all possible partitions of the set of candidates into couples. # Examples| | input6- 3 - 10 - 5 11 4 4| | output5| | input2- 6 6| | output12| | input80 0 0 0 0 0 0 0| | output0| | end",
+    "note": "",
+    "topics": [
+      "sortings",
+      "greedy"
+    ],
+    "id": 2065
+  },
+  {
+    "title": "Jardinera",
+    "url": "https://omegaup.com/arena/problem/A-Jardinera",
+    "history": "A Natalia le piden que debe regar una jardinera en un espacio unidimensional, de un experimento muy importante en el cual el objetivo es obtener el mayor nu\u0301mero de islas, veamos el siguiente ejemplo; tenemos una jardinera con 4 valores positivos 5, 6, 2 y 4 cada valor representa la altura de la tierra. Para considerar una isla debe tener altura > 0. ! [ Ejemplo de una jardinera] ( jardin. jpg) En donde al momento de regar el agua tendri\u0301amos lo siguiente: Para una altura del agua con valor de cero, obtenemos una isla ( toda la jardinera) Para una altura del agua con valor de 1. 5, obtenemos una islaPara una altura del agua con valor de 2. 5, obtenemos dos islasPara una altura del agua con valor de 4. 5, obtenemos so\u0301lo una isla ya que todo la dema\u0301s tierra queda abajo del agua. Para una altura del agua de 6. 5 obtenemos cero islas ya que todo queda cubierto por el agua. ProblemaConstruye un programa que ayude a Natalia saber cual es la mayor cantidad de islas que ella puede obtener.",
+    "input": "Tu programa debera\u0301 leer de la entrada estandard lo siguiente, en la primera li\u0301nea el nu\u0301mero \u201cN\u201d donde N< = 1, 000, 000, indicando la cantidad de valores consecutivos de tierra que tiene la jardinera. Las siguientes \u201cN\u201d li\u0301neas contendra\u0301 cada una un valor entero que representa la secuencia de alturas de la tierra ( a0, a1, a2, . . aN) . todos estos valores son mayor o igual a cero y menores que 1, 073, 741, 824. # Ejemplos| | input45624| | output2| | input75613298| | output3| | end",
+    "output": "",
+    "note": "",
+    "topics": [
+      "implementation",
+      "greedy"
+    ],
+    "id": 2004
+  },
+  {
+    "title": "IOI 1996 - Ordenando una Secuencia de Tres Valores",
+    "url": "https://omegaup.com/arena/problem/Ordenando-Sec-Tres-Val",
+    "history": "< center> ! [ Logo IOI 1996] [ 1] < / center> \u2014\u2014\u2014\u2014\u2014\u2013# Ordenando una Secuencia de Tres ValoresOrdenar es una de las tareas ma\u0301s frecuentes en la computacio\u0301n. Considera el siguiente problema especial de ordenamiento, donde los elementos a ordenar solo tienen tres valores diferentes. Esta situacio\u0301n se presenta, por ejemplo, cuando se quiere ordenar los medallistas de una competencia de acuerdo al valor de su medalla, esto es, los medallistas de oro van primero, seguidos de los medallistas de plata y finalmente vienen los ganadores de medalla de bronce. En esta tarea los posibles valores de una secuencia son los enteros 1, 2 y 3. Se requiere ordenar de menor a mayor. Para ordenar la secuencia es necesario realizar operaciones de intercambio. Una operacio\u0301n de intercambio se define como, dados dos nu\u0301meros p y q, intercambiar los elementos de la secuencia S_ p y S_ q. Dada una secuencia de n valores ( 1 \u2264 n \u2264 200, 000) , calcula el mi\u0301nimo nu\u0301mero de operaciones de intercambio necesarias para ordenarla. Para hacer esta tarea un poco ma\u0301s difi\u0301cil, tambie\u0301n es necesario que imprimas una serie va\u0301lida de operaciones de intercambio para lograr el ordenamiento. Cualquier serie de operaciones que ordene la secuencia sera\u0301 considerada correcta.",
+    "input": "La primer li\u0301nea de entrada contendra\u0301 un entero n. La siguiente li\u0301nea contendra\u0301 n enteros. El i- e\u0301simo entero representa el valor de S_ i.",
+    "output": "Imprime en la primer li\u0301nea k, el mi\u0301nimo nu\u0301mero de operaciones necesarias para ordenar la secuencia. En la siguientes k li\u0301neas imprime dos enteros p_ i y q_ i ( 1 \u2264 p_ i, q_ i \u2264 n) . La i- e\u0301sima li\u0301nea representa los i\u0301ndices p_ i y q_ i que se intercambiara\u0301n en la i- e\u0301sima operacio\u0301n. | | input92 2 1 3 3 3 2 3 1| | output43 27 59 44 1| | end[ 1] : f796bd3baeef40024a6f5c2a745104dea0340acc. jpeg",
+    "note": "",
+    "topics": [
+      "greedy",
+      "implementation"
+    ],
+    "id": 1757
+  },
+  {
+    "title": "Chocolate",
+    "url": "https://omegaup.com/arena/problem/chocolate",
+    "history": "Supongamos que tenemos una barra de chocolate de * m* x * n* piezas cuadradas de 1x1( es una suposicio\u0301n, por lo tanto no puedes comertela) y debes partirla en cuadrados de 1 x 1. Las partes del chocolate pueden ser cortadas a trave\u0301s de cortes horizontales y/ o verticales como se muestra en la figura. Un corte( ya sea horizontal o vertical) de un pedazo del chocolate siempre divide ese pedazo en dos pedazos mas pequen\u0303os. Como todo cuesta en esta vida, cada corte que realizes en el chocolate tambie\u0301n tendra\u0301 un costo, dicho costo se puede expresar como un nu\u0301mero entero positivo. Este costo no depende del taman\u0303o del pedazo que se corte, sino que depende de la recta horizontal o vertical por la cual se este\u0301 cortando. Denotaremos los costos de cortar por cada recta vertical como * x* < sub> 1< / sub> , * x* < sub> 2< / sub> , * x* < sub> 3< / sub> , . . . , * x* < sub> * m- 1* < / sub> y los costos de cortar por cada recta horizontal como * y* < sub> 1< / sub> , * y* < sub> 2< / sub> , * y* < sub> 3< / sub> , . . . , * y* < sub> * n- 1* < / sub> . El costo de cortar la barra entera es la suma de los costos de todos los cortes requeridos. ! [ ] ( choc. jpg) Por ejemplo, si cortamos el chocolate a lo largo de las rectas horizontales y despue\u0301s cada pedazo obtenido lo cortamos a lo largo de las rectas verticales, el costo total por cortar la barra sera\u0301 * y* < sub> 1< / sub> + * y* < sub> 2< / sub> + * y* < sub> 3< / sub> + 4( * x* < sub> 1< / sub> + * x* < sub> 2< / sub> + * x* < sub> 3< / sub> + * x* < sub> 4< / sub> + * x* < sub> 5< / sub> ) . # ProblemaEscribe un programa que dado el taman\u0303o de la barra de chocolate, determine el costo mi\u0301nimo para cortarla en cuadrados de 1x1.",
+    "input": "Li\u0301nea 1: Dos enteros positivos * m* y * n* separados por un espacioSiguientes * m* - 1 li\u0301neas: Los valores de * x< sub> 1< / sub> , x< sub> 2< / sub> , x< sub> 3< / sub> , . . . , x* < sub> * m- 1* < / sub> Siguientes * n* - 1 li\u0301neas: Los valores de * y< sub> 1< / sub> , y< sub> 2< / sub> , y< sub> 3< / sub> , . . . , y* < sub> * n- 1* < / sub> * * Ejemplo: * * 6 421314412",
+    "output": "Li\u0301nea 1: Un solo nu\u0301mero entero: el costo mi\u0301nimo de cortar todo el chocolate en cuadrados de 1x1* * Ejemplo: * * 42# Li\u0301mites* 2 \u2264 * m* * * n* \u2264 1000* Ninguno de los costos superara\u0301 a 1000",
+    "note": "",
+    "topics": [
+      "greedy",
+      "number theory"
+    ],
+    "id": 1435
+  },
+  {
+    "title": "IOI 1996 - Red de Escuelas",
+    "url": "https://omegaup.com/arena/problem/Red-de-Escuelas",
+    "history": "< center> ! [ Logo IOI 1996] [ 1] < / center> \u2014\u2014\u2014\u2014\u2014\u2013# Red de EscuelasAlgunas escuelas esta\u0301n conectadas en una gran red de computadoras con el propo\u0301sito de compartir software educativo a todas ellas. Se han hecho algunos convenios entre las escuelas dentro de la red: cada escuela mantiene una lista de contactos con la que distribuye software. Nota que si la escuela x tiene a la escuela y en su lista de contactos, no es necesario que la escuela y tenga a x en su lista. * * * Subtarea a* * * : Encuentra el mi\u0301nimo nu\u0301mero de escuelas a las que le tienes que entregar un software para que dicho software sea distribuido a todas las escuelas dentro de la red. * * * Subtarea b* * * : Se quiere asegurar que, entregando un solo software a cualquier escuela en la red, sea posible distribuirlo a todas las otras escuelas. Calcula el mi\u0301nimo nu\u0301mero de extensiones que se tienen que hacer para garantizarlo. Una extensio\u0301n se define como agregar un nuevo miembro en la lista de contactos de una escuela.",
+    "input": "La primera li\u0301nea de entrada contendra\u0301 un entero n: el nu\u0301mero de escuelas en la red ( 1 \u2264 n \u2264 10^ 6) . Las escuelas esta\u0301n numeradas del 1 al n. Cada una de las siguientes n li\u0301neas describe la lista de contactos de la i- e\u0301sima escuela. La li\u0301nea nu\u0301mero i contendra\u0301 los nu\u0301meros de los contactos de la escuela i. La lista siempre termina con un nu\u0301mero 0. Se asegura que en el nu\u0301mero total de contactos en todas las listas no excede 10^ 6.",
+    "output": "Dos li\u0301neas con un entero cada una, la respuesta a la subtarea a y b respectivamente. | | input52 4 3 04 5 0001 0| | output12| | end[ 1] : f796bd3baeef40024a6f5c2a745104dea0340acc. jpeg",
+    "note": "",
+    "topics": [
+      "greedy",
+      "graphs"
+    ],
+    "id": 1364
+  },
+  {
+    "title": "Permutaci\u00f3n Hermosa",
+    "url": "https://omegaup.com/arena/problem/Permutacion-Hermosa",
+    "history": "A Loro le encantan las permutaciones. Una permutacio\u0301n de longitud n es una secuencia de n nu\u0301meros enteros positivos distintos, ninguno mayor que n. Asumiremos que el valor de mcd( a, b) es el ma\u0301ximo comu\u0301n divisor de a y b. Para Loro, el elemento p_ i de la permutacio\u0301n p_ 1, p_ 2, . . . , p_ n es bueno si mcd( i, p_ i) > 1. Loro considera una permutacio\u0301n hermosa, si tiene exactamente k elementos buenos. Desafortunadamente Loro no conoce ninguna permutacio\u0301n hermosa. Ayu\u0301dalo a encontrar al menos una de ellas.",
+    "input": "La linea de entrada contiene dos enteros n y k.",
+    "output": "En una sola linea imprime cualquier permutacio\u0301n hermosa o\u0301 - 1, si no existe ninguna.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "dfs and similar",
+      "math",
+      "greedy"
+    ],
+    "id": 1327
+  },
+  {
+    "title": "Elevator Code",
+    "url": "https://omegaup.com/arena/problem/Elevator-Code",
+    "history": "# Elevator CodeYou\u2019re playing a really cool video game about an special ferret agent called * Pwnie* . This little friend is trying to gain access to the secret labs of an evil corporation, but you\u2019re stuck on a level where you have to enter a secret code in the panel of an elevator. You actually remember some details about the code, but you have played this game for many hours and its hard to make some memory. The elevator panel shows an arithmetical expression consisting only in number signs ( \u201c# \u201d) , and add/ subtract operators ( \u201c+ \u201d/ \u201c- \u201d) . You know that each number sign must be replaced with a single digit. After a few minutes doing nothing, you remembered the digits you must use in the elevator panel, but you don\u2019t remember the correct order. Before trying like crazy all possible orders, you look for a hint on a video game magazine, there you find a very useful hint: \u201cIn order to get the correct code, the result of the expression must be the maximum among all possible results\u201d. Given the expression in the elevator panel and the digits you must use in the code, can you say what is the maximum result that the expression can get? After that, it will be easier to guess the code.",
+    "input": "The first line of input contains an integer T ( 1 \u2264 T \u2264 100) , the number of test cases. Each of the following T cases starts with an string E, the expression on the elevator panel. The length of the expression will not exceed 500 characters. There will be at most seven consecutive \u201c# \u201d. On the next line of the case there will be a string D, the digits that you remember the code must use. The length of the string D will be exactly the same as the number of \u201c# \u201d characters in E. You can safely assume an operator will not be placed after another operator or at the end of the expression.",
+    "output": "For each test case in the input, print the maximum result you can get from the expression and the digits given. The maximum result of the expression will fit in a 32- bit signed integer. # Example| | input2# # + # # 1234# # - # # - # # # 3333333| | output73- 333| | end",
+    "note": "",
+    "topics": [
+      "greedy"
+    ],
+    "id": 1270
+  },
+  {
+    "title": "Cubote",
+    "url": "https://omegaup.com/arena/problem/Cubote",
+    "history": "Dado un cubo como el que se muestra a continuacion, cada uno con un numero positivo en cada cara. ! [ Entrada] ( 1. jpg) Te dan N^ 3 de esos cubos con los que haces un cubote de N \u00d7 N \u00d7 N. El cual pondras en una mesa de tal suerte que solo se ven 5 caras. # ProblemaDados los valores de las caras cual es la suma minima que puede haber en las caras exteriores.",
+    "input": "Recibiras un numero N, seguido de 6 numeros, donde el primer nu\u0301mero representa el nu\u0301mero en la cara A del cubo, el segundo el valor de la cara B, y asi sucesivamente.",
+    "output": "Un numero que representa la suma minima de las 5 caras visibles del cubo.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "implementation"
+    ],
+    "id": 777
+  },
+  {
+    "title": "Las cartas de Dr. Lira",
+    "url": "https://omegaup.com/arena/problem/CartasDrLira",
+    "history": "Dr. Lira has N cards in a row on a table, numbered from left to right from 0 to N- 1. Every card is black on one side and white on the other. The cards on the table may have either side facing up. To activate his weapons arsenal, Dr. Lira needs the cards to have alternating colors, that is, every pair of consecutive cards needs to have different colors face up. Since he' s lazy, Dr. Lira has hired you to find what' s the minimum number of cards he needs to flip so they have alternating colors.",
+    "input": "In the first line an integer, N ( 3 \u2264 N \u2264 50) , indicating the number of cards Dr. Lira owns. In the second line, a string representing the configuration of the cards. If the i- th character is B, the i- th card has the black side facing up. Similarly, if the i- th character is W, the i- th card has the white side facing up.",
+    "output": "The minimum amount of cards that need to be flipped so the cards on the table have alternating colors. # Sample| | input4BBBW| | output1| | descriptionFlipping the second card: ` BWBW` | | input5WBWBW| | output0| | descriptionThere' s no need to flip anything. | | input9WWWWWWWWW| | output4| | descriptionFlipping 4 cards: ` WBWBWBWBW` | | end",
+    "note": "",
+    "topics": [
+      "trees",
+      "graphs",
+      "implementation",
+      "strings",
+      "greedy"
+    ],
+    "id": 237
+  },
+  {
+    "title": "\u00c1rboles",
+    "url": "https://omegaup.com/arena/problem/OIEG2013SSD",
+    "history": "Hace mucho tiempo, el rey Dengklek planto\u0301 N a\u0301rboles, numerados del 0 al N- 1, a lo largo del camino principal del Reino de los Patos. Al pasar el tiempo, los a\u0301rboles crecieron. Ahora, la altura del i- e\u0301simo a\u0301rbol es H_ i unidades. El rey Dengklek cree que el camino se veri\u0301a mejor si las alturas de los a\u0301rboles fueran estrictamente crecientes. Mas especi\u0301ficamente, en la configuracio\u0301n deseada, la altura del i- e\u0301simo a\u0301rbol debe ser estrictamente mas pequen\u0303a que la altura del ( i+ 1) - e\u0301simo a\u0301rbol, para todos los posibles valores de i. Para lograrlo, el rey Dengklek usara\u0301 sus poderes ma\u0301gicos. Si relaiza un hechizo de nivel X, puede aumentar o disminuir la altura de cada a\u0301rbol en a lo mas X unidades. El rey no puede disminuir la altura de ningu\u0301n arbol a menos de 1 unidad. Adema\u0301s la nueva altura del a\u0301rbol debe seguir siedo un nu\u0301mero entero de unidades. Calcula el mi\u0301nimo entero no negativo X tal que el rey Dengklek puede conseguir su objetivo mediante un hechizo de nivel X.",
+    "input": "En la primera linea el nu\u0301mero N de a\u0301rboles. En la segunda linea, una lista de N nu\u0301meros separados por espacios que representan las alturas de los a\u0301rboles.",
+    "output": "En la primera linea, el mi\u0301nimo entero no negativo X tal que el rey Dengklek puede conseguir su objetivo mediante un hechizo de nivel X.",
+    "note": "",
+    "topics": [
+      "greedy",
+      "binary search"
+    ],
+    "id": 194
+  },
+  {
+    "title": "Metro",
+    "url": "https://omegaup.com/arena/problem/metro",
+    "history": "En el mushroom kingdom desean crear una red de li\u0301neas de tren subterra\u0301neo que conecte todo el reino. El mushroom kingdom cuenta con 3< = n< = 30000 estaciones numeradas de 1 a n, las cuales deben conectarse con vi\u0301as. Para ello, se han realizado estudios que permitieron calcular cua\u0301l seri\u0301a el costo 1< = c< = 1000 de conectar la estacio\u0301n i con la estacio\u0301n j ( 1< = i, j< = n, i distinto de j) para 2< = m< = 200000 pares de estaciones i, j. Como se quiere hacer un uso eficiente de los recursos, te han encomendado la creacio\u0301n de un programa que determine cua\u0301l es el costo mi\u0301nimo de unir todas las estaciones, es decir, cua\u0301l es el menor costo posible para construir vi\u0301as que permitan llegar desde cualquier estacio\u0301n a cualquier otra. Debes tomar en cuenta las siguientes consideraciones: 1. Siempre sera\u0301 posible conectar todas las estaciones con los pares i, j dados en la entrada. 2. Si el par i, j aparece en la entrada, no aparecera\u0301 el par j, i ni habra\u0301 repeticiones.",
+    "input": "La primera li\u0301nea de la entrada tendra\u0301 2 enteros n y m, el nu\u0301mero de estaciones y el nu\u0301mero de posibles tramos a construir. Las siguientes m li\u0301neas contendra\u0301n la descripcio\u0301n de un posible tramo con 3 enteros i, j y c, donde i y j son las estaciones a conectarse y c es el costo que tendri\u0301a su construccio\u0301n.",
+    "output": "Un u\u0301nico nu\u0301mero, el menor costo resultante de conectar todas las estaciones. # Ejemplos| | input4 51 2 12 3 12 4 13 4 24 1 2| | output3| | descriptionLas vi\u0301as construidas seri\u0301an las que conectan los pares ( 1, 2) , ( 2, 3) y ( 2, 4) , que suman un costo de 3| | input6 82 5 63 6 33 1 406 4 21 4 12 6 72 1 202 4 20| | output19| | descriptionLas vi\u0301as construidas seri\u0301an las que conectan los pares ( 2, 5) , ( 3, 6) , ( 6, 4) , ( 1, 4) y ( 2, 6) que suman un costo de 19| | end# Li\u0301mites* 3< = n< = 30000* 2< = m< = 200000",
+    "note": "",
+    "topics": [
+      "graphs",
+      "greedy",
+      "dsu",
+      "sortings"
+    ],
+    "id": 169
+  }
+]
