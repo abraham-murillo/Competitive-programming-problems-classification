@@ -1,4 +1,4 @@
-import ai
+# import ai
 import time
 import firebase_admin
 from firebase_admin import credentials, initialize_app, firestore
@@ -7,7 +7,7 @@ from flask import Flask, request, send_from_directory, jsonify
 from flask_restful import Api, Resource, reqparse
 
 import json
-import nlp
+# import nlp
 from topicsStandardization import codeforcesToOmegaup
 from pprint import pprint
 
@@ -48,8 +48,8 @@ def getAllProblems():
 # pprint(getAllProblems()[:5])
 
 
-model = ai.Model()
-model.train("CNN", getAllProblems())
+# model = ai.Model()
+# model.train("CNN", getAllProblems())
 
 
 @app.route("/predictedTopics", methods=["POST"])
