@@ -1,0 +1,835 @@
+[
+  {
+    "title": "occ22sfinns23",
+    "url": "https://omegaup.com/arena/problem/occ22sfinns23",
+    "history": "# \u00bfVe\u0301rtices de un Recta\u0301ngulo? Dadas las coordenadas enteras de cuatro puntos en el plano cartesiano, determinar si son los ve\u0301rticesde un recta\u0301ngulo con los lados paralelos a los ejes cartesianos. Lasrespuestas posibles son \" Si\" o \" No\" # Ejemplos| | input3 4 3 2 5 4 5 2| | outputSi| | input3 4 3 2 5 4 5 1| | outputNo| | end",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 15978
+  },
+  {
+    "title": "occ22sfinpn3",
+    "url": "https://omegaup.com/arena/problem/occ22sfinpn3",
+    "history": "# Misma Horizontal, Misma Vertical o NingunaDados las coordenadas de dos puntos en el plano cartesiano determinar si esta\u0301n en una mismarecta horizontal, en una misma recta vertical o en ninguna de esas dos. Las salidas posibles sonhorizontal, vertical y ninguna. # Ejemplos| | input2 4 5 4| | outputhorizontal| | input10 20 10 10| | outputvertical| | input8 8 54 72| | outputninguna| | end",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 15970
+  },
+  {
+    "title": "occ22claspn14",
+    "url": "https://omegaup.com/arena/problem/occ22claspn14",
+    "history": "# Menor distanciaDadas las coordenadas enteras del ve\u0301rtice superior izquierdo e inferior derecho de un recta\u0301ngulo en el plano cartesiano y, la posicio\u0301n de las coordenadas enteras de un punto dentro de ese recta\u0301ngulo, encontrar la menordistancia de ese punto a uno de los lados del recta\u0301ngulo. # Ejemplos| | input2 56 - 23 0| | output1| | input2 56 - 24 3| | output2| | end",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 15838
+  },
+  {
+    "title": "Cobertura para puntos de colores",
+    "url": "https://omegaup.com/arena/problem/Cobertura-para-puntos-de-colores",
+    "history": "Dadas las coordenadas en el plano de N puntos rojos y N puntos negros, se desean trazar segmentos de recta de modo que cada punto rojo este\u0301 unido con al menos uno negro y cada punto negro este\u0301 unido con al menos uno rojo. Escribe un programa que minimice la suma de las longitudes de los segmentos usados.",
+    "input": "Un entero N seguido de 2N parejas de reales X, Y. Las primeras N parejas denotan las coordenadas de los puntos rojos y las siguientes N parejas denotan las coordenadas de los puntos negros. Puedes suponer que 1 \u2264 N \u2264 500 y que las componentes de las coordenadas esta\u0301n entre 0 y 100.",
+    "output": "Un real impreso con dos decimales de precisio\u0301n que sea la suma mi\u0301nima de las longitudes de los segmentos usados.",
+    "note": "",
+    "topics": [
+      "geometry",
+      "graph matchings"
+    ],
+    "id": 15546
+  },
+  {
+    "title": "Barco",
+    "url": "https://omegaup.com/arena/problem/Barco",
+    "history": "Un barco ha tenido un accidente y necesita auxilio. En el a\u0301rea hay otras dos embarcaciones y en base a sus coordenadas el capita\u0301n debe determinar cua\u0301l es la ma\u0301s cercana para llamarle y pedir rescate. Ayuda al capita\u0301n a encontrar la nave ma\u0301s cercana.",
+    "input": "En la primera li\u0301nea, dos enteros separados por un espacio x_ 0 y y_ 0 representando las coordenadas del barco accidentado. En la siguiente, dos enteros separados por un espacio x_ a y y_ a representando las coordenadas del primer barco de rescate, denotado A en la salida. En la tercera, dos enteros separados por un espacio x_ b y y_ b representando las coordenadas del otro barco de rescate, denotado B en la salida.",
+    "output": "La letra A o B, que indique que\u0301 barco esta\u0301 ma\u0301s cerca del navi\u0301o accidentado.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 15384
+  },
+  {
+    "title": "La fila perfecta",
+    "url": "https://omegaup.com/arena/problem/La-fila-perfecta",
+    "history": "En una empresa de desarrollo de sistemas informa\u0301ticos han decidido premiar la precisio\u0301n de sus programadores. Y tal vez pienses que se tomara\u0301 en cuenta la precisio\u0301n con la que desarrollan sus co\u0301digos. . . \u00a1Pero no! . El u\u0301nico criterio para obtener el premio es: hacer una fila perfecta; despue\u0301s de todo, uno debe ser muy preciso para lograr ese objetivo. En un punto P_ 0 ( X_ 0, Y_ 0) se coloca el director de la empresa, listo para entregar el premio a quienes superen la prueba. Luego se forma el primer programador en el punto P_ 1 ( X_ 1, Y_ 1) , quien, por cierto, asegura su premio por ser el primero en llegar a la fila. Detra\u0301s de e\u0301l se forman el resto de los programadores intentando hacer una fila perfecta con respecto del director y del primer programador que llego\u0301 a formarse. Un dron que sobrevuela el espacio donde se lleva a cabo la prueba, captura las coordenadas del resto de los empleados y las envi\u0301a al servidor central de la empresa. So\u0301lo se premiara\u0301 a quienes este\u0301n colocados en una fila perfecta. Ya que los N programadores acudieron por el premio, no hay quie\u0301n programe la solucio\u0301n al problema. \u00bfCrees que puedas ayudarles? ! [ enter image description here] [ 1]",
+    "input": "Dos enteros X_ 0 y Y_ 0 que representan las coordenadas de la ubicacio\u0301n del director, seguidos de la cantidad N de programadores que acudieron por el premio. En seguida, N pares de nu\u0301meros enteros representando las coordenadas de cada empleado en la fila.",
+    "output": "La cantidad de programadores que recibieron el premio.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "geometry",
+      "math"
+    ],
+    "id": 15281
+  },
+  {
+    "title": "Carretera recta",
+    "url": "https://omegaup.com/arena/problem/Carretera-recta",
+    "history": "El gobierno de Plaquetaque quiere construir una carretera que conecte sus muchas ciudades. Las ciudades esta\u0301n representadas como puntos con valores x y y. Esta carretera sera\u0301 perfecta, por lo cual no tendra\u0301 ni una sola imperfeccio\u0301n, \u00a1Como por ejemplo tener curvas! Asi\u0301 es, la carretera sera\u0301 completamente recta, desde su comienzo hasta el fin. Esto por supuesto implica que muy probablemente no sera\u0301 posible conectar todas las ciudades con la misma carretera. Ayuda a los ingenieros a saber cual se la ma\u0301xima cantidad de ciudades que pueden ser conectadas con esta nueva carretera.",
+    "input": "En la primer li\u0301nea un entero 2 \u2264 n \u2264 1000 la cantidad de ciudades en Plaquetaque. Las siguientes n li\u0301neas contienen cada una un par de enteros - 100 \u2264 x_ i, y_ i \u2264 100 las coordenadas de la i- e\u0301sima ciudad. Esta\u0301 garantizado que en cada punto solo puede existir una sola ciudad, es decir, cada par dado sera\u0301 u\u0301nico.",
+    "output": "Imprime un solo entero, la ma\u0301xima cantidad de ciudades que es posible conectar con una carretera recta.",
+    "note": "",
+    "topics": [
+      "number theory",
+      "geometry"
+    ],
+    "id": 14759
+  },
+  {
+    "title": "Tiendas en el supermercado",
+    "url": "https://omegaup.com/arena/problem/Tiendas-en-el-supermercado",
+    "history": "Grecia y Axyoan esta\u0301n en un supermercado, en un punto decidieron hacer una visita de varias tiendas, para ellos el orden en que las visitan es muy importante, por lo cual siempre las van a visitar en el orden que planearon visitarlas, por lo tanto, si despue\u0301s de una tienda A quieren ir a una tienda B ira\u0301n en li\u0301nea recta desde las coordenadas X, Y de A hacia las coordenadas X, Y de B, como es un supermercado al aire libre no hay paredes que los detengan. Sabiendo las coordenadas de las tiendas y el orden en que las van a recorrer ayuda a Grecia y Axyoan a saber la longitud total de su recorrido, siendo el punto de partida la primer coordenada de la lista.",
+    "input": "Un entero N ( 1 \u2264 N \u2264 1000000) que indica la cantidad de tiendas que van a visitar, seguido habra\u0301n N lineas, cada una conteniendo las coordenadas X_ i y Y_ i de la i- esima tienda ( 1 < = X, Y, < = 1000000) .",
+    "output": "La distancia total del recorrido.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "geometry"
+    ],
+    "id": 14356
+  },
+  {
+    "title": "La caja de zapatos",
+    "url": "https://omegaup.com/arena/problem/caja-de-zapatos",
+    "history": "Es navidad y Neil recibio\u0301 como regalo un nuevo par de zapatos. Como la caja es muy bonita, Neil quiereconservarla en su armario. El u\u0301nico problema es que Neil no sabe si tiene suficiente espacio para guardarla. Para responder esa pregunta, Neil tiene que conocer el volumen de la caja. Neil tiene una regla y es capaz de mediral largo l de la caja, el ancho a de la caja y la altura h de la caja. La caja tiene la forma de un paralelepi\u0301pedo rectangular. Recordemos que el volumen de un parlelepi\u0301pedorectangular es la multiplicacio\u0301n de su largo, su ancho y su altura. Ayuda a Neil a calcular el volumen de la caja escribiendo un programa que lo resuelva.",
+    "input": "Tres nu\u0301meros l, a y h, la longitud, anchura y altura de la caja. Se cumple que 1 \u2264 l, a, h \u2264 100.",
+    "output": "El volumen de la caja. # Ejemplos| | input1 2 4| | output8| | input3 5 4| | output60| | input5 5 5| | output125| | input1 1 1| | output1| | end",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 14355
+  },
+  {
+    "title": "Pizza Vinotinto",
+    "url": "https://omegaup.com/arena/problem/pizza-vinotinto",
+    "history": "Neil y Cristian esta\u0301n reunidos para ver el partido de la Vinotinto, pero como es de noche, deben cenar antes. Los amigos quieren cocinar una pizza, pero les falta uno de los ingredientes ma\u0301s importantes: el queso. Neil y Cristian saben el taman\u0303o del radio de la bandeja y quieren calcular cua\u0301nto queso deben comprar para hacer su pizza. Para esto, deben calcular el a\u0301rea de la pizza. Adema\u0301s, quieren an\u0303adirle bordes de queso, por lo que tambie\u0301n necesitan calcular el peri\u0301metro. Para este problema asumiremos que la pizza es perfectamente circular. Dado el radio de la pizza, ayuda a Neil y a Cristian a calcular ra\u0301pidamente el a\u0301rea y el peri\u0301metro de la misma. \u00a1Ra\u0301pido, antes de que empiece el partido! Afortunadamente, a los amigos no les importa ser muy precisos, por lo que piden que la respuesta tenga exactamente * * dos di\u0301gitos de precisio\u0301n* * . Por ejemplo, si el valor total es 34. 5431, los amigos se conforman con una respuesta de 34. 54. De la misma manera, si el valor real es 55. 1, tu respuesta debe ser 55. 10. # NotaPara este problema vamos a asumir que el valor de \u03c0 es exactamente * * 3. 14* *",
+    "input": "Una u\u0301nica li\u0301nea que contiene un entero r, el radio de la pizza.",
+    "output": "Imprime dos li\u0301neas. En la primera, el entero a: el a\u0301rea de la pizza. En la segunda, el entero p: el peri\u0301metro de la pizza. # Ejemplos| | input3| | output28. 2618. 84| | input5| | output78. 5031. 40| | end# Explicacio\u0301n del ejemploEn el primer caso, el radio de la pizza es r= 3. De esta manera, el a\u0301rea de la pizza viene dado por: a = \u03c0 r ^ 2 = 3. 14 * 9 = 28. 26Adema\u0301s, el peri\u0301metro viene dado por: p = 2 \u03c0 r = 2 * 3. 14 * 3 = 18. 84",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 14043
+  },
+  {
+    "title": "occ21sfinpn24",
+    "url": "https://omegaup.com/arena/problem/occ21sfinpn24",
+    "history": "# \u00bfCua\u0301ntos ve\u0301rtices? Dados dos recta\u0301ngulos en el plano cartesiano encontrar cua\u0301ntos ve\u0301rtices del segundo esta\u0301n en el interiordel primero ( incluyendo los bordes) . Su programarecibira\u0301 como entrada las coordenadas enteras de los ve\u0301rtices superior izquierdo e inferior derecho del primer recta\u0301ngulo seguidospor las coordenadas enteras de los ve\u0301rtices superior izquierdo e inferior derecho del segundo recta\u0301ngulo",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 13860
+  },
+  {
+    "title": "Agujeros negros",
+    "url": "https://omegaup.com/arena/problem/Agujeros-negros",
+    "history": "El otro di\u0301a descubriste dos agujeros negros usando tu telescopio. Sabes que si se acercan lo suficiente se fusionara\u0301n y formara\u0301n un agujero negro au\u0301n mas grande. Esto, como dicen por ahi\u0301, \" estari\u0301a bien padre\" asi\u0301 que quieres saber si sucedera\u0301 o no. Ambos ajugeros negros pueden ser ilustrados como puntos en un plano cartesiano el cual representa el cielo. Estos agujeros negros tienen un radio de atraccio\u0301n. Si estos radios se tocan, o si uno de los agujeros negros se encuentra dentro del radio de atraccio\u0301n del otro, sabes que se fusionara\u0301n.",
+    "input": "En la primer li\u0301nea tres enteros - 100 \u2264 a_ x, a_ y \u2264 100 y 1 \u2264 a_ r \u2264 100 las coordenadas X y Y y el radio del primer agujero negro. En la segunda li\u0301nea tres enteros - 100 \u2264 b_ x, b_ y \u2264 100 y 1 \u2264 b_ r \u2264 100 las coordenadas X y Y y el radio del segundo agujero negro.",
+    "output": "Si los agujeros colisionara\u0301n, imprime \" Si\" , caso contrario imprime \" No\" .",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 13548
+  },
+  {
+    "title": "Investigaci\u00f3n Espacial Especial",
+    "url": "https://omegaup.com/arena/problem/investigacion_espacial",
+    "history": "Un equipo de investigacio\u0301n espacial especial te ha contratado para que los ayudes con sus ca\u0301lculos. En particular necesitan que les ayudes a simular los movimientos de un conjunto de N planetas despue\u0301s de ser sometidos a M operaciones rotatorias. Se te dara\u0301n las coordenadas exactas de cada uno de los N planetas. Las cuales sera\u0301n coordenadas enteras en el plano. Habra\u0301 M operaciones rotatorias, las cuales estara\u0301n descritas con: * Coordenadas ( X, Y) . E\u0301ste sera\u0301 el punto sobre el cual van a girar los planetas. * A\u0301ngulo de rotacio\u0301n \u03b1. El cual siempre sera\u0301 un mu\u0301ltiplo de 90. E\u0301ste sera\u0301 el nu\u0301mero de grados que rotara\u0301n ( contrario a las manecillas del reloj * * CCW* * ) . Nota que cualquier rotacio\u0301n de 360 + \u03b1_ 2 es lo mismo que una rotacio\u0301n de \u03b1_ 2 ( por ejemplo una rotacio\u0301n de 450 es lo mismo que una de 90, una de 720 es lo mismo que 0. ) Al final tu tarea es imprimir las coordenadas finales de cada uno de los planetas despue\u0301s de todas las rotaciones.",
+    "input": "La primer li\u0301nea contendra\u0301 los enteros N y M que representan el nu\u0301mero de planetas y el nu\u0301mero de rotaciones a simlular. Las siguientes N li\u0301neas contienen las coordenadas enteras ( X, Y) de cada uno de los planetas. Las siguientes M li\u0301neas contienen las coordenadas enteras ( X, Y) y el a\u0301ngulo entero \u03b1 de cada operacio\u0301n rotatoria.",
+    "output": "N li\u0301neas con las coordenadas ( X, Y) finales de cada planeta, en el mismo orden en el que se dan en la entrada.",
+    "note": "",
+    "topics": [
+      "geometry",
+      "constructive algorithms",
+      "implementation"
+    ],
+    "id": 12982
+  },
+  {
+    "title": "Uniendo puntos con segmentos cortos",
+    "url": "https://omegaup.com/arena/problem/Uniendo-puntos-con-segmentos-cor",
+    "history": "Tenemos cuatro puntos A, B, C, D en el plano. Deseamos unirlos usando tres segmentos de recta. \u00bfEn que\u0301 orden tenemos que unirlos si deseamos minimizar la suma de las longitudes de los segmentos de recta usados?",
+    "input": "Cuatro parejas de reales que denotan las coordenadas en el plano de los puntos A, B, C, D respectivamente. Puedes suponer que todas las coordenadas esta\u0301n en el rango de - 10 a + 10.",
+    "output": "El orden en el que se deben unir los cuatro puntos ( denotados con caracteres) . En caso de existir ma\u0301s de una solucio\u0301n, puedes imprimir cualquiera de ellas. Adema\u0301s, se debe imprimir un real que sea la suma de las longitudes de los segmentos usados. El real impreso se considerara\u0301 correcto si es razonablemente cercano a la respuesta exacta.",
+    "note": "",
+    "topics": [
+      "math",
+      "geometry",
+      "implementation"
+    ],
+    "id": 12938
+  },
+  {
+    "title": "Vallas locas",
+    "url": "https://omegaup.com/arena/problem/S1-2021-Senior-CCC",
+    "history": "Necesitas pintar una valla de madera entre tu casa y la de tu vecino. Necesitas determinar el a\u0301rea de la valla, para poder determinar cua\u0301nta pintura necesitas usar. Sin embargo, la valla esta\u0301 hecha de N pedazos de madera no- uniformes, y tu vecino cree que tienen un toque arti\u0301stico. En particular, las piezas de madera tienen distinta anchura. El lado inferior de cada pedazo de madera es horizontal, ambos lados sera\u0301n verticales, pero la parte superior puede estar inclinada. A continuacio\u0301n se muestran dos pedazos de madera: ! [ Figura] ( figura1. png) Por suerte, la valla ha sido construida de tal forma que las piezas de madera adyacentes tienen la misma altura en los lados donde se tocan, lo que la hace lucir mejor visualmente.",
+    "input": "La primera li\u0301nea de la entrada contiene un entero positivo N donde N \u2264 10000. La segunda li\u0301nea de entrada contiene N+ 1 enteros separados por un espacio h_ 1, . . . , h_ N+ 1 ( 1 \u2264 h_ i \u2264 100, 1 \u2264 i \u2264 N + 1) describiendo las alturas de izquierda a derecha, de cada pieza de madera. Especi\u0301ficamente la altura izquierda de la i- e\u0301sima pieza de madera es h_ i y la altura derecha de la i- e\u0301sima pieza de madera es h_ i+ 1. La tercera li\u0301nea de la entrada contendra\u0301 N enteros separados por un espacio w_ i ( 1 \u2264 w_ i \u2264 100, 1 \u2264 i \u2264 N) describiendo el ancho de la i- e\u0301sima pieza de madera.",
+    "output": "El a\u0301rea total de la valla.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 12857
+  },
+  {
+    "title": "Grecia Illuminati",
+    "url": "https://omegaup.com/arena/problem/Grecia-Illuminati",
+    "history": "En la misteriosa ciudad de Guadalajara estaba una chica llamada Grecia, la cual estaba juntando ramitas en el bosque, sintiendo intriga por la situacio\u0301n se acerca el misterioso Axyoan a preguntarle \" Porque estas jutando ramitas? \" . < br/ > A lo que Grecia le contesto \" Para hacer mi casita que no ves? \" , pero en realidad Grecia es parte de los Iluminati, y estaba buscando ramitas para formar un triangulo y contactar con su antigua orden. < br/ > Para que un triangulo sea considerado valido solo tiene que cumplir de estar armado por 3 ramitas, y que ningun par de ramitas tenga longitud mayor que la suma de las longitudes de las otras 2 ( Se contaran los triangulos degenerados como triangulos) . Pero Axyoan siendo el detective que es estaba completamente seguro de lo que Grecia estaba haciendo, sin embargo el no sabia que ramitas iba a elegir asi que se quedo pensando de cuantas maneras podia elegir 3 ramitas para formar un triangulo. Ayuda a Axyoan a saber la cantidad.",
+    "input": "Un entero N indicando la cantidad de ramitas que tiene Grecia. < br/ > En la siguiente linea se encontraran las longitudes de las N ramitas.",
+    "output": "< br/ > La cantidad de formas que se pueden elegir 3 ramitas para formar un triangulo.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 12162
+  },
+  {
+    "title": "Serpiente Gigante",
+    "url": "https://omegaup.com/arena/problem/Serpiente-Gigante",
+    "history": "Un grupo de criptozoo\u0301logos descubrieron en el lago de Chapala una gran serpiente marina de taman\u0303o descomunal. Ahora monitorean sus movimientos con sate\u0301lites. Sin embargo por limitaciones tecnolo\u0301gicas no pueden tomar video del animal, solo fotografi\u0301as. Para deducir a donde se movera\u0301 a continuacio\u0301n la serpiente ( la cual le pusieron de apodo Pito\u0301n 3. 0) , observan la posicio\u0301n de su cabeza con el resto de su cuerpo. En las ima\u0301genes satelitales se representa la criatura con 3 coordenadas distintas sobre un plano cartesiano con centro en ( 0, 0) , la primer coordenada corresponde a su cola, la segunda a la base de su cabeza, y la tercera a la punta de su cabeza. Si formamos una linea recta con las primeras dos coordenadas, asumimos lo siguiente: si la punta de su cabeza continu\u0301a en la misma direccio\u0301n, se movera\u0301 hacia adelante. Si se dobla hacia la izquierda o derecha ( con respecto a la li\u0301nea trazada por su cuerpo) se movera\u0301 en esa direccio\u0301n. Ayuda a la comunidad cienti\u0301fica a predecir los movimientos de la serpiente.",
+    "input": "La entrada consiste de 3 li\u0301neas, cada una con un par de enteros - 1e5 \u2264 x, y \u2264 1e5 describiendo la posicio\u0301n de la cola de la serpiente, la base de su cabeza, y la punta de su cabeza respectivamente. Todas las coordenadas son distintas, la cabeza no puede voltearse directamente hacia atra\u0301s.",
+    "output": "Una de las siguientes 3 opciones, sin comillas: \" IZQUIERDA\" , \" ADELANTE\" , \" DERECHA\" .",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 12139
+  },
+  {
+    "title": "Ordenando por distancia al origen",
+    "url": "https://omegaup.com/arena/problem/Ordenando-por-distancia-al-orige",
+    "history": "Escribe un programa que lea un arreglo de N puntos en el plano ( x_ i, y_ i) y los ordene segu\u0301n su distancia con respecto al origen. En caso de empates en distancia, primero deben aparecer los de menor x y despue\u0301s los de menor y.",
+    "input": "Un entero N seguido de N parejas de enteros ( x_ i, y_ i) . Puedes suponer que 1 \u2264 N \u2264 10^ 5 y que las coordenadas esta\u0301n en el rango de - 25000 a + 25000.",
+    "output": "Los N puntos del arreglo ordenado.",
+    "note": "",
+    "topics": [
+      "math",
+      "sortings",
+      "geometry"
+    ],
+    "id": 12054
+  },
+  {
+    "title": "occ20sfns24",
+    "url": "https://omegaup.com/arena/problem/occ20sfns24",
+    "history": "# \u00bfQue\u0301 lado corta? Considere un recta\u0301ngulo en el plano cartesiano con su ve\u0301rtice inferior izquierdo en el origen ( 0, 0) y dos puntos que no esta\u0301n en ninguno de los lados del recta\u0301ngulo. Usted debe hacer un programa que determine si el segmento que une esos puntos corta algu\u0301n lado del recta\u0301ngulo, en caso afirmativo decir que\u0301 lado es. Respuestas posibles N ninguno, A lado superior, B lado inferior, I lado izquierdo, D lado derecho. La entrada consta de tres pares de nu\u0301meros. Los dos primeros x1 y y1 ( 0< x_ 1 , y_ 1< 1000) representan las coordenadas del ve\u0301rtice superior derecho del recta\u0301ngulo, los siguientes dos pares representan las coordenadas de los puntos que definen el segmento. Las coordenadas de estos puntos pueden estar entre - 2000 y 2000. Se garantiza en todas las entradas de prueba que el segmento nunca va interceptar uno de los ve\u0301rtices ni a dos lados. # Ejemplos| | input3 5 1 2 2 2| | outputN| | input3 5 1 2 1 7| | outputA| | end",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 12032
+  },
+  {
+    "title": "occ20sfpn32",
+    "url": "https://omegaup.com/arena/problem/occ20sfpn32",
+    "history": "# \u00bfQue\u0301 lado corta? Considere un recta\u0301ngulo en el plano cartesiano con su ve\u0301rtice inferior izquierdo en el origen ( 0, 0) y un segmento, horizontal o vertical, que no esta\u0301 sobre ningu\u0301n lado del recta\u0301ngulo. Usted debe hacer un programa que determine si el segmento corta algu\u0301n lado del recta\u0301ngulo, en caso afirmativo decir que\u0301 lado es. Respuestas posibles: N ninguno, A lado superior, B lado inferior, I lado izquierdo, D lado derecho. La entrada consta de tres pares de nu\u0301meros. Los dos primeros x_ 1 y y_ 1 ( 0< x_ 1 , y_ 1< 1000) representan las coordenadas del ve\u0301rtice superior derecho del recta\u0301ngulo, los siguientes dos pares representan las coordenadas de los puntos que definen el segmento. Las coordenadas de estos puntos pueden estar entre - 2000 y 2000. # Ejemplos| | input3 5 1 2 2 2| | outputN| | input3 5 1 2 1 7| | outputA| | end",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 12027
+  },
+  {
+    "title": "El golfista vidente",
+    "url": "https://omegaup.com/arena/problem/El-golfista-vidente",
+    "history": "Eres un famoso vidente y has decidido incursionar en el mundo del golf para obtener ma\u0301s dinero. Aunque quieres aprovechar tus poderes para obtener un mejor desempen\u0303o, pronto te diste cuenta que conocer el futuro no te convierte un buen golfista: en tu visio\u0301n del futuro puedes ver la distancia que recorrera\u0301 la bola en cada uno de tus siguientes N tiros, pero no puedes cambiar las distancias ni el orden en el que ocurrira\u0301n. El campo de golf es un plano en dos dimensiones y lo que si\u0301 puedes elegir sin restricciones es la orientacio\u0301n de cada tiro. Para al menos dar la batalla en el pro\u0301ximo torneo, deseas escribir un programa que determine si sera\u0301 posible llevar la bola de golf de su punto inicial al agujero de meta usando los tiros de tu visio\u0301n.",
+    "input": "Cuatro enteros X_ 1, Y_ 1, X_ 2, Y_ 2 que denotan la posicio\u0301n inicial de la bola y la posicio\u0301n de la meta, respectivamente. Posteriormente, un entero N seguido de N enteros D_ 1, D_ 2, . . . , D_ N que denotan la magnitud de la distancia de tus N tiros. Puedes suponer que - 10^ 5 \u2264 X_ 1, Y_ 1, X_ 2, Y_ 2 \u2264 + 10^ 5, que 1 \u2264 D_ i \u2264 10^ 6 y que D_ 1 + D_ 2 + . . . + D_ N \u2264 10^ 9.",
+    "output": "Un entero que sea la menor cantidad de tiros que necesitas para llevar la bola de golf a la meta o el entero - 1 si es imposible.",
+    "note": "",
+    "topics": [
+      "dp",
+      "binary search",
+      "geometry"
+    ],
+    "id": 10860
+  },
+  {
+    "title": "Y^3 + X^5 = N^7",
+    "url": "https://omegaup.com/arena/problem/Y3--X5--N7",
+    "history": "# HistoriaUn dia, Sebas estaba leyendo un Tzaloa de la OMM, y se encontro un problema muy dificil: \" Dado un entero N, determina si se cumple la igualdad Y^ 3 + X^ 5 = N^ 7 para algun X, Y entero. \" , cuya solucion no encontro. Tu como buen programador que eres, escribe un codigo que resuelva dicho problema.",
+    "input": "Un entero N.",
+    "output": "Imprime 1 o - 1 si existen o no dichos enteros respectivamente.",
+    "note": "",
+    "topics": [
+      "strings",
+      "trees",
+      "combinatorics",
+      "graph matchings",
+      "binary search",
+      "dp",
+      "matrices",
+      "dfs and similar",
+      "number theory",
+      "math",
+      "greedy",
+      "implementation",
+      "brute force",
+      "graphs",
+      "games",
+      "data structures",
+      "meet-in-the-middle",
+      "string suffix structures",
+      "flows",
+      "geometry",
+      "shortest paths",
+      "constructive algorithms",
+      "sortings"
+    ],
+    "id": 9724
+  },
+  {
+    "title": "Sumita cuadrada",
+    "url": "https://omegaup.com/arena/problem/Sumita-cuadrada",
+    "history": "Sebas esta\u0301 en un entrenamiento de matematicas, y le presentaron un problema: \" Demuestra que para toda N existe una suma de N nu\u0301meros tal que su suma sea un cuadrado perfecto. \" , Sebas esta muy ocupado para resolver ese problema, y tu\u0301 como buen programador que eres, te ha pedido que demuestres el problema con \" casitos\" .",
+    "input": "Un entero N",
+    "output": "Los N nu\u0301meros distintos entre si\u0301 separados por un espacio y ordenados en orden creciente tal que su suma sea un cuadrado perfecto",
+    "note": "",
+    "topics": [
+      "dfs and similar",
+      "graph matchings",
+      "string suffix structures",
+      "flows",
+      "strings",
+      "sortings",
+      "shortest paths",
+      "combinatorics",
+      "number theory",
+      "games",
+      "data structures",
+      "implementation",
+      "brute force",
+      "greedy",
+      "trees",
+      "graphs",
+      "meet-in-the-middle",
+      "geometry",
+      "dp",
+      "math",
+      "binary search",
+      "matrices",
+      "constructive algorithms"
+    ],
+    "id": 9723
+  },
+  {
+    "title": "\u00c1reas Verdes",
+    "url": "https://omegaup.com/arena/problem/Areas-Verdes",
+    "history": "La Organizacio\u0301n Medidora de A\u0301reas Verdes en Ambientes Urbanos ( OMAVAU) es un ente encargado tal y como su nombre lo indica, de medir a\u0301reas verdes en ambientes urbanos, y el di\u0301a de hoy te han encargado el proyecto ma\u0301s importante del an\u0303o: Medir el a\u0301rea verde del nuevo Aeropuerto Internacional de la Ciudad de Me\u0301xico, y para lograrlo cuentas con los planos de la nueva obra los cuales nos indican las coordenadas de cada uno de los ve\u0301rtices del Aeropuerto.",
+    "input": "En cada una de las siguientes * * N* * lineas encontraras los enteros * * X* * y * * Y* * , los cuales indican la coordenada en la que se encuentra un ve\u0301rtice del Aeropuerto, todas los ve\u0301rtices se encuentran en orden ( NOTA: El a\u0301rea total del Aeropuerto incluyendo sus zonas verdes nunca excedera\u0301n los limites dados por las coordenadas) . Terminaras de leer cuando la coordenada * * X* * y * * Y* * sean las iniciales.",
+    "output": "En una sola linea escribira\u0301s el si\u0301mbolo * *",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 9587
+  },
+  {
+    "title": "ITC Cajitas Felices",
+    "url": "https://omegaup.com/arena/problem/Las-cajitas",
+    "history": "Aaro\u0301n es un alumno que durante sus primeras semanas dentro del ITC, se enfoco en su materia preferida \" Programacio\u0301n\" . Por lo cual dejo pasar sus dema\u0301s materias. Aaro\u0301n necesita de tu ayuda para poder entregar todas sus tareas. por lo que te pide ayuda en su tarea de Matema\u0301ticas. Su tarea consiste en dado una hoja de papel m* n, formar una caja. En la cual debe de determinar el volumen ma\u0301ximo y la altura ma\u0301xima que puede tener dicha caja. # ProblemaDadas las medidas del papel m* n formar una caja, recortando a la hoja en cada esquina un cuadrado de x* x donde x es la altura de la caja. con la figura resultante formar la caja y calcular la altura ma\u0301xima h y el volumen v ma\u0301ximo de la caja! [ Texto alternativo] ( recorte. png) ! [ Texto alternativo] ( cubo. png)",
+    "input": "Ingresar 2 valores enteros m y n representando las medias de la hoja.",
+    "output": "Imprimir 2 valores enteros h y v. Donde h es la altura ma\u0301xima que puede tener la caja y v el volumen ma\u0301ximo de la misma.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 8908
+  },
+  {
+    "title": "Distancia entre dos puntos",
+    "url": "https://omegaup.com/arena/problem/Distancia-entre-dos-puntos",
+    "history": "# Descripcio\u0301n: Este es un problema simple y sencillo, tu u\u0301nica tarea es mostrar en pantalla la distancia entre dos puntos dados ( A, y B) , dentro de un plano cartesiano. ! [ enter image description here] [ 1]",
+    "input": "- En la primera li\u0301nea, las coordenadas x y y del punto A. - En la segunda li\u0301nea, las coordenadas x y y del punto B.",
+    "output": "- La distancia que hay entre los puntos A y B.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 8809
+  },
+  {
+    "title": "Analygeos de Xcoder",
+    "url": "https://omegaup.com/arena/problem/Analygeos-de-Xcoder",
+    "history": "\u2014\u2014\u2014- > # Descripcion: > > Un di\u0301a como cualquier otro, Xcoder observa en la lejania tres> barcos, los cuales ordeno alfabeticamente, el Barco A, Barco B y> Barco C. En el Barco A se encuentra el gran Dr. MrKrista, en el> barco B se encuentra Apocryphon, > mientras que en el barco C se encuentran los _ \" dioses\" _ Amehc y> Citalord quienes acababan de terminar una disputa entre los dos. > Cada uno de ellos quiere saber que distancia hay entre cada uno de sus> barcos. Amehc te a pedido calcular el semiperimetro, mientras que> Citalord el area. JosepHy ( quien esta viendo desde lejos) , posee un> mapa muy preciso de esa regio\u0301n dividido por coordenadas y orientado> mediante dos ejes ( vertical para y, y horizontal para x) , el te ha> pedido que le digas si los tres barcos A, B y C se encuentran en> una recta paralela al eje x, o una recta paralela al eje y ( si es> que se presenta el caso) . > > ! [ enter image description here] [ 1] > > # Entrada> > - En la primera li\u0301nea las coordenadas del barco A. > - En la segunda li\u0301nea las coordenadas del barco B. > - En la tercera li\u0301nea las coordenadas de barco C. > > # Salida> > - El semiperimetro ( S) del poligono formado por los tres barcos. > - El peri\u0301metro ( P) de dicho poligono. > - El a\u0301rea del poligono mencionado anteriormente. > - En caso de que los 3 barcos, A, B y C se encuentren en una misma linea recta paralela, imprimira\u0301s: \u0300\u0300Recta paralela al> eje x\" , si es que corresponde al eje x, en caso contrario> imprimiras: \u0300\u0300Recta paralela al eje y\" . \u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry",
+      "implementation"
+    ],
+    "id": 8801
+  },
+  {
+    "title": "Figuras Planas",
+    "url": "https://omegaup.com/arena/problem/Figuras-Planas",
+    "history": "Dado cuatro puntos * * A* * , * * B* * , * * C* * y * * D* * determina si la figura * * ABCD* * es un cuadrado, un recta\u0301ngulo, un paralelogramo, un trapezoide o ninguno bajo las siguientes definiciones: Cuadrado: Cuadrila\u0301tero con cuatro a\u0301ngulos rectos y cuatro lados del mismo taman\u0303oRectangulo: Cuadrila\u0301tero que no es cuadrado pero tiene cuatro a\u0301ngulos rectosParalelogramo: Cuadrila\u0301tero que no tiene a\u0301ngulos rectos pero cada par de lados opuestos tiene el mismo taman\u0303o e inclinacio\u0301n ( son paralelos) . Trapezoide: Cuadrila\u0301tero que tiene dos lados paralelos y dos lados no paralelos. Ninguno: No cumple con las u\u0301ltimas descripciones. Las figuras no se intersectara\u0301n y formara\u0301n un cuadrila\u0301tero con lados * * AB* * , * * BC* * , * * CD* * y * * AD* * .",
+    "input": "Cuatro pares de nu\u0301meros enteros * * X* * : - 10000 \u2264 X \u2264 10000 y * * Y* * : - 10000 \u2264 Y \u2264 10000 en distintas li\u0301neas correspondiendo a * * A* * , * * B* * , * * C* * y * * D* * en ese orden.",
+    "output": "Cuadrado, Rectangulo, Paralelogramo, Trapezoide o Ninguno dependiendo de la figura",
+    "note": "",
+    "topics": [
+      "geometry",
+      "implementation"
+    ],
+    "id": 8614
+  },
+  {
+    "title": "Tipos de Triangulos",
+    "url": "https://omegaup.com/arena/problem/Tipos-de-Triangulos",
+    "history": "Escribe un programa que detecte el tipo de un tria\u0301ngulo dadas las longitudes x, y, z de sus tres lados. - * * Equila\u0301tero* * : tria\u0301ngulo con los tres lados iguales. - * * Iso\u0301sceles* * : tria\u0301ngulo con dos lados iguales. - * * Escaleno* * : tria\u0301ngulo con los tres lados desiguales.",
+    "input": "Los tres enteros x, y, z separados por un espacio. Puedes suponer que x, y, z > 0 y que existe una forma va\u0301lida de construir un tria\u0301ngulo con esas longitudes de lados.",
+    "output": "El tipo de tria\u0301ngulo que se tiene. La cadena a imprimir debe estar en minu\u0301scula y no debe incluir acentos.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "geometry"
+    ],
+    "id": 8551
+  },
+  {
+    "title": "Campo Electrico",
+    "url": "https://omegaup.com/arena/problem/Campo-Electrico",
+    "history": "La mama\u0301 de Juanito esta atrapada en un campo ele\u0301ctrico y ocupa tu ayuda para salir de e\u0301l. Dado cierto nu\u0301mero de cargas electricas en espacio tridimensional, debes calcular cual sera\u0301 el vector de campo ele\u0301ctrico en el punto indicado. Para obtener el valor del campo electrico en cierto punto, debes aplicar la formula E\u20d7 = \u2211kQ/ r^ 2 con direccio\u0301n hacia el punto si el valor de la carga Q es negativo y direccio\u0301n contraria si es positivo. Considera k = 9x10^ 9, y r como la magnitud de la distancia entre el punto y la carga.",
+    "input": "La primera li\u0301nea sera\u0301 el nu\u0301mero de cargas puntuales * * N* * seguido por tres nu\u0301meros separados por espacios que son las coordenadas X, Y y Z de la mama\u0301 de Juanito. En las siguientes * * N* * lineas vendra\u0301n 4 nu\u0301meros reales, el valor de la carga seguido por sus coordenadas.",
+    "output": "Debes imprimir tres valores con dos puntos decimales redondeados indicando los componentes del campo electrico en X, Y y Z divididos por 1x10^ 9",
+    "note": "",
+    "topics": [
+      "implementation",
+      "geometry"
+    ],
+    "id": 7861
+  },
+  {
+    "title": "Alturas equil\u00e1teros",
+    "url": "https://omegaup.com/arena/problem/Alturas-equilateros",
+    "history": "La maestra de Juanito le encargo\u0301 de tarea encontrar una expresio\u0301n para calcular la altura de cualquier tria\u0301ngulo equila\u0301tero dada la longitud de uno de sus lados. Como Juanito esta\u0301 muy ocupado terminando su robot, te dara\u0301 un sandwich si le ayudes a resolver su tarea. A continuacio\u0301n se muestran los apuntes descifrados de la tarea de Juanito.",
+    "input": "En la primera li\u0301nea encontrara\u0301s el valor * * N* * que indicara\u0301 cuantos tria\u0301ngulos ocupas leer y en las siguientes * * N* * lineas encontrara\u0301s un entero con el valor de cualquiera de los lados de ese tria\u0301ngulo.",
+    "output": "* * N* * li\u0301neas con las alturas de cada tria\u0301ngulo redondeados a dos lugares despues del punto.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "math",
+      "geometry"
+    ],
+    "id": 7837
+  },
+  {
+    "title": "Uniendo puntos",
+    "url": "https://omegaup.com/arena/problem/Uniendo-puntos",
+    "history": "De nin\u0303o siempre comprabas revistas para colorear y te gustaba la seccio\u0301n en la que uni\u0301as puntos numerados para formar una figura. Esas revistas no son tan populares como antes, pero te gustari\u0301a contar con un programa que simule la misma actividad. Si unes el punto 1 con el 2 mediante una recta, el 2 con el 3, . . . , el N - 1 con el N y finalmente el N con el 1 para cerrar el dibujo, \u00bfcua\u0301l fue la longitud total del trazo realizado?",
+    "input": "Un entero N seguido de N parejas enteros que denotan las coordenadas X, Y de los puntos desde el punto 1 hasta el N. Puedes suponer que 2 \u2264 N \u2264 200 y que para cada punto se cumple que 0 \u2264 X, Y \u2264 100.",
+    "output": "Un real con dos decimales de precisio\u0301n que sea la longitud del trazo realizado. E\u0301ste corresponde con la suma de las longitudes de cada recta dibujada. # NotaEste problema se puede resolver con los temas vistos en * Programacio\u0301n Estructurada* de la UAM Azcapotzalco.",
+    "note": "",
+    "topics": [
+      "geometry",
+      "implementation",
+      "math"
+    ],
+    "id": 7551
+  },
+  {
+    "title": "Expected area",
+    "url": "https://omegaup.com/arena/problem/Expected-area",
+    "history": "Tenemos dos segmentos en R^ 3: O\u20d7A\u20d7 y O\u20d7B\u20d7, donde O es el origen. Escogemos de forma aleatoria dos puntos en el segmento O\u20d7A\u20d7 y uno ma\u0301s en el segmento O\u20d7B\u20d7. Los tres puntos escogidos forman los ve\u0301rtices de un tria\u0301ngulo. \u00bfCua\u0301l es el valor esperado de su a\u0301rea? La eleccio\u0301n de los puntos en ambos segmentos es uniforme sobre su longitud, no sobre sus coordenadas.",
+    "input": "La primera li\u0301nea contiene tres enteros A_ x, A_ y y A_ z, que son las coordenadas del punto A. La segunda li\u0301nea contiene tres enteros B_ x, B_ y y B_ z, que son las coordenadas del punto B.",
+    "output": "El valor esperado del a\u0301rea del tria\u0301ngulo formado, redondeado a 4 decimales.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 7220
+  },
+  {
+    "title": "Tareas",
+    "url": "https://omegaup.com/arena/problem/CEP2017-Tareas",
+    "history": "A la profesora de Alfredo se le ha ocurrido nuevamente dejar una tarea muy aburrida y bastante larga. Esta vez, les ha pedido calcular el a\u0301rea de muchos trapecios. Como Alfredo aprendio\u0301 a programar con los chicos del ACM, decide hacer un programa para resolver su tarea. Cada ejercicio es dado por 3 nu\u0301meros a, b y h, los cuales son la bases del trapecio y la altura, respectivamente.",
+    "input": "Un u\u0301nica li\u0301nea conteniendo los 3 enteros a, b y h.",
+    "output": "Un u\u0301nica li\u0301nea con el resultado del a\u0301rea del trapecio. Si el a\u0301rea es entera, puedes incluir o no decimales.",
+    "note": "",
+    "topics": [
+      "math",
+      "geometry"
+    ],
+    "id": 6210
+  },
+  {
+    "title": "Canchas",
+    "url": "https://omegaup.com/arena/problem/COMI-Canchas",
+    "history": "El director de la escuela necesita tu ayuda para redistribuir la cancha de baskety de volley en el patio de la escuela. Ambas canchas ahora sera\u0301n recta\u0301ngulos cuyas esquinasestara\u0301n en coordenadas enteras dentro del nuevo patio. El director te dara\u0301 las coordenadas de las esquinas opuestas de cada cancha nuevay quiere que calcules cua\u0301l sera\u0301 el a\u0301rea total del patio que quedara\u0301 cubierta porambas canchas. A pesar del taman\u0303o del patio de la escuela, puede ser que ambas canchas puedan encimarse, por lo que debera\u0301s tomar eso en cuenta para no contar dos veces el a\u0301rea. # TareaEscribe un programa que dadas las coordenadas de un par de esquinas opuestas de cadacancha calcule el a\u0301rea total cubierta por ambas canchas.",
+    "input": "Tu programa debera\u0301 leer del teclado dos li\u0301neas, cada una con 4 nu\u0301meros enteros separadospor un espacio que representan las coordendas x_ 1, y_ 1, x_ 2, y_ 2de cada una de las canchas.",
+    "output": "Tu programa debera\u0301 escribir en la pantalla un u\u0301nico nu\u0301mero entero que represente ela\u0301rea total cubierta por ambas canchas",
+    "note": "",
+    "topics": [
+      "math",
+      "geometry",
+      "implementation"
+    ],
+    "id": 6120
+  },
+  {
+    "title": "Manecillas del reloj",
+    "url": "https://omegaup.com/arena/problem/manecillas-reloj",
+    "history": "El intere\u0301s medieval en los disposivos meca\u0301nicos esta\u0301 bien ilustrado por el desarrollo del reloj meca\u0301nico. El ma\u0301s antiguo de los cuales es impulsado por pesas y controlado en un borde por un brazo oscilante que interactu\u0301acon una rueda dentada se remonta a 1386. Los relojes controlados por muelles aparecieron a mediados del siglo XV, esto que permitio\u0301 construir mecanismos ma\u0301s compactos y preparar el camino para el reloj porta\u0301til. Los relojes de pe\u0301ndulo impulsados \u200b\u200bpor resorte ingleses mantuvieron primero en un soporte de pared pequen\u0303o y ma\u0301s tarde en un estante. Muchos relojes de soporte conteni\u0301an un cajo\u0301n para sostener la llave de enrollamiento. Los primeros relojes de soporte, hechos para un peri\u0301odo posterior a 1660, eran de disen\u0303o arquitecto\u0301nico, con pilares a los lados y un fronto\u0301n en la parte superior. En Francia, en los siglos XVII y XVIII, el reloj de mesa se convirtio\u0301 en un objeto de disen\u0303o monumental, cuyos mejores ejemplos son obras menores de escultura. Los relojes Longcase ( tambie\u0301n llamados relojes de pie) son relojes de pe\u0301ndulo altos encerrados en una caja de madera que se levanta sobre el piso y tiene ti\u0301picamente entre 6 y 7, 5 pies ( 1, 8 a 2, 3 m) de altura. Ma\u0301s tarde, el nombre * * reloj de abuelo* * se hizo popular despue\u0301s de la popular cancio\u0301n * * El reloj de mi abuelo* * , escrita en 1876 por Henry Clay Work. Uno de los primeros relojes ato\u0301micos era un reloj controlado por amoni\u0301aco. Fue construido en 1949 en la Oficina Nacional de Esta\u0301ndares, Washington, D. C . ; en este reloj, la frecuencia no vario\u0301 en ma\u0301s de una parte en 10< sup> 8< / sup> . Los relojes nucleares se construyen con dos relojes. El conjunto de a\u0301tomos que emiten la radiacio\u0301n gamma de frecuencia precisa se puede llamar el reloj emisor; y, otro grupo de a\u0301tomos que absorben esta radiacio\u0301n, siendo e\u0301ste el reloj absorbente. Un par de estos relojes nucleares puede detectar cambios de energi\u0301a de una parte en 10< sup> 14< / sup> , siendo aproximadamente 1000 veces ma\u0301s sensible que el mejor reloj ato\u0301mico. El reloj de cesio es el tipo de reloj ma\u0301s preciso que se haya desarrollado. Este dispositivo hace uso de las transiciones entre los estados de giro del nu\u0301cleo de cesio y produce una frecuencia que es tan regular que se ha adoptado para establecer el esta\u0301ndar de tiempo. La historia de los relojes es fascinante, pero no relacionada con este problema. En este problema, se le pide que encuentre el a\u0301ngulo entre la aguja de los minutos y la manecilla de las horas en un reloj analo\u0301gico normal. Suponga que la manecilla de los segundos, si hubiera una, estari\u0301a apuntando hacia arriba hacia la 12. De\u0301 todos los a\u0301ngulos como a\u0301ngulos positivos ma\u0301s pequen\u0303os. Por ejemplo, 9: 00 es 90 grados; no - 90 o 270 grados.",
+    "input": "La entrada es un tiempo de la forma * * H: M* * , en una sola li\u0301nea, con 1 \u2264 H \u2264 12 y 00 \u2264 M \u2264 59. Tenga en cuenta que * * H* * puede representarse con 1 o\u0301 2 di\u0301gitos ( para 1 - 9 o\u0301 10 - 12, respectivamente) ; M siempre se representa con 2 di\u0301gitos ( los tiempos de entrada son los que normalmente se ven en un reloj digital) .",
+    "output": "La salida muestra el a\u0301ngulo positivo ma\u0301s pequen\u0303o en grados entre las manecillas. La respuesta debe estar entre 0 grados y 180 grados. La salida debe redondearse al 1/ 1000 ma\u0301s cercano, es decir, tres lugares despue\u0301s de imprimir el punto decimal.",
+    "note": "",
+    "topics": [
+      "geometry",
+      "implementation"
+    ],
+    "id": 5856
+  },
+  {
+    "title": "Base de un triangulo",
+    "url": "https://omegaup.com/arena/problem/Base-de-un-triangulo",
+    "history": "Un di\u0301a Miguelito se senti\u0301a muy frustado ya que no habi\u0301a pasado la olimpiada de matema\u0301ticas, asi\u0301 que decidio\u0301 pasar la de informa\u0301tica como venganza. A miguelito le gustaba la de informa\u0301tica ya que no habi\u0301a problemas de geometri\u0301a pero \u00a1Oh, sorpresa! de repente vio un problema de un triangulo en la plataforma el cual te deci\u0301a * * * \" Halla la base de triangulo teniendo la altura\" * * * , el dijo \" Que fa\u0301cil\" pero al parecer como Diosito no lo quiere su computadora fallaba y le dividi\u0301a la altura entre dos, asi\u0301 que a el no lo detuvo eso y consiguio\u0301 resolver el problema# ProblemaDecrifa cual era el programa que creo miguel con su computadora fallada",
+    "input": "Dos enteros A y B, la media altura del triangulo y su a\u0301rea respectivamente",
+    "output": "La base del triangulo",
+    "note": "",
+    "topics": [
+      "math",
+      "geometry",
+      "implementation"
+    ],
+    "id": 5845
+  },
+  {
+    "title": "Bisecci\u00f3n de un pol\u00edgono",
+    "url": "https://omegaup.com/arena/problem/Biseccion-de-un-poligono",
+    "history": "En lo\u0301gica difusa, la fuerza con la que una regla difusa se cumple es un real en el intervalo [ 0, 1] y cada regla hace referencia a una funcio\u0301n con el mismo codominio. Durante el proceso de desdifusificacio\u0301n, el a\u0301rea debajo de la curva de la funcio\u0301n se sombrea a partir de una altura Y que es igual a la fuerza de su regla. Lo anterior se hace para todas las reglas del sistema. Al final se obtiene un poli\u0301gono ( no necesariamente conexo) y un algoritmo de desdifusificacio\u0301n consiste en encontrar la X tal que una li\u0301nea vertical en esa posicio\u0301n bisecta al poli\u0301gono en dos partes cuyas a\u0301reas sombreadas son de la misma magnitud. Escribe un programa que implemente dicho algoritmo de desdifusificacio\u0301n. La entrada consistira\u0301 de N reglas, donde cada regla esta\u0301 descrita por los puntos ( X_ 1, X_ 2, X_ 3) de una funcio\u0301n triangular y un valor Y que es la fuerza con la que se cumple la regla. Una funcio\u0301n triangular ( X_ 1, X_ 2, X_ 3) se ve en el plano cartesiano como el tria\u0301ngulo con ve\u0301rtices en ( X_ 1, 0) , ( X_ 2, 1) , ( X_ 3, 0) .",
+    "input": "El entero N seguido de las N reglas descritas como una cuadrupleta de reales X_ 1, X_ 2, X_ 3, Y. Puedes suponer que 1 \u2264 N \u2264 100 adema\u0301s de que 0 \u2264 X_ 1 < X_ 2 < X_ 3 \u2264 1000 y 0 \u2264 Y \u2264 1 para todas las reglas.",
+    "output": "Un real que es la coordenada X de la recta vertical que bisecta el poli\u0301gono. La salida se considerara\u0301 correcta si coindice con el valor exacto con una precisio\u0301n de un decimal.",
+    "note": "",
+    "topics": [
+      "dp",
+      "geometry"
+    ],
+    "id": 5834
+  },
+  {
+    "title": "\u00c1rea de un tri\u00e1ngulo ",
+    "url": "https://omegaup.com/arena/problem/area-triangulo-inout",
+    "history": "En la escuela a Carlitos le han ensen\u0303ado a calcular el a\u0301rea de un tria\u0301ngulo usando los valores de los lados. La maestra le ha indicado que lo primero que debe calcular es el valor: S = L_ 1 + L_ 2 + L_ 3/ 2 El siguiente paso es aplicar la fo\u0301rmula para calcular el a\u0301rea. area = \u221a( s ( s- L_ 1) ( s- L_ 2) ( s- L_ 3) ) Carlitos esta\u0301 empezando sus cursos, por ello te pide que le apoyes escribiendo un programa que permita verificar si esta\u0301 haciendo bien sus ca\u0301lculos.",
+    "input": "Recibira\u0301s 3 valores de tipo real. Estos lados corresponden siempre a un tria\u0301ngulo va\u0301lido.",
+    "output": "Mostrar cada uno de los lados lei\u0301dos en la entrada y el a\u0301rea del tria\u0301ngulo. Considera 15 caracteres para imprimir cada nu\u0301mero y cuatro decimales. Los detalles puedes consultarlos en los ejemplos.",
+    "note": "",
+    "topics": [
+      "math",
+      "implementation",
+      "geometry"
+    ],
+    "id": 5821
+  },
+  {
+    "title": "Puntos colineales",
+    "url": "https://omegaup.com/arena/problem/Puntos-colineales",
+    "history": "Dados dos puntos en el plano, siempre existe una li\u0301nea recta que los une. Sin embargo, para tres puntos puede que dicha recta no exista. Dadas las coordenadas de tres puntos en el plano, determina si existe o no una recta que toca a todos los puntos.",
+    "input": "Seis enteros x_ 1, y_ 1, x_ 2, y_ 2, x_ 3, y_ 3 separados por espacios que denotan las coordenadas de los tres puntos en el plano, respectivamente. Puedes suponer que - 1000 \u2264 x_ i, y_ i \u2264 + 1000 para 1 \u2264 i \u2264 3.",
+    "output": "La letra ' S' si existe una recta que toque todos los puntos y la letra ' N' en caso contrario.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "geometry"
+    ],
+    "id": 5755
+  },
+  {
+    "title": "Buscando rutas",
+    "url": "https://omegaup.com/arena/problem/Buscando-rutas",
+    "history": "Es usual que en la Universidad de las Ciencias Informa\u0301ticas te encuentres con gran cantidad de ranas en sus instalaciones. Ya sea en los cuartos, pasillos, ban\u0303os, etc. . . Esto no es ningu\u0301n problema a menos que tengas fobia a estos anfibios. Durante ma\u0301s de 4 an\u0303os el profesor Edgardo Adria\u0301n Franco Marti\u0301nez, ha sido participe en el campamento cariben\u0303o de entrenamiento con distintos estudiantes de la ESCOM, y ninguno de ellos ha tenido problemas con este aspecto. \u00a1En la VIII edicio\u0301n de este gran evento, algo inesperado sucedio\u0301, una participante que no podi\u0301a ver a las ranas ni en pintura, asistio\u0301! \u00a1Elsy Pinzo\u0301n es su nombre! Durante varios di\u0301as se encontro\u0301 con estos pequen\u0303os animalitos en distintos lugares de su apartamento y en varias instalaciones de la institucio\u0301n. Esto ocasiono\u0301 que tuviera que estar migrando entre los cuartos de los compan\u0303eros del Club de Algoritmia ESCOM por que el suyo estaba infestado. Ella teni\u0301a lugares a los que queri\u0301a asistir durante el transcurso del campamento, pero no queri\u0301a encontrarse con ninguna rana en su camino. Por lo tanto, se puso a pensar en alguna forma de poder ir a todos los lugares sin tener que pasar dificultades en el camino. Al no poder encontrar ninguna forma, Fili le menciono\u0301 que existi\u0301a algo ma\u0301gico que haci\u0301a que las ranas desaparecieran. Para lograr esto ella teni\u0301a que escoger un punto de inicio y un punto de fin ( * * No necesariamente diferentes* * ) de entre las distintas locaciones que queri\u0301a visitar y escoger una ruta tal que las siguientes restricciones se cumplieran: \u2219 * Que la ruta escogida pase por todas las locaciones las cuales ella quiere visitar. * \u2219 * Pasar por todos los lugares a los ma\u0301s una vez, con excepcio\u0301n del punto de inicio y de fin, las cuales esta\u0301n permitidas que se visiten a los ma\u0301s 2 veces. * \u2219 * Que la ruta trazada forme un poli\u0301gono convexo de area positiva y que a lo ma\u0301s contenga una li\u0301nea recta dentro de este. * ! [ Ruta valida] [ 1] ! [ Ruta Invalida] [ 2] ! [ Ruta valida] [ 3] * * Las ima\u0301genes describen un ruta valida, invalida y valida respectivamente. * * * ( Explicacio\u0301n al final del problema) * Elsy al saber, de esto se emociono\u0301 demasiado y penso\u0301: * \" \u00a1Si logro hacer lo que Fili me dijo, podre caminar libremente en cierta a\u0301rea de la universidad y asi\u0301 podre vivir feliz! \" * Es por eso que ella construyo\u0301 un traje que la ai\u0301sla de todo lo exterior y que le provee solo aire para que pueda respirar y seguir viviendo. Con el uso de este traje al estar en un sitio x, ella puede trasladarse directamente a cualquiera de los otros lugares, siempre y cuando no viole la restriccio\u0301n definida anteriormente. Ella quiere conocer cuantas rutas validas existen ( lo mas rapido posible) para saber de cuantas maneras dfierentes podri\u0301a vivir feliz durante el transcurso del campamento cariben\u0303o. Es por eso que te pide tu ayuda para resolver este problema. * * Nota: Dos rutas son consideradas diferentes si la figura formada es diferente. * *",
+    "input": "La primera li\u0301nea de entrada contendra\u0301 un numero N, describiendo la cantidad de sitios que Elsy quiere visitar. A continuacio\u0301n N li\u0301neas, donde cada una contendra\u0301 dos nu\u0301meros enteros x_ i, y_ i dando las coordenadas de cada lugar.",
+    "output": "El nu\u0301mero de formas en las que se puede trazar la ruta, cumpliendo las restricciones descritas en el enunciado del problema. Como este numero puede ser muy grande, se pide que se imprima la respuesta modulo 10^ 9 + 7",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 5583
+  },
+  {
+    "title": "Distancia Manhattan",
+    "url": "https://omegaup.com/arena/problem/Distancia-Manhattan",
+    "history": "Dados dos puntos en el plan ( X, Y) determinar la distancia Manhattan que existe entre ellos. La distancia Manhattan es la diferencia que existe entre las X' s, ma\u0301s la diferencia de la Y' s.",
+    "input": "La primera li\u0301nea contiene un nu\u0301mero entero 1 \u2264 T \u2264 10^ 4 que es el nu\u0301mero de casos de prueba. Despue\u0301s de este T casos existen. Cada caso de prueba consta de cuatro nu\u0301meros enteros X1, Y1, X2 y Y2 . . . en una li\u0301nea por si\u0301 mismo que denotan las coordenadas de los puntos. Los valores para las coordenadas de todos los puntos estara\u0301n siempre entre - 10^ 4 y 10^ 4.",
+    "output": "Para cada caso de prueba de salida de una sola li\u0301nea con un nu\u0301mero entero: la distancia de Manhattan entre los puntos dados. | | input32 3 4 56 7 8 32 8 6 4| | output468| | end",
+    "note": "",
+    "topics": [
+      "geometry",
+      "implementation",
+      "math"
+    ],
+    "id": 5195
+  },
+  {
+    "title": "Bad Luck Chimpa",
+    "url": "https://omegaup.com/arena/problem/Bad-Luck-Chimpa",
+    "history": "El Guerrero Chimpa Definitivo ( tambie\u0301n conocido como GCD) , viajero del tiempo del an\u0303o 207\u0303012, ha llegado a nuestros di\u0301as para realizar la misio\u0301n ma\u0301s difi\u0301cil de toda la historia: evaluar el resultado de la partida de Worms de esta noche ( el equipo de desarrollo de Team 17 arruino\u0301 los me\u0301todos de revisio\u0301n de colisiones de todas las armas del juego) y asi\u0301 arreglar el futuro y el destino de la raza humana. El juego de Worms ( desarrollado por Team 17) es un juego de estrategia por turnos que se juega entre dos o ma\u0301s jugadores quienes tienen 4 gusanos al inicio del juego; el objetivo del juego es eliminar a todos los gusanos de los otros jugadores ataca\u0301ndolos con las armas que tienes a tu disposicio\u0301n. La forma en el que las armas del juego dan\u0303an a los gusanos se basa en explosiones de forma circular, cada tipo de arma tiene un radio de explosio\u0301n definido, mientras ma\u0301s cerca este\u0301 del gusano ma\u0301s dan\u0303o realizara\u0301, aunque si no esta\u0301 lo suficientemente cerca no le hara\u0301 dan\u0303o. Cabe recalcar que cualquier gusano dentro del radio de explosio\u0301n de un arma sera\u0301 dan\u0303ado aunque sea del jugador atacante. La partida de esta noche es especial pues solamente hay dos jugadores ( Chimpa y Medina) que cuentan con un gusano cada uno con 1 punto de vida por lo que cualquier explosio\u0301n que los toque los matari\u0301a. Y si no era suficiente, Chimpa tiene ventaja pues Medina, despue\u0301s de aceptar la partida pero antes de hacer algu\u0301n movimiento, tuvo que ir a conseguir botanas antes de que la tienda cerrara por lo que Chimpa hizo todos sus movimientos seguidos antes de que Medina regresara ( Medina no hizo ningu\u0301n movimiento) . Finalmente, el juego puede acabar porque Chimpa elimine a su propio gusano ( o elimine al de Medina y al suyo con la misma explosio\u0301n) o se acaben los movimientos de la bita\u0301cora. GCD posee la bita\u0301cora de los movimientos que se realizaron en la partida; la bita\u0301cora contiene la informacio\u0301n de las n armas que se permite utilizar en la partida y los m turnos que duro\u0301 la partida ( antes de acabar por tiempo) . Adema\u0301s, cuenta con las posiciones del gusano de Chimpa ( denotado como x_ C, y_ C) y del gusano de Medina ( denotado como x_ M, y_ M) , las descripciones de las armas que se utilizaron que se definen con un caracter en mayu\u0301scula identificador para cada arma c_ i y un radio de la explosio\u0301n r_ i. Finalmente, la bita\u0301cora contiene la informacio\u0301n de cada movimiento hecho por Chimpa el cual cuenta con el caracter identificador del arma que se utilizo\u0301 y la posicio\u0301n del centro de la explosio\u0301n del arma ( x_ j, y_ j) . Ahora que GCD sabe co\u0301mo interpretar la bita\u0301cora de movimientos, necesita que le ayudes a hacer un programa que lea esta bita\u0301cora y le genere el resultado de la partida; pero eso no es todo, GCD tambie\u0301n es muy orgulloso por lo que si los ataques de Chimpa pueden eliminar al gusano de Medina mu\u0301ltiples veces antes de que acabe el juego entonces quiere que se genere ese resultado; la convencio\u0301n que sigue el juego es, en caso de que sea solo una vez \" Chimpa gana! \" o si son ma\u0301s de una, entonces \" Chimpa gana x x! \" donde x es el nu\u0301mero de veces. Finalmente, si Chimpa empata, es decir, nunca elimino\u0301 al gusano de Medina en los turnos anteriores y el ataque de Chimpa hizo que los gusanos de ambos jugadores fueran eliminados en el turno actual, entonces imprime \" Ethan dira: Au au, no puedo ganar, amo\" ( sin comillas) y si Chimpa pierde, es decir, nunca elimino\u0301 al gusano de Medina y el ataque de Chimpa elimino\u0301 a su propio gusano o ninguno de los ataques de Chimpa elimino\u0301 al gusano de Medina, entonces imprime \" El futuro esta condenado\" ( sin comillas) . Recuerda que todo movimiento en la bita\u0301cora despue\u0301s de que el gusano de Chimpa muera va a ser desechado y no importa para el resultado del juego.",
+    "input": "La primera li\u0301nea de entrada contiene dos enteros n y m. La segunda li\u0301nea de entrada contiene cuatro enteros x_ C, y_ C, x_ M y y_ M. Cada una de las siguientes n lineas contiene la descripcio\u0301n de un arma con un caracter en mayu\u0301scula c_ i y un entero r_ i. Finalmente, cada una de las siguientes m lineas contiene el caracter identificador del arma que utilizo\u0301 Chimpa c_ j y la posicio\u0301n del centro de explosio\u0301n dada por los valores enteros x_ j y y_ j.",
+    "output": "La salida so\u0301lo debe contener la frase de resultado como se explico\u0301 en el problema ( sin comillas) .",
+    "note": "",
+    "topics": [
+      "math",
+      "implementation",
+      "geometry"
+    ],
+    "id": 4084
+  },
+  {
+    "title": "En busca de Namekusei",
+    "url": "https://omegaup.com/arena/problem/Fili-y-Angie",
+    "history": "Fili y Angie han sido amigos desde tiempos inmemorables. Ahora que ellos han terminado su carrera y se han convertidos en unos grandes astronautas, se han dado la tarea de encontrar un nuevo planeta en la galaxia debido a que el nuestro esta a punto de desaparecer. Por suerte han encontrado el planeta Namekusei que es completamente habitable para seres humanos aunque ahora se han encontrado con un nuevo dilema. . . Al ser amigos de toda la vida no quieren estar separados el uno del otro y es por eso que ellos quieren encontrar 2 casas que este\u0301n comunicadas y que el tiempo de recorrido de una a otra se la mi\u0301nima posible. El planeta tiene zonas territoriales a la que ellos han denominado de las siguientes 2 formas: * * * Rapadopolus* * * * * Ransemnios* * Un rapadopolus es una zona territorial que contiene un conjunto de ransemnios. Por otra parte un ransemnio es una zona territorial en donde se pueden construir casas. * * Nota: Para este problema se puede asumir que en los ransenmios hay construida solo una casa y no pueden an\u0303adirse mas. * * El costo de llegar de un ransemnio a otro es equivalente a * * K * | i - j | ^ 2* * , donde * * i* * y * * j* * son los identificadores de los 2 ransemnios y * * K* * es un entero dado en la entrada. Existen aparatos especiales disen\u0303ados por Fili y Angie que permiten a los habitantes de este planeta teletransportarse de un Rapadopolus a otro, donde el costo asignado a esta accio\u0301n es igual a * * K * | i - j | ^ 2* * , donde * * i* * y * * j* * son los identificadores de los Rapadopolus y * * K* * es un entero dado en la entrada. Cuando te teletransportas siempre llegas a el ransenmio con identificador * * i* * , donde * * i* * es el mismo nu\u0301mero del ransenmio en donde estabas ubicado anteriormente. Ten en cuenta que puedes pasar por el ransenmio * * i* * pero no puedes construir una casa si no fue dado este en la entrada.",
+    "input": "La entrada contendra\u0301 dos nu\u0301meros * * N* * y * * K* * , donde * * N* * es el nu\u0301mero de Rapadopolus que existen en Namekusei y * * K* * el entero mencionado en la descripcio\u0301n. Las siguientes * * N* * lineas contendra\u0301n un entero * * M* * indicando el nu\u0301mero de ransemnios que existen en el * * i- th* * Rapadopolus. A continuacio\u0301n * * ( En cada una de las N lineas) * * * * M* * nu\u0301meros * * A_ i* * dicie\u0301ndonos el identificador de cada ransemnio.",
+    "output": "La sa\u0301lida estara\u0301 formada por 1 linea indicando la distancia minima entre las 2 casas en donde Fili y Angie deben habitar. Se garantiza que la respuesta sera menor a 2^ 60. * * Nota: Los rapadopolus dados esta\u0301n numerados de 1 a N. * *",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 4008
+  },
+  {
+    "title": "Polygons",
+    "url": "https://omegaup.com/arena/problem/Polygons",
+    "history": "Dada una lista L de n puntos ( x_ i, y_ i) , y un poli\u0301gono de k lados, calcula: 1. El a\u0301rea del poli\u0301gono2. El centroide de los ve\u0301rtices del poli\u0301gono3. El nu\u0301mero de puntos d de la lista L que esta\u0301n estrictamente dentro del poli\u0301gono4. El nu\u0301mero de puntos f de la lista L que esta\u0301n estrictamente fuera del poli\u0301gono",
+    "input": "En la primera linea el entero n indicando el nu\u0301mero de puntos de la lista L. En cada una de las siguientes n lineas, dos enteros x_ i, y_ i indicando las coordenadas del i- e\u0301simo punto. En la siguiente linea el entero k indicando el nu\u0301mero de puntos del poli\u0301gono. En cada una de las siguientes k lineas, dos enteros u_ i, v_ i indicando las coordenadas del i- e\u0301simo punto del poli\u0301gono. Los puntos del poli\u0301gono estara\u0301n dados en forma consecutiva, es decir, los segmentos del poli\u0301gono sera\u0301n precisamente lossegmentos que van de ( u_ i, v_ i) a ( u_ i+ 1, v_ i+ 1) para 0 \u2264 i \u2264 k- 1, y el segmento que va de( u_ k- 1, v_ k- 1) a ( u_ 0, v_ 0) .",
+    "output": "En la primera linea el area A del poli\u0301gono. En la segunda linea el centro de masa C_ x C_ y del poli\u0301gono. En la tercera linea, el nu\u0301mero de puntos dentro y puntos fuera d f separados por un espacio.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2592
+  },
+  {
+    "title": "Convex hull",
+    "url": "https://omegaup.com/arena/problem/Convex-hull",
+    "history": "Dada una lista de n puntos ( x_ i, y_ i) , encuentra su envolvente convexa.",
+    "input": "En la primera linea el entero n indicando el nu\u0301mero de puntos. En cada una de las siguientes n lineas, dos enteros x_ i, y_ i indicando las coordenadas del i- e\u0301simo punto.",
+    "output": "En la primera linea, el nu\u0301mero k de puntos en la envolvente convexa. En las siguientes k lineas, los puntosP_ 0, P_ 1, . . . , P_ k- 1 que forman la envolvente convexa. Los puntos deben aparecer en forma consecutiva, es decir, los segmentos de la envolvente deben ser precisamente los segmentos que van de P_ i a P_ i+ 1 para 0 \u2264 i \u2264 k- 1, y el segmento P_ k- 1 a P_ 0.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2590
+  },
+  {
+    "title": "Line intersection",
+    "url": "https://omegaup.com/arena/problem/Line-intersection",
+    "history": "Dado un conjunto de n pares de rectas, determina si las rectas se intersecan en 0, 1 o ma\u0301s de un punto. Si se intersecan en so\u0301lo un punto, encuentra la interseccio\u0301n.",
+    "input": "En la primera linea el entero n indicando el nu\u0301mero de pares de rectas. En cada una de las siguientes n lineas, 8 enteros separados por espacios. Los primeros 4 enteros P_ x, P_ y, Q_ x, Q_ yindican las posiciones de dos puntos distintos P, Q por los que pasa la primera recta. Los siguientes 4 enteros R_ x, R_ y, S_ x, S_ y indican las posiciones los puntos distintos R, S por los que pasa lasegunda recta.",
+    "output": "En la i- e\u0301sima linea, imprime 0 si las rectas no se intersecan, - 1 si se intersecan en ma\u0301s de un punto, o x y ( la interseccio\u0301n del par de rectas) si se intersecan en un u\u0301nico punto.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2584
+  },
+  {
+    "title": "Left Right",
+    "url": "https://omegaup.com/arena/problem/Left-Right",
+    "history": "Dada una lista de n puntos ( x_ i, y_ i) , y un vector ( u, v) cuenta el nu\u0301mero de puntos a la izquierda yel nu\u0301mero de puntos a la derecha de la linea orientada en la direccio\u0301n ( u, v) . ! [ Fig. 1: ejemplo. Los puntos verdes se encuentran a la iquierda de la linea y los puntos rojos se encuentran a la derecha. ] [ 1]",
+    "input": "En la primera linea los enteros n, u, v indicando el nu\u0301mero de puntos y la direccio\u0301n ( u, v) . En cada una de las siguientes n lineas, dos enteros x_ i, y_ i indicando las coordenadas del i- e\u0301simo punto.",
+    "output": "En la primera linea, el nu\u0301mero de puntos a la izquierda y el nu\u0301mero de puntos a la derecha, separados por un espacio.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2583
+  },
+  {
+    "title": "Largest collinear",
+    "url": "https://omegaup.com/arena/problem/Largest-colinear",
+    "history": "Dada una lista de n puntos ( x_ i, y_ i) , encuentra el mayor subconjunto de puntos colineales.",
+    "input": "En la primera linea el entero n indicando el nu\u0301mero de puntos. En cada una de las siguientes n lineas, dos enteros x_ i, y_ i indicando las coordenadas del i- e\u0301simo punto.",
+    "output": "En la primera linea, el ma\u0301ximo nu\u0301mero de puntos colineales.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2569
+  },
+  {
+    "title": "Least angle",
+    "url": "https://omegaup.com/arena/problem/Least-angle",
+    "history": "Dada una lista de n vectores ( x_ i, y_ i, z_ i) , encuentra el par de ellos que forman el menor a\u0301ngulo entre si\u0301.",
+    "input": "En la primera linea el entero n indicando el nu\u0301mero de puntos. En cada una de las siguientes n lineas, tres enteros x_ i, y_ i, z_ i indicando las coordenadas del i- e\u0301simo vector.",
+    "output": "En la primera linea, los i\u0301ndices i, j de los vectores que forman el menor a\u0301ngulo entre si\u0301. Si hay ma\u0301sde un par de vectores con a\u0301ngulo mi\u0301nimo, regresa el par con menor i\u0301ndice i. Si au\u0301n hay ma\u0301s de una solucio\u0301nregresa el par con menor i\u0301ndice j.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2562
+  },
+  {
+    "title": "Closest pair",
+    "url": "https://omegaup.com/arena/problem/Closest-pair",
+    "history": "Dada una lista de n puntos ( x_ i, y_ i) , encuentra la mi\u0301nima distancia de entre todos los pares de puntos.",
+    "input": "En la primera linea el entero n indicando el nu\u0301mero de puntos. En cada una de las siguientes n lineas, dos enteros x_ i, y_ i indicando las coordenadas del i- e\u0301simo punto.",
+    "output": "En la primera linea, la distancia mas corta de entre todos los pares de puntos.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2558
+  },
+  {
+    "title": "Ligas",
+    "url": "https://omegaup.com/arena/problem/Ligas",
+    "history": "Tu hermano pequen\u0303o y tu\u0301 tienen un juego bastante curioso. Tu abuela les regalo\u0301 una tabla con clavos dispuestos en una matriz cuadrangular y unas ligas. Tu hermano y tu\u0301 se turnan colocando ligas de la siguiente manera: seleccionan dos clavos y estiran la liga para que los extremos de la liga se sostengan con ellos. El chiste del juego es que las ligas que coloquen nunca se intersecten ni toquen. El primer jugador que no pueda colocar su liga es el que pierde. ! [ Ligas] [ 1] Tu\u0301 como buen programador decides hacer un programa para que tu hermanito se entretenga. Tu programa coloca una liga al azar y espera a que tu hermano coloque la suya. Ahora debes verificar si tu hermano coloco\u0301 la liga en un lugar va\u0301lido.",
+    "input": "La primer li\u0301nea del programa contiene un entero k ( 1 \u2264 k \u2264 100) con el nu\u0301mero de casos de prueba. Cada caso de prueba contiene la descripcio\u0301n de las dos ligas. Cada liga se puede representar con dos pares de coordenadas enteras x1, y1, x2, y2 ( 0 \u2264 xi, yi \u2264 1000) que representan el punto de inicio y final de la liga.",
+    "output": "Para caso de prueba debes escribir una li\u0301nea de texto con el mensaje \" Caso k: No hay interseccion. \" si las ligas no se intersectan o \" Caso k: Hay interseccion. \" , si las ligas se intersectan. k es el nu\u0301mero de caso de prueba ( esta\u0301n numerados secuencialmente, empezando por 1) . No escribas el acento de interseccio\u0301n. | | input21 4 5 2 3 4 7 81 4 5 2 1 2 7 8| | outputCaso 1: No hay interseccion. Caso 2: Hay interseccion. | | endLuis He\u0301ctor Cha\u0301vez2007- 04- 291er Concurso Local de Programacion del Club de Progra[ 1] : 7976ccc46322059565d5bed9181cf6a2390cd2ad. png",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2176
+  },
+  {
+    "title": "Reactor nuclear",
+    "url": "https://omegaup.com/arena/problem/A-Reactor-nuclear",
+    "history": "Un reactor nuclear ha explotado y se tendra\u0301 que reconstruir, afortunadamente la radiacio\u0301n fue detenida por una serie de celdas de plomo que cubren las paredes que tiene un ancho de 1 metro y una altura igual a la altura del cuarto, pero en el punto donde se unen las celdas esta\u0301n las bases. Tu tienes los planos del cuarto , que es un cuadrado, de taman\u0303o N por N metros, y dentro de este cuarto hay diversas columnas hechas totalmente de plomo asi\u0301 que estas columnas evitaron que algunas bases se dan\u0303aran. El punto con la coordenada ( 0, 0) es la esquina inferior izquierda del cuarto, y la coordenada ( N, N) es la esquina superior derecha. Las bases que se dan\u0303aron son aquellas que fueron alcanzadas por la radiacio\u0301n de la explosio\u0301n de forma directa, es decir, que si se traza una li\u0301nea recta entre el punto de la base y el lugar de la explosio\u0301n, y no existe ninguna columna que atraviese la li\u0301nea, esa base se dan\u0303o, cabe aclarar que si ese punto se alinea perfectamente con una esquina de una columna se considera que ese punto no fue dan\u0303ado. Las columnas son siempre figuras convexas con a\u0301rea mayor que cero y sus esquinas siempre se ubican en posiciones enteras, las cuales nunca se sobreponen, ni se tocan. # ProblemaTu tarea consiste en hacer un programa que dada la descripcio\u0301n del cuarto y en donde ocurrio\u0301 la explosio\u0301n diga cuantas bases se necesita reparar.",
+    "input": "La primera li\u0301nea tiene 2 enteros N y C. Donde N es la longitud de cada lado del cuarto donde estaba el reactor nuclear y C es el nu\u0301mero de columnasLa segunda li\u0301nea contiene 2 enteros X y Y la coordenada de donde ocurrio\u0301 la explosio\u0301n. El resto de la entrada consiste en la descripcio\u0301n de cada una de las columnas. La descripcio\u0301n de una columna consiste en primero un nu\u0301mero E ( 3 < = E < = 20) que indica el nu\u0301mero de esquinas que tiene la columna, las siguientes E li\u0301neas contiene cada una dos enteros X y Y que son las coordenadas de esa esquina ( las esquinas se dara\u0301n en el orden contrario a las manecillas del reloj)",
+    "output": "Un solo entero el nu\u0301mero de bases que se necesitan reparar. | | input100 160 50570 4075 4080 4080 5070 60| | output319| | descriptionEn este ejemplo en total existen 400 bases, y solo una columna, la columna no protegio\u0301 a ninguna base de la pared Izquierda, Superior ni Inferior mientras que en la pared derecha se protegio\u0301 desde la base en el punto ( 100, 10) hasta la base en el punto ( 100, 90) en total 81 bases. Eso nos da un total de 319 bases dan\u0303adas. | | end# Li\u0301mites* 1< = N < = 500, 000* 0< = C < = 30, 000",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 2001
+  },
+  {
+    "title": "Area m\u00e1xima dado un per\u00edmetro",
+    "url": "https://omegaup.com/arena/problem/Area-maxima-dado-un-perimetro",
+    "history": "# Descripcio\u0301n del problemaTe dan una cuerda de 100 metros de longitud. \u00bfCua\u0301les son las dimensiones( alto y ancho) del recta\u0301ngulo de mayor a\u0301rea que puedes rodear con dichacuerda?",
+    "input": "No se requieren entradas. Es un problema de \" solo salida\" . Solamente vasa escribir tu respuesta como salida de la forma que se indica acontinuacio\u0301n. No necesitas escribir ningu\u0301n co\u0301digo ni programar.",
+    "output": "La respuesta del problema es tu salida, y es lo que vas a escribir en lapantalla que aparecera\u0301. Para enviar tu respuesta sigue los siguientes pasos: 1. Da click en donde dice \u201c nuevo envi\u0301o \u201c2. Selecciona como lenguaje \u201csolo salida\u201c3. Escribe tu respuesta en la ventana indicando los dosnu\u0301meros de tu respuesta ( el alto y el ancho) separados por un espacio.",
+    "note": "",
+    "topics": [
+      "implementation",
+      "geometry"
+    ],
+    "id": 1877
+  },
+  {
+    "title": "Los remos faltantes de Urshanab\u00ed",
+    "url": "https://omegaup.com/arena/problem/remos",
+    "history": "El u\u0301ltimo obsta\u0301culo de Gilgamesh para visitar a Utanapi\u0301shtim era cruzarlas aguas de la muerte y el u\u0301nico que lo podi\u0301a ayudar era el barquero Urshanabi\u0301. E\u0301ste le pidio\u0301 a Gilgamesh que fuera al bosque a cortar R a\u0301rboles parahacer los R remos que le faltaban. Como Gilgamesh estaba cansado, queri\u0301acaminar lo menos posible para traer uno por uno los a\u0301rboles necesarios. Escribeun programa que, dadas las coordenadas de N a\u0301rboles, calcule la mi\u0301nimadistancia D que debe caminar Gilgamesh desde el origen. Gilgamesh so\u0301lo puede cargar un a\u0301rbol a la vez.",
+    "input": "Dos enteros N y R, seguidos de N parejas de enteros X_ i, Y_ i que son lascoordenadas ( X_ i, Y_ i) del a\u0301rbol i.",
+    "output": "El valor de D ( redondeado al entero ma\u0301s cercano) .",
+    "note": "",
+    "topics": [
+      "sortings",
+      "geometry"
+    ],
+    "id": 1746
+  },
+  {
+    "title": "Puntos dentro de un tri\u00e1ngulo",
+    "url": "https://omegaup.com/arena/problem/pdt",
+    "history": "Considera un tria\u0301ngulo T dado por sus tres ve\u0301rtices ( a, b) , ( c, d) y ( e, f) con coordenadas enteras. Algunos puntos de coordenadas enteras esta\u0301n sobre los lados de T y otros puntos de coordenadas enteras esta\u0301n dentro de T. Escribe un programa que encuentre las cantidades s y t de puntos sobre los lados y dentro de T, respectivamente. Por ejemplo, si los ve\u0301rtices de T tienen las coordenadas ( 0, 1) , ( 4, 3) y ( 2, 5) entonces s = 6 y t = 4 ya que los 6 puntos ( 0, 1) , ( 2, 2) , ( 4, 3) , ( 3, 4) , ( 2, 5) y ( 1, 3) esta\u0301n sobre los lados de T mientras que los 4 puntos ( 1, 2) , ( 2, 3) , ( 2, 4) y ( 3, 3) esta\u0301n dentro de T.",
+    "input": "Seis nu\u0301meros enteros a, b, c, d, e y f separados por espacios y todos ellos en el intervalo de - 1, 000 a 1, 000 ( incluye\u0301ndolos) . Puedes suponer que los tres ve\u0301rtices de T no esta\u0301n alineados y por lo tanto forman un tria\u0301ngulo.",
+    "output": "Dos nu\u0301meros enteros s y t separados por un espacio.",
+    "note": "",
+    "topics": [
+      "geometry"
+    ],
+    "id": 1021
+  },
+  {
+    "title": "\u00c1rea m\u00e1xima de un trapecio",
+    "url": "https://omegaup.com/arena/problem/amt",
+    "history": "Un carpintero tiene cuatro tablas de madera de longitudes a, b, c, d con las cuales desea construir los lados de una caja con forma detrapecio ( es decir, un cuadrila\u0301tero que tiene dos lados paralelos) . Aunque sabe co\u0301mo construir dicha caja, no sabe cua\u0301l sera\u0301 el a\u0301rea delfondo resultante. Escribe un programa que determine el a\u0301rea que tendra\u0301 el fondo de la caja considerando que ha sido construida con una\u0301rea ma\u0301xima. Puedes suponer que con las longitudes dadas se puede construir al menos un trapecio.",
+    "input": "Cuatro nu\u0301meros enteros a, b, c, d con 1 \u2264 a, b, c, d \u2264 1000.",
+    "output": "El a\u0301rea ma\u0301xima m que puede tener la caja. Si dicha a\u0301rea tiene una parte decimal, e\u0301sta debe ser truncada.",
+    "note": "",
+    "topics": [
+      "geometry",
+      "math",
+      "brute force",
+      "implementation"
+    ],
+    "id": 999
+  },
+  {
+    "title": "Taxis",
+    "url": "https://omegaup.com/arena/problem/taxi",
+    "history": "Te encuentras en el extremo de una calle de exactamente M metros de largo. A lo largo de la calle, hay N lugares donde puedes pedir un taxi. Los lugares donde se pueden pedir taxis esta\u0301n numerados de 1 a N, siendo 1 el ma\u0301s cercano a ti y N el mas lejano a ti. La forma cobrar de los taxis es un poco inusual, ya que el solo hecho de pedir un taxi en el lugar i, tiene un costo de c( i) . Adema\u0301s del costo por pedir el taxi, el taxista cobrara\u0301 una cantidad de d^ 2 por hacer un viaje que recorra una distancia de d metros. Como estas lesionado no eres capaz de caminar ni siquiera un metro. # ProblemaEscribe un programa que dados los costos * c* , las posiciones para tomar cada taxi y el nu\u0301mero * M* , determine el costo mi\u0301nimo para viajar desde la posicio\u0301n inicial( 0) a la posicio\u0301n * M* .",
+    "input": "Li\u0301nea 1: Dos nu\u0301meros N y MSiguientes N li\u0301neas: Cada li\u0301nea representa un lugar para tomar taxis y contendra\u0301 dos nu\u0301meros representando el lugar donde se toma el taxi( en metros) y el costo inicial por pedirlo. * * Ejemplo: * * 2 500 225 1",
+    "output": "Un solo nu\u0301mero: el costo mi\u0301nimo para llegar a la posicio\u0301n M* * Ejemplo: * * 1253# Li\u0301mites1 \u2264 N \u2264 100, 000Siempre podra\u0301s pedir un taxi en la posicio\u0301n 0El costo de cualquier estrategia que evite retroceder siempre cabe en un entero de 64 bits",
+    "note": "",
+    "topics": [
+      "dp",
+      "geometry"
+    ],
+    "id": 1741
+  },
+  {
+    "title": "Karel y la cima",
+    "url": "https://omegaup.com/arena/problem/Karel-y-la-cima",
+    "history": "< br/ > Hoy Karel amanecio\u0301 muy motivado, por lo que estaba muy decidido de dar lo mejor de si\u0301. Por lo que se decidio\u0301 a escalar la escalera ma\u0301s alta como un entrenamiento, ya que miro a su he\u0301roe Rocky Balboa hacerlo tambie\u0301n. Para su mala suerte Karel no encontro\u0301 ninguna escalera, pero ese detalle no fue suficiente para desanimarlo, decidio\u0301 que si no hay una escalera que subir el creari\u0301a su propia escalera y se parari\u0301a en la cima victorioso. < / br> Ayuda a Karel a construir la escalera ma\u0301s alta que pueda con la cantidad de zumbadores dadas en la posicio\u0301n ( 1, 1) . Al terminar deja a Karel en la cima de la escalera, victorioso, mirando al cielo( Norte) . # Consideraciones* Una escalera esta\u0301 compuesta por bloques de 2 zumbadores, subiendo diagonalmente hacia la derecha. * No se puede hacer bloques de solamente un zumbador, en caso de ser una cantidad impar se ignora el ultimo. * La cima de la escalera se define como la posicio\u0301n arriba del ultimo escalo\u0301n en su beeper de la derecha. * En el mundo no hay paredes de por medio, y no hay zumbadores en una posicio\u0301n que no sea ( 1, 1) . * Solo deben haber zumbadores en el mundo que sean parte de la escalera. * Se considera la posicion final y orientacion de Karel. * En el mundo solo deben quedar los zumbadores que forman la escalera. * En la escalera no debe haber ningun monton con mas de un zumbador. ( Nota: Mirar la imagen para tener la definicio\u0301n de escalera ma\u0301s clara) < br/ > # Ejemplo Entrada! [ Ejemplo mundo entrada] ( KarelInput. png) # Ejemplo Salida! [ Ejemplo mundo salida] ( KarelOutput. png) # Li\u0301mites< br/ > < br/ > * El mundo es de taman\u0303o 100x100* Karel inicia en la posicio\u0301n ( 1, 1) mirando al norte. * Para 70",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "constructive algorithms",
+      "geometry"
+    ],
+    "id": 12245
+  },
+  {
+    "title": "Karel y la sana distancia",
+    "url": "https://omegaup.com/arena/problem/Karel-y-la-sana-distancia",
+    "history": "< br/ > Karel recientemente esta muy preocupado por el asunto de la pandemia, sin embargo el tenia la esperanza de que al final todo saldara bien y que regresaremos a la normalidad, el quiere agregar su granito de arena para que todo se desarrolle de la mejor manera posible. Karel decidio supervisar que todas las personas respeten la sana distancia, por lo que por cada persona par de personas ( representadas por montones de un zumbador) tiene que haber al menos una casilla vacia entre ellas dos, todas las personas se encuentran en un salon que tiene forma de pasillo de 1xN. En caso de que todas las personas respeten la sana distancia Karel se apagara viendo al norte, de caso contrario se apagara viendo al sur. # Consideraciones* Karel empieza dentro del pasillo sin embargo no sabes su posicio\u0301n. * No se sabe la orientacio\u0301n incial de Karel. * El largo del pasillo es a lo mas 50 y siempre tiene de altura 1. * Cada monton de zumbadores en el mundo cuenta a lo mas con un zumbador. * Karel inicia sin zumbadores. * En el mundo no hay paredes diferentes a las que definen el pasilllo. * Solo importa la orientacion final de Karel. < br/ > < br/ > A continuacion se muestra solamente el estado final de los siguientes mundos: # Ejemplo Entrada! [ Ejemplo mundo entrada] ( KarelInput. png) # Ejemplo Salida! [ Ejemplo mundo salida] ( KarelOutput. png) # Ejemplo Entrada! [ Ejemplo mundo entrada] ( KarelInput2. png) # Ejemplo Salida! [ Ejemplo mundo salida] ( KarelOutput2. png) # Nota< br/ > < br/ > * Los casos estan agrupados con parejas de tal forma que una respuesta mirando al norte siempre esta emparejada con una mirando al sur, se dan puntos si se contestan los dos casos de manera correcta en cada grupo.",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry",
+      "constructive algorithms"
+    ],
+    "id": 12244
+  },
+  {
+    "title": "Karel y la ruta de camion",
+    "url": "https://omegaup.com/arena/problem/Karel-y-la-ruta-de-camion",
+    "history": "< br/ > Karel se estaba preparando su viaje a Culiacan desde Los Mochis, sin embargo dentro del camion olvido que tipo de camion agarro, un Express un Directo o uno Normal. Sin embargo el podia saber que tipo de camion era contando las paradas que hacia, hacer solo una parada significaria que solo se paro en Culican, haciendolo un camion express, en caso de ser 3 paradas estas serian en Guamuchil, Guasave y Culiacan, haciendolo un camion directo, un camion normal el conto que hacia en total 7 paradas. Karel no podia evitar dormirse durante el viaje, asi que cuando el estaba despierto anotaba cuantas paradas hizo, lo cual lo anotaba mediante un monton de zumbadores en un pasillo de 1xN, un zumbador significa que agrego una parada mas, dos zumbadores que agrego dos paradas mas, etc. Habian varios montones de zumbadores durante todo el camino, por lo que despues de agarrar todos decidio mencionar que tipo de camion era expresando con la direccion en la que miraba, pero era posible que la cantidad no se refiriera a ningun tipo de camion por lo que Karel habia recordado mal las paradas, en ese caso debia apagarse mirando el sur. Para los demas tipos de camiones las direccions son: * Express = Este* Directo = Norte* Normal = Oeste# Consideraciones* Karel empieza en la posicio\u0301n ( 1, 1) mirando al norte. * El mapa es un pasillo cubierto de paredes de taman\u0303o 1xN, con N < = 100. * En el mundo hay montones de zumbadores. * Karel inicia sin zumbadores. * Karel tiene que terminar en la casilla ( 1, N) . * Al terminar no deben quedar mas zumbadores en el mundo. < br/ > < br/ > A continuacion se muestra solamente el estado final de los siguientes mundos: # Ejemplo Entrada! [ Ejemplo mundo entrada] ( KarelInput. png) # Ejemplo Salida! [ Ejemplo mundo salida] ( KarelOutput. png) # Ejemplo Entrada! [ Ejemplo mundo entrada] ( KarelInput2. png) # Ejemplo Salida! [ Ejemplo mundo salida] ( KarelOutput2. png) # Li\u0301mites< br/ > < br/ > * Los casos estan agrupados con parejas de tal forma que una respuesta mirando a una direccion siempre esta emparejada con una mirando a otra direccion, se dan puntos si se contestan los dos casos de manera correcta en cada grupo.",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "geometry",
+      "constructive algorithms"
+    ],
+    "id": 12243
+  },
+  {
+    "title": "Karel y los casi-cuadrados",
+    "url": "https://omegaup.com/arena/problem/Karel-y-los-casi-cuadrados",
+    "history": "< br/ > Karel recientemente compro un terreno para sembrar, el estaba muy emocionado por poder lograr su suen\u0303o de cultivar tomates, sin embargo Karel no puede evitar ocultar su amor por la geometria, de todas las figuras geometricas el esperaba que el terreno que recien compro sea un cuadrado. Sin embargo Karel sabe que la probabilidad de que sea un cuadrado es bastante baja, y el no quiere parecer alguien demasiado estricto con sus terrenos, por lo que decidio conformarse si el terreno es casi un cuadrado, Karel define un terreno como casi un cuadrado si la diferencia entre la base y la altura es a lo mas 2, ya sea que el lado menor sea la base o la altura del terreno. El terreno es un cuadrilatero con su esquina inferior izquierda en la casilla ( 1, 1) , se conforma de 4 lados que lo cierran completamente y no tiene ninguna pared dentro del area que limita al igual que tampoco zumbadores. En caso de que el terreno sea un casi cuadrado Karel decidio expresar su felicidad apagandose mirando al norte, en caso de no ser un casi cuadrado trata de ocultar su tristeza apagandose mirando al sur. # Consideraciones* Karel empieza en la posicio\u0301n ( 1, 1) mirando al norte. * Cada lado del terreno es menor que 100. * Cada lado del terreno mide al menos 3. * Karel inicia sin zumbadores. * En el mundo no hay paredes diferentes a las que definen el terreno y no hay zumbadores en el mundo. * Solo importa la orientacion final de Karel. < br/ > < br/ > A continuacion se muestra solamente el estado final de los siguientes mundos: # Ejemplo Entrada! [ Ejemplo mundo entrada] ( KarelInput. png) # Ejemplo Salida! [ Ejemplo mundo salida] ( KarelOutput. png) # Li\u0301mites< br/ > < br/ > * El mundo es de taman\u0303o 100x100* Karel inicia en la posicio\u0301n ( 1, 1) mirando al norte. * Los casos estan agrupados con parejas de tal forma que una respuesta mirando al norte siempre esta emparejada con una mirando al sur, se dan puntos si se contestan los dos casos de manera correcta en cada grupo.",
+    "input": "",
+    "output": "",
+    "note": "",
+    "topics": [
+      "constructive algorithms",
+      "geometry"
+    ],
+    "id": 12242
+  }
+]
