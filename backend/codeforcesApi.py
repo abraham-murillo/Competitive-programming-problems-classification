@@ -1,13 +1,11 @@
 import urllib.request
 
-from chromeDriver import getChromeDriver
 from bs4 import BeautifulSoup
-import pandas as pd
+import SmartRequests
 
-import pprint
+from pprint import pprint
 import json
 
-driver = getChromeDriver()
 
 def getFrom(url):
     url = url.replace(" ", "%20")
@@ -19,9 +17,11 @@ def getFrom(url):
         return json.loads(str(BeautifulSoup(page, "html.parser")))
     elif url.startswith("https://codeforces.com/problemset/problem/"):
         # Extract codeforces problem data from html
-        driver.get(url)
+        request = SmartRequests.get(url)
+        if request is None:
+            return {}
 
-        content = driver.page_source
+        content = request.content
         soup = BeautifulSoup(content, "html.parser")
 
         problem = {}
@@ -31,28 +31,40 @@ def getFrom(url):
             if html:
                 html.decompose()
 
-        for html in soup.findAll("div", attrs={"class": "problem-statement"}):
-            decomposeIfFound(html.find("div", attrs={"class": "header"}))
-            decomposeIfFound(html.find("div", attrs={"class": "sample-tests"}))
+        try:
+            for html in soup.findAll("div", attrs={"class": "problem-statement"}):
+                decomposeIfFound(html.find("div", attrs={"class": "header"}))
+                decomposeIfFound(html.find("div", attrs={"class": "sample-tests"}))
 
-            input = html.find("div", attrs={"class": "input-specification"})
-            if input:
-                decomposeIfFound(input.find("div", attrs={"class": "section-title"}))
-                problem["input"] = input.text
+                input = html.find("div", attrs={"class": "input-specification"})
+                if input:
+                    decomposeIfFound(
+                        input.find("div", attrs={"class": "section-title"})
+                    )
+                    problem["input"] = input.text
 
-            output = html.find("div", attrs={"class": "output-specification"})
-            if output:
-                decomposeIfFound(output.find("div", attrs={"class": "section-title"}))
-                problem["output"] = output.text
-            note = html.find("div", attrs={"class": "note"})
-            if note:
-                decomposeIfFound(note.find("div", attrs={"class": "section-title"}))
-                problem["note"] = note.text
-            decomposeIfFound(html.find("div", attrs={"class": "input-specification"}))
-            decomposeIfFound(html.find("div", attrs={"class": "output-specification"}))
-            decomposeIfFound(html.find("div", attrs={"class": "note"}))
+                output = html.find("div", attrs={"class": "output-specification"})
+                if output:
+                    decomposeIfFound(
+                        output.find("div", attrs={"class": "section-title"})
+                    )
+                    problem["output"] = output.text
+                note = html.find("div", attrs={"class": "note"})
+                if note:
+                    decomposeIfFound(note.find("div", attrs={"class": "section-title"}))
+                    problem["note"] = note.text
+                decomposeIfFound(
+                    html.find("div", attrs={"class": "input-specification"})
+                )
+                decomposeIfFound(
+                    html.find("div", attrs={"class": "output-specification"})
+                )
+                decomposeIfFound(html.find("div", attrs={"class": "note"}))
 
-        problem["history"] = html.text
+            problem["history"] = html.text
+        except:
+            print(f"Problem {url} failed to load")
+
         return problem
 
 
@@ -89,8 +101,8 @@ def getProblem(problem):
     """
 
     url = f"https://codeforces.com/problemset/problem/{problem['contestId']}/{problem['index']}"
-    # print(url)
-    problem.update(getFrom(url))
+    data = getFrom(url)
+    problem.update(data)
     return problem
 
 
@@ -105,10 +117,10 @@ def getProblemset(topics, maxNumOfProblems=-1):
         url = f"https://codeforces.com/api/problemset.problems?tags={tag}"
         return getFrom(url)["result"]["problems"]
 
-    filteredProblems = dict()
+    problems = dict()
 
     def enoughProblems():
-        return maxNumOfProblems != -1 and len(filteredProblems) >= maxNumOfProblems
+        return maxNumOfProblems != -1 and len(problems) >= maxNumOfProblems
 
     for topic, rating in topics:
         problemsWithTopic = getProblems(topic)
@@ -118,31 +130,31 @@ def getProblemset(topics, maxNumOfProblems=-1):
             problemId = str(problem["contestId"]) + problem["index"]
             problem["id"] = problemId
             problem["site"] = "codeforces"
-            filteredProblems[problemId] = problem
+            problems[problemId] = problem
 
             if enoughProblems():
                 break
 
-        # print(len(filteredProblems))
+        # print(len(problems))
         if enoughProblems():
             break
 
-    # pprint.pprint(filteredProblems)
-    return filteredProblems
+    # pprint(problems)
+    return problems
 
 
 # List obtained with getAllTopics()
 topicsRating = [
-    ('implementation', 1480.7348092322186),
-    ('sortings', 1734.078947368421),
-    ('strings', 1734.0740740740741),
+    ("implementation", 1480.7348092322186),
+    ("sortings", 1734.078947368421),
+    ("strings", 1734.0740740740741),
     ("greedy", 1721.7074440395627),
+    ("number theory", 1917.490494296578),
     ("brute force", 1730.524505588994),
     ("math", 1769.0954773869346),
     ("expression parsing", 1862.5),
     ("constructive algorithms", 1865.944540727903),
     ("schedules", 1883.3333333333333),
-    ("number theory", 1917.490494296578),
     ("two pointers", 1964.207650273224),
     ("ternary search", 2020.4545454545455),
     ("binary search", 2045.6258411843876),

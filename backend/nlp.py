@@ -7,7 +7,7 @@ import unicodedata
 from pylatexenc.latex2text import LatexNodes2Text
 
 import pandas
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+# from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
 
 class SmartNLP:

@@ -1,16 +1,14 @@
-import urllib.request
-
-from webdriver_manager.chrome import ChromeDriverManager
 from pylatexenc.latex2text import LatexNodes2Text
-from selenium import webdriver
 from bs4 import BeautifulSoup
-import pandas as pd
+import requests
+import SmartRequests
 
 # import trashTags
 from pprint import pprint
 import json
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+import re
+
 tagPrefixes = ["problemTag", "problemTopic"]
 
 
@@ -30,43 +28,69 @@ def destroyCamelCase(text):
 
 def getFrom(url):
     url = url.replace(" ", "%20")
+    request = SmartRequests.get(url)
+    if request is None:
+        return {}
 
-    driver.get(url)
-    content = driver.page_source
+    content = request.content
     soup = BeautifulSoup(content, "html.parser")
 
     if url.startswith("https://omegaup.com/arena/problem/"):
         # Extract omegaup problem data from html
         problem = {}
-
-        allText = ""
-        for html in soup.findAll("div", attrs={"class": "mt-4 markdown"}):
-            allText += html.text
-        allText += "Fin\n"
-        allText = allText.split("\n")
-
-        problemSections = {
-            "Descripción": "history",
-            "Entrada": "input",
-            "Salida": "output",
-            "Ejemplo": "?",
-            "Notas": "note",
-            "Fin": "?",
-        }
-
-        section = ""
-        doing = "?"
-        for text in allText:
-            text = text.strip()
-            if text in problemSections:
-                if doing != "?":
-                    problem[doing] = section
-                doing = problemSections[text]
-                section = ""
-            else:
-                section += text
-
         problem["url"] = url
+
+        payload = soup.find("script", attrs={"id": "payload"})
+        if payload:
+            payloadJson = json.loads(payload.string)
+            allText = payloadJson["problem"]["statement"]["markdown"]
+            # pprint(allText)
+
+            # allText = ""
+            # for html in soup.findAll("div", attrs={"class": "mt-4 markdown"}):
+            #     allText += html.text
+            allText += "fin\n"
+            allText = allText.split("\n")
+            # pprint(allText)
+
+            problemSections = {
+                "descripción": "history",
+                "entrada": "input",
+                "salida": "output",
+                "input": "input",
+                "output": "output",
+                "ejemplo": "?",
+                "notas": "note",
+                "fin": "?",
+            }
+
+            def getProblemSection(text):
+                return text.lower().replace("#", "").replace(" ", "")
+
+            def isProblemSection(text):
+                return getProblemSection(text) in problemSections
+
+            def isImage(text):
+                return (
+                    "data:image/jpeg;base64" in text
+                    or "data:image/png;base64" in text
+                    or "data:image/jpg;base64" in text
+                    or "data:image/gif;base64" in text
+                )
+
+            sectionText = ""
+            doing = "history"
+            for text in allText:
+                text = text.strip()
+                if isProblemSection(text):
+                    if doing != "?":
+                        problem[doing] = sectionText
+                    doing = problemSections[getProblemSection(text)]
+                    sectionText = ""
+                else:
+                    if isImage(text):
+                        continue
+                    sectionText += text
 
         return problem
     elif url.startswith("https://omegaup.com/problem/list"):
@@ -124,7 +148,8 @@ def getFrom(url):
 
 def getProblem(problem):
     url = f"https://omegaup.com/arena/problem/{problem['url']}"
-    problem.update(getFrom(url))
+    data = getFrom(url)
+    problem.update(data)
     return problem
 
 
@@ -135,23 +160,23 @@ def getProblemset(topics, maxNumOfProblems=-1):
         - limit of problems is maxNumOfProblems
     """
 
-    filteredProblems = dict()
+    problems = dict()
 
     def enoughProblems():
-        return maxNumOfProblems != -1 and len(filteredProblems) >= maxNumOfProblems
+        return maxNumOfProblems != -1 and len(problems) >= maxNumOfProblems
 
-    def getProblems(tag, page):
+    def getProblemListUrl(tag, page):
         tag = "".join(word.title() for word in tag.split())
         url = f"https://omegaup.com/problem/list/?page={page}&tag[]=problemTag{tag}"
-        return getFrom(url)
+        return url
 
     for topic in topics:
         for page in range(0, 1000):
-            problemsWithTopic = getProblems(topic, page)
+            problemsWithTopic = getFrom(getProblemListUrl(topic, page))
+            # print(topic, len(problemsWithTopic))
 
             for problem in problemsWithTopic:
-                filteredProblems[problem["id"]] = problem
-
+                problems[problem["id"]] = problem
                 if enoughProblems():
                     break
 
@@ -165,8 +190,8 @@ def getProblemset(topics, maxNumOfProblems=-1):
         if enoughProblems():
             break
 
-    # pprint.pprint(filteredProblems)
-    return filteredProblems
+    # pprint(problems)
+    return problems
 
 
 # List obtained with getAllTags()
