@@ -7,7 +7,7 @@ import unicodedata
 from pylatexenc.latex2text import LatexNodes2Text
 
 import pandas
-# from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
 
 class SmartNLP:
@@ -18,7 +18,6 @@ class SmartNLP:
         # Returns nlp based on the language
         # return self.english if detect(text) == "en" else self.spanish
         return self.english
-
 
 smart = SmartNLP()
 
