@@ -75,12 +75,12 @@ def getCodeforcesProblem(data):
 
 
 def getCodeforcesProblems(topic, numOfProblems):
-    dataSetName = f"data/codeforces-{topic[0]}.json"
+    dataSetName = f"data/codeforces-{topic}.json"
 
     problemset = CodeforcesApi.getProblemset([topic], numOfProblems)
     allProblems = []
 
-    print(f"The problemset of {topic[0]} consists of {len(problemset)} problems")
+    print(f"The problemset of {topic} consists of {len(problemset)} problems")
 
     if os.path.isfile(dataSetName):
         # As the file already exists, try to collect only the problems that are missing of a history
@@ -132,13 +132,13 @@ def getOmegaupProblem(data):
 
 
 def getOmegaupProblems(topic, numOfProblems):
-    dataSetName = f"data/omegaup-{topic[0]}.json"
+    dataSetName = f"data/omegaup-{topic}.json"
 
-    omegaupTopics = getOmegaupTopics(topic[0])
+    omegaupTopics = getOmegaupTopics(topic)
     problemset = OmegaupApi.getProblemset(omegaupTopics, numOfProblems)
     allProblems = []
 
-    print(f"The problemset of {topic[0]} consists of {len(problemset)} problems")
+    print(f"The problemset of {topic} consists of {len(problemset)} problems")
 
     if os.path.isfile(dataSetName):
         # As the file already exists, try to collect only the problems that are missing of a history
@@ -182,14 +182,14 @@ def getOmegaupProblems(topic, numOfProblems):
 
 # This are the topics to start training
 startingTopics = [
-    ("sortings", 1734.078947368421),
-    ("strings", 1734.0740740740741),
-    ("greedy", 1721.7074440395627),
-    ("number theory", 1917.490494296578),
-    ("math", 1769.0954773869346),
-    ("graphs", 2253.4969325153374),
-    ("geometry", 2222.257053291536),
-    ("data structures", 2295.8870967741937),
+    "sortings",
+    "strings",
+    "greedy",
+    "number theory",
+    "math",
+    "graphs",
+    "geometry",
+    "data structures",
 ]
 
 if __name__ == "__main__":
@@ -198,8 +198,8 @@ if __name__ == "__main__":
 
     for topic in topics:
         start = datetime.now()
-        print(topic[0])
+        print(topic)
         # getCodeforcesProblems(topic, numOfProblems)
         getOmegaupProblems(topic, numOfProblems)
         end = datetime.now() - start
-        print(f"It took {end} to collect {topic[0]}'s problems\n")
+        print(f"It took {end} to collect {topic}'s problems\n")

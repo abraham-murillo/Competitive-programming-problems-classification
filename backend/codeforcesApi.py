@@ -122,7 +122,7 @@ def getProblemset(topics, maxNumOfProblems=-1):
     def enoughProblems():
         return maxNumOfProblems != -1 and len(problems) >= maxNumOfProblems
 
-    for topic, rating in topics:
+    for topic in topics:
         problemsWithTopic = getProblems(topic)
         # print(len(problemsWithTopic))
 
