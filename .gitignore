@@ -35,3 +35,5 @@ __pycache__
 get-pip.py
 
 wut.py
+
+backend/training/*

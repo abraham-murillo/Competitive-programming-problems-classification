@@ -26,7 +26,7 @@ export default function AddProblem() {
   const [history, setHistory] = useState("");
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [topics, setTopics] = useState([]);
+  const [topics, setTopics] = useState(["set", "tree"]);
   const [suggestions, setSuggestions] = useState(codeforces);
   const toast = useToast();
 
@@ -67,7 +67,7 @@ export default function AddProblem() {
           <Text
             fontWeight='bold'
             fontSize="2xl">
-            Crear JSON
+            Agregar problema
           </Text>
 
           <FormControl isRequired>
@@ -105,7 +105,7 @@ export default function AddProblem() {
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>Tags</FormLabel>
+            <FormLabel>Temas</FormLabel>
 
             {topics.length > 0 && (
               <HStack>

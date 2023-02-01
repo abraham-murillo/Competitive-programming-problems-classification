@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, HStack, Kbd } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Text } from "@chakra-ui/react";
 
 import { BiCodeCurly, BiCodeBlock } from "react-icons/bi";
 import AddProblem from "pages/AddProblem";
@@ -44,6 +44,11 @@ export default function MainPage() {
 
   return (
     <Container maxW={"container.lg"} mt={2} h={"90vh"} padding={"0"}>
+      <Text>
+        Esto es texto
+
+      </Text>
+
       {/* <Tabs
         variant={"enclosed"}
         size={"sm"}

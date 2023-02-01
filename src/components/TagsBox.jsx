@@ -15,7 +15,7 @@ export function CustomTag({ tag }) {
       size="lg"
       colorScheme="blue">
       {/* Change to only tag */}
-      <TagLabel> {tag.name} </TagLabel>
+      <TagLabel> {tag} </TagLabel>
       <TagCloseButton />
     </Tag>
   );
