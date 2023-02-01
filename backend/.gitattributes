@@ -1,0 +1,8 @@
+training/cp_val_loss-epoch=16-val_loss=0.37.ckpt filter=lfs diff=lfs merge=lfs -text
+training/model-afected-by-greedies.ckpt filter=lfs diff=lfs merge=lfs -text
+training/no_greedy-val_loss-epoch=08-val_loss=0.39.ckpt filter=lfs diff=lfs merge=lfs -text
+training/no_greedy-val_loss-epoch=09-val_loss=0.38.ckpt filter=lfs diff=lfs merge=lfs -text
+training/OverSampling_4.pt filter=lfs diff=lfs merge=lfs -text
+training/cp_latest-epoch=15-step=5952.ckpt filter=lfs diff=lfs merge=lfs -text
+training/cp_latest-epoch=16-step=6324.ckpt filter=lfs diff=lfs merge=lfs -text
+training/cp_val_loss-epoch=15-val_loss=0.38.ckpt filter=lfs diff=lfs merge=lfs -text
