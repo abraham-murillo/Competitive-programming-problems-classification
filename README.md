@@ -4,9 +4,6 @@
 `pip3 install -r backend/requirements.txt`
 
 `git lfs install`
-`git clone https://huggingface.co/bert-base-multilingual-cased`
-`pip3 install torch torchvision torchaudio`
-pip install transformers
 
 
 ## Available Scripts
