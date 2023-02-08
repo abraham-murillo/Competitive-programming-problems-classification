@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "styles/App.css";
 
-import { ChakraProvider, theme, Text, Container } from "@chakra-ui/react";
+import { ChakraProvider, theme, Container } from "@chakra-ui/react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "Navbar";
 import MainPage from "MainPage";
 import SearchResults from "pages/SearchResults";
 import ProblemPage from "pages/problem/ProblemPage";
-import AddProblem from "pages/AddProblem";
+import Contribute from "pages/Contribute";
 import DetectTopics from "pages/DetectTopics";
 
 import { getAllProblems } from "api/firebase";
@@ -58,8 +58,8 @@ export default function App() {
               />
 
               <Route
-                path="/createJSON"
-                element={<AddProblem />}
+                path="/contribute"
+                element={<Contribute />}
               />
 
               <Route

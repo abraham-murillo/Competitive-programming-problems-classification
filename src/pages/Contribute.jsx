@@ -7,7 +7,6 @@ import {
   VStack,
   Button,
   HStack,
-  useDisclosure,
   Text,
   useToast,
 } from "@chakra-ui/react";
@@ -19,13 +18,13 @@ import { addProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
 import { useAppContext } from "App";
 
-export default function AddProblem() {
+export default function Contribute() {
   const { addLocalProblem } = useAppContext();
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [history, setHistory] = useState("");
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
+  // const [input, setInput] = useState("");
+  // const [output, setOutput] = useState("");
   const [topics, setTopics] = useState(["set", "tree"]);
   const [suggestions, setSuggestions] = useState(codeforces);
   const toast = useToast();
@@ -37,8 +36,6 @@ export default function AddProblem() {
       title,
       url,
       history,
-      input,
-      output,
       topics,
     };
 
@@ -67,17 +64,21 @@ export default function AddProblem() {
           <Text
             fontWeight='bold'
             fontSize="2xl">
-            Agregar problema
+            Contribuir con un problema
           </Text>
 
           <FormControl isRequired>
-            <FormLabel>Título del problema</FormLabel>
+            <FormLabel fontWeight="bold" fontSize="xl">
+              Título del problema
+            </FormLabel>
 
             <Input value={title} onChange={(e) => setTitle(e.target.value)} />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>Url</FormLabel>
+            <FormLabel fontWeight="bold" fontSize="xl">
+              Url
+            </FormLabel>
 
             <Input
               type={"url"}
@@ -87,25 +88,33 @@ export default function AddProblem() {
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>Historia</FormLabel>
+            <FormLabel fontWeight="bold" fontSize="xl">
+              Historia
+            </FormLabel>
 
             <TextareaAutosize value={history} onChange={setHistory} />
           </FormControl>
 
-          <FormControl mt={5} isRequired>
-            <FormLabel>Entrada</FormLabel>
+          {/* <FormControl mt={5} isRequired>
+            <FormLabel fontWeight="bold" fontSize="xl">
+              Entrada
+            </FormLabel>
 
             <TextareaAutosize value={input} onChange={setInput} />
           </FormControl>
 
           <FormControl mt={5} isRequired>
-            <FormLabel>Salida</FormLabel>
+            <FormLabel fontWeight="bold" fontSize="xl">
+              Salida
+            </FormLabel>
 
             <TextareaAutosize value={output} onChange={setOutput} />
-          </FormControl>
+          </FormControl> */}
 
           <FormControl mt={5} isRequired>
-            <FormLabel>Temas</FormLabel>
+            <FormLabel fontWeight="bold" fontSize="xl">
+              Temas
+            </FormLabel>
 
             {topics.length > 0 && (
               <HStack>
@@ -121,7 +130,7 @@ export default function AddProblem() {
           isFullWidth
           mt={10}
           onClick={(e) => handleSubmit(e)}>
-          Crear problema
+          Agregar problema
         </Button>
       </Box>
     </form >

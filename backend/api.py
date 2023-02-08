@@ -29,9 +29,15 @@ model = MultiLabelClassificationModel()
 
 @app.route("/predictedTopics", methods=["POST"])
 def getPredictedTopics():
-    text = request.get_json()
-    # print(text)
-    return {"predictedTopics": model.predict(text)}
+    data = {"success": False}
+    
+    if request.method == "POST":
+        text = request.get_json()
+        # print(text)
+        data["predictedTopics"] = model.predict(text)
+        data["success"] = True
+
+    return jsonify(data)
 
 
 # @app.route("/topics")
@@ -60,4 +66,9 @@ def addProblem(problemData):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    print(("* Loading Keras model and Flask starting server..."
+		"please wait until server has fully started :)"))
+    app.run(
+        debug=True,
+        host='0.0.0.0',
+    )
