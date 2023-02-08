@@ -93,9 +93,10 @@ class MultiLabelClassificationModel:
     return predition_with_probability
 
 # from dummy import staticProblems
-# for i in range(0, 10):
+# model = MultiLabelClassificationModel()
+# for i in range(0, 5):
 #     print(staticProblems[i]['history'])
-#     print(f"Predicted {predict(staticProblems[i]['history'])}")
+#     print(f"Predicted {model.predict(staticProblems[i]['history'])}")
 #     print(f"Real {staticProblems[i]['topics']}")
 #     print()
 
@@ -103,6 +104,6 @@ class MultiLabelClassificationModel:
 # for i in random.sample(range(len(staticProblems) // 3), 5):
 #     print(staticProblems[i]['url'])
 #     print(staticProblems[i]['history'])
-#     print(f"Predicted {predict(staticProblems[i]['history'])}")
+#     print(f"Predicted {model.predict(staticProblems[i]['history'])}")
 #     print(f"Real {staticProblems[i]['topics']}")
 #     print()
