@@ -43,7 +43,9 @@ export default function DetectTopics() {
             </Text>
 
             <HStack mb={15}>
-              {predictedTopics.length > 0 &&
+              {predictedTopics.length === 0 ?
+                <Box p='4' />
+                :
                 predictedTopics.map((element) =>
                   <CustomTag
                     tag={element.topic + " " + element.probability + "%"}

@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import {
-  Text,
   Link,
   Input,
   Box,
@@ -35,10 +34,10 @@ export default function Navbar() {
             </Link>
           </Tooltip>
 
-          <Tooltip label="Crear JSON">
+          <Tooltip label="Contribuir">
             <Link
               ml={5}
-              href="#/createJSON">
+              href="#/contribute">
               <Icon
                 className="homeButtonIcon"
                 as={BiCodeCurly}

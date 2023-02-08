@@ -1,3 +1,5 @@
+import React from "react"
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -14,14 +16,14 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "process.env.REACT_APP_apiKey",
-  authDomain: "nlp-problems-classification.firebaseapp.com",
-  projectId: "nlp-problems-classification",
-  storageBucket: "nlp-problems-classification.appspot.com",
-  messagingSenderId: "831064056148",
-  appId: "1:831064056148:web:839d990106c8987711a8c1",
-  measurementId: "G-6QGW6R4Y4Q",
-};
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
+}
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
