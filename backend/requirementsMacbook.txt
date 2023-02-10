@@ -61,6 +61,7 @@ h5py==3.7.0
 httplib2==0.21.0
 huggingface-hub==0.11.1
 idna==3.4
+IPy==1.1
 ipykernel==6.20.2
 ipython==8.8.0
 ipywidgets==8.0.4
@@ -178,3 +179,8 @@ widgetsnbextension==4.0.5
 wrapt==1.14.1
 wsproto==1.2.0
 yarl==1.8.2
+opencv-python
+numpy
+requests
+flask
+pillow
