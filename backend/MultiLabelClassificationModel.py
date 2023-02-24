@@ -61,6 +61,7 @@ class MultiLabelClassificationModel:
     # Put model in evaluation mode
     self.model = self.model.to(device) # moving model to cuda
     self.model.eval()
+    print("MultiLabelClassificationModel ready to use")
 
   # convert probabilities into 0 or 1 based on a threshold value
   def classify(self, predictions, threshold):

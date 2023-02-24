@@ -1,13 +1,18 @@
-FROM anibali/pytorch:cuda-10.0
+# FROM python:3.9-alpine
+FROM python:3.10-bullseye
 
-ENV path=/Competitive-programming-problems-classification/backend/
+ENV path="/Competitive-programming-problems-classification/backend/"
 
-WORKDIR ${path}
+WORKDIR /idk
 
-RUN sudo apt-get update
-RUN sudo apt-get install -y libsm6 libxext6 libxrender-dev libglib2.0-0
-RUN pip3 install -r ./requirementsMacbook.txt
+COPY requirementsMacbook.txt requirements.txt 
 
-COPY . ${path}
-RUN sudo chmod -R a+rwx ${path}
-CMD ["python3", "api.py"]~
+RUN pip3 install --upgrade pip setuptools wheel
+RUN pip3 install python-dotenv
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+# CMD ["python3", "-m", "flask", "run", "-h", "0.0.0.0"]
+
+CMD ["python3", "api.py"]

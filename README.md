@@ -5,6 +5,8 @@
 
 `git lfs install`
 
+Use `pipreqs` to know which files to install
+
 
 ## Available Scripts
 

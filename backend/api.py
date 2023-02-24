@@ -32,9 +32,8 @@ def getPredictedTopics():
     data = {"success": False}
     
     if request.method == "POST":
-        text = request.get_json()
-        # print(text)
-        data["predictedTopics"] = model.predict(text)
+        json = request.get_json()
+        data["predictedTopics"] = model.predict(json['text'])
         data["success"] = True
 
     return jsonify(data)
@@ -69,6 +68,5 @@ if __name__ == "__main__":
     print(("* Loading Keras model and Flask starting server..."
 		"please wait until server has fully started :)"))
     app.run(
-        debug=True,
         host='0.0.0.0',
     )
