@@ -35,9 +35,7 @@ export default function Navbar() {
           </Tooltip>
 
           <Tooltip label="Contribuir">
-            <Link
-              ml={5}
-              href="#/contribute">
+            <Link ml={5} href="#/contribute">
               <Icon
                 className="homeButtonIcon"
                 as={BiCodeCurly}
@@ -48,9 +46,18 @@ export default function Navbar() {
           </Tooltip>
 
           <Tooltip label="Analizar problema">
-            <Link
-              ml={5}
-              href="#/detectTopics">
+            <Link ml={5} href="#/detectTopics">
+              <Icon
+                className="homeButtonIcon"
+                as={BiCodeBlock}
+                color="black"
+                isTruncated
+              />
+            </Link>
+          </Tooltip>
+
+          <Tooltip label="Iniciar sesión">
+            <Link ml={5} href="#/logIn">
               <Icon
                 className="homeButtonIcon"
                 as={BiCodeBlock}
