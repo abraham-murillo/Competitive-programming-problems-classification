@@ -9,10 +9,18 @@ import {
   Icon,
   Tooltip,
 } from "@chakra-ui/react";
-import { BiHomeAlt, BiCodeCurly, BiCodeBlock } from "react-icons/bi";
+import {
+  BiHomeAlt,
+  BiCodeCurly,
+  BiCodeBlock,
+  BiLogInCircle,
+  BiLogOutCircle,
+} from "react-icons/bi";
+import { UserAuth } from "context/AuthContext";
 
 export default function Navbar() {
   const [queryString, setQueryString] = useState("");
+  const { user, logOut } = UserAuth();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,14 +65,18 @@ export default function Navbar() {
           </Tooltip>
 
           <Tooltip label="Iniciar sesión">
-            <Link ml={5} href="#/logIn">
-              <Icon
-                className="homeButtonIcon"
-                as={BiCodeBlock}
-                color="black"
-                isTruncated
-              />
-            </Link>
+            {user?.displayName ? (
+              <div>
+                <p>Bienvenido, {user.displayName}!</p>
+                <button ml={5} onClick={logOut}>
+                  Cerrar sesión
+                </button>
+              </div>
+            ) : (
+              <Link ml={5} href="#/logIn">
+                Iniciar sesión
+              </Link>
+            )}
           </Tooltip>
 
           <Spacer />
