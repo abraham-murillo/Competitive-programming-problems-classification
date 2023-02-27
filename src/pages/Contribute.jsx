@@ -3,6 +3,7 @@ import {
   Box,
   FormLabel,
   FormControl,
+  FormErrorMessage,
   Input,
   VStack,
   Button,
@@ -17,26 +18,45 @@ import { codeforces } from "information/topics";
 import { addProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
 import { useAppContext } from "App";
+import ReactTags from 'react-tag-autocomplete'
 
 export default function Contribute() {
-  const { addLocalProblem } = useAppContext();
+  const { addLocalProblem, kTopics } = useAppContext();
+
+  const kTopicsSuggestions = kTopics.map(topic => {
+    return {
+      id: topic,
+      name: topic
+    };
+  });
+
   const [title, setTitle] = useState("");
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState("Own problem");
   const [history, setHistory] = useState("");
-  // const [input, setInput] = useState("");
-  // const [output, setOutput] = useState("");
-  const [topics, setTopics] = useState(["set", "tree"]);
-  const [suggestions, setSuggestions] = useState(codeforces);
+  const [topics, setTopics] = useState([]);
   const toast = useToast();
+
+  function isEmptyString(str) {
+    return str === undefined || str.trim() === '';
+  }
+
+  function problemHasNotTopics() {
+    return topics.length === 0;
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    if (isEmptyString(title) || isEmptyString(url) || isEmptyString(history) || problemHasNotTopics()) {
+      return;
+    }
 
     const problemData = {
       title,
       url,
       history,
-      topics,
+      topics: topics.map(topic => topic.name),
+      accepted: false,
     };
 
     const problemId = await addProblem(problemData);
@@ -50,8 +70,8 @@ export default function Contribute() {
 
     toastBoth({
       status: problemId !== undefined,
-      success: "Problema creado exitosamente.",
-      failure: "Hubo un error al crear el problema, inténtelo más tarde.",
+      success: "Problema agregado exitosamente (este será revisado por un moderador).",
+      failure: "Hubo un error al agregar el problema, inténtelo más tarde.",
       toast,
     });
   }
@@ -66,16 +86,31 @@ export default function Contribute() {
             fontSize="2xl">
             Contribuir con un problema
           </Text>
+          <Text
+            fontSize="m">
+            ¡Muchas gracias por contribuir!, este problema formará parte de nuestro dataset pero primero tendrá que pasar por una revisión con alguno de nuestros moderadores para determinar la calidad del problema contribuido.
+          </Text>
 
-          <FormControl isRequired>
+          <FormControl
+            isRequired
+            isInvalid={isEmptyString(title)}>
             <FormLabel fontWeight="bold" fontSize="xl">
               Título del problema
             </FormLabel>
 
-            <Input value={title} onChange={(e) => setTitle(e.target.value)} />
+            <Input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+
+            <FormErrorMessage>
+              El título no puede ser vacío.
+            </FormErrorMessage>
           </FormControl>
 
-          <FormControl mt={5} isRequired>
+          <FormControl
+            mt={5}
+            isInvalid={isEmptyString(url)}>
             <FormLabel fontWeight="bold" fontSize="xl">
               Url
             </FormLabel>
@@ -85,42 +120,58 @@ export default function Contribute() {
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
+
+            <FormErrorMessage>
+              La url no puede ser vacía, deje el default en caso de ser un problema propio.
+            </FormErrorMessage>
           </FormControl>
 
-          <FormControl mt={5} isRequired>
+          <FormControl
+            mt={5}
+            isRequired
+            isInvalid={isEmptyString(history)}>
             <FormLabel fontWeight="bold" fontSize="xl">
               Historia
             </FormLabel>
 
-            <TextareaAutosize value={history} onChange={setHistory} />
+            <TextareaAutosize
+              minRows={5}
+              value={history}
+              onChange={setHistory} />
+
+            <FormErrorMessage>
+              La historia del problema no puede ser vacía.
+            </FormErrorMessage>
           </FormControl>
 
-          {/* <FormControl mt={5} isRequired>
-            <FormLabel fontWeight="bold" fontSize="xl">
-              Entrada
-            </FormLabel>
-
-            <TextareaAutosize value={input} onChange={setInput} />
-          </FormControl>
-
-          <FormControl mt={5} isRequired>
-            <FormLabel fontWeight="bold" fontSize="xl">
-              Salida
-            </FormLabel>
-
-            <TextareaAutosize value={output} onChange={setOutput} />
-          </FormControl> */}
-
-          <FormControl mt={5} isRequired>
+          <FormControl
+            mt={5}
+            isRequired
+            isInvalid={problemHasNotTopics()}>
             <FormLabel fontWeight="bold" fontSize="xl">
               Temas
             </FormLabel>
 
-            {topics.length > 0 && (
-              <HStack>
-                {topics.map((topic) => <CustomTag tag={topic} />)}
-              </HStack>
-            )}
+            <ReactTags
+              tags={topics}
+              suggestions={kTopicsSuggestions}
+              onDelete={(i) => {
+                setTopics(topics.filter((topic, index) => index !== i));
+              }}
+              onAddition={(newTopic) => {
+                const newTopicLowerCase = newTopic.name.toLowerCase();
+                for (let topic of topics) {
+                  if (topic.name === newTopicLowerCase) {
+                    return;
+                  }
+                }
+                setTopics([...topics, newTopic]);
+              }}
+            />
+
+            <FormErrorMessage>
+              El problema debe de tener al menos un tema.
+            </FormErrorMessage>
           </FormControl>
         </VStack>
 

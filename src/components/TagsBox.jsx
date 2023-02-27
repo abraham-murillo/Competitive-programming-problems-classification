@@ -6,7 +6,6 @@ import {
 } from "@chakra-ui/react";
 
 import "styles/TagsBox.css"
-import ReactTags from 'react-tag-autocomplete'
 
 export function CustomTag({ tag }) {
   return (

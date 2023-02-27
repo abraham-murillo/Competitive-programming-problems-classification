@@ -19,6 +19,17 @@ export function useAppContext() {
   return React.useContext(AppContext);
 }
 
+const kTopics = [
+  "sortings",
+  "strings",
+  "greedy",
+  "number theory",
+  "math",
+  "graphs",
+  "geometry",
+  "data structures",
+]
+
 export default function App() {
   const [problems, setProblems] = useState([]);
 
@@ -42,6 +53,7 @@ export default function App() {
   return (
     <ChakraProvider theme={theme}>
       <AppContext.Provider value={{
+        kTopics,
         problems, setProblems,
         eraseLocalProblem,
         addLocalProblem

@@ -9,7 +9,16 @@ import {
   Icon,
   Tooltip,
 } from "@chakra-ui/react";
-import { BiHomeAlt, BiCodeCurly, BiCodeBlock } from "react-icons/bi";
+
+import {
+  BiHomeAlt as Home,
+  // BiCodeCurly as Contribute,
+  BiCodeBlock as DetectTopics
+} from "react-icons/bi";
+
+import {
+  AiOutlineFileAdd as Contribute
+} from "react-icons/ai"
 
 export default function Navbar() {
   const [queryString, setQueryString] = useState("");
@@ -27,7 +36,7 @@ export default function Navbar() {
             <Link className="homeButton" href="/">
               <Icon
                 className="homeButtonIcon"
-                as={BiHomeAlt}
+                as={Home}
                 color="black"
                 isTruncated
               />
@@ -40,7 +49,7 @@ export default function Navbar() {
               href="#/contribute">
               <Icon
                 className="homeButtonIcon"
-                as={BiCodeCurly}
+                as={Contribute}
                 color="black"
                 isTruncated
               />
@@ -53,7 +62,7 @@ export default function Navbar() {
               href="#/detectTopics">
               <Icon
                 className="homeButtonIcon"
-                as={BiCodeBlock}
+                as={DetectTopics}
                 color="black"
                 isTruncated
               />

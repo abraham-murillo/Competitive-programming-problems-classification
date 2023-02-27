@@ -31,10 +31,10 @@ const firestore = getFirestore(app);
 const storage = getStorage(app);
 
 // Data bases collections
-const rawProblems = collection(firestore, "rawProblems");
+const contributionProblems = collection(firestore, "contributionProblems");
 
 export async function getAllProblems() {
-  return await getDocs(rawProblems)
+  return await getDocs(contributionProblems)
     .then((response) => {
       return response.docs.map((doc) => ({
         ...doc.data(),
@@ -47,12 +47,12 @@ export async function getAllProblems() {
 }
 
 export async function getProblem(id) {
-  const problem = await getDoc(doc(rawProblems, id));
+  const problem = await getDoc(doc(contributionProblems, id));
   return problem.data();
 }
 
 export async function addProblem(data) {
-  return await addDoc(rawProblems, data)
+  return await addDoc(contributionProblems, data)
     .then((response) => {
       return response.id;
     })
@@ -62,7 +62,7 @@ export async function addProblem(data) {
 }
 
 export async function eraseProblem(id) {
-  return await deleteDoc(doc(rawProblems, id))
+  return await deleteDoc(doc(contributionProblems, id))
     .then(() => {
       return true;
     })
