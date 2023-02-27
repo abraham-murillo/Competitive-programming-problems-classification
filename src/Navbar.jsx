@@ -13,15 +13,20 @@ import {
 import {
   BiHomeAlt as Home,
   // BiCodeCurly as Contribute,
-  BiCodeBlock as DetectTopics
+  BiCodeBlock as DetectTopics,
+  BiLogInCircle,
+  BiLogOutCircle,
 } from "react-icons/bi";
 
 import {
   AiOutlineFileAdd as Contribute
 } from "react-icons/ai"
 
+import { UserAuth } from "context/AuthContext";
+
 export default function Navbar() {
   const [queryString, setQueryString] = useState("");
+  const { user, logOut } = UserAuth();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -44,9 +49,7 @@ export default function Navbar() {
           </Tooltip>
 
           <Tooltip label="Contribuir">
-            <Link
-              ml={5}
-              href="#/contribute">
+            <Link ml={5} href="#/contribute">
               <Icon
                 className="homeButtonIcon"
                 as={Contribute}
@@ -57,9 +60,7 @@ export default function Navbar() {
           </Tooltip>
 
           <Tooltip label="Analizar problema">
-            <Link
-              ml={5}
-              href="#/detectTopics">
+            <Link ml={5} href="#/detectTopics">
               <Icon
                 className="homeButtonIcon"
                 as={DetectTopics}
@@ -67,6 +68,21 @@ export default function Navbar() {
                 isTruncated
               />
             </Link>
+          </Tooltip>
+
+          <Tooltip label="Iniciar sesión">
+            {user?.displayName ? (
+              <div>
+                <p>Bienvenido, {user.displayName}!</p>
+                <button ml={5} onClick={logOut}>
+                  Cerrar sesión
+                </button>
+              </div>
+            ) : (
+              <Link ml={5} href="#/logIn">
+                Iniciar sesión
+              </Link>
+            )}
           </Tooltip>
 
           <Spacer />

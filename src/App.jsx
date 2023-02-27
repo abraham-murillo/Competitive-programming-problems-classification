@@ -3,6 +3,7 @@ import "styles/App.css";
 
 import { ChakraProvider, theme, Container } from "@chakra-ui/react";
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { AuthContextProvider } from "context/AuthContext";
 
 import Navbar from "Navbar";
 import MainPage from "MainPage";
@@ -10,6 +11,7 @@ import SearchResults from "pages/SearchResults";
 import ProblemPage from "pages/problem/ProblemPage";
 import Contribute from "pages/Contribute";
 import DetectTopics from "pages/DetectTopics";
+import Login from "pages/Login";
 
 import { getAllProblems } from "api/firebase";
 
@@ -43,56 +45,47 @@ export default function App() {
   }, []);
 
   function eraseLocalProblem(problemId) {
-    setProblems(problems.filter((problem) => problem.id !== problemId))
+    setProblems(problems.filter((problem) => problem.id !== problemId));
   }
 
   function addLocalProblem(newProblem) {
-    setProblems([...problems, newProblem])
+    setProblems([...problems, newProblem]);
   }
 
   return (
     <ChakraProvider theme={theme}>
-      <AppContext.Provider value={{
-        kTopics,
-        problems, setProblems,
-        eraseLocalProblem,
-        addLocalProblem
-      }}>
-        <Navbar />
+      <AuthContextProvider>
+        <AppContext.Provider value={{
+          kTopics,
+          problems,
+          setProblems,
+          eraseLocalProblem,
+          addLocalProblem
+        }}>
+          <Navbar />
 
-        <Container maxW={"container.lg"} mt={10} h={"100%"}>
+          <Container maxW={"container.lg"} mt={10} h={"100%"}>
+            <HashRouter>
+              <Routes>
+                <Route exact path="/" element={<MainPage />} />
 
-          <HashRouter>
-            <Routes>
-              <Route
-                exact path="/"
-                element={<MainPage />}
-              />
+                <Route path="/contribute" element={<Contribute />} />
 
-              <Route
-                path="/contribute"
-                element={<Contribute />}
-              />
+                <Route path="/detectTopics" element={<DetectTopics />} />
 
-              <Route
-                path="/detectTopics"
-                element={<DetectTopics />}
-              />
+                <Route path="/login" element={<Login />} />
 
-              <Route
-                path="/searchResults/:queryString"
-                element={<SearchResults />}
-              />
+                <Route
+                  path="/searchResults/:queryString"
+                  element={<SearchResults />}
+                />
 
-              <Route
-                path="/problem/:problemId"
-                element={<ProblemPage />}
-              />
-            </Routes>
-          </HashRouter>
-        </Container>
-
-      </AppContext.Provider>
+                <Route path="/problem/:problemId" element={<ProblemPage />} />
+              </Routes>
+            </HashRouter>
+          </Container>
+        </AppContext.Provider>
+      </AuthContextProvider>
     </ChakraProvider >
   );
 }

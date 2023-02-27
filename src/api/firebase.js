@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -23,10 +23,10 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_messagingSenderId,
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId,
-}
+};
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 const firestore = getFirestore(app);
 const storage = getStorage(app);
 
