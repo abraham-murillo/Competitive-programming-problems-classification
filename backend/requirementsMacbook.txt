@@ -11,3 +11,4 @@ scikit_learn
 torch
 transformers
 urllib3
+flask_cors
