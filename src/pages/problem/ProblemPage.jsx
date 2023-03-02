@@ -19,6 +19,7 @@ import isUrl from 'is-url';
 import Error from "components/Error";
 import Loading from "components/Loading";
 import { createTags, flattenTags, kTopicsSuggestions } from "information/topics";
+import { hasLoggedIn } from "context/AuthContext";
 
 export default function ProblemPage() {
   const { problemId } = useParams();
@@ -161,21 +162,23 @@ export default function ProblemPage() {
             )}
           </Box>
 
-          <HStack mt={10}>
-            <Button
-              colorScheme="blue"
-              isFullWidth
-              onClick={(e) => handleUpdateProblem(e)}>
-              Aceptar problema
-            </Button>
+          {hasLoggedIn() && (
+            <HStack mt={10}>
+              <Button
+                colorScheme="blue"
+                isFullWidth
+                onClick={(e) => handleUpdateProblem(e)}>
+                Aceptar problema
+              </Button>
 
-            <Button
-              colorScheme="red"
-              isFullWidth
-              onClick={(e) => handleEraseProblem(e)}>
-              Rechazar problema
-            </Button>
-          </HStack>
+              <Button
+                colorScheme="red"
+                isFullWidth
+                onClick={(e) => handleEraseProblem(e)}>
+                Rechazar problema
+              </Button>
+            </HStack>
+          )}
         </>
       );
     }

@@ -45,3 +45,8 @@ export const AuthContextProvider = ({ children }) => {
 export const UserAuth = () => {
   return useContext(AuthContext);
 };
+
+export function hasLoggedIn() {
+  const { user } = UserAuth();
+  return user?.displayName ? true : false;
+}

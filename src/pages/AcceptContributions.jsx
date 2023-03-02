@@ -30,6 +30,8 @@ import {
 
 import { getAllProblemsNotAccepted } from "api/firebase";
 import { CustomTag } from "components/TagsBox";
+import { hasLoggedIn } from "context/AuthContext";
+import Error from "components/Error";
 import isUrl from 'is-url';
 
 export default function AcceptContributions() {
@@ -46,6 +48,10 @@ export default function AcceptContributions() {
     setLoading(true);
     fetchAllProblemsNotAccepted();
   }, []);
+
+  if (!hasLoggedIn()) {
+    return <Error text={"No tienes permisos para estar aquí."} />
+  }
 
   return (
     <Box w="100%">
