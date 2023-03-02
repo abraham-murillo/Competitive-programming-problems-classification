@@ -10,12 +10,11 @@ import "styles/TagsBox.css"
 export function CustomTag({ tag }) {
   return (
     <Tag
+      ml={1}
       borderRadius="full"
       size="lg"
       colorScheme="blue">
-      {/* Change to only tag */}
       <TagLabel> {tag} </TagLabel>
-      <TagCloseButton />
     </Tag>
   );
 }

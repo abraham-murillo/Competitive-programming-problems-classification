@@ -13,22 +13,14 @@ import {
 } from "@chakra-ui/react";
 
 import TextareaAutosize from "components/TextareaAutosize";
-import { CustomTag } from "components/TagsBox";
-import { codeforces } from "information/topics";
 import { addProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
 import { useAppContext } from "App";
 import ReactTags from 'react-tag-autocomplete'
+import { flattenTags, kTopicsSuggestions } from "information/topics"
 
 export default function Contribute() {
-  const { addLocalProblem, kTopics } = useAppContext();
-
-  const kTopicsSuggestions = kTopics.map(topic => {
-    return {
-      id: topic,
-      name: topic
-    };
-  });
+  const { addLocalProblem } = useAppContext();
 
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("Own problem");
@@ -55,7 +47,7 @@ export default function Contribute() {
       title,
       url,
       history,
-      topics: topics.map(topic => topic.name),
+      topics: flattenTags(topics),
       accepted: false,
     };
 

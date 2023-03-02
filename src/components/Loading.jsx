@@ -16,7 +16,7 @@ export default function Loading() {
         <Center w="50%" h="50%">
           <Image src={sloth} w="90%" />
 
-          <a href="http://www.freepik.com"> Designed by pch.vector </a>
+          {/* <a href="http://www.freepik.com"> Designed by pch.vector </a> */}
         </Center>
 
         <Text

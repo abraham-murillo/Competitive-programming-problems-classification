@@ -20,6 +20,7 @@
     "firebase": "^9.8.1",
     "firebase-tools": "^11.22.0",
     "framer-motion": "^6.3.3",
+    "is-url": "^1.2.4",
     "npm": "^9.4.2",
     "os-browserify": "^0.3.0",
     "react": "^18.1.0",

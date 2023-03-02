@@ -22,6 +22,10 @@ import {
   AiOutlineFileAdd as Contribute
 } from "react-icons/ai"
 
+import {
+  BsUiChecks as AcceptContributions
+} from "react-icons/bs"
+
 import { UserAuth } from "context/AuthContext";
 
 export default function Navbar() {
@@ -70,6 +74,33 @@ export default function Navbar() {
             </Link>
           </Tooltip>
 
+          {/* Mostrar sólo si está autentificado */}
+          {/* {user === null && ( */}
+          <Tooltip label="Aceptar contribuciones">
+            <Link ml={5} href="#/acceptContributions">
+              <Icon
+                className="homeButtonIcon"
+                as={AcceptContributions}
+                color="black"
+                isTruncated
+              />
+            </Link>
+          </Tooltip>
+          {/* )} */}
+
+          <Spacer />
+
+          {/* <Tooltip label="Buscar un problema">
+            <form onSubmit={handleSubmit}>
+              <Input
+                w="30vw"
+                placeholder="Título del problema"
+                onChange={(event) => setQueryString(event.target.value)}
+                onSubmit={handleSubmit}
+              />
+            </form>
+          </Tooltip> */}
+
           <Tooltip label="Iniciar sesión">
             {user?.displayName ? (
               <div>
@@ -83,19 +114,6 @@ export default function Navbar() {
                 Iniciar sesión
               </Link>
             )}
-          </Tooltip>
-
-          <Spacer />
-
-          <Tooltip label="Buscar un problema">
-            <form onSubmit={handleSubmit}>
-              <Input
-                w="30vw"
-                placeholder="Título del problema"
-                onChange={(event) => setQueryString(event.target.value)}
-                onSubmit={handleSubmit}
-              />
-            </form>
           </Tooltip>
         </Flex>
       </Container>

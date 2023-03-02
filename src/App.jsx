@@ -11,7 +11,9 @@ import SearchResults from "pages/SearchResults";
 import ProblemPage from "pages/problem/ProblemPage";
 import Contribute from "pages/Contribute";
 import DetectTopics from "pages/DetectTopics";
+import AcceptContributions from "pages/AcceptContributions";
 import Login from "pages/Login";
+import { kTopics } from "information/topics"
 
 import { getAllProblems } from "api/firebase";
 
@@ -20,17 +22,6 @@ export const AppContext = React.createContext(null);
 export function useAppContext() {
   return React.useContext(AppContext);
 }
-
-const kTopics = [
-  "sortings",
-  "strings",
-  "greedy",
-  "number theory",
-  "math",
-  "graphs",
-  "geometry",
-  "data structures",
-]
 
 export default function App() {
   const [problems, setProblems] = useState([]);
@@ -74,6 +65,8 @@ export default function App() {
                 <Route path="/detectTopics" element={<DetectTopics />} />
 
                 <Route path="/login" element={<Login />} />
+
+                <Route path="/acceptContributions" element={<AcceptContributions />} />
 
                 <Route
                   path="/searchResults/:queryString"

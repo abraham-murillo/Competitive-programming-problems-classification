@@ -2,7 +2,7 @@ import React from "react";
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, setDoc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import {
   collection,
@@ -10,6 +10,7 @@ import {
   getDoc,
   addDoc,
   deleteDoc,
+  updateDoc,
   doc,
   query,
   where,
@@ -68,5 +69,31 @@ export async function eraseProblem(id) {
     })
     .catch((error) => {
       return false;
+    });
+}
+
+export async function updateProblem(id, data) {
+  const docRef = doc(contributionProblems, id);
+  return await updateDoc(docRef, data)
+    .then(() => {
+      return true;
+    })
+    .catch((error) => {
+      return false;
+    });
+}
+
+export async function getAllProblemsNotAccepted() {
+  const queryProblemsNotAccepted = query(contributionProblems, where("accepted", "==", false));
+
+  return await getDocs(queryProblemsNotAccepted)
+    .then((response) => {
+      return response.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+    })
+    .catch((error) => {
+      console.log(error.message);
     });
 }
