@@ -6,9 +6,7 @@ import {
   Button,
   useToast,
   VStack,
-  Container,
   HStack,
-  Show,
 } from "@chakra-ui/react";
 import { getProblem, eraseProblem, updateProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
