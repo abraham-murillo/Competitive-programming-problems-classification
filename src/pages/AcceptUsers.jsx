@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getAllUsers, updateUser } from "api/firebase";
 import { hasLoggedIn } from "context/AuthContext";
 import Error from "components/Error";
+import Information from "components/Information";
+import { UserAuth } from "context/AuthContext";
+import waiting from "assets/images/sad.png";
+
 import {
   Box,
   FormLabel,
@@ -31,7 +35,9 @@ export default function AcceptUsers() {
   const [pendingUsers, setPendingUsers] = useState([]);
   const [acceptedUsers, setAcceptedUsers] = useState([]);
   const [rejectedUsers, setRejectedUsers] = useState([]);
+  const [acceptedUser, setAcceptedUser] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { user } = UserAuth();
 
   async function fetchAllUsers() {
     const data = await getAllUsers();
@@ -54,6 +60,18 @@ export default function AcceptUsers() {
 
     setLoading(false);
   }
+
+  useEffect(() => {
+    console.log(acceptedUsers);
+    console.log(user);
+    for (const someUser of acceptedUsers) {
+      if (someUser.email == user.email) {
+        setAcceptedUser(true);
+        return;
+      }
+    }
+    setAcceptedUser(false);
+  }, [acceptedUsers]);
 
   useEffect(() => {
     setLoading(true);
@@ -82,6 +100,20 @@ export default function AcceptUsers() {
 
   if (!hasLoggedIn()) {
     return <Error text={"No tienes permisos para estar aquí."} />;
+  }
+
+  if (!acceptedUser) {
+    return (
+      <Information
+        title={"No tienes permiso para estar aquí :("}
+        text={
+          <div style={{ textAlign: "center" }}>
+            <p>No has sido aceptado por uno de nuestros admins todavía.</p>
+          </div>
+        }
+        img={waiting}
+      />
+    );
   }
 
   return (

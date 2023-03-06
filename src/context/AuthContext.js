@@ -14,47 +14,36 @@ const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [newUser, setNewUser] = useState(false);
 
   const googleSignIn = async () => {
     const allUsers = await getAllUsers();
-    console.log(allUsers);
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then(function (result) {
-        var user = result.user;
-        var isNewUser = true;
 
-        for (const someUser of allUsers) {
-          if (someUser.email == user.email) {
-            console.log(someUser);
-            isNewUser = false;
-          }
+    try {
+      const result = await signInWithPopup(auth, provider);
+      var user = result.user;
+      var isNewUser = true;
+
+      for (const someUser of allUsers) {
+        if (someUser.email == user.email) {
+          isNewUser = false;
         }
+      }
 
-        setNewUser(isNewUser);
-
-        if (isNewUser) {
-          console.log(
-            "User " + user.email + " is a new user! User not accepted yet"
-          );
-          const newUser = {
-            email: user.email,
-            accepted: false,
-            pending: true,
-          };
-          addUser(newUser);
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-    if (newUser) {
-      logOut();
+      if (isNewUser) {
+        console.log(
+          "User " + user.email + " is a new user! User not accepted yet"
+        );
+        const newUser = {
+          email: user.email,
+          accepted: false,
+          pending: true,
+        };
+        addUser(newUser);
+      }
+    } catch (error) {
+      console.log(error);
     }
-
-    return newUser;
   };
 
   const logOut = () => {

@@ -69,30 +69,31 @@ export default function Navbar() {
             </Link>
           </Tooltip>
 
-          {/* Mostrar sólo si está autentificado */}
-          {/* {user === null && ( */}
-          <Tooltip label="Aceptar contribuciones">
-            <Link ml={5} href="#/acceptContributions">
-              <Icon
-                className="homeButtonIcon"
-                as={AcceptContributions}
-                color="black"
-                isTruncated
-              />
-            </Link>
-          </Tooltip>
-          {/* )} */}
+          {user?.displayName ? (
+            <Tooltip label="Aceptar contribuciones">
+              <Link ml={5} href="#/acceptContributions">
+                <Icon
+                  className="homeButtonIcon"
+                  as={AcceptContributions}
+                  color="black"
+                  isTruncated
+                />
+              </Link>
+            </Tooltip>
+          ) : null}
 
-          <Tooltip label="Aceptar usuarios">
-            <Link ml={5} href="#/acceptUsers">
-              <Icon
-                className="homeButtonIcon"
-                as={AcceptUsers}
-                color="black"
-                isTruncated
-              />
-            </Link>
-          </Tooltip>
+          {user?.displayName ? (
+            <Tooltip label="Aceptar usuarios">
+              <Link ml={5} href="#/acceptUsers">
+                <Icon
+                  className="homeButtonIcon"
+                  as={AcceptUsers}
+                  color="black"
+                  isTruncated
+                />
+              </Link>
+            </Tooltip>
+          ) : null}
 
           <Spacer />
 
@@ -110,7 +111,7 @@ export default function Navbar() {
           <Tooltip label="Iniciar sesión">
             {user?.displayName ? (
               <div>
-                <p>Bienvenido, {user.displayName}!</p>
+                <p>Bienvenido, {user.displayName.split(" ")[0]}!</p>
                 <button ml={5} onClick={logOut}>
                   Cerrar sesión
                 </button>
