@@ -129,17 +129,17 @@ export default function AcceptUsers() {
               <Tbody />
             ) : (
               <Tbody>
-                {pendingUsers.map((user) => {
+                {pendingUsers.map((someUser) => {
                   return (
                     <Tr>
-                      <Td>{user.email}</Td>
+                      <Td>{someUser.email}</Td>
                       <Td>
-                        <button onClick={() => handleAccept(user)}>
+                        <button onClick={() => handleAccept(someUser)}>
                           Aceptar
                         </button>
                       </Td>
                       <Td>
-                        <button onClick={() => handleReject(user)}>
+                        <button onClick={() => handleReject(someUser)}>
                           Rechazar
                         </button>
                       </Td>
@@ -161,15 +161,17 @@ export default function AcceptUsers() {
               <Tbody />
             ) : (
               <Tbody>
-                {acceptedUsers.map((user) => {
+                {acceptedUsers.map((someUser) => {
                   return (
                     <Tr>
-                      <Td>{user.email}</Td>
-                      <Td>
-                        <button onClick={() => handleReject(user)}>
-                          Rechazar
-                        </button>
-                      </Td>
+                      <Td>{someUser.email}</Td>
+                      {someUser.email != user.email ? (
+                        <Td>
+                          <button onClick={() => handleReject(someUser)}>
+                            Rechazar
+                          </button>
+                        </Td>
+                      ) : null}
                     </Tr>
                   );
                 })}
