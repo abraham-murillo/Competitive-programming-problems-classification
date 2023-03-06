@@ -33,6 +33,7 @@ const storage = getStorage(app);
 
 // Data bases collections
 const contributionProblems = collection(firestore, "contributionProblems");
+const pendingUsers = collection(firestore, "pendingUsers");
 
 export async function getAllProblems() {
   return await getDocs(contributionProblems)
@@ -62,6 +63,16 @@ export async function addProblem(data) {
     });
 }
 
+export async function addUser(data) {
+  return await addDoc(pendingUsers, data)
+    .then((response) => {
+      return response.id;
+    })
+    .catch((error) => {
+      return undefined;
+    });
+}
+
 export async function eraseProblem(id) {
   return await deleteDoc(doc(contributionProblems, id))
     .then(() => {
@@ -83,10 +94,39 @@ export async function updateProblem(id, data) {
     });
 }
 
+export async function updateUser(id, data) {
+  const docRef = doc(pendingUsers, id);
+  return await updateDoc(docRef, data)
+    .then(() => {
+      return true;
+    })
+    .catch((error) => {
+      return false;
+    });
+}
+
 export async function getAllProblemsNotAccepted() {
-  const queryProblemsNotAccepted = query(contributionProblems, where("accepted", "==", false));
+  const queryProblemsNotAccepted = query(
+    contributionProblems,
+    where("accepted", "==", false)
+  );
 
   return await getDocs(queryProblemsNotAccepted)
+    .then((response) => {
+      return response.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+}
+
+export async function getAllUsers() {
+  const queryUsers = query(pendingUsers);
+
+  return await getDocs(queryUsers)
     .then((response) => {
       return response.docs.map((doc) => ({
         ...doc.data(),

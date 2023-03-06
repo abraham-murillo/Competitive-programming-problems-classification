@@ -14,17 +14,12 @@ import {
   BiHomeAlt as Home,
   // BiCodeCurly as Contribute,
   BiCodeBlock as DetectTopics,
-  BiLogInCircle,
-  BiLogOutCircle,
+  BiUserCheck as AcceptUsers,
 } from "react-icons/bi";
 
-import {
-  AiOutlineFileAdd as Contribute
-} from "react-icons/ai"
+import { AiOutlineFileAdd as Contribute } from "react-icons/ai";
 
-import {
-  BsUiChecks as AcceptContributions
-} from "react-icons/bs"
+import { BsUiChecks as AcceptContributions } from "react-icons/bs";
 
 import { UserAuth } from "context/AuthContext";
 
@@ -87,6 +82,17 @@ export default function Navbar() {
             </Link>
           </Tooltip>
           {/* )} */}
+
+          <Tooltip label="Aceptar usuarios">
+            <Link ml={5} href="#/acceptUsers">
+              <Icon
+                className="homeButtonIcon"
+                as={AcceptUsers}
+                color="black"
+                isTruncated
+              />
+            </Link>
+          </Tooltip>
 
           <Spacer />
 

@@ -12,8 +12,9 @@ import ProblemPage from "pages/problem/ProblemPage";
 import Contribute from "pages/Contribute";
 import DetectTopics from "pages/DetectTopics";
 import AcceptContributions from "pages/AcceptContributions";
+import AcceptUsers from "pages/AcceptUsers";
 import Login from "pages/Login";
-import { kTopics } from "information/topics"
+import { kTopics } from "information/topics";
 
 import { getAllProblems } from "api/firebase";
 
@@ -47,13 +48,15 @@ export default function App() {
   return (
     <ChakraProvider theme={theme}>
       <AuthContextProvider>
-        <AppContext.Provider value={{
-          kTopics,
-          problems,
-          setProblems,
-          eraseLocalProblem,
-          addLocalProblem
-        }}>
+        <AppContext.Provider
+          value={{
+            kTopics,
+            problems,
+            setProblems,
+            eraseLocalProblem,
+            addLocalProblem,
+          }}
+        >
           <Navbar />
 
           <Container maxW={"container.lg"} mt={10} h={"100%"}>
@@ -67,7 +70,12 @@ export default function App() {
 
                 <Route path="/login" element={<Login />} />
 
-                <Route path="/acceptContributions" element={<AcceptContributions />} />
+                <Route
+                  path="/acceptContributions"
+                  element={<AcceptContributions />}
+                />
+
+                <Route path="/acceptUsers" element={<AcceptUsers />} />
 
                 <Route
                   path="/searchResults/:queryString"
@@ -80,6 +88,6 @@ export default function App() {
           </Container>
         </AppContext.Provider>
       </AuthContextProvider>
-    </ChakraProvider >
+    </ChakraProvider>
   );
 }
