@@ -121,20 +121,22 @@ export default function Navbar() {
             </Tooltip>
           ) : null}
 
-          <Tooltip label="Iniciar sesión">
-            {user?.displayName ? (
-              <div>
-                <p>Bienvenido, {user.displayName.split(" ")[0]}!</p>
+          {user?.displayName ? (
+            <div>
+              <p>Bienvenido, {user.displayName.split(" ")[0]}!</p>
+              <Tooltip label="Cerrar sesión">
                 <button ml={5} onClick={logOut}>
                   Cerrar sesión
                 </button>
-              </div>
-            ) : (
+              </Tooltip>
+            </div>
+          ) : (
+            <Tooltip label="Iniciar sesión">
               <Link ml={5} href="#/logIn">
                 Iniciar sesión
               </Link>
-            )}
-          </Tooltip>
+            </Tooltip>
+          )}
         </Flex>
       </Container>
     </Box>
