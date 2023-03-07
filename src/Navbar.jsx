@@ -109,7 +109,7 @@ export default function Navbar() {
           </Tooltip> */}
 
           {user?.photoURL ? (
-            <Tooltip label="Aceptar usuarios">
+            <Tooltip label={user.displayName}>
               <img
                 style={{
                   borderRadius: "100%",
