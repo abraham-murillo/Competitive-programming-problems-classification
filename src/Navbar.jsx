@@ -108,6 +108,19 @@ export default function Navbar() {
             </form>
           </Tooltip> */}
 
+          {user?.photoURL ? (
+            <Tooltip label="Aceptar usuarios">
+              <img
+                style={{
+                  borderRadius: "100%",
+                  width: "40px",
+                  marginRight: "20px",
+                }}
+                src={user.photoURL}
+              />
+            </Tooltip>
+          ) : null}
+
           <Tooltip label="Iniciar sesión">
             {user?.displayName ? (
               <div>
