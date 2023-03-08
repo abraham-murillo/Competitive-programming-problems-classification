@@ -1,5 +1,3 @@
-import React from "react";
-
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore, setDoc } from "firebase/firestore";

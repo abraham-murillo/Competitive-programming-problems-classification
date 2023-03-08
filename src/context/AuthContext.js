@@ -1,5 +1,5 @@
 import { addUser, getAllUsers } from "api/firebase";
-import { useAppContext } from "App";
+
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -31,9 +31,9 @@ export const AuthContextProvider = ({ children }) => {
       }
 
       if (isNewUser) {
-        console.log(
-          "User " + user.email + " is a new user! User not accepted yet"
-        );
+        // console.log(
+        //   "User " + user.email + " is a new user! User not accepted yet"
+        // );
         const newUser = {
           email: user.email,
           accepted: false,
@@ -53,7 +53,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("User", currentUser);
+      // console.log("User", currentUser);
     });
 
     return () => {

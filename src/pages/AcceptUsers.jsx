@@ -8,27 +8,13 @@ import waiting from "assets/images/sad.png";
 
 import {
   Box,
-  FormLabel,
-  FormControl,
-  FormErrorMessage,
-  Input,
   VStack,
-  Button,
-  HStack,
   Text,
-  useToast,
   TableContainer,
   Table,
-  TableCaption,
-  Thead,
   Tr,
-  Th,
   Tbody,
   Td,
-  Tooltip,
-  Link,
-  Icon,
-  Spacer,
 } from "@chakra-ui/react";
 
 export default function AcceptUsers() {
@@ -46,7 +32,7 @@ export default function AcceptUsers() {
     setRejectedUsers([]);
 
     for (const user of data) {
-      console.log(user);
+      // console.log(user);
       if (user.pending) {
         setPendingUsers((pendingUsers) => [...pendingUsers, user]);
       } else {
@@ -62,8 +48,8 @@ export default function AcceptUsers() {
   }
 
   useEffect(() => {
-    console.log(acceptedUsers);
-    console.log(user);
+    //console.log(acceptedUsers);
+    //console.log(user);
     for (const someUser of acceptedUsers) {
       if (someUser.email == user.email) {
         setAcceptedUser(true);
@@ -85,7 +71,7 @@ export default function AcceptUsers() {
       pending: false,
     });
     fetchAllUsers();
-    console.log("Accepting ", user);
+    //console.log("Accepting ", user);
   };
 
   const handleReject = async (user) => {
@@ -95,7 +81,7 @@ export default function AcceptUsers() {
       pending: false,
     });
     fetchAllUsers();
-    console.log("Rejecting ", user);
+    //console.log("Rejecting ", user);
   };
 
   if (!hasLoggedIn()) {

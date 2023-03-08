@@ -31,6 +31,14 @@ export const kProblems = [
     topics: ["greedy"],
     url: "fake.com",
   },
+  {
+    id: "13213",
+    accepted: false,
+    title: "Abraham y los pokemones",
+    history: "Abraham el joven maestro Pokémon ha encontrado una refugio enorme que consiste de n recintos uno tras de otro en una línea. Hay exactamente 1 Pokémon de cada tipo en cada recinto, esto para evitar que se peleen, para facilitarlo cada tipo es representado por una letra mayúscula o minúscula.Abraham quiere convivir con todos los tipos de Pokémon, pero entrar a cada recinto cuesta 1 bitcoin y él no tiene tanto dinero :c, uno diría que basta con saber cuántos tipos diferentes de Pokémon hay para conocer el precio final; pero el refugio tiene planes diferentes y quiere lucrar con ellos, por eso una vez que entras a un",
+    topics: ["greedy"],
+    url: "fake.com",
+  }
 ]
 
 

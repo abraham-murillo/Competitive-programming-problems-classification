@@ -5,18 +5,10 @@ import Information from "components/Information";
 
 import {
   Box,
-  FormLabel,
-  FormControl,
-  FormErrorMessage,
-  Input,
   VStack,
-  Button,
-  HStack,
   Text,
-  useToast,
   TableContainer,
   Table,
-  TableCaption,
   Thead,
   Tr,
   Th,
@@ -150,7 +142,7 @@ export default function AcceptContributions() {
 
                       <Td>
                         {problem.topics.map((topic, index) => {
-                          console.log(topic, index);
+                          // console.log(topic, index);
                           if (index > 0 && index % 3 === 0) {
                             return (
                               <>

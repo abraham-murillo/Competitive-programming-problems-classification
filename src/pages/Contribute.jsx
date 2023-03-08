@@ -17,7 +17,7 @@ import { addProblem } from "api/firebase";
 import { toastBoth } from "utils/toastBoth";
 import { useAppContext } from "App";
 import ReactTags from 'react-tag-autocomplete'
-import { flattenTags, kTopicsSuggestions } from "information/topics"
+import { flattenTags, kTopics, kTopicsSuggestions } from "information/topics"
 
 export default function Contribute() {
   const { addLocalProblem } = useAppContext();
@@ -144,6 +144,10 @@ export default function Contribute() {
               Temas
             </FormLabel>
 
+            <Text color="gray">
+              Estos temas pueden ser {kTopics.join(", ")}.
+            </Text>
+
             <ReactTags
               tags={topics}
               suggestions={kTopicsSuggestions}
@@ -159,6 +163,8 @@ export default function Contribute() {
                 }
                 setTopics([...topics, newTopic]);
               }}
+              noSuggestionsText="No hay temas que coincidan."
+              minQueryLength={1}
             />
 
             <FormErrorMessage>

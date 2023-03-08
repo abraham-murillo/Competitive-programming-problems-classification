@@ -19,7 +19,7 @@ export default function EasyTable(props) {
     return headers ? headers : getProperties(values[0]);
   }
 
-  console.log("headers:", headers, "values:", values);
+  // console.log("headers:", headers, "values:", values);
 
   return (
     <TableContainer>

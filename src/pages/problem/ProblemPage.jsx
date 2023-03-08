@@ -16,7 +16,7 @@ import isUrl from 'is-url';
 
 import Error from "components/Error";
 import Loading from "components/Loading";
-import { createTags, flattenTags, kTopicsSuggestions } from "information/topics";
+import { createTags, flattenTags, kTopics, kTopicsSuggestions } from "information/topics";
 import { hasLoggedIn } from "context/AuthContext";
 
 export default function ProblemPage() {
@@ -139,6 +139,10 @@ export default function ProblemPage() {
                     Temas asignados por el contribuidor, (asegúrese de que sean correctos o corríjalos).
                   </Text>
 
+                  <Text color="gray">
+                    Estos temas pueden ser {kTopics.join(", ")}.
+                  </Text>
+
                   <ReactTags
                     tags={topics}
                     suggestions={kTopicsSuggestions}
@@ -154,6 +158,8 @@ export default function ProblemPage() {
                       }
                       setTopics([...topics, newTopic]);
                     }}
+                    noSuggestionsText="No hay temas que coincidan."
+                    minQueryLength={1}
                   />
                 </Box>
               </VStack>

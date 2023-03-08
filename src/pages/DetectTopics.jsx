@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
-import { Button, Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { Button, Box, HStack, Text, VStack, useToast } from "@chakra-ui/react";
 import TextareaAutosize from "components/TextareaAutosize";
 import { CustomTag } from "components/TagsBox";
 import axios from "axios";
 import { kProblems } from "information/problems"
+import { kLanguages } from "information/languages"
 
 export default function DetectTopics() {
   const [text, setText] = useState(kProblems[0].history);
   const [predictedTopics, setPredictedTopics] = useState([]);
+  const toast = useToast();
 
   function getHeuristicWordCount(str) {
     return str.trim().split(/\s+/).length;
@@ -19,6 +21,11 @@ export default function DetectTopics() {
     probability: "",
   };
 
+  const BACKEND_FAILURE = {
+    topic: "Backend failure",
+    probability: "",
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -26,16 +33,27 @@ export default function DetectTopics() {
     const local = 'http://127.0.0.1:5000/predictedTopics';
     const url = backend;
 
-    if (getHeuristicWordCount(text) <= 20) {
+    if (getHeuristicWordCount(text) <= 10) {
       setPredictedTopics([NOT_ENOUGH_CONTEXT]);
     } else {
       axios.post(url, {
         text: text
       }).then(response => {
-        if (response !== undefined && response.data.predictedTopics.length > 0) {
-          setPredictedTopics(response.data.predictedTopics);
+        console.log(response);
+        if (response.data.mainLanguage === 'en') {
+          if (response !== undefined && response.data.predictedTopics.length > 0) {
+            setPredictedTopics(response.data.predictedTopics);
+          } else {
+            setPredictedTopics([BACKEND_FAILURE]);
+          }
         } else {
-          setPredictedTopics([NOT_ENOUGH_CONTEXT]);
+          setPredictedTopics([]);
+          toast({
+            title: `Parece que el problema está en ${kLanguages[response.data.mainLanguage]}, por favor tradúzcalo a Inglés y vuelva a intentarlo.`,
+            status: 'warning',
+            duration: 7000,
+            isClosable: true,
+          })
         }
       })
         .catch(error => console.log(error));

@@ -1,7 +1,6 @@
-import { React, useState } from "react";
+import { React } from "react";
 import {
   Link,
-  Input,
   Box,
   Spacer,
   Flex,
@@ -24,13 +23,13 @@ import { BsUiChecks as AcceptContributions } from "react-icons/bs";
 import { UserAuth } from "context/AuthContext";
 
 export default function Navbar() {
-  const [queryString, setQueryString] = useState("");
+  // const [queryString, setQueryString] = useState("");
   const { user, logOut } = UserAuth();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    window.location.href = "/#/searchResults/" + queryString;
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   window.location.href = "/#/searchResults/" + queryString;
+  // }
 
   return (
     <Box boxShadow={"md"}>

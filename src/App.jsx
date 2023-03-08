@@ -30,7 +30,7 @@ export default function App() {
   useEffect(() => {
     async function getTitles() {
       const allProblems = await getAllProblems();
-      console.log(allProblems);
+      // console.log(allProblems);
       setProblems(allProblems);
     }
 

@@ -1,12 +1,12 @@
 export const kTopics = [
+  "data structures",
+  "geometry",
+  "graphs",
+  "greedy",
+  "math",
+  "number theory",
   "sortings",
   "strings",
-  "greedy",
-  "number theory",
-  "math",
-  "graphs",
-  "geometry",
-  "data structures",
 ]
 
 export function createTags(topics) {
