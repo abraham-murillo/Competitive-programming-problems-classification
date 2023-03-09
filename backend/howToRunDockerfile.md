@@ -9,25 +9,25 @@ docker system prune --all --force --volumes
 docker build -t backend:fool . -->
 
 ## Al parecer M1 la cajetea, prueba con esto
-docker buildx build --platform linux/amd64 -t backend:abraham .
+docker buildx build --platform linux/amd64 -t backend:abraham2 .
 
 ## Re-etiqueta y vuelve a subir
-docker tag backend:abraham abrahammurillo7443/backend:abraham
-docker push abrahammurillo7443/backend:abraham
+docker tag backend:abraham2 abrahammurillo7443/backend:abraham2
+docker push abrahammurillo7443/backend:abraham2
 
 
 ## Correr el docker localmente
-docker run -d -p 5000:5000 backend:abraham
+docker run -d -p 5000:5000 backend:abraham2
 
-docker run -d backend:abraham
+docker run -d backend:abraham2
 
 # Google cloud (https://www.youtube.com/watch?v=_Zul8u5YypA)
 ## Cargar la imagen desde docker hub
-docker pull abrahammurillo7443/backend:abraham
+docker pull abrahammurillo7443/backend:abraham2
 
 ## Re-etiqueta y vuelve a subir
-docker tag abrahammurillo7443/backend:abraham gcr.io/cp-problem-classification/backend:abraham
+docker tag abrahammurillo7443/backend:abraham2 gcr.io/cp-problem-classification/backend:abraham2
 
-docker push gcr.io/cp-problem-classification/backend:abraham
+docker push gcr.io/cp-problem-classification/backend:abraham2
 
 

@@ -2,9 +2,6 @@ import CodeforcesApi
 import OmegaupApi
 import json
 from pprint import pprint
-from string import punctuation
-import unicodedata
-from pylatexenc.latex2text import LatexNodes2Text
 from topicsStandardization import getOmegaupTopics, getCodeforcesTopics
 
 from random import random
@@ -16,30 +13,13 @@ import SmartRequests
 from datetime import datetime
 import os
 
+from TextCleaner import pretty
+
 PROCESSES = 30
 BUCKET_SIZE = 100
 
-
 def flatten(t):
     return [item for sublist in t for item in sublist]
-
-
-def addSpaces(text):
-    newText = ""
-    last = ""
-    for ch in text:
-        if last in punctuation:
-            newText += " "
-        newText += ch
-        last = ch
-    return newText
-
-
-def pretty(text):
-    text = LatexNodes2Text().latex_to_text(text)
-    text = unicodedata.normalize("NFKD", text)
-    text = addSpaces(text)
-    return " ".join(text.split())
 
 
 def fixData(problem):

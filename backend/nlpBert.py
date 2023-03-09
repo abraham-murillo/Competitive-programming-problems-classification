@@ -23,7 +23,11 @@ tokenizer = BertTokenizer.from_pretrained(BERT_MODEL_NAME)
 
 MAX_TEXT_LEN = 512
 
+from TextCleaner import pretty
+
 def tokenize(text):
+  text = pretty(text)
+
   return tokenizer.encode_plus(
             text,
             None,
