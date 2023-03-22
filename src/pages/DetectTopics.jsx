@@ -39,7 +39,7 @@ export default function DetectTopics() {
       axios.post(url, {
         text: text
       }).then(response => {
-        console.log(response);
+        // console.log(response);
         if (response.data.mainLanguage === 'en') {
           if (response !== undefined && response.data.predictedTopics.length > 0) {
             setPredictedTopics(response.data.predictedTopics);

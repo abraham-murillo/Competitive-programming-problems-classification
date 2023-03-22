@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Container, Text, Button, VStack, Box } from "@chakra-ui/react";
 import { CSVLink } from "react-csv";
@@ -6,13 +6,15 @@ import { useAppContext } from "App";
 import { FiDownload as Download } from "react-icons/fi";
 import { CanvaSlides } from "CanvaSlides";
 
+import { codeforces } from "codeforces"
+
 export default function MainPage() {
   const { problems } = useAppContext();
   const headers = [
-    { label: 'Título', key: 'title' },
-    { label: 'Historia', key: 'history' },
-    { label: 'Categorías', key: 'topics' },
-    { label: 'Url', key: 'url' },
+    { label: 'title', key: 'title' },
+    { label: 'history', key: 'history' },
+    { label: 'topics', key: 'topics' },
+    { label: 'url', key: 'url' },
   ];
 
   return (
@@ -44,7 +46,7 @@ export default function MainPage() {
           right={10}
           bottom={5}>
           <CSVLink
-            data={problems}
+            data={[...codeforces, ...problems]}
             headers={headers}
             filename={"cp-problem-classification-dataset.csv"}
             target="_blank">
