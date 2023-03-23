@@ -17,6 +17,9 @@ export default function MainPage() {
     { label: 'url', key: 'url' },
   ];
 
+  // const miniCodeforces = codeforces.slice(0, 200);
+  // console.log(miniCodeforces)
+
   return (
     <Container maxW={"container.lg"} mt={2} h={"90vh"} padding={"0"}>
       <VStack
